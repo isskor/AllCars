@@ -5,14 +5,21 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 
 
+
+
 const Navbar = () => {
   return (
-    <nav >
-      <Link to="/deals">{<LocalOfferIcon />}Deals</Link>
-      <Link to="/">{<HomeIcon/>}Home</Link>
-      <Link to="/about">{<InfoOutlinedIcon/>}About</Link>
-      
-    </nav>
+    <div>
+        <h1>AllCars</h1>
+       <nav >
+            <Link to="/deals">{<LocalOfferIcon />}Deals</Link>
+            <Link to="/">{<HomeIcon/>}Home</Link>
+            <Link to="/about">{<InfoOutlinedIcon/>}About</Link>      
+      </nav>
+     
+    </div>
+    
+    
   );
 }
  
