@@ -1,18 +1,18 @@
-function CarCard() {
+function CarCard(prop) {
 
     return (
         <div className="carCard">
             <div className="imgContainer">
-                <img src="/assets/car-pictures/Acura-NSX-2000.jpg" alt="Car picture" />
-                <p>Car price</p>
+                <img src={`/assets/car-pictures/${prop.car.make}-${prop.car.model}-${prop.car.year}.jpg`} alt="Car picture" />
+                <p>{prop.car.price}</p>
                 <div className="imgTextWrapper">
-                    <p>Car make</p>
-                    <p>Car year</p>
+                    <p>{prop.car.make}</p>
+                    <p>{prop.car.year}</p>
                 </div>
             </div>
             <div className="statsContainer">
-                <p>model</p>
-                <p>miles</p>
+                <p>{prop.car.model}</p>
+                <p>{prop.car.miles}</p>
                 <button>Add to cart</button>
             </div>
         </div>
