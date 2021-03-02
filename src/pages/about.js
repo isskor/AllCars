@@ -8,8 +8,10 @@ const about = () => {
         <div className = "about-container">
             <div className="about-hero-image">
                 <h1 className="about-title">About AllCars</h1>
+                <img src={aboutHero} alt="About Header" />
             </div>
-           
+            <div className="about-text">
+            </div>
         </div>
      );
 }
