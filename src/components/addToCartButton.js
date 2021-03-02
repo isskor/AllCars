@@ -1,8 +1,8 @@
 import { useState, useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
-const addToCartButton = () => {
+const addToCartButton = ({ car }) => {
   const { addToCart } = useContext(CartContext);
-  return <div></div>;
+  return <button onClick={() => addToCart(car)}>Add To Cart</button>;
 };
 
 export default addToCartButton;
