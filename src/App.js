@@ -1,8 +1,13 @@
+import CarContextProvider from './contexts/CarContext';
+import Test from './components/test';
 function App() {
   return (
-    <div className='App'>
-      <h1>AllCars</h1>
-    </div>
+    <CarContextProvider>
+      <div className='App'>
+        <h1>AllCars</h1>
+      </div>
+      <Test />
+    </CarContextProvider>
   );
 }
 
