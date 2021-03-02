@@ -11,6 +11,7 @@ const about = () => {
                 <img src={aboutHero} alt="About Header" />
             </div>
             <div className="about-text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis cupiditate ipsa ducimus ex! Perspiciatis quisquam exercitationem debitis recusandae repellat magnam maxime sunt. Maxime consequuntur, at quidem eius rerum pariatur.</p>
             </div>
         </div>
      );
