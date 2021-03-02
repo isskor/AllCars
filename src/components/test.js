@@ -4,7 +4,7 @@ import AddToCartButton from './AddToCartButton';
 import { CartContext } from '../contexts/CartContext';
 const Test = () => {
   const { cars } = useContext(CarContext);
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, removeFromCart, addToCart } = useContext(CartContext);
   console.log(cars);
   return (
     <div>
@@ -18,7 +18,7 @@ const Test = () => {
           <p>{car.model}</p>
           <p>{car.year}</p>
           <p>{`${car.discounted}`}</p>
-          <AddToCartButton car />
+          <AddToCartButton car={car} />
           <button onClick={() => removeFromCart(car)}>Remove from cart</button>
         </div>
       ))}
