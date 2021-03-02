@@ -7,7 +7,7 @@ const about = () => {
     return ( 
         <div className = "about-container">
             <div className="about-hero-image">
-               
+                <h1 className="about-title">About AllCars</h1>
             </div>
            
         </div>
