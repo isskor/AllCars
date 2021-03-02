@@ -10,8 +10,9 @@ import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 const Navbar = () => {
   return (
     <div>
-        <h1>AllCars</h1>
+        
        <nav >
+            <span><a href="/">AllCars</a></span>
             <Link to="/deals">{<LocalOfferIcon />}Deals</Link>
             <Link to="/">{<HomeIcon/>}Home</Link>
             <Link to="/about">{<InfoOutlinedIcon/>}About</Link>      

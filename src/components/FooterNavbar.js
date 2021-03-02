@@ -8,6 +8,7 @@ import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 const FooterNavbar = () => {
   return (
     <nav >
+      
       <Link to="/deals">{<LocalOfferIcon />}</Link>
       <Link to="/">{<HomeIcon/>}</Link>
       <Link to="/about">{<InfoOutlinedIcon/>}</Link>
