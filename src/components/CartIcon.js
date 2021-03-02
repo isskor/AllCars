@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
+import styles from '../css/CartIcon.module.css';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 const CartIcon = () => {
   const { cart } = useContext(CartContext);
@@ -8,17 +9,12 @@ const CartIcon = () => {
   console.log(totalCost);
   //   console.log(cart[0].price);
   return (
-    <div>
-      <span className='cost'>${totalCost}</span>
+    <div className={styles.cartIcon}>
+      <span className={styles.cost}>${totalCost}</span>
       <ShoppingCartOutlinedIcon
-        className='cart'
-        style={{
-          fontSize: 40,
-          color: 'var(--primary-color)',
-          position: 'relative',
-        }}
+        className={styles.cart}
       ></ShoppingCartOutlinedIcon>
-      <span className='quantity'>{cart.length}</span>
+      <span className={styles.quantity}>{cart.length}</span>
     </div>
   );
 };
