@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
-import AddToCartButton from './AddToCartButton';
+import AddToCart from './AddToCart';
 import { CartContext } from '../contexts/CartContext';
 const Test = () => {
   const { cars } = useContext(CarContext);
@@ -18,7 +18,7 @@ const Test = () => {
           <p>{car.model}</p>
           <p>{car.year}</p>
           <p>{`${car.discounted}`}</p>
-          <AddToCartButton car={car} />
+          <AddToCart car={car} />
           <button onClick={() => removeFromCart(car)}>Remove from cart</button>
         </div>
       ))}
