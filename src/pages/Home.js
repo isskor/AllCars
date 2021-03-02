@@ -1,7 +1,10 @@
 function Home() {
     return (
         <div className="home">
-            <h1>Home works!</h1>
+            <div className="hero">
+                <img src="/assets/background/allcars_home.jpg" />
+                <h1>Quality never goes out of style</h1>
+            </div>
         </div>
     )
 }
