@@ -7,7 +7,7 @@ export const CarContext = createContext();
 const CarContextProvider = ({ children }) => {
   const { Provider } = CarContext;
   const [cars, setCars] = useState(carList);
-  console.log(cars);
+
   return <Provider value={{ cars }}>{children}</Provider>;
 };
 

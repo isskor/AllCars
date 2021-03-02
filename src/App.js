@@ -1,12 +1,15 @@
 import CarContextProvider from './contexts/CarContext';
 import Test from './components/test';
+import CartContextProvider from './contexts/CartContext';
 function App() {
   return (
     <CarContextProvider>
-      <div className='App'>
-        <h1>AllCars</h1>
-      </div>
-      <Test />
+      <CartContextProvider>
+        <div className='App'>
+          <h1>AllCars</h1>
+        </div>
+        <Test />
+      </CartContextProvider>
     </CarContextProvider>
   );
 }
