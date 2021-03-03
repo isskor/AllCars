@@ -9,12 +9,14 @@ function Home() {
     const { cars } = useContext(CarContext);
 
     return (
-        <div className="home">
+        <div className={style.home}>
             <div className={style.hero}>
                 <img className={style.heroImg} src="/assets/background/allcars_home.jpg" />
                 <h1 className={style.heroText}>Quality never goes out of style</h1>
             </div>
-            <SearchForm />
+            <div className={style.searchForm}>
+                <SearchForm />
+            </div>
             <div className={style.carList}>
                 {cars.map((car, i) => (
                     <CarCard key={i} car={car} />
