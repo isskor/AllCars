@@ -14,7 +14,12 @@ const SearchForm = () => {
         <label htmlFor='search'>Search</label>
         <input type='text' className={styles.search_input} />
       </div>
-      <button onClick={() => setshowFilters(!showFilters)}>Filters</button>
+      <button
+        className={styles.filter_btn}
+        onClick={() => setshowFilters(!showFilters)}
+      >
+        Filters
+      </button>
       {showFilters && (
         <>
           <SliderInput min={1000} max={1000000} type={'Price'} />
