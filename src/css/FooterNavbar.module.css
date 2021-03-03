@@ -2,7 +2,8 @@
     display: none;
     color:#ffc388;
     font-size: 1.4rem;
-    padding: 10px 5px;
+    padding: 10px 10px;
+    margin-right: 2rem;
 }
 
 
@@ -21,7 +22,7 @@
     .navbar{
         bottom: 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         position: fixed;
         left: 0;
         bottom: 0;
@@ -36,6 +37,7 @@ svg{
     color:#ffc388;
     height: 1.25em !important;
     width: 1.25em !important ;
+    margin-top: 1rem;
 }
 svg:hover {
     color:orange;
