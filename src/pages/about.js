@@ -5,7 +5,7 @@ import styles from "../css/About.module.css";
 
 const About = () => {
     return (
-        <div className="about-container">
+        <div className="about-container"> 
             <div className="about-hero-container">
                 <h1 className={styles.aboutTitle}>About us</h1>
                 <img className={styles.aboutHeroImage} src="/assets/background/allcars_about.jpg" alt="About Header" />
