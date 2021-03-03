@@ -1,28 +1,35 @@
 import { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { CarContext } from "../contexts/CarContext";
+import styles from  '../css/CarDetails.module.css'; 
 
-import "../css/CarDetails.module.css"; 
+
 
 function CarDetails(props) {
   const [car, setCar] = useState(null);
   const { cars } = useContext(CarContext);
 
- 
+  const theCars = cars.map((car) => {
+      return {
+        ...car,
+        image: `../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
+      }
+    });
+
   useEffect(() => {
-    if (cars) {
+    if (theCars) {
        setCar(
-            cars.find((car) => props.match.params.id === car.id)
+            theCars.find((car) => props.match.params.id === car.id)
       );
     }
-  }, [cars]);
+  }, [theCars]);
 
-  
+
   const renderCar = () => {
     return (
       <div className="car">
         <div className="image-container">
-          <img src= "../../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg" alt={car.make} />
+        <img src={car.image} alt={car.name} />
         </div>
         <div className="container">
           <span className="make">{car.make}</span>
@@ -53,5 +60,6 @@ function CarDetails(props) {
 
   return car ? renderCar() : <div></div>;
 }
+
 
 export default CarDetails;
