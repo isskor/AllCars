@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from '../css/SearchForm.module.css';
 import Filters from './Filters';
+import SliderInput from './SliderInput';
 const SearchForm = () => {
   const [showFilters, setshowFilters] = useState(false);
 
@@ -9,24 +10,24 @@ const SearchForm = () => {
       className={styles.search_wrapper}
       onSubmit={(e) => e.preventDefault()}
     >
+      <h3>Find Your Vintage Dream</h3>
       <div className={styles.form_group}>
-        <label htmlFor='search'>Search</label>
+        <span className={styles.form_group_label}>Search</span>
         <input type='text' className={styles.search_input} />
+
+        <span>icon</span>
       </div>
-      <button onClick={() => setshowFilters(!showFilters)}>Filters</button>
+      <button
+        className={styles.filter_btn}
+        onClick={() => setshowFilters(!showFilters)}
+      >
+        {!showFilters ? 'Filters' : 'Close'}
+      </button>
       {showFilters && (
         <>
-          <div className={styles.form_group}>
-            <label htmlFor='price'>Price</label>
-            <input type='range' />
-          </div>
-          <div className={styles.form_group}>
-            <label htmlFor='Milage'>Milage</label>
-            <input type='range' />
-          </div>
+          <SliderInput min={1000} max={1000000} type={'Price'} />
+          <SliderInput min={1000} max={1000000} type={'Milage'} />
           <Filters />
-
-          <span>icon</span>
         </>
       )}
     </form>

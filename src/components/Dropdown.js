@@ -1,12 +1,24 @@
-import React from 'react';
+import { useRef } from 'react';
+import useOutsideClick from './useOutsideClick';
+// styles
+import styles from '../css/Dropdown.module.css';
 
-const Dropdown = ({ filterList }) => {
-  console.log(filterList);
+const Dropdown = ({ filterList, setIsOpen }) => {
+  const dropDownRef = useRef();
+
+  const handleClickOutside = () => {
+    setIsOpen(false);
+  };
+
+  useOutsideClick(dropDownRef, handleClickOutside);
+
   return (
-    <div>
+    <div className={styles.filter_list} ref={dropDownRef}>
       <ul>
         {filterList.map((item) => (
-          <li className='filterItem'>{item}</li>
+          <li className={styles.filter_item} onClick={() => setIsOpen(false)}>
+            {item}
+          </li>
         ))}
       </ul>
     </div>
