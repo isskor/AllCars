@@ -3,7 +3,7 @@ import styles from '../css/SearchForm.module.css';
 import Filters from './Filters';
 const SearchForm = () => {
   const [showFilters, setshowFilters] = useState(false);
-  console.log(showFilters);
+
   return (
     <form
       className={styles.search_wrapper}

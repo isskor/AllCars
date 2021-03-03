@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Dropdown = ({ dropdownList }) => {
+const Dropdown = ({ filterList }) => {
+  console.log(filterList);
   return (
     <div>
-      <ul></ul>
+      <ul>
+        {filterList.map((item) => (
+          <li className='filterItem'>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 };
