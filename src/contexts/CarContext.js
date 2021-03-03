@@ -1,4 +1,3 @@
-import { Looks } from '@material-ui/icons';
 import { useState, createContext, useReducer } from 'react';
 import carsJSON from '../json/cars.json';
 
@@ -16,6 +15,11 @@ const carList = carsJSON.map((car, i) => {
 });
 const getFilters = (type) => {
   const filterSet = new Set(carList.map((c) => c[type]));
+  if (type === 'Year') {
+    const newFilters = [...filterSet].sort((a, b) => (a < b ? 1 : -1));
+
+    return newFilters;
+  }
   const newFilters = [...filterSet].sort((a, b) => (a < b ? -1 : 1));
   return newFilters;
 };
