@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import styles from '../css/SearchForm.module.css';
+import styles from '../css/Filters.module.css';
 import Dropdown from './Dropdown';
 import { CarContext } from '../contexts/CarContext';
 const Filters = () => {
@@ -11,7 +11,7 @@ const Filters = () => {
     <div>
       {filters.map((filterList, i) => (
         <div className={styles.form_group_select}>
-          <label htmlFor=''>{filterList.type}</label>
+          <label htmlFor={filterList.type}>{filterList.type}</label>
           <button onClick={() => setIsOpen(isOpen === i ? false : i)}>
             {filterList.type}
           </button>
