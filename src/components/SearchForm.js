@@ -10,23 +10,24 @@ const SearchForm = () => {
       className={styles.search_wrapper}
       onSubmit={(e) => e.preventDefault()}
     >
+      <h3>Find Your Vintage Dream</h3>
       <div className={styles.form_group}>
-        <label htmlFor='search'>Search</label>
+        <span className={styles.form_group_label}>Search</span>
         <input type='text' className={styles.search_input} />
+
+        <span>icon</span>
       </div>
       <button
         className={styles.filter_btn}
         onClick={() => setshowFilters(!showFilters)}
       >
-        Filters
+        {!showFilters ? 'Filters' : 'Close'}
       </button>
       {showFilters && (
         <>
           <SliderInput min={1000} max={1000000} type={'Price'} />
           <SliderInput min={1000} max={1000000} type={'Milage'} />
           <Filters />
-
-          <span>icon</span>
         </>
       )}
     </form>

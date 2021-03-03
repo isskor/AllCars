@@ -55,8 +55,8 @@ const SliderInput = ({ min, max, type }) => {
         />
       </div>
       <div className={styles.labels}>
-        <label htmlFor='min'>{minVal.toLocaleString()}</label>
-        <label htmlFor='max'>{maxVal.toLocaleString()}</label>
+        <span>{minVal.toLocaleString()}</span>
+        <span>{maxVal.toLocaleString()}</span>
       </div>
     </div>
   );
