@@ -1,5 +1,7 @@
 .mainNavbar {
     background-color: var(--card-bg);
+    display: flex;
+    justify-content: space-between;
 }
 
 .logo{
