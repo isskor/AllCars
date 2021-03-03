@@ -7,18 +7,6 @@ const Filters = () => {
   const { cars } = useContext(CarContext);
   console.log(cars);
 
-  const getFilters = (type) => {
-    const filterSet = new Set(cars.map((c) => c[type]));
-    const newFilters = [...filterSet].sort((a, b) => (a < b ? -1 : 1));
-    return newFilters;
-  };
-  const makes = getFilters('make');
-  const models = getFilters('model');
-  const years = getFilters('year');
-
-  console.log(makes);
-  console.log(models);
-  console.log(years);
   return (
     <div>
       <div className={styles.form_group_select}>
