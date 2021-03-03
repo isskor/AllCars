@@ -4,6 +4,7 @@ import { CarContext } from '../contexts/CarContext';
 import DealsBanner from '../components/DealsBanner';
 import TempCard from '../components/tempCard';
 import style from "../css/deals.module.css";
+import CarCard from '../components/CarCard';
 
 const Deals = () => {
   const { cars } = useContext(CarContext);
@@ -24,7 +25,7 @@ const Deals = () => {
       <div className={style.grid}>
         {/* ADD CARD COMPONENT HERE + IMPORT STYLES FOR CARD. FILTER OUT COMPONENTS THAT HAS DISCOUNTED = TRUE */}
         {discountedCars.map((car) => (
-           <TempCard car={car} key={car.vin}/>
+           <CarCard car={car} key={car.vin}/>
           ))}
       </div>
     </div>
