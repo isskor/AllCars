@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from '../css/SearchForm.module.css';
 import Filters from './Filters';
+import SliderInput from './SliderInput';
 const SearchForm = () => {
   const [showFilters, setshowFilters] = useState(false);
 
@@ -20,10 +21,7 @@ const SearchForm = () => {
             <label htmlFor='price'>Price</label>
             <input type='range' />
           </div>
-          <div className={styles.form_group}>
-            <label htmlFor='Milage'>Milage</label>
-            <input type='range' />
-          </div>
+          <SliderInput />
           <Filters />
 
           <span>icon</span>

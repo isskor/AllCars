@@ -1,0 +1,26 @@
+.min_max_slider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.min_max_slider p {
+  text-align: center;
+}
+
+.min_max_slider input {
+  -webkit-appearance: none;
+  outline: none !important;
+  background: transparent;
+  background: tomato;
+  height: 4px;
+  border-radius: 5px;
+}
+
+.max {
+  margin-left: -1px;
+}
+.min {
+  margin-right: -1px;
+}
