@@ -1,0 +1,16 @@
+.mainNavbar {
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    
+}
+
+.logo{
+    color: var(--primary-color);
+    padding: 20px;
+    font-family: var(--header-font);
+    font-size: 2rem;
+    text-decoration: none;
+}
