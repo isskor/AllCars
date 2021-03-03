@@ -1,0 +1,33 @@
+.carCard {
+    margin: 2rem 1rem;
+    background-color: var(--card-bg);
+    box-shadow: 0px 4px 9px #00000040;
+    border-radius: 4px;
+    display: flex;
+}
+
+.imgContainer {
+    width: 50%;
+    position: relative;
+}
+
+.carPrice {
+    position: absolute;
+    top: 0;
+    right: 0.3rem;
+    color: var(--primary-color);
+}
+
+.imgTextWrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1rem 0.2rem;
+    background-color: #424242ad;
+}
+
+.wrapperText {
+    color: var(--primary-color);
+}
