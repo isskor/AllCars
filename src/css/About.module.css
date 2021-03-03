@@ -16,11 +16,11 @@
        position: absolute;
        top: 21%;
        left: 10%;
-       color: white;
+       color: #eaeaea;
        transform: translate(-50%, -50%);
    }
    
-   .aboutContentContainer { 
+   .aboutContentContainer {
        padding: 50px;
        display: grid;
        grid-gap: 10vh;
@@ -29,7 +29,7 @@
    }
    
    .aboutText p {
-   color: white;
+   color: #eaeaea;
    text-align: justify;
    }
    
