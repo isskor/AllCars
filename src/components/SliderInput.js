@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from '../css/SliderInput.module.css';
-const SliderInput = () => {
-  const min = 1000;
-  const max = 1000000;
+const SliderInput = ({ min, max, type }) => {
   let thumbsize = 14;
   const [avg, setAvg] = useState((min + max) / 2);
   const [minVal, setMinVal] = useState(avg * 0.5);
@@ -27,12 +25,13 @@ const SliderInput = () => {
   }, [minVal, maxVal]);
 
   return (
-    <div className={styles.min_max_slider}>
-      <p>Price</p>
-      <div>
+    <div className={styles.slider_container}>
+      <p>{type}</p>
+      <div className={styles.slider}>
+        <div className={styles.slider_bar}></div>
         <input
           id='min'
-          className={styles.min}
+          className={styles.min_slider}
           style={inputStyles.min}
           name='min'
           type='range'
@@ -44,7 +43,7 @@ const SliderInput = () => {
         />
         <input
           id='max'
-          className={styles.max}
+          className={styles.max_slider}
           style={inputStyles.max}
           name='max'
           type='range'
@@ -55,9 +54,9 @@ const SliderInput = () => {
           onChange={({ target }) => setMaxVal(Math.round(Number(target.value)))}
         />
       </div>
-      <div className='labels'>
-        <label htmlFor='min'>{minVal}</label>
-        <label htmlFor='max'>{maxVal}</label>
+      <div className={styles.labels}>
+        <label htmlFor='min'>{minVal.toLocaleString()}</label>
+        <label htmlFor='max'>{maxVal.toLocaleString()}</label>
       </div>
     </div>
   );

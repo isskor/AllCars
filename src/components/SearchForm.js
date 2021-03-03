@@ -17,11 +17,8 @@ const SearchForm = () => {
       <button onClick={() => setshowFilters(!showFilters)}>Filters</button>
       {showFilters && (
         <>
-          <div className={styles.form_group}>
-            <label htmlFor='price'>Price</label>
-            <input type='range' />
-          </div>
-          <SliderInput />
+          <SliderInput min={1000} max={1000000} type={'Price'} />
+          <SliderInput min={1000} max={1000000} type={'Milage'} />
           <Filters />
 
           <span>icon</span>
