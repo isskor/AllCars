@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { CarContext } from "../contexts/CarContext";
 
-import "../css/CarDetails.module.css";
+import "../css/CarDetails.module.css"; 
 
 function CarDetails(props) {
   const [car, setCar] = useState(null);
@@ -22,7 +22,7 @@ function CarDetails(props) {
     return (
       <div className="car">
         <div className="image-container">
-          <img src={car.image} alt={car.make} />
+          <img src= "../../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg" alt={car.make} />
         </div>
         <div className="container">
           <span className="make">{car.make}</span>
