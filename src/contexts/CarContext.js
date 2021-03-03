@@ -4,7 +4,6 @@ import carsJSON from '../json/cars.json';
 
 const carList = carsJSON.map((car, i) => {
   if (i < 3) {
-    console.log(car);
     return {
       ...car,
       discounted: true,
@@ -15,6 +14,28 @@ const carList = carsJSON.map((car, i) => {
     discounted: false,
   };
 });
+const getFilters = (type) => {
+  const filterSet = new Set(carList.map((c) => c[type]));
+  const newFilters = [...filterSet].sort((a, b) => (a < b ? -1 : 1));
+  return newFilters;
+};
+
+const filterList = () => {
+  return [
+    {
+      type: 'Make',
+      list: getFilters('make'),
+    },
+    {
+      type: 'Model',
+      list: getFilters('model'),
+    },
+    {
+      type: 'Year',
+      list: getFilters('year'),
+    },
+  ];
+};
 export const CarContext = createContext();
 
 // const searchReducer(state, action) => {
@@ -24,10 +45,11 @@ export const CarContext = createContext();
 const CarContextProvider = ({ children }) => {
   const { Provider } = CarContext;
   const [cars, setCars] = useState(carList);
+  const [filters, setFilters] = useState(filterList());
   // const [cars, dispatch] = useReducer(searchReducer, cars)
-  console.log(cars);
+  console.log(filters);
 
-  return <Provider value={{ cars }}>{children}</Provider>;
+  return <Provider value={{ cars, filters }}>{children}</Provider>;
 };
 
 export default CarContextProvider;
