@@ -3,5 +3,12 @@
   height: 20vh;
   background: lightcoral;
   display: flex;
-  background-image: url(../../public/assets/background/allcars_deals.jpg);
+}
+.header img{
+  object-fit: cover;
+}
+.header h1{
+  z-index: 2;
+  position: absolute;
+  padding: 0.5rem;
 }
