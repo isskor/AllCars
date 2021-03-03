@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../css/SearchForm.module.css';
+import Dropdown from './Dropdown';
 
 const Filters = () => {
   return (
@@ -26,9 +27,7 @@ const Filters = () => {
       </div>
       <div className={styles.form_group_select}>
         <label htmlFor=''>Cars</label>
-        <select name='' id=''>
-          <option value=''>cars</option>
-        </select>
+        <Dropdown />
       </div>
     </div>
   );
