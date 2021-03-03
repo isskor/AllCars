@@ -12,9 +12,12 @@ function App() {
           <CartContextProvider>
             <FooterNavbar />
             <Navbar />
-            <Route exact path='/deals'></Route>
-            <Route exact path='/'></Route>
-            <Route exact path='/about'></Route>
+            <Route path='/deals' />
+            <Route exact path='/' />
+            <Route path='/about' />
+            <Route exact path='/car/:id' />
+            <Route exact path='/cart' />
+            <Route path='/receipt' />
             <Test />
           </CartContextProvider>
         </CarContextProvider>
