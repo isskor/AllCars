@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import styles from '../css/CartIcon.module.css';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
@@ -11,9 +12,9 @@ const CartIcon = () => {
   return (
     <div className={styles.cartIcon}>
       <span className={styles.cost}>${totalCost}</span>
-      <ShoppingCartOutlinedIcon
-        className={styles.cart}
-      ></ShoppingCartOutlinedIcon>
+      <Link to='/cart' className={styles.cart}>
+        <ShoppingCartOutlinedIcon />
+      </Link>
       <span className={styles.quantity}>{cart.length}</span>
     </div>
   );
