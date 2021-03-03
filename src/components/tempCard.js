@@ -1,5 +1,12 @@
 import style from "../css/deals.module.css";
 
+function isDiscounted(car) {
+  if (car.discounted === true) {
+    discountedCar.push(car);
+  }
+}
+
+
 const tempCard = ({car}) => {
 
   return (
