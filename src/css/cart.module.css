@@ -1,0 +1,6 @@
+.cart_input {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--secondary-color);
+  }
