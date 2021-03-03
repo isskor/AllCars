@@ -12,5 +12,8 @@
     padding: 20px;
     font-family: var(--header-font);
     font-size: 2rem;
+    
+}
+a {
     text-decoration: none;
 }
