@@ -1,17 +1,51 @@
-import React from 'react';
-
+import { useState } from 'react';
+import styles from '../css/SearchForm.module.css';
 const SearchForm = () => {
+  const [showFilters, setshowFilters] = useState(false);
+  console.log(showFilters);
   return (
-    <div className='search_wrapper'>
-      <label htmlFor='search'>Search</label>
-      <input type='text' className='search_input' />
-      <label htmlFor='price'>Price</label>
-      <input type='range' />
-      <label htmlFor='Milage'>Milage</label>
-      <input type='range' />
-      <button>Filters</button>
-      <span>icon</span>
-    </div>
+    <form
+      className={styles.search_wrapper}
+      onSubmit={(e) => e.preventDefault()}
+    >
+      <div className={styles.form_group}>
+        <label htmlFor='search'>Search</label>
+        <input type='text' className={styles.search_input} />
+      </div>
+      <button onClick={() => setshowFilters(!showFilters)}>Filters</button>
+      {showFilters && (
+        <>
+          <div className={styles.form_group}>
+            <label htmlFor='price'>Price</label>
+            <input type='range' />
+          </div>
+          <div className={styles.form_group}>
+            <label htmlFor='Milage'>Milage</label>
+            <input type='range' />
+          </div>
+          <div className={styles.form_group_select}>
+            <label htmlFor=''>Cars</label>
+            <select name='' id=''>
+              <option value=''>cars</option>
+            </select>
+          </div>
+          <div className={styles.form_group_select}>
+            <label htmlFor=''>Cars</label>
+            <select name='' id=''>
+              <option value=''>cars</option>
+            </select>
+          </div>
+          <div className={styles.form_group_select}>
+            <label htmlFor=''>Cars</label>
+            <select name='' id=''>
+              <option value=''>cars</option>
+            </select>
+          </div>
+
+          <span>icon</span>
+        </>
+      )}
+    </form>
   );
 };
 

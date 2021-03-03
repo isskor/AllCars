@@ -1,0 +1,32 @@
+.search_wrapper {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+button {
+  width: 30%;
+  margin: 1rem auto;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search_input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
+}
+label {
+  color: var(--secondary-color);
+}
