@@ -22,7 +22,7 @@ function CarDetails(props) {
     return (
       <div className="car">
         <div className="image-container">
-          <img src={car.image} alt={car.make} />
+          <img src= "../../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg" alt={car.make} />
         </div>
         <div className="container">
           <span className="make">{car.make}</span>
