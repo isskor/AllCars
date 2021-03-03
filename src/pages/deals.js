@@ -7,6 +7,14 @@ import style from "../css/deals.module.css";
 
 const Deals = () => {
   const { cars } = useContext(CarContext);
+  const discountedCars = [];
+
+  cars.forEach(car => {
+    if (car.discounted) {
+      discountedCars.push(car)
+    }
+  });
+
 
   return (
     <div className={style.dealsContainer}>
@@ -14,8 +22,8 @@ const Deals = () => {
 
       <div className={style.grid}>
         {/* ADD CARD COMPONENT HERE + IMPORT STYLES FOR CARD. FILTER OUT COMPONENTS THAT HAS DISCOUNTED = TRUE */}
-        {cars.map((car, i) => (
-           <TempCard car={car} key={i}/>
+        {discountedCars.map((car) => (
+           <TempCard car={car} key={car.vin}/>
           ))}
       </div>
     </div>
