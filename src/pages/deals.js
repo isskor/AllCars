@@ -15,6 +15,7 @@ const Deals = () => {
     }
   });
 
+  /* Don' remember how to do filter, been awhile, but this work. */
 
   return (
     <div className={style.dealsContainer}>
