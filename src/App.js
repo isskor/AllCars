@@ -10,7 +10,6 @@ function App() {
       <Router>
         <CarContextProvider>
           <CartContextProvider>
-            <FooterNavbar />
             <Navbar />
             <Route path='/deals' />
             <Route exact path='/' />
