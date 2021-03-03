@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CarContextProvider from './contexts/CarContext';
@@ -17,6 +18,7 @@ function App() {
             <Route exact path='/cart' />
             <Route path='/receipt' />
             <Test />
+            <CarCard />
           </CartContextProvider>
         </CarContextProvider>
       </Router>
