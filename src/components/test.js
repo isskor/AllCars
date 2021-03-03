@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
+import SearchForm from './SearchForm';
 // import { CartContext } from '../contexts/CartContext';
 const Test = () => {
   const { cars } = useContext(CarContext);
@@ -7,6 +8,7 @@ const Test = () => {
   console.log(cars);
   return (
     <div>
+      <SearchForm />
       {/* for testing, display cart length */}
       {/* <h2>cart items {cart.length}</h2> */}
       {cars.map((car) => (
