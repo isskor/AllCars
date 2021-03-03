@@ -1,1 +1,37 @@
 /* about.module.css */
+*{
+    box-sizing: border-box;
+   }
+   
+   body, html {
+       height: 100%;
+   }
+   
+   .aboutHeroContainer {
+       position: relative;
+   }
+   
+   .aboutTitle {
+       text-align: center;
+       position: absolute;
+       top: 21%;
+       left: 10%;
+       color: #eaeaea;
+       transform: translate(-50%, -50%);
+   }
+   
+   .aboutContentContainer {
+       padding: 50px;
+       display: grid;
+       grid-gap: 10vh;
+       grid-template-columns: 1fr 1fr;
+       grid-template-rows: 1fr;
+   }
+   
+   .aboutText p {
+   color: #eaeaea;
+   text-align: justify;
+   }
+   
+   /* .aboutImageStaff img {
+   } */
