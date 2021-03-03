@@ -3,4 +3,5 @@
   height: 20vh;
   background: lightcoral;
   display: flex;
+  background-image: url(../../public/assets/background/allcars_deals.jpg);
 }
