@@ -1,0 +1,11 @@
+.mainNavbar {
+    background-color: var(--card-bg);
+}
+
+.logo{
+    color: var(--primary-color);
+    padding: 20px;
+    font-family: var(--header-font);
+    font-size: 2rem;
+    text-decoration: none;
+}
