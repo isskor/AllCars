@@ -1,12 +1,14 @@
-import React from 'react';
+import styles from '../css/Dropdown.module.css';
 
-const Dropdown = ({ filterList }) => {
+const Dropdown = ({ filterList, setIsOpen }) => {
   console.log(filterList);
   return (
-    <div>
+    <div className={styles.filter_list}>
       <ul>
         {filterList.map((item) => (
-          <li className='filterItem'>{item}</li>
+          <li className={styles.filter_item} onClick={() => setIsOpen(false)}>
+            {item}
+          </li>
         ))}
       </ul>
     </div>

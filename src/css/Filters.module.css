@@ -1,3 +1,7 @@
+.filter_container {
+  position: relative;
+}
+
 .form_group_select {
   display: flex;
   align-items: center;

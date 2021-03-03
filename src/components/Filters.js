@@ -8,14 +8,16 @@ const Filters = () => {
   console.log(filters);
 
   return (
-    <div>
+    <div className={styles.filter_container}>
       {filters.map((filterList, i) => (
         <div className={styles.form_group_select}>
           <label htmlFor={filterList.type}>{filterList.type}</label>
           <button onClick={() => setIsOpen(isOpen === i ? false : i)}>
             {filterList.type}
           </button>
-          {isOpen === i && <Dropdown filterList={filterList.list} />}
+          {isOpen === i && (
+            <Dropdown filterList={filterList.list} setIsOpen={setIsOpen} />
+          )}
         </div>
       ))}
     </div>
