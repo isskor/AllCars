@@ -1,9 +1,9 @@
 import style from "../css/deals.module.css";
 
-const tempCard = ({car, i}) => {
-  console.log(car);
+const tempCard = ({car}) => {
+
   return (
-    <div  key={i} className={style.card}>
+    <div className={style.card}>
       <div className={style.cardImg}>
         <h3 className={style.cardPrice}>{car.price}</h3>
         <h3 className={style.cardTitle}>{car.make}</h3>
