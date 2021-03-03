@@ -15,8 +15,8 @@ const carList = carsJSON.map((car, i) => {
 });
 const getFilters = (type) => {
   const filterSet = new Set(carList.map((c) => c[type]));
-  if (type === 'Year') {
-    const newFilters = [...filterSet].sort((a, b) => (a < b ? 1 : -1));
+  if (type === 'year') {
+    const newFilters = [...filterSet].sort((a, b) => (a > b ? -1 : 1));
 
     return newFilters;
   }
@@ -51,7 +51,6 @@ const CarContextProvider = ({ children }) => {
   const [cars, setCars] = useState(carList);
   const [filters, setFilters] = useState(filterList());
   // const [cars, dispatch] = useReducer(searchReducer, cars)
-  console.log(filters);
 
   return <Provider value={{ cars, filters }}>{children}</Provider>;
 };
