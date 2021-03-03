@@ -31,3 +31,37 @@
 .wrapperText {
     color: var(--primary-color);
 }
+
+.statsContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: space-between;
+    padding: 0.1rem 0.3rem;
+}
+
+.model {
+    font-size: 0.8rem;
+    text-decoration: underline;
+}
+
+.milesContainer {
+    justify-self: right;
+}
+
+.miles {
+    font-size: 0.8rem;
+    text-decoration: underline;
+}
+
+.addBtn {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 0;
+    width: 5.5rem;
+    height: 2rem;
+    justify-self: right;
+    align-self: end;
+    margin: 0.3rem 0.1rem;
+}

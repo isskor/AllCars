@@ -12,16 +12,16 @@ function CarCard(prop) {
                     <p className={style.wrapperText}>{prop.car.year}</p>
                 </div>
             </div>
-            <div className="statsContainer">
+            <div className={style.statsContainer}>
                 <div className="carModel">
-                    <p>Model</p>
+                    <p className={style.model}>Model</p>
                     <p>{prop.car.model}</p>
                 </div>
-                <div className="carMiles">
-                    <p>Miles</p>
+                <div className={style.milesContainer}>
+                    <p className={style.miles}>Miles</p>
                     <p>{prop.car.miles}</p>
                 </div>
-                <button>Add to cart</button>
+                <button className={style.addBtn}>Add to cart</button>
             </div>
         </div>
     )
