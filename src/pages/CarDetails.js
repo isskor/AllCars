@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { CarContext } from "../contexts/CarContext";
 
-import "../css/CarDetails.module.css";
+import "../css/CarDetails.module.css"; 
 
 function CarDetails(props) {
   const [car, setCar] = useState(null);
