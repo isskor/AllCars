@@ -1,16 +1,15 @@
 import { useContext } from 'react';
+import DealsBanner from '../components/DealsBanner';
 import { CarContext } from '../contexts/CarContext';
 import style from "../css/deals.module.css";
 
 const Deals = () => {
   const { cars } = useContext(CarContext);
-  console.log(cars);
+
   return (
     <div className={style.dealsContainer}>
       {/* ADD HEADER  COMP HERE */}
-      <div className={style.header}>
-        <h1>Quality Deals</h1>
-      </div>
+      <DealsBanner className={style.header}/>
       {/* -------------------- */}
 
       <div className={style.grid}>
