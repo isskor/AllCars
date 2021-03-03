@@ -1,6 +1,8 @@
 import { useContext } from 'react';
-import DealsBanner from '../components/DealsBanner';
 import { CarContext } from '../contexts/CarContext';
+
+import DealsBanner from '../components/DealsBanner';
+import TempCard from '../components/tempCard';
 import style from "../css/deals.module.css";
 
 const Deals = () => {
@@ -15,20 +17,8 @@ const Deals = () => {
       <div className={style.grid}>
         {/* ADD CARD COMPONENT HERE + IMPORT STYLES FOR CARD. FILTER OUT COMPONENTS THAT HAS DISCOUNTED = TRUE */}
         {cars.map((car, i) => (
-          <div  key={i} className={style.card}>
-            <div className={style.cardImg}>
-              <h3 className={style.cardPrice}>{car.price}</h3>
-              <h3 className={style.cardTitle}>{car.make}</h3>
-            </div>
-            <div className={style.cardStats}>
-              <h3>Model</h3>
-              <h3 className={style.cardModel}>{car.model}</h3>
-              <h3>Miles</h3>
-              <h3 className={style.cardMiles}>{car.miles}</h3>
-              <button className={style.cardBtn}></button>
-            </div>
-          </div>
-        ))}
+           <TempCard car={car} key={i}/>
+          ))}
       </div>
     </div>
   );

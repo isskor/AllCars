@@ -4,7 +4,6 @@ import carsJSON from '../json/cars.json';
 
 const carList = carsJSON.map((car, i) => {
   if (i < 3) {
-    console.log(car);
     return {
       ...car,
       discounted: true,
@@ -25,7 +24,6 @@ const CarContextProvider = ({ children }) => {
   const { Provider } = CarContext;
   const [cars, setCars] = useState(carList);
   // const [cars, dispatch] = useReducer(searchReducer, cars)
-  console.log(cars);
 
   return <Provider value={{ cars }}>{children}</Provider>;
 };
