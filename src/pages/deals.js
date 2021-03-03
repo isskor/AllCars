@@ -10,9 +10,7 @@ const Deals = () => {
 
   return (
     <div className={style.dealsContainer}>
-      {/* ADD HEADER  COMP HERE */}
       <DealsBanner className={style.header}/>
-      {/* -------------------- */}
 
       <div className={style.grid}>
         {/* ADD CARD COMPONENT HERE + IMPORT STYLES FOR CARD. FILTER OUT COMPONENTS THAT HAS DISCOUNTED = TRUE */}
