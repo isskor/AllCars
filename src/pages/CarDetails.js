@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { CarContext } from "../contexts/CarContext";
-import styles from  '../css/CarDetails.module.css'; 
+import styles from '../css/CarDetails.module.css';
 import AddToCartButton from '../components/AddToCart';
 
 
@@ -11,16 +11,16 @@ function CarDetails(props) {
   const { cars } = useContext(CarContext);
 
   const theCars = cars.map((car) => {
-      return {
-        ...car,
-        image: `../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
-      }
-    });
+    return {
+      ...car,
+      image: `../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
+    }
+  });
 
   useEffect(() => {
     if (theCars) {
-       setCar(
-            theCars.find((car) => props.match.params.id === car.id)
+      setCar(
+        theCars.find((car) => props.match.params.id === car.id)
       );
     }
   }, [theCars]);
@@ -33,10 +33,10 @@ function CarDetails(props) {
           Back
         </NavLink>
         <div className={styles.carImageContainer}>
-        <img src={car.image} alt={car.name} />
-        <div className={styles.cartButton}>
-            <button>{AddToCartButton}</button>
-        </div>
+          <img src={car.image} alt={car.name} />
+          <div className={styles.cartButton}>
+            <AddToCartButton />
+          </div>
         </div>
         <div className={styles.carStatsContainer}>
           <div className={styles.carDescriptionShort}>{car.descShort}</div>
@@ -62,7 +62,7 @@ function CarDetails(props) {
           <span className={styles.carLongDescription}>{car.longDesc}</span>
         </div>
         <div className={styles.cartButton}>
-        <button>{AddToCartButton}</button>
+          <AddToCartButton />
         </div>
       </div>
     );
