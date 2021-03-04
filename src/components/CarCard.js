@@ -1,7 +1,7 @@
 import style from '../css/CarCard.module.css';
 
 function CarCard({car}) {
-
+    console.log(car);
     return (
         <div className={style.carCard}>
             <div className={style.imgContainer}>
