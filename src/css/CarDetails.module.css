@@ -1,1 +1,46 @@
-/* CarDetail.module.css */
+* {
+    box-sizing: border-box;
+}
+.carImageContainer {
+height: auto;
+width: 100%;
+}
+.carImageContainer img {
+    max-height: 100%;
+    /* height: 70%; */
+    /* width: auto; */
+    max-width: 100%;
+}
+.carStatsContainer {
+
+}
+.carDescriptionShort{
+    
+}
+.carPriceLabel{
+
+}
+.carMake{
+
+}
+.carModel {
+
+}
+.carYear{
+
+}
+.carMileage{
+
+}
+.carVIN{
+    
+}
+.carCity{
+
+}
+.carLongDescription{
+
+}
+.cartButton{
+    
+}
