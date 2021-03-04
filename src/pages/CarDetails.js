@@ -38,7 +38,7 @@ function CarDetails(props) {
             alt={car.name}
           />
           <div className={styles.cartButton}>
-            <AddToCartButton />
+            <AddToCartButton car={car} />
           </div>
         </div>
         <div className={styles.carStatsContainer}>
@@ -65,7 +65,7 @@ function CarDetails(props) {
           <span className={styles.carLongDescription}>{car.descLong}</span>
         </div>
         <div className={styles.cartButton}>
-          <AddToCartButton />
+          <AddToCartButton car={car} />
         </div>
       </div>
     );
