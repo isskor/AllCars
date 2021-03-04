@@ -28,6 +28,8 @@ const Deals = () => {
            <CarCard car={car} key={car.vin}/>
           ))}
       </div>
+
+      <button>Search..</button>
     </div>
   );
 }
