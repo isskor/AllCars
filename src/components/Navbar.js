@@ -1,22 +1,21 @@
-import { Link } from 'react-router-dom';
-import HomeIcon from '@material-ui/icons/Home';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+
+import { Link } from "react-router-dom";
+import FooterNavbar from "./FooterNavbar"
+import styles from "../css/Navbar.module.css" ;
 import CartIcon from './CartIcon';
+
+
 
 const Navbar = () => {
   return (
     <div>
-      <nav>
-        <span>
-          <a href='/'>AllCars</a>
-        </span>
-        <Link to='/deals'>{<LocalOfferIcon />}Deals</Link>
-        <Link to='/'>{<HomeIcon />}Home</Link>
-        <Link to='/about'>{<InfoOutlinedIcon />}About</Link>
-      </nav>
-      <CartIcon />
-    </div>
+       <nav className={styles.mainNavbar}>
+            <Link to="/"><span className={styles.logo}>AllCars</span></Link>
+            <FooterNavbar />  
+            <CartIcon />
+      </nav>   
+    </div> 
+      
   );
 };
 
