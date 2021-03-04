@@ -4,7 +4,7 @@ import { CartContext } from '../contexts/CartContext';
 import CartItem from '../components/CartItem';
 import CartForm from '../components/CartForm';
 
-const Cart = () => {
+const CartPage = () => {
     const { cart } = useContext(CartContext);
     const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
     return (
@@ -18,9 +18,8 @@ const Cart = () => {
                 <h4>Total</h4>
                 <h3>{totalCost}​​​​​</h3>
             </div>
-            {/* Cart form with personal information and shipping options */}
             <CartForm />
         </div>);
 };
 
-export default Cart;
+export default CartPage;

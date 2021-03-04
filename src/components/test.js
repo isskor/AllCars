@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
-import Cart from '../pages/Cart.js';
+import CartPage from '../pages/CartPage.js';
 import { CartContext } from '../contexts/CartContext';
 const Test = () => {
   const { cars } = useContext(CarContext);
@@ -13,7 +13,7 @@ const Test = () => {
           <p onClick={()=>addToCart(car)}>{car.model}</p>
         )
       })}
-      <Cart/>
+      <CartPage />
     </div>
   );
 };
