@@ -24,7 +24,8 @@ const Deals = () => {
       <div className={style.grid}>
         {discountedCars.map((car) => (
            <CarCard car={car} key={car.vin}/>
-          ))}
+          ))
+        }
       </div>
 
       <button>Search..</button>
