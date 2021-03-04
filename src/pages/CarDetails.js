@@ -1,39 +1,42 @@
-import { useContext, useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { CarContext } from "../contexts/CarContext";
+import { useContext, useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import { CarContext } from '../contexts/CarContext';
 import styles from '../css/CarDetails.module.css';
 import AddToCartButton from '../components/AddToCart';
 
-
-
 function CarDetails(props) {
-  const [car, setCar] = useState(null);
   const { cars } = useContext(CarContext);
+  const [car, setCar] = useState(cars[0]);
 
+  // not needed, slows network by loading all images we only need one
+  // good approach but we should put this in context instead and load it all
   const theCars = cars.map((car) => {
     return {
       ...car,
       image: `../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
-    }
+    };
   });
 
-  useEffect(() => {
-    if (theCars) {
-      setCar(
-        theCars.find((car) => props.match.params.id === car.id)
-      );
-    }
-  }, [theCars]);
-
+  // useEffect(() => {
+  //   if (theCars) {
+  //     setCar(
+  //       theCars.find((car) => props.match.params.id === car.id)
+  //     );
+  //   }
+  // }, [theCars]);
 
   const renderCar = () => {
     return (
-      <div className="car">
-        <NavLink className="back" to="/">
+      <div className='car'>
+        <NavLink className='back' to='/'>
           Back
         </NavLink>
         <div className={styles.carImageContainer}>
-          <img src={car.image} alt={car.name} />
+          {/* added image src here directly */}
+          <img
+            src={`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
+            alt={car.name}
+          />
           <div className={styles.cartButton}>
             <AddToCartButton />
           </div>
@@ -54,12 +57,12 @@ function CarDetails(props) {
             <span>Mileage {car.miles}</span>
           </div>
           <div className={styles.carVIN}>
-            <span>VIN {car.VIN}</span>
+            <span>VIN {car.vin}</span>
           </div>
           <div className={styles.carCity}>
             <span>City {car.city}</span>
           </div>
-          <span className={styles.carLongDescription}>{car.longDesc}</span>
+          <span className={styles.carLongDescription}>{car.descLong}</span>
         </div>
         <div className={styles.cartButton}>
           <AddToCartButton />
@@ -68,9 +71,7 @@ function CarDetails(props) {
     );
   };
 
-
   return car ? renderCar() : <div></div>;
 }
-
 
 export default CarDetails;
