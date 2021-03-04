@@ -1,4 +1,4 @@
-/* IMPORT carCards styling here */
+import style from '../css/carCards.module.css';
 
 function CarCard() {
 
