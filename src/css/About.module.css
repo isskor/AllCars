@@ -29,42 +29,32 @@
        'theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage'
        'theContactSection theContactSection theContactSection theContactSection theContactSection theContactSection ';
        align-items: center;
-       /* grid-template-columns: 1fr;
-       grid-template-rows: 1fr; */
-       border: 1px solid red;
-   }
+       }
    
    .aboutText p {
        grid-area: theText;
    color: #eaeaea;
    text-align: justify;
    margin: 10px;
-   border: 1px solid blue
    }
    .aboutImageStaff {
        grid-area: theStaffImage;
        margin: 10px;
-       border: 1px solid yellow;
    }
-   .aboutTeam{
-       border: 1px solid magenta;  
-   }
+   /* .aboutTeam{
+   } */
    .aboutContactInfo{
        grid-area: theContactSection;
       color: #eaeaea;
       margin: 10px;
-      border: 1px solid green; 
    }
-   .contactForm {
-       border: 1px solid orange;
+   /* .contactForm {
    }
    .contactInformation {
-       border: 1px solid purple;
    }
    .customerContact {
-       border: 1px solid brown;
    }
-   
+    */
    a{
        color:#ffc388;
    }
