@@ -1,0 +1,28 @@
+.cartIcon {
+  display: grid;
+  grid-template-columns: 80px 40px;
+  grid-template-rows: 30px 30px;
+}
+.cost {
+  color: var(--secondary-color);
+}
+
+.cart {
+  color: var(--primary-color);
+  font-size: 50px;
+  grid-area: 1/2/3/2;
+  align-self: center;
+  justify-self: center;
+}
+
+.quantity {
+  font-size: 1rem;
+  grid-area: 1/2/1/2;
+  justify-self: end;
+  color: var(--secondary-color);
+  background-color: red;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  text-align: center;
+}
