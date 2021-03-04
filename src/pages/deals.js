@@ -22,7 +22,6 @@ const Deals = () => {
       <DealsBanner className={style.header}/>
 
       <div className={style.grid}>
-        {/* ADD CARD COMPONENT HERE + IMPORT STYLES FOR CARD. FILTER OUT COMPONENTS THAT HAS DISCOUNTED = TRUE */}
         {discountedCars.map((car) => (
            <CarCard car={car} key={car.vin}/>
           ))}
