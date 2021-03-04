@@ -5,7 +5,7 @@ ul {
 .filter_list {
   position: absolute;
   right: 0;
-  top: 31px;
+  top: 0;
   height: 30vh;
   width: 100%;
   overflow: auto;
@@ -27,4 +27,12 @@ ul {
   background: var(--primary-color);
   color: var(--dark-color);
   font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .filter_list {
+    width: 70%;
+    height: 30vh;
+    top: 0;
+  }
 }
