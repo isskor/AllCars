@@ -1,5 +1,7 @@
 .home {
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .hero {
@@ -33,4 +35,10 @@
 
 .carList {
     margin: 1rem;
+}
+
+.loadMore {
+    width: 100px;
+    margin-bottom: 2rem;
+    align-self: center;
 }

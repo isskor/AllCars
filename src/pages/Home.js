@@ -22,6 +22,7 @@ function Home() {
                     <CarCard key={i} car={car} />
                 ))}
             </div>
+            <button className={style.loadMore}>Load more</button>
         </div>
     )
 }
