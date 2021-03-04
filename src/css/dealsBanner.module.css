@@ -1,8 +1,10 @@
 
 .header{
-  height: 20vh;
+  height: 50vh;
+  margin-bottom: 1rem;
   background: lightcoral;
   display: flex;
+  padding-top: 4.5rem; /* add height of nav here */
 }
 .header img{
   object-fit: cover;

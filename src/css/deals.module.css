@@ -3,18 +3,12 @@
   margin: auto;
 }
 
-.header{
-  height: 20vh;
-  background: lightcoral;
-  display: flex;
-}
-
 .grid{
   background: lightblue;
   min-height: 50vh;
   margin: auto;
   display: flex;
-flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
