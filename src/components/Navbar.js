@@ -12,9 +12,10 @@ const Navbar = () => {
        <nav className={styles.mainNavbar}>
             <Link to="/"><span className={styles.logo}>AllCars</span></Link>
             <FooterNavbar />  
+            <CartIcon />
       </nav>   
     </div> 
-      <CartIcon />
+      
   );
 };
 
