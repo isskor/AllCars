@@ -1,78 +1,68 @@
-/* about.module.css */
-*{
+* {
     box-sizing: border-box;
-   }
-   
-   body, html {
-       /* height: 100%; */
-   }
-   
-   .aboutHeroContainer {
-       position: relative;
-   }
-   
-   .aboutTitle {
-       text-align: center;
-       position: absolute;
-       top: 21%;
-       left: 15%;
-       color: #eaeaea;
-       transform: translate(-50%, -50%);
-   }
-   
-   .aboutContentContainer {
-       margin: 30px;
-       display: grid;
-       grid-gap: 1vh;
-       grid-template-areas: 
-       'theText theText theText theText theText theText'
-       'theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage'
-       'theContactSection theContactSection theContactSection theContactSection theContactSection theContactSection ';
-       align-items: center;
-       }
-   
-   .aboutText p {
-       grid-area: theText;
-   color: #eaeaea;
-   text-align: justify;
-   margin: 10px;
-   }
-   .aboutImageStaff {
-       grid-area: theStaffImage;
-       margin: 10px;
-   }
-   /* .aboutTeam{
-   } */
-   .aboutContactInfo{
-       grid-area: theContactSection;
-      color: #eaeaea;
-      margin: 10px;
-   }
-   /* .contactForm {
-   }
-   .contactInformation {
-   }
-   .customerContact {
-   }
-    */
-   a{
-       color:#ffc388;
-   }
-   a:hover {
-       color:orange;
-   }
-   
-   
-   /* iPads (portrait and landscape) ----------- */
-   /* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-       } */
-   /* 
-   @media only screen and (min-device-width : 768px) {
-       .aboutContentContainer {
-           padding: 50px;
-           display: grid;
-           grid-gap: 10vh;
-           grid-template-columns: 1fr 1fr;
-           grid-template-rows: 1fr;
-       }
-   }     */
+  }
+  
+  .aboutHeroContainer {
+    position: relative;
+  }
+  
+  .aboutTitle {
+    text-align: center;
+    position: absolute;
+    top: 21%;
+    left: 15%;
+    color: #eaeaea;
+    transform: translate(-50%, -50%);
+  }
+  
+  .aboutContentContainer {
+    margin: 30px;
+    display: grid;
+    grid-gap: 1vh;
+    grid-template-areas:
+      "theText theText theText theText theText theText"
+      "theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage"
+      "theContactSection theContactSection theContactSection theContactSection theContactSection theContactSection ";
+    align-items: center;
+  }
+  
+  .aboutText p {
+    grid-area: theText;
+    color: #eaeaea;
+    text-align: justify;
+    margin: 10px;
+  }
+  .aboutImageStaff {
+    grid-area: theStaffImage;
+    margin: 10px;
+  }
+  .aboutContactInfo {
+    grid-area: theContactSection;
+    color: #eaeaea;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+  }
+  a {
+    color: #ffc388;
+  }
+  a:hover {
+    color: orange;
+  }
+  
+  /* iPads and above ----------- */
+  /* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+      } */
+  
+  @media only screen and (min-device-width: 768px) {
+    .aboutContentContainer {
+      grid-template-areas:
+        "theText theText theText . theStaffImage theStaffImage"
+        "theContactSection theContactSection . . . . ";
+    }
+  
+    .aboutImageStaff {
+      max-width: 70%;
+    }
+  }
+  
