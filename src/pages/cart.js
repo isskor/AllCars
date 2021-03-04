@@ -18,6 +18,7 @@ const Cart = () => {
                 <h4>Total</h4>
                 <h3>{totalCost}​​​​​</h3>
             </div>
+            {/* Cart form with personal information and shipping options */}
             <CartForm />
         </div>);
 };
