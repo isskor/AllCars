@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
+import CarCard from '../components/CarCard';
 
 import DealsBanner from '../components/DealsBanner';
 import style from "../css/deals.module.css";
-import CarCard from '../components/CarCard';
 
 const Deals = () => {
   const { cars } = useContext(CarContext);
