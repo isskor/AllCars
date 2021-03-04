@@ -1,3 +1,5 @@
+/* IMPORT carCards styling here */
+
 function CarCard() {
 
     return (
