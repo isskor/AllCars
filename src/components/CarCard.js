@@ -1,4 +1,9 @@
+
 function CarCard() {
+
+    function goCart() {
+        console.log(" go to Cart Details Page")
+    }
 
     return (
         <div className="carCard">
@@ -13,7 +18,8 @@ function CarCard() {
             <div className="statsContainer">
                 <p>model</p>
                 <p>miles</p>
-                <button>Add to cart</button>
+                <button >Add to cart</button>
+                <button onClick= {goCart} >Go to cart</button>
             </div>
         </div>
     )
