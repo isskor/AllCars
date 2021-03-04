@@ -1,21 +1,27 @@
-import style from '../css/carCards.module.css';
+import style from '../css/CarCard.module.css';
 
-function CarCard() {
+function CarCard(prop) {
 
     return (
-        <div className="carCard">
-            <div className="imgContainer">
-                <img src="/assets/car-pictures/Acura-NSX-2000.jpg" alt="Car picture" />
-                <p>Car price</p>
-                <div className="imgTextWrapper">
-                    <p>Car make</p>
-                    <p>Car year</p>
+        <div className={style.carCard}>
+            <div className={style.imgContainer}>
+                <img src={`/assets/car-pictures/${prop.car.make}-${prop.car.model}-${prop.car.year}.jpg`} alt="Car picture" />
+                <p className={style.carPrice}>${prop.car.price}</p>
+                <div className={style.imgTextWrapper}>
+                    <p className={style.wrapperText}>{prop.car.make}</p>
+                    <p className={style.wrapperText}>{prop.car.year}</p>
                 </div>
             </div>
-            <div className="statsContainer">
-                <p>model</p>
-                <p>miles</p>
-                <button>Add to cart</button>
+            <div className={style.statsContainer}>
+                <div className="carModel">
+                    <p className={style.model}>Model</p>
+                    <p>{prop.car.model}</p>
+                </div>
+                <div className={style.milesContainer}>
+                    <p className={style.miles}>Miles</p>
+                    <p>{prop.car.miles}</p>
+                </div>
+                <button className={style.addBtn}>Add to cart</button>
             </div>
         </div>
     )
