@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
 
 import DealsBanner from '../components/DealsBanner';
-import TempCard from '../components/tempCard';
 import style from "../css/deals.module.css";
 import CarCard from '../components/CarCard';
 
