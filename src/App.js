@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import CarContextProvider from './contexts/CarContext';
 import CartContextProvider from './contexts/CartContext';
 import Test from './components/test';
+import About from './pages/About';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             <Switch>
                 <Route path='/deals' />
                 <Route exact path='/' component={Test}/>
-                <Route path='/about' />
+                <Route path='/about' component={About}/>
                 <Route exact path='/car/:id' />
                 <Route exact path='/cart' />
                 <Route path='/receipt' />
