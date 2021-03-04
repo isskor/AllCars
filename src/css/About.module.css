@@ -4,7 +4,7 @@
    }
    
    body, html {
-       height: 100%;
+       /* height: 100%; */
    }
    
    .aboutHeroContainer {
@@ -15,25 +15,54 @@
        text-align: center;
        position: absolute;
        top: 21%;
-       left: 10%;
+       left: 15%;
        color: #eaeaea;
        transform: translate(-50%, -50%);
    }
    
    .aboutContentContainer {
-       padding: 50px;
+       margin: 30px;
        display: grid;
-       grid-gap: 10vh;
-       grid-template-columns: 1fr;
-       grid-template-rows: 1fr;
+       grid-gap: 1vh;
+       grid-template-areas: 
+       'theText theText theText theText theText theText'
+       'theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage'
+       'theContactSection theContactSection theContactSection theContactSection theContactSection theContactSection ';
+       align-items: center;
+       /* grid-template-columns: 1fr;
+       grid-template-rows: 1fr; */
+       border: 1px solid red;
    }
    
    .aboutText p {
+       grid-area: theText;
    color: #eaeaea;
    text-align: justify;
+   margin: 10px;
+   border: 1px solid blue
+   }
+   .aboutImageStaff {
+       grid-area: theStaffImage;
+       margin: 10px;
+       border: 1px solid yellow;
+   }
+   .aboutTeam{
+       border: 1px solid magenta;  
    }
    .aboutContactInfo{
-      color: #eaeaea;; 
+       grid-area: theContactSection;
+      color: #eaeaea;
+      margin: 10px;
+      border: 1px solid green; 
+   }
+   .contactForm {
+       border: 1px solid orange;
+   }
+   .contactInformation {
+       border: 1px solid purple;
+   }
+   .customerContact {
+       border: 1px solid brown;
    }
    
    a{
@@ -47,7 +76,7 @@
    /* iPads (portrait and landscape) ----------- */
    /* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
        } */
-   
+   /* 
    @media only screen and (min-device-width : 768px) {
        .aboutContentContainer {
            padding: 50px;
@@ -56,4 +85,4 @@
            grid-template-columns: 1fr 1fr;
            grid-template-rows: 1fr;
        }
-   }    
+   }     */
