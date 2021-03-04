@@ -2,9 +2,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CarContextProvider from './contexts/CarContext';
 import CartContextProvider from './contexts/CartContext';
-import Test from './components/test';
+import Home from './pages/Home';
 import About from './pages/About';
-
 function App() {
   return (
     <div className='App'>

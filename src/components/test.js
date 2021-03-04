@@ -1,12 +1,20 @@
 import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
+<<<<<<< HEAD
 import { CartContext } from '../contexts/CartContext';
+||||||| added disctouned = true to the 3 first cars
+// import { CartContext } from '../contexts/CartContext';
+=======
+import SearchForm from './SearchForm';
+// import { CartContext } from '../contexts/CartContext';
+>>>>>>> Home
 const Test = () => {
   const { cars } = useContext(CarContext);
   const { addToCart, cart } = useContext(CartContext);
   console.log(cars);
   return (
     <div>
+      <SearchForm />
       {/* for testing, display cart length */}
       {/* <h2>cart items {cart.length}</h2> */}
       {cars.map((car) => (
