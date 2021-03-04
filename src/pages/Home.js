@@ -18,7 +18,7 @@ function Home() {
                 <SearchForm />
             </div>
             <div className={style.carList}>
-                {cars.map((car, i) => (
+                {cars.slice(0, 10).map((car, i) => (
                     <CarCard key={i} car={car} />
                 ))}
             </div>
