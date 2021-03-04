@@ -4,3 +4,30 @@
     outline: none;
     border-bottom: 1px solid var(--secondary-color);
   }
+  form{
+  width: 350px;
+  margin: 0 auto;
+}
+  .halfinput{
+      width: 165px;
+  }
+    .halfinput1{
+    width: 165px;
+    float: left;
+    margin-right: 20px;
+    }
+  input, button {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 20px;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+  }
+  .delivery_radio{
+    display: flex;
+    flex-direction: row;
+  }

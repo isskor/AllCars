@@ -7,23 +7,38 @@ const CartForm = () => {
             <h1>Checkout</h1>
             <form >
                 <label>
-                    Name:<br />
-                    <input  type="text" className={styles.cart_input} />
+                    Full name:<br />
+                    <input type="text" className={styles.cart_input} />
                 </label> <br />
                 <label>
-                    Name:<br />
-                    <input  type="text" className={styles.cart_input} />
+                    E-mail:<br />
+                    <input type="text" className={styles.cart_input} />
                 </label> <br />
                 <label>
-                    Name:<br />
-                    <input  type="text" className={styles.cart_input} />
+                    Phone number:<br />
+                    <input type="text" className={styles.cart_input} />
                 </label>
                 <br />
                 <label>
-                    Name:<br />
-                    <input  type="text" className={styles.cart_input} />
+                    Address:<br />
+                    <input type="text" className={styles.cart_input} />
                 </label>
                 <br />
+                <div className={styles.delivery_radio}>
+                    <input type="radio" value="Pick up" /> Pick up
+                    <input type="radio" value="Delivery" /> Delivery
+                    <input type="radio" value="Express delivery" /> Express delivery
+                </div>
+                <br />
+                </form>
+
+                <form className={styles.form}>
+
+                <input type="text" placeholder="Card number" className={styles.half}/>
+                <input type="text" placeholder="Name on card" className={styles.half} />
+
+                <input type="text" placeholder="MM/YY" className={styles.halfinput1} />
+                <input type="text" placeholder="CVC" className={styles.halfinput} />
                 <br />
                 <button> Purchase </button>
             </form>
