@@ -19,7 +19,6 @@
   input, button {
     box-sizing: border-box;
     display: block;
-    float: left;
     width: 100%;
     padding: 20px;
     font-size: 1.3em;
@@ -27,7 +26,11 @@
     outline: none;
     border: none;
   }
-  .delivery_radio{
+  .radio{
     display: flex;
     flex-direction: row;
+  }
+  .radiotext{
+    display: flex;
+    justify-content: space-between;
   }

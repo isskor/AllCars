@@ -24,10 +24,15 @@ const CartForm = () => {
                     <input type="text" className={styles.cart_input} />
                 </label>
                 <br />
-                <div className={styles.delivery_radio}>
-                    <input type="radio" value="Pick up" /> Pick up
-                    <input type="radio" value="Delivery" /> Delivery
-                    <input type="radio" value="Express delivery" /> Express delivery
+                <div className={styles.radiotext}>
+                    <label>Pick up</label>
+                    <label>Delivery</label>
+                    <label>Express delivery</label>
+                </div>
+                <div className={styles.radio}>
+                    <input type="radio" value="Pick up" />
+                    <input type="radio" value="Delivery" /> 
+                    <input type="radio" value="Express delivery" /> 
                 </div>
                 <br />
                 </form>
