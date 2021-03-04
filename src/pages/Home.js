@@ -21,8 +21,8 @@ function Home() {
                 {cars.slice(0, 10).map((car, i) => (
                     <CarCard key={i} car={car} />
                 ))}
+                <button className={style.loadMore}>Load more</button>
             </div>
-            <button className={style.loadMore}>Load more</button>
         </div>
     )
 }
