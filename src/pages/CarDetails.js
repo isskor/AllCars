@@ -45,32 +45,32 @@ function CarDetails(props) {
             </div>
           </section>
           <section className={styles.carStatsContainer}>
-            <div className={styles.carDescriptionShort}>{car.descShort}</div>
+            <div className={styles.carDescriptionShort}><p>{car.descShort}</p></div>
             <h2 className={styles.carStatsTitle}>Car Stats</h2>
-            <div className={styles.carMake}>
-              <span>Make: {car.make}</span>
+            <div className={styles.carMake}><p>
+              <span>Make: {car.make}</span></p>
             </div>
             <div className={styles.carModel}>
-              <span>Model: {car.model}</span>
+              <p><span>Model: {car.model}</span></p>
             </div>
             <div className={styles.carYear}>
-              <span>Year {car.year}</span>
+              <p><span>Year {car.year}</span></p>
             </div>
             <div className={styles.carMileage}>
-              <span>Mileage {car.miles}</span>
+              <p><span>Mileage {car.miles}</span></p>
             </div>
             <div className={styles.carVIN}>
-              <span>VIN {car.vin}</span>
+              <p><span>VIN {car.vin}</span></p>
             </div>
             <div className={styles.carCity}>
-              <span>City {car.city}</span>
+              <p><span>City {car.city}</span></p>
             </div>
           </section>
           <section className={styles.carPriceLongDescContainer}>
             <h3 className={styles.carPrice}>Price</h3>
-            <div className={styles.carPriceLabel}>{car.price}</div>
+            <div className={styles.carPriceLabel}><p>{car.price}</p></div>
             <h2 className={styles.carDescriptionTitle}>Description</h2>
-            <div className={styles.carLongDescription}>{car.descLong}</div>
+            <div className={styles.carLongDescription}><p>{car.descLong}</p></div>
           </section>
           <div className={styles.cartButton}>
             <AddToCartButton car={car} />
