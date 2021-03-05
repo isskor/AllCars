@@ -1,3 +1,5 @@
+/* @import '~antd/dist/antd.css'; */
+
 * {
     box-sizing: border-box; 
     margin: 0;
@@ -8,6 +10,9 @@ h2, h3 {
     color: var(--secondary-color);
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
   }
+ .carDetailsContainer{
+
+ } 
 .carImageContainer {
 height: auto;
 width: 100%;
@@ -17,15 +22,41 @@ width: 100%;
     /* height: 70%; */
     /* width: auto; */
     max-width: 100%;
+    object-fit: cover;
+}
+.backButton{
+
+}
+.carMakeModelName{
+
+}
+.cartButtonTop{
+    text-align: right;
+}
+.carTextDetailsContainer{
+    margin: 4vh;
+    padding: 1vh;
+    display: grid;
+    grid-template-areas: 
+    '. theStats theStats theStats theStats  . '
+    '. thePriceDescription thePriceDescription thePriceDescription thePriceDescription .';
 }
 /* working on these styles right now */
 .carStatsContainer {
-
+    grid-area: theStats;
+    margin: 1vh;
+    padding: 1vh;
 }
-.carDescriptionShort{
-    
+.carStatsContainer span { 
+    color: var(--secondary-color);    
+    /* color: #eaeaea; */
 }
-.carPriceLabel{
+.carDescriptionShort p{
+/* color: #ffc388;     */
+color: var(--primary-color);    
+}
+.carStatsTitle{
+    text-align: center;
 
 }
 .carMake{
@@ -46,9 +77,35 @@ width: 100%;
 .carCity{
 
 }
+.carPriceDescContainer{
+    grid-area: thePriceDescription;
+    margin: 1vh;
+    padding: 1vh;
+}
+.carPriceLabel{
+
+}
+.carPrice{
+
+}
+.carDescriptionTitle{
+    text-align: center;
+}
 .carLongDescription{
 
 }
 .cartButton{
-    
+    text-align: center;
 }
+
+/* iPads (portrait and landscape) ----------- */
+/* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    } */
+
+    @media only screen and (min-device-width: 768px) {
+        .carTextDetailsContainer{
+            display: grid;
+            grid-template-areas: 
+            'theStats theStats theStats thePriceDescription thePriceDescription thePriceDescription';
+        }   
+    }
