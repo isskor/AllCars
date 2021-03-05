@@ -2,15 +2,16 @@
 .header{
   height: 50vh;
   margin-bottom: 1rem;
-  background: lightcoral;
   display: flex;
-  padding-top: 4.5rem; /* add height of nav here */
+  padding-top: 5.75rem; /* add height of nav here */
+  z-index: -3;
 }
 .header img{
   object-fit: cover;
+  z-index: -2;
 }
 .header h1{
-  z-index: 2;
+  z-index: -1;
   position: absolute;
   padding: 0.5rem;
 }
