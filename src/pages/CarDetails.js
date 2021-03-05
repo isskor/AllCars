@@ -28,50 +28,58 @@ function CarDetails(props) {
 
   const renderCar = () => {
     return (
-      <div className='car'>
-        <NavLink className='back' to='/'>
-          Back
+      <>
+        <div className={styles.carDetailsContainer}>
+          <NavLink className={styles.backButton} to='/'>
+            Back
         </NavLink>
-        <div className={styles.carImageContainer}>
-          {/* added image src here directly */}
-          <img
-            src={`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
-            alt={car.name}
-          />
+          <section className={styles.carImageContainer}>
+            {/* added image src here directly */}
+            <img
+              src={`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
+              alt={car.name}
+            />
+            <h1 className={styles.carMakeModelName}><span>Name {car.make} {car.model}</span></h1>
+            <div className={styles.cartButton}>
+              <AddToCartButton car={car} />
+            </div>
+          </section>
+          <section className={styles.carStatsContainer}>
+            <div className={styles.carDescriptionShort}>{car.descShort}</div>
+            <h2 className={styles.carStatsTitle}>Car Stats</h2>
+            <div className={styles.carMake}>
+              <span>Make: {car.make}</span>
+            </div>
+            <div className={styles.carModel}>
+              <span>Model: {car.model}</span>
+            </div>
+            <div className={styles.carYear}>
+              <span>Year {car.year}</span>
+            </div>
+            <div className={styles.carMileage}>
+              <span>Mileage {car.miles}</span>
+            </div>
+            <div className={styles.carVIN}>
+              <span>VIN {car.vin}</span>
+            </div>
+            <div className={styles.carCity}>
+              <span>City {car.city}</span>
+            </div>
+          </section>
+          <section className={styles.carPriceLongDescContainer}>
+            <h3 className={styles.carPrice}>Price</h3>
+            <div className={styles.carPriceLabel}>{car.price}</div>
+            <h2 className={styles.carDescriptionTitle}>Description</h2>
+            <div className={styles.carLongDescription}>{car.descLong}</div>
+          </section>
           <div className={styles.cartButton}>
             <AddToCartButton car={car} />
           </div>
+          <div className={styles.footerNav}>
+            <FooterNavBar />
+          </div>
         </div>
-        <div className={styles.carStatsContainer}>
-          <div className={styles.carDescriptionShort}>{car.descShort}</div>
-          <div className={styles.carPriceLabel}>{car.price}</div>
-          <div className={styles.carMake}>
-            <span>Make: {car.make}</span>
-          </div>
-          <div className={styles.carModel}>
-            <span>Model: {car.model}</span>
-          </div>
-          <div className={styles.carYear}>
-            <span>Year {car.year}</span>
-          </div>
-          <div className={styles.carMileage}>
-            <span>Mileage {car.miles}</span>
-          </div>
-          <div className={styles.carVIN}>
-            <span>VIN {car.vin}</span>
-          </div>
-          <div className={styles.carCity}>
-            <span>City {car.city}</span>
-          </div>
-          <span className={styles.carLongDescription}>{car.descLong}</span>
-        </div>
-        <div className={styles.cartButton}>
-          <AddToCartButton car={car} />
-        </div>
-        <div className={styles.footerNav}>
-          <FooterNavBar/>
-        </div>
-      </div>
+      </>
     );
   };
 
