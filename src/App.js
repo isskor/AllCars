@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import FooterNavbar from './components/FooterNavbar';
 import Navbar from './components/Navbar';
 import CarContextProvider from './contexts/CarContext';
 import CartContextProvider from './contexts/CartContext';
@@ -11,12 +10,14 @@ function App() {
       <Router>
         <CarContextProvider>
           <CartContextProvider>
-            <FooterNavbar />
             <Navbar />
-            <Route exact path='/deals'></Route>
+            <Route path='/deals' />
+            <Route path='/about' />
+            <Route exact path='/car/:id' />
+            <Route exact path='/cart' />
+            <Route path='/receipt' />
+            <Test />
             <Route exact path='/' component={Home}></Route>
-            <Route exact path='/about'></Route>
-            {/* <Test /> */}
           </CartContextProvider>
         </CarContextProvider>
       </Router>
