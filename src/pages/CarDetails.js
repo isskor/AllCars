@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/CarDetails.module.css';
 import AddToCartButton from '../components/AddToCart';
+import FooterNavBar from '../components/FooterNavbar';
 
 function CarDetails(props) {
   const { cars } = useContext(CarContext);
@@ -66,6 +67,9 @@ function CarDetails(props) {
         </div>
         <div className={styles.cartButton}>
           <AddToCartButton car={car} />
+        </div>
+        <div className={styles.footerNav}>
+          <FooterNavBar/>
         </div>
       </div>
     );
