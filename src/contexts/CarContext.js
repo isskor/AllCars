@@ -68,10 +68,10 @@ const CarContextProvider = ({ children }) => {
   const [searchedCars, setSearchedCars] = useState(cars);
   const [filters, setFilters] = useState(filterList());
 
-  const filterMake = (filterType, payload) => {
+  const filterMake = (state, filterType, payload) => {
     console.log(payload);
     console.log(filterType);
-    const filteredCars = carList.filter((car) => car[filterType] === payload);
+    const filteredCars = state.filter((car) => car[filterType] === payload);
     // const index = filters.findIndex((list) => list.type === 'Make');
     setFilters([
       {
@@ -90,21 +90,13 @@ const CarContextProvider = ({ children }) => {
 
     return filteredCars;
   };
-  // const filterModel = (model) => {
-  //   const filteredModels = filterMake('Ford').filter(
-  //     (car) => car.model === model
-  //   );
-  //   return filteredModels;
-  // };
-  // const filterYear = (year) => {
-  //   // filter after year
-  // };
 
   const searchReducer = (state, action) => {
     switch (action.type) {
       case 'FILTER_ACTION':
         console.log(action);
         return filterMake(
+          state,
           action.payload.filterCategory,
           action.payload.filterItem
         );
