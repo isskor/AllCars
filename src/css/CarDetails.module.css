@@ -83,13 +83,13 @@ color: var(--primary-color);
     padding: 1vh;
 }
 .carPriceLabel{
-
+text-align: right;
 }
 .carPrice{
-
+text-align: right;
 }
 .carDescriptionTitle{
-    text-align: center;
+    text-align: left;
 }
 .carLongDescription{
 
