@@ -49,15 +49,19 @@ const filterList = () => {
 //   // set new searched cars
 //   setSearchedCars()
 // }
-const handlePriceRange = (min, max) => {
+const maxMin = (min, max) => {};
+
+const handlePriceRange = (state, min, max) => {
   // filtersearchedCars
   // filter method
   // set new searched cars
+  return state.filter((item) => item.price >= min && item.price <= max);
 };
-const handleMilageRange = (min, max) => {
+const handleMilageRange = (state, min, max) => {
   // filtersearchedCars
   // filter method
   // set new searched cars
+  return state.filter((item) => item.miles >= min && item.miles <= max);
 };
 
 export const CarContext = createContext();
@@ -94,21 +98,26 @@ const CarContextProvider = ({ children }) => {
     return filteredCars;
   };
 
-  const searchReducer = (state, action) => {
+  const searchReducer = (filteredCars, action) => {
     switch (action.type) {
       case 'FILTER_ACTION':
-        console.log(action);
         return filterCars(
-          state,
+          filteredCars,
           action.payload.filterCategory,
           action.payload.filterItem
         );
       case 'RESET_FILTERS_ACTION':
         setFilters(filterList());
         return cars;
+      case 'PRICE_RANGE_ACTION':
+        // action.payload{min, max}
+        return handlePriceRange(cars, action.payload.min, action.payload.max);
+
+      case 'MILAGE_RANGE_ACTION':
+        return handleMilageRange(cars, action.payload.min, action.payload.max);
 
       default:
-        return state;
+        return filteredCars;
     }
   };
 
@@ -124,3 +133,12 @@ const CarContextProvider = ({ children }) => {
 };
 
 export default CarContextProvider;
+
+// filterObject : {
+//   make: toyota
+//   model: null
+//   year: null
+//   price:100, 200
+//   milage:
+//   Search:
+// }
