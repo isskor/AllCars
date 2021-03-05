@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import styles from '../css/Filters.module.css';
 import Dropdown from './Dropdown';
 import { CarContext } from '../contexts/CarContext';
+
 const Filters = () => {
   const [isOpen, setIsOpen] = useState(null);
   const { filters, dispatch } = useContext(CarContext);
