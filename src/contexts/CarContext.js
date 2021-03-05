@@ -68,7 +68,7 @@ const CarContextProvider = ({ children }) => {
   const [searchedCars, setSearchedCars] = useState(cars);
   const [filters, setFilters] = useState(filterList());
 
-  const filterMake = (state, filterType, filterItem) => {
+  const filterCars = (state, filterType, filterItem) => {
     console.log(filterItem);
     console.log(filterType);
     const filteredCars = state.filter((car) => car[filterType] === filterItem);
@@ -98,11 +98,14 @@ const CarContextProvider = ({ children }) => {
     switch (action.type) {
       case 'FILTER_ACTION':
         console.log(action);
-        return filterMake(
+        return filterCars(
           state,
           action.payload.filterCategory,
           action.payload.filterItem
         );
+      case 'RESET_FILTERS_ACTION':
+        setFilters(filterList());
+        return cars;
 
       default:
         return state;

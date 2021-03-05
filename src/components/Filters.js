@@ -4,7 +4,7 @@ import Dropdown from './Dropdown';
 import { CarContext } from '../contexts/CarContext';
 const Filters = () => {
   const [isOpen, setIsOpen] = useState(null);
-  const { filters } = useContext(CarContext);
+  const { filters, dispatch } = useContext(CarContext);
   console.log(filters);
 
   return (
@@ -27,6 +27,11 @@ const Filters = () => {
           )}
         </div>
       ))}
+      <div className={styles.option_btn}>
+        <button onClick={() => dispatch({ type: 'RESET_FILTERS_ACTION' })}>
+          Reset Filters
+        </button>
+      </div>
     </div>
   );
 };
