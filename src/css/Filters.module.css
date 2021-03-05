@@ -3,13 +3,25 @@
 }
 
 .form_group_select {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 2rem 1rem;
 }
 
-button {
-  margin: 0;
+.option_btn {
+  align-self: start;
   width: 33%;
+}
+
+@media (min-width: 768px) {
+  .filter_container {
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    width: 270px;
+    background: var(--card-bg);
+    border-radius: 1.5rem;
+  }
 }

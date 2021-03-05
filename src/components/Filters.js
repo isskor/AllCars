@@ -12,7 +12,10 @@ const Filters = () => {
       {filters.map((filterList, i) => (
         <div className={styles.form_group_select}>
           <span htmlFor={filterList.type}>{filterList.type}</span>
-          <button onClick={() => setIsOpen(isOpen === i ? false : i)}>
+          <button
+            className={styles.option_btn}
+            onClick={() => setIsOpen(isOpen === i ? false : i)}
+          >
             {filterList.type}
           </button>
           {isOpen === i && (
