@@ -15,8 +15,8 @@ const carList = carsJSON.map((car, i) => {
   };
 });
 // filter lists
-const getFilters = (type) => {
-  const filterSet = new Set(carList.map((c) => c[type]));
+const getFilters = (type, list = carList) => {
+  const filterSet = new Set(list.map((c) => c[type]));
   if (type === 'year') {
     const newFilters = [...filterSet].sort((a, b) => (a > b ? -1 : 1));
 
@@ -68,9 +68,25 @@ const CarContextProvider = ({ children }) => {
   const [searchedCars, setSearchedCars] = useState(cars);
   const [filters, setFilters] = useState(filterList());
 
-  const filterMake = (make) => {
-    const filteredCars = carList.filter((car) => car.make === make);
-    const index = filters.findIndex((list) => list.type === 'Make');
+  const filterMake = (filterType, payload) => {
+    console.log(payload);
+    console.log(filterType);
+    const filteredCars = carList.filter((car) => car[filterType] === payload);
+    // const index = filters.findIndex((list) => list.type === 'Make');
+    setFilters([
+      {
+        type: 'Make',
+        list: getFilters('make', filteredCars),
+      },
+      {
+        type: 'Model',
+        list: getFilters('model', filteredCars),
+      },
+      {
+        type: 'Year',
+        list: getFilters('year', filteredCars),
+      },
+    ]);
 
     return filteredCars;
   };
@@ -86,8 +102,12 @@ const CarContextProvider = ({ children }) => {
 
   const searchReducer = (state, action) => {
     switch (action.type) {
-      case 'filterMake':
-        return filterMake(action.payload);
+      case 'FILTER_ACTION':
+        console.log(action);
+        return filterMake(
+          action.payload.filterCategory,
+          action.payload.filterItem
+        );
 
       default:
         return state;

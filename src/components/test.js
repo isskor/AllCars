@@ -5,15 +5,18 @@ const Test = () => {
   const { dispatch, filteredCars, filters } = useContext(CarContext);
   //   const { addToCart, cart } = useContext(CartContext);
 
-  const handleDispatch = (type, payload) => {
+  const handleDispatch = (filterCategory, filterItem) => {
     dispatch({
-      type: type,
-      payload: payload,
+      type: 'FILTER_ACTION',
+      payload: {
+        filterCategory: filterCategory,
+        filterItem: filterItem,
+      },
     });
   };
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', paddingTop: '10rem' }}>
       {/* for testing, display cart length */}
       {/* <h2>cart items {cart.length}</h2> */}
       <div className='cars'>
@@ -21,18 +24,25 @@ const Test = () => {
           <div key={car.vin}>
             {/* for testing, click on title to add to cart */}
             {/* <h1 onClick={() => addToCart(car)}>{car.make}</h1> */}
-            <p onClick={() => handleDispatch('filterMake', car.make)}>
-              {car.make}
+            <p onClick={() => handleDispatch('make', car.make)}>{car.make}</p>
+            <p onClick={() => handleDispatch('model', car.model)}>
+              {car.model}
             </p>
-            <p>{car.model}</p>
-            <p>{car.year}</p>
+            <p onClick={() => handleDispatch('year', car.year)}>{car.year}</p>
             <p>{`${car.discounted}`}</p>
           </div>
         ))}
       </div>
       <div className='filters'>
         {filters.map((filter) => (
-          <p>{filter.type}</p>
+          <div>
+            <p>{filter.type}</p>
+            <ul>
+              {filter.list.map((l) => (
+                <li>{l}</li>
+              ))}
+            </ul>
+          </div>
         ))}
       </div>
     </div>
