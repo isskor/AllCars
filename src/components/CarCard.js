@@ -1,8 +1,6 @@
 import style from '../css/CarCard.module.css';
 
 function CarCard({car}) {
-    console.log(car);
-    /* Some how this runs more than the length of discountCars... */
     return (
         <div className={style.carCard}>
             <div className={style.imgContainer}>
