@@ -4,6 +4,7 @@ import { CarContext } from '../contexts/CarContext';
 import styles from '../css/CarDetails.module.css';
 import AddToCartButton from '../components/AddToCart';
 import FooterNavBar from '../components/FooterNavbar';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 
 function CarDetails(props) {
   const { cars } = useContext(CarContext);
@@ -31,7 +32,7 @@ function CarDetails(props) {
       <>
         <div className={styles.carDetailsContainer}>
           <NavLink className={styles.backButton} to='/'>
-            Back
+            <ArrowLeftOutlined />
         </NavLink>
           <section className={styles.carImageContainer}>
             {/* added image src here directly */}
