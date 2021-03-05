@@ -68,23 +68,26 @@ const CarContextProvider = ({ children }) => {
   const [searchedCars, setSearchedCars] = useState(cars);
   const [filters, setFilters] = useState(filterList());
 
-  const filterMake = (state, filterType, payload) => {
-    console.log(payload);
+  const filterMake = (state, filterType, filterItem) => {
+    console.log(filterItem);
     console.log(filterType);
-    const filteredCars = state.filter((car) => car[filterType] === payload);
+    const filteredCars = state.filter((car) => car[filterType] === filterItem);
     // const index = filters.findIndex((list) => list.type === 'Make');
     setFilters([
       {
         type: 'Make',
         list: getFilters('make', filteredCars),
+        active: filterType === 'make' ? filterItem : filters[0].active,
       },
       {
         type: 'Model',
         list: getFilters('model', filteredCars),
+        active: filterType === 'model' ? filterItem : filters[1].active,
       },
       {
         type: 'Year',
         list: getFilters('year', filteredCars),
+        active: filterType === 'year' ? filterItem : filters[2].active,
       },
     ]);
 

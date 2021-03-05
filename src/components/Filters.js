@@ -16,7 +16,7 @@ const Filters = () => {
             className={styles.option_btn}
             onClick={() => setIsOpen(isOpen === i ? false : i)}
           >
-            {filterList.type}
+            {filterList.active ? filterList.active : 'choose'}
           </button>
           {isOpen === i && (
             <Dropdown
