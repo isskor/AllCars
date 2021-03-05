@@ -38,9 +38,9 @@ function Home() {
         {showCars.map((car, i) => (
           <CarCard key={i} car={car} />
         ))}
-        <button className={style.loadMore} onClick={handleShowNumber}>
+        {showCars.length !== cars.length && <button className={style.loadMore} onClick={handleShowNumber}>
           Load more
-        </button>
+        </button>}
       </div>
     </div>
   );
