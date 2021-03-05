@@ -1,13 +1,25 @@
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
+import { CarContext } from '../contexts/CarContext';
 import useOutsideClick from './useOutsideClick';
 // styles
 import styles from '../css/Dropdown.module.css';
 
-const Dropdown = ({ filterList, setIsOpen }) => {
+const Dropdown = ({ filterList, type, setIsOpen }) => {
   const dropDownRef = useRef();
-
+  const { dispatch } = useContext(CarContext);
   const handleClickOutside = () => {
     setIsOpen(false);
+  };
+
+  const handleInsideClick = (item) => {
+    setIsOpen(false);
+    dispatch({
+      type: 'FILTER_ACTION',
+      payload: {
+        filterCategory: type.toLowerCase(),
+        filterItem: item,
+      },
+    });
   };
 
   useOutsideClick(dropDownRef, handleClickOutside);
@@ -16,7 +28,10 @@ const Dropdown = ({ filterList, setIsOpen }) => {
     <div className={styles.filter_list} ref={dropDownRef}>
       <ul>
         {filterList.map((item) => (
-          <li className={styles.filter_item} onClick={() => setIsOpen(false)}>
+          <li
+            className={styles.filter_item}
+            onClick={() => handleInsideClick(item)}
+          >
             {item}
           </li>
         ))}

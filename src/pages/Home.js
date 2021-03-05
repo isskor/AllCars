@@ -5,7 +5,7 @@ import SearchForm from '../components/SearchForm';
 import style from '../css/Home.module.css';
 
 function Home() {
-  const { cars } = useContext(CarContext);
+  const { filteredCars } = useContext(CarContext);
   //   set component state
   // cars to show
   const [showCars, setShowCars] = useState([]);
@@ -13,9 +13,9 @@ function Home() {
   const [showNumber, setShowNumber] = useState(10);
   // get a new list of cars to show everytime showNumber changes
   useEffect(() => {
-    const showing = cars.slice(0, showNumber);
+    const showing = filteredCars.slice(0, showNumber);
     setShowCars(showing);
-  }, [showNumber]);
+  }, [showNumber, filteredCars]);
 
   //   add 10 to current showNumber
   const handleShowNumber = () => {
@@ -38,9 +38,11 @@ function Home() {
         {showCars.map((car, i) => (
           <CarCard key={i} car={car} />
         ))}
-        {showCars.length !== cars.length && <button className={style.loadMore} onClick={handleShowNumber}>
-          Load more
-        </button>}
+        {showCars.length !== filteredCars.length && (
+          <button className={style.loadMore} onClick={handleShowNumber}>
+            Load more
+          </button>
+        )}
       </div>
     </div>
   );

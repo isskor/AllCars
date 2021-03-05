@@ -19,7 +19,11 @@ const Filters = () => {
             {filterList.type}
           </button>
           {isOpen === i && (
-            <Dropdown filterList={filterList.list} setIsOpen={setIsOpen} />
+            <Dropdown
+              filterList={filterList.list}
+              setIsOpen={setIsOpen}
+              type={filterList.type}
+            />
           )}
         </div>
       ))}
