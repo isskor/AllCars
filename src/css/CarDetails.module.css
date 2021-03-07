@@ -28,6 +28,7 @@ width: 100%;
  font-size: 30px;
  background-color: var(--secondary-color);
  border-radius: 100%;
+ border: 2px solid var(--primary-color);
  padding: 5px;
  margin: 5px;
 }
@@ -112,4 +113,7 @@ text-align: right;
             grid-template-areas: 
             'theStats theStats theStats thePriceDescription thePriceDescription thePriceDescription';
         }   
+        .footerNav{
+            display: none;
+        }
     }
