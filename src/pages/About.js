@@ -1,24 +1,25 @@
 import styles from "../css/About.module.css";
 import FooterNavBar from '../components/FooterNavbar';
+import ReadMoreReact from 'read-more-react';
 
 
 const About = () => {
     return (
         <>
             <section className={styles.aboutContainer}>
-                <div className={styles.aboutHeroContainer}>
+                <section className={styles.aboutHeroContainer}>
                     <h1 className={styles.aboutTitle}>About us</h1>
-                    <img className={styles.aboutHeroImage} src="/assets/background/allcars_about.jpg" alt="About Header" />
-                </div>
+                    {/* <img className={styles.aboutHeroImage} src="/assets/background/allcars_about.jpg" alt="About Header" /> */}
+                </section>
                 <div className={styles.aboutContentContainer}>
                     <section className={styles.aboutText}>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis cupiditate ipsa ducimus ex!
-                        Perspiciatis quisquam exercitationem debitis recusandae repellat magnam maxime sunt. Maxime consequuntur,
-                        at quidem eius rerum pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis cupiditate ipsa ducimus ex!
-                        Perspiciatis quisquam exercitationem debitis recusandae repellat magnam maxime sunt. Maxime consequuntur,
-                        at quidem eius rerum pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis cupiditate ipsa ducimus ex!
-                        Perspiciatis quisquam exercitationem debitis recusandae repellat magnam maxime sunt. Perspiciatis quisquam exercitationem
-                     debitis recusandae repellat magnam maxime sunt.</p>
+                        <p><ReadMoreReact className="styles.aboutReadMoreText" text={
+                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis cupiditate ipsa ducimus ex! Perspiciatis quisquam exercitationem debitis recusandae repellat magnam maxime sunt. Maxime consequuntur, at quidem eius rerum pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis cupiditate ipsa ducimus ex! Perspiciatis quisquam exercitationem debitis recusandae repellat magnam maxime sunt. Maxime consequuntur, at quidem eius rerum pariatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis cupiditate ipsa ducimus ex! Perspiciatis quisquam exercitationem debitis recusandae repellat magnam maxime sunt. Maxime consequuntur, at quidem eius rerum pariatur."
+                        }
+                            min={429}
+                            ideal={450}
+                            max={700}
+                        /></p>
                     </section>
                     <section className={styles.aboutImageStaff}>
                         <img className={styles.aboutTeam} src="/assets/background/allcars-team.jpg" alt="About the AllCars staff" />

@@ -1,68 +1,121 @@
+/* about.module.css */
 * {
-    box-sizing: border-box;
-  }
-  
-  .aboutHeroContainer {
-    position: relative;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #ffc388;
+}
+a:hover {
+  color: orange;
+}
+
+.aboutHeroContainer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../assets/background/allcars_about.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30vh;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+.aboutTitle {
+  text-align: left;
+  font-size: 3vh;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: var(--secondary-color);
+  transform: translate(-50%, -50%);
+  margin: 1vh;
+  padding: 1vh;
+}
+
+.aboutContentContainer {
+  width: 95%;
+  margin: 1vh auto;
+  display: grid;
+  grid-template-areas:
+    "theText theText theText theText theText theText"
+    "theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage"
+    "theContactSection theContactSection theContactSection theContactSection theContactSection theContactSection ";
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.aboutText {
+  grid-area: theText;
+  width: 100%;
+  margin: 1vh 1vw;
+  padding: 1vh;
+  justify-self: center;
+  text-align: center;
+}
+
+.aboutText p {
+  color: var(--secondary-color);
+  text-align: justify;
+  padding: 10px;
+  justify-self: center;
+}
+.aboutText span {
+  color: var(--secondary-color);
+}
+
+.aboutImageStaff {
+  grid-area: theStaffImage;
+  margin: 0 1vw;
+  padding: 0 1vw;
+  align-self: start;
+  justify-self: center;
+  width: 100%;
+}
+
+.aboutTeam {
+  min-height: 20vh;
+  min-width: 30vw;
+  width: 100%;
+  padding: 10px;
+}
+.aboutContactInfo {
+  grid-area: theContactSection;
+  color: #eaeaea;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+}
+
+.footerNav {
+  margin: 2vh 2vw;
+}
+
+/* iPads (portrait and landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) {
   .aboutTitle {
-    text-align: center;
-    position: absolute;
-    top: 21%;
-    left: 15%;
-    color: #eaeaea;
-    transform: translate(-50%, -50%);
   }
-  
   .aboutContentContainer {
-    margin: 30px;
-    display: grid;
-    grid-gap: 1vh;
     grid-template-areas:
-      "theText theText theText theText theText theText"
-      "theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage"
-      "theContactSection theContactSection theContactSection theContactSection theContactSection theContactSection ";
-    align-items: center;
+      "theText theText theText . theStaffImage theStaffImage"
+      "theContactSection  theContactSection . . . .";
   }
-  
-  .aboutText p {
-    grid-area: theText;
-    color: #eaeaea;
-    text-align: justify;
-    margin: 10px;
+  .aboutText {
+    margin: 0 1vw;
   }
+
   .aboutImageStaff {
-    grid-area: theStaffImage;
-    margin: 10px;
+    max-width: 70%;
+    margin: 1vh 1vw;
+    padding: 1vh;
   }
-  .aboutContactInfo {
-    grid-area: theContactSection;
-    color: #eaeaea;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #eaeaea;
+  .footerNav {
+    display: none;
   }
-  a {
-    color: #ffc388;
-  }
-  a:hover {
-    color: orange;
-  }
-  
-  /* iPads and above ----------- */
-  /* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-      } */
-  
-  @media only screen and (min-device-width: 768px) {
-    .aboutContentContainer {
-      grid-template-areas:
-        "theText theText theText . theStaffImage theStaffImage"
-        "theContactSection theContactSection . . . . ";
-    }
-  
-    .aboutImageStaff {
-      max-width: 70%;
-    }
-  }
-  
+}
+@media only screen and (min-device-width: 992px) {
+  /* Styles */
+}
