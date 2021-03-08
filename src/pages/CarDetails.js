@@ -40,7 +40,7 @@ function CarDetails(props) {
               src={`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
               alt={car.name}
             />
-            <h1 className={styles.carMakeModelName}><span>{car.make} {car.model}: only {car.price.toLocaleString('en')}! </span></h1>
+            <h2 className={styles.carMakeModelName}><span>{car.make} {car.model}: Only {car.price.toLocaleString('en')}! </span></h2>
             <div className={styles.cartButtonTop}>
               <AddToCartButton car={car} />
             </div>
@@ -49,24 +49,27 @@ function CarDetails(props) {
             <section className={styles.carStatsContainer}>
               <div className={styles.carDescriptionShort}><p>{car.descShort}</p></div>
               <h2 className={styles.carStatsTitle}>Car Stats</h2>
-              <div className={styles.carMake}><p>
-                <span>Make: {car.make}</span></p>
-              </div>
-              <div className={styles.carModel}>
-                <p><span>Model: {car.model}</span></p>
-              </div>
-              <div className={styles.carYear}>
-                <p><span>Year {car.year}</span></p>
-              </div>
-              <div className={styles.carMileage}>
-                <p><span>Mileage {car.miles}</span></p>
-              </div>
-              <div className={styles.carVIN}>
-                <p><span>VIN {car.vin}</span></p>
-              </div>
-              <div className={styles.carCity}>
-                <p><span>City {car.city}</span></p>
-              </div>
+              <section className={styles.carStats}>
+                <div className={styles.carMake}>
+                <p  className={styles.carAttribute}><span>Make:</span></p> <p className={styles.carValue}><span>{car.make}</span></p>
+                  {/* <div className={styles.spacingDiv}></div> */}
+                </div>
+                <div className={styles.carModel}>
+                  <p  className={styles.carAttribute}><span>Model:</span> </p> <p   className={styles.carValue}><span> {car.model}</span></p>
+                </div>
+                <div className={styles.carYear}>
+                  <p  className={styles.carAttribute}><span>Year</span></p> <p  className={styles.carValue}> <span> {car.year}</span></p>
+                </div>
+                <div className={styles.carMileage}>
+                  <p  className={styles.carAttribute}><span>Mileage</span></p> <p  className={styles.carValue}> <span> {car.miles}</span></p>
+                </div>
+                <div className={styles.carVIN}>
+                  <p className={styles.carAttribute}><span>VIN</span> </p> <p  className={styles.carValue}><span> {car.vin}</span></p>
+                </div>
+                <div className={styles.carCity}>
+                  <p  className={styles.carAttribute}><span>City </span></p> <p  className={styles.carValue}> <span>{car.city}</span></p>
+                </div>
+              </section>
             </section>
             <section className={styles.carPriceDescContainer}>
               <h3 className={styles.carPriceLabel}>Price</h3>
