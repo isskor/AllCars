@@ -52,9 +52,7 @@ const SearchForm = () => {
         <div className={styles.search_icon_lg}>
           <span>icon</span>
         </div>
-        <div
-          className={`${styles.filters} ${showFilters ? styles.dropAnim : ''}`}
-        >
+        <div className={styles.filters}>
           <div
             className={`${styles.line} ${showFilters ? styles.lineAnim : ''}`}
           ></div>
