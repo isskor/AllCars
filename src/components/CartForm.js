@@ -1,26 +1,34 @@
 import React from 'react';
+import { useState } from 'react' ;
 import styles from '../css/cart.module.css';
 
 const CartForm = () => {
+
+    const [form, setForm] = useState({name :"", email:"", phone:"", address:"", method:""});
+
+    const handleChange = (e) => {
+      setForm( {...form , [e.target.name]  : [e.target.value] });
+    }
+    
     return (
         <div>
-            <form >
+            <form onChange={handleChange}>
                 <label>
                     Full name:<br />
-                    <input type="text" className={styles.cart_input} />
+                    <input type="text" className={styles.cart_input} name="name"/>
                 </label> <br />
                 <label>
                     E-mail:<br />
-                    <input type="text" className={styles.cart_input} />
+                    <input type="text" className={styles.cart_input} name="email"/>
                 </label> <br />
                 <label>
                     Phone number:<br />
-                    <input type="text" className={styles.cart_input} />
+                    <input type="text" className={styles.cart_input} name="phone"/>
                 </label>
                 <br />
                 <label>
                     Address:<br />
-                    <input type="text" className={styles.cart_input} />
+                    <input type="text" className={styles.cart_input} name = "address"/>
                 </label>
                 <br />
                 <div className={styles.radiotext}>
@@ -29,9 +37,9 @@ const CartForm = () => {
                     <label>Express delivery</label>
                 </div>
                 <div className={styles.radio}>
-                    <input type="radio" value="Pick up" />
-                    <input type="radio" value="Delivery" /> 
-                    <input type="radio" value="Express delivery" /> 
+                    <input type="radio" value="Pick up" name="method"/>
+                    <input type="radio" value="Delivery" name="method"/> 
+                    <input type="radio" value="Express delivery" name="method" /> 
                 </div>
                 <br />
                 </form>
