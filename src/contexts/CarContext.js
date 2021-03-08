@@ -55,10 +55,6 @@ const CarContextProvider = ({ children }) => {
   );
 
   const newFiltersHelper = (filterTypeOne, filterTypeTwo) => {
-    console.log('newfilters');
-    console.log(filters);
-    console.log(filteredCarsObject);
-    console.log(cars);
     return cars.filter((car) => {
       if (
         filteredCarsObject.categories[filterTypeOne].length > 0 ||
@@ -136,9 +132,6 @@ const CarContextProvider = ({ children }) => {
 
   // useEffect(() => {
   // }, [filteredCars]);
-
-  console.log(filteredCarsObject);
-  console.log(filteredCars);
 
   return (
     <Provider
