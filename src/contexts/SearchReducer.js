@@ -73,18 +73,12 @@ export const searchReducer = (state, action) => {
     case 'FILTER_PRICE_ACTION':
       return {
         ...state,
-        price: {
-          min: payload.min,
-          max: payload.max,
-        },
+        price: { ...state.price, [payload.minOrMax]: payload.value },
       };
     case 'FILTER_MILAGE_ACTION':
       return {
         ...state,
-        milage: {
-          min: payload.min,
-          max: payload.max,
-        },
+        milage: { ...state.milage, [payload.minOrMax]: payload.value },
       };
     case 'FILTER_SEARCH_ACTION':
       return;
