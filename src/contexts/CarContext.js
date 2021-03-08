@@ -1,6 +1,7 @@
-import { useState, createContext, useReducer } from 'react';
+import { useState, createContext, useReducer, useEffect } from 'react';
 import carsJSON from '../json/cars.json';
-
+import { initialCarState, searchReducer } from './SearchReducer';
+// fetch data
 const carList = carsJSON.map((car, i) => {
   if (i < 3) {
     return {
@@ -13,8 +14,9 @@ const carList = carsJSON.map((car, i) => {
     discounted: false,
   };
 });
-const getFilters = (type) => {
-  const filterSet = new Set(carList.map((c) => c[type]));
+// filter lists
+const getFilters = (type, list = carList) => {
+  const filterSet = new Set(list.map((c) => c[type]));
   if (type === 'year') {
     const newFilters = [...filterSet].sort((a, b) => (a > b ? -1 : 1));
 
@@ -23,7 +25,6 @@ const getFilters = (type) => {
   const newFilters = [...filterSet].sort((a, b) => (a < b ? -1 : 1));
   return newFilters;
 };
-
 const filterList = () => {
   return [
     {
@@ -40,19 +41,79 @@ const filterList = () => {
     },
   ];
 };
+
+const handlePriceRange = (state, min, max) => {
+  // filtersearchedCars
+  // filter method
+  // set new searched cars
+  return state.filter((item) => item.price >= min && item.price <= max);
+};
+const handleMilageRange = (state, min, max) => {
+  // filtersearchedCars
+  // filter method
+  // set new searched cars
+  return state.filter((item) => item.miles >= min && item.miles <= max);
+};
+
 export const CarContext = createContext();
-
-// const searchReducer(state, action) => {
-
-// }
 
 const CarContextProvider = ({ children }) => {
   const { Provider } = CarContext;
   const [cars, setCars] = useState(carList);
   const [filters, setFilters] = useState(filterList());
-  // const [cars, dispatch] = useReducer(searchReducer, cars)
+  const [filteredCars, setFilteredCars] = useState(cars);
+  const [filteredCarsObject, dispatch] = useReducer(
+    searchReducer,
+    initialCarState
+  );
 
-  return <Provider value={{ cars, filters }}>{children}</Provider>;
+  const handleFilteredCars = (stateToFilter, filterObject) => {
+    const { categories, price, milage } = filterObject;
+
+    let newCarList = stateToFilter;
+
+    if (price) {
+      newCarList = newCarList.filter(
+        (car) => car.price >= price.min && car.price <= price.max
+      );
+    }
+    if (milage) {
+      newCarList = newCarList.filter(
+        (car) =>
+          (car.miles >= milage.min && car.miles <= milage.max) || !car.miles
+      );
+    }
+    if (categories.make.length) {
+      newCarList = newCarList.filter((car) => {
+        return categories.make.includes(car.make);
+      });
+    }
+    if (categories.model.length) {
+      newCarList = newCarList.filter((car) => {
+        return categories.model.includes(car.model);
+      });
+    }
+    if (categories.year.length) {
+      newCarList = newCarList.filter((car) => {
+        return categories.year.includes(car.year);
+      });
+    }
+
+    setFilteredCars(newCarList);
+  };
+
+  useEffect(() => {
+    handleFilteredCars(cars, filteredCarsObject);
+  }, [filteredCarsObject]);
+
+  console.log(filteredCarsObject);
+  console.log(filteredCars);
+
+  return (
+    <Provider value={{ cars, filters, dispatch, filteredCars }}>
+      {children}
+    </Provider>
+  );
 };
 
 export default CarContextProvider;

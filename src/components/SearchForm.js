@@ -1,10 +1,17 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import styles from '../css/SearchForm.module.css';
 import Filters from './Filters';
 import SliderInput from './SliderInput';
+import useOutsideClick from './useOutsideClick';
 const SearchForm = () => {
+  const filterRef = useRef();
   const [showFilters, setshowFilters] = useState(false);
+  const handleClickOutside = () => {
+    setshowFilters(false);
+    console.log('click');
+  };
 
+  useOutsideClick(filterRef, handleClickOutside);
   return (
     <form
       className={styles.search_wrapper}
@@ -18,18 +25,18 @@ const SearchForm = () => {
         <span className={styles.search_icon_sm}>icon</span>
       </div>
       <div className={styles.range_sliders}>
-        <SliderInput min={1000} max={1000000} type={'Price'} />
-        <SliderInput min={1000} max={1000000} type={'Milage'} />
+        <SliderInput min={100000} max={800000} type={'Price'} />
+        <SliderInput min={0} max={70000} type={'Milage'} />
       </div>
-      <div className={styles.filter_btn}>
+      <div className={styles.filter_btn} ref={filterRef}>
         <button onClick={() => setshowFilters(!showFilters)}>
           {!showFilters ? 'Filters' : 'Close'}
         </button>
         {showFilters && (
           <>
             <div className={styles.range_sliders_sm}>
-              <SliderInput min={1000} max={1000000} type={'Price'} />
-              <SliderInput min={1000} max={1000000} type={'Milage'} />
+              <SliderInput min={100000} max={800000} type={'Price'} />
+              <SliderInput min={0} max={70000} type={'Milage'} />
             </div>
             <Filters />
           </>

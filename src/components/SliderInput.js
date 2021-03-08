@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { CarContext } from '../contexts/CarContext';
 import styles from '../css/SliderInput.module.css';
 const SliderInput = ({ min, max, type }) => {
+  const { dispatch } = useContext(CarContext);
   let thumbsize = 14;
   const [avg, setAvg] = useState((min + max) / 2);
-  const [minVal, setMinVal] = useState(avg * 0.5);
-  const [maxVal, setMaxVal] = useState(avg * 1.5);
+  const [minVal, setMinVal] = useState(min);
+  const [maxVal, setMaxVal] = useState(max);
 
   const width = 120;
   const minWidth =
@@ -22,6 +24,13 @@ const SliderInput = ({ min, max, type }) => {
 
   useEffect(() => {
     setAvg((maxVal + minVal) / 2);
+    dispatch({
+      type: type === 'Price' ? 'FILTER_PRICE_ACTION' : 'FILTER_MILAGE_ACTION',
+      payload: {
+        min: minVal,
+        max: maxVal,
+      },
+    });
   }, [minVal, maxVal]);
 
   return (

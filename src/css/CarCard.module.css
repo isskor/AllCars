@@ -1,0 +1,71 @@
+.carCard {
+    margin: 1rem 1rem;
+    background-color: var(--card-bg);
+    box-shadow: 0px 4px 9px #00000040;
+    border-radius: 4px;
+    display: flex;
+    overflow: hidden;
+}
+
+.imgContainer {
+    width: 50%;
+    position: relative;
+}
+
+.carPrice {
+    position: absolute;
+    top: 0;
+    right: 0.3rem;
+    color: var(--primary-color);
+}
+
+.imgTextWrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1rem 0.2rem;
+    background-color: #424242ad;
+}
+
+.wrapperText {
+    color: var(--primary-color);
+}
+
+.statsContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: space-between;
+    padding: 0.1rem 0.3rem;
+}
+
+.model {
+    font-size: 0.75rem;
+    text-decoration: underline;
+    opacity: 30%;
+}
+
+.milesContainer {
+    justify-self: right;
+}
+
+.miles {
+    font-size: 0.75rem;
+    text-decoration: underline;
+    opacity: 30%;
+
+}
+
+.addBtn {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 0;
+    width: 5.5rem;
+    height: 2rem;
+    justify-self: right;
+    align-self: end;
+    margin: 0.3rem 0.1rem;
+}

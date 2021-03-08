@@ -2,9 +2,10 @@ import { useState, useContext } from 'react';
 import styles from '../css/Filters.module.css';
 import Dropdown from './Dropdown';
 import { CarContext } from '../contexts/CarContext';
+
 const Filters = () => {
   const [isOpen, setIsOpen] = useState(null);
-  const { filters } = useContext(CarContext);
+  const { filters, dispatch } = useContext(CarContext);
   console.log(filters);
 
   return (
@@ -16,13 +17,22 @@ const Filters = () => {
             className={styles.option_btn}
             onClick={() => setIsOpen(isOpen === i ? false : i)}
           >
-            {filterList.type}
+            {filterList.active ? filterList.active : 'choose'}
           </button>
           {isOpen === i && (
-            <Dropdown filterList={filterList.list} setIsOpen={setIsOpen} />
+            <Dropdown
+              filterList={filterList.list}
+              setIsOpen={setIsOpen}
+              type={filterList.type}
+            />
           )}
         </div>
       ))}
+      <div className={styles.option_btn}>
+        <button onClick={() => dispatch({ type: 'FILTER_RESET_ACTION' })}>
+          Reset Filters
+        </button>
+      </div>
     </div>
   );
 };
