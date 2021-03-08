@@ -1,7 +1,20 @@
 ul {
   list-style: none;
 }
+.filter_list::-webkit-scrollbar {
+  width: 0.4rem;
+  background: transparent;
+  /* height: 10%; */
+}
+.filter_list::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
 
+  border-radius: 1rem;
+  border-color: transparent;
+}
+.filter_list::-webkit-scrollbar-track {
+  background: transparentre;
+}
 .filter_list {
   position: absolute;
   right: 0;
@@ -32,9 +45,10 @@ ul {
 
 @media (min-width: 768px) {
   .filter_list {
-    width: 70%;
+    width: 100%;
     height: 30vh;
-    top: 0;
+    top: 3.5rem;
+    left: 0;
   }
 }
 

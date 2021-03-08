@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/ActiveFilters.module.css';
+import { CloseCircleOutlined } from '@ant-design/icons';
 const ActiveFilters = () => {
   const { dispatch, filteredCarsObject } = useContext(CarContext);
   const { make, model, year } = filteredCarsObject.categories;
@@ -22,10 +23,11 @@ const ActiveFilters = () => {
           <ul>
             {activeFilters.map((item, i) => (
               <div
-                className='active_container'
+                className={styles.active_filter}
                 onClick={() => handleRemoveFilter(item)}
               >
-                x<li key={i}>{item}</li>
+                <CloseCircleOutlined />
+                <li key={i}>{item}</li>
               </div>
             ))}
           </ul>
