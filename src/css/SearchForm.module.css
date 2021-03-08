@@ -25,22 +25,6 @@
   position: relative;
 }
 
-.form_group_search {
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.search_input {
-  width: 80%;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--secondary-color);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
 .form_group_label {
   margin-bottom: 1rem;
   flex-basis: 100%;

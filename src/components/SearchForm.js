@@ -1,15 +1,13 @@
-import { useState, useRef, useContext } from 'react';
-import { CarContext } from '../contexts/CarContext';
+import { useState, useRef } from 'react';
 import styles from '../css/SearchForm.module.css';
 import ActiveFilters from './ActiveFilters';
+import CarSearchInput from './CarSearchInput';
 import Filters from './Filters';
 import SliderInput from './SliderInput';
 import useOutsideClick from './useOutsideClick';
 const SearchForm = () => {
   const filterRef = useRef();
   const [showFilters, setshowFilters] = useState(false);
-
-  const { dispatch, filteredCarsObject } = useContext(CarContext);
 
   const handleClickOutside = () => {
     setshowFilters(false);
@@ -22,18 +20,7 @@ const SearchForm = () => {
       <form onSubmit={(e) => e.preventDefault()}>
         <h3>Find Your Vintage Dream</h3>
         <div className={styles.form_group_search}>
-          <span className={styles.form_group_label}>Search</span>
-          <input
-            type='text'
-            className={styles.search_input}
-            value={filteredCarsObject.search}
-            onChange={(e) =>
-              dispatch({
-                type: 'FILTER_SEARCH_ACTION',
-                payload: e.target.value,
-              })
-            }
-          />
+          <CarSearchInput />
 
           <span className={styles.search_icon_sm}>icon</span>
         </div>
