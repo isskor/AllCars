@@ -22,26 +22,26 @@ const handleFilters = (categoryState, payload) => {
     ...categoryState,
     [categoryType]: [...categoryState[categoryType], categoryValue],
   };
-  // this is same as this, but dynamic
-  //   if (categoryType === 'make') {
-  //     return {
-  //       ...categoryState,
-  //       make: [...categoryState.make, categoryValue],
-  //     };
-  //   }
-  //   if (categoryType === 'model') {
-  //     return {
-  //       ...categoryState,
-  //       model: [...categoryState.model, categoryValue],
-  //     };
-  //   }
-  //   if (categoryType === 'year') {
-  //     return {
-  //       ...categoryState,
-  //       year: [...categoryState.year, categoryValue],
-  //     };
-  //   }
 };
+// this is same as this, but dynamic
+//   if (categoryType === 'make') {
+//     return {
+//       ...categoryState,
+//       make: [...categoryState.make, categoryValue],
+//     };
+//   }
+//   if (categoryType === 'model') {
+//     return {
+//       ...categoryState,
+//       model: [...categoryState.model, categoryValue],
+//     };
+//   }
+//   if (categoryType === 'year') {
+//     return {
+//       ...categoryState,
+//       year: [...categoryState.year, categoryValue],
+//     };
+//   }
 
 export const searchReducer = (state, action) => {
   const { type, payload } = action;
