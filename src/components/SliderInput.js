@@ -5,8 +5,8 @@ const SliderInput = ({ min, max, type }) => {
   const { dispatch } = useContext(CarContext);
   let thumbsize = 14;
   const [avg, setAvg] = useState((min + max) / 2);
-  const [minVal, setMinVal] = useState(avg * 0.5);
-  const [maxVal, setMaxVal] = useState(avg * 1.5);
+  const [minVal, setMinVal] = useState(min);
+  const [maxVal, setMaxVal] = useState(max);
 
   const width = 120;
   const minWidth =

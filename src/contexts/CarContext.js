@@ -79,15 +79,35 @@ const CarContextProvider = ({ children }) => {
     }
     if (milage) {
       newCarList = newCarList.filter(
-        (car) => car.miles >= milage.min && car.miles <= milage.max
+        (car) =>
+          (car.miles >= milage.min && car.miles <= milage.max) || !car.miles
       );
     }
+    if (categories.make.length) {
+      newCarList = newCarList.filter((car) => {
+        return categories.make.includes(car.make);
+      });
+    }
+    if (categories.model.length) {
+      newCarList = newCarList.filter((car) => {
+        return categories.model.includes(car.model);
+      });
+    }
+    if (categories.year.length) {
+      newCarList = newCarList.filter((car) => {
+        return categories.year.includes(car.year);
+      });
+    }
+
     setFilteredCars(newCarList);
   };
 
   useEffect(() => {
     handleFilteredCars(cars, filteredCarsObject);
   }, [filteredCarsObject]);
+
+  console.log(filteredCarsObject);
+  console.log(filteredCars);
 
   return (
     <Provider value={{ cars, filters, dispatch, filteredCars }}>

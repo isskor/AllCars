@@ -47,6 +47,10 @@ export const searchReducer = (state, action) => {
         ...state,
         categories: handleFilters(state.categories, payload),
       };
+    case 'FILTER_REMOVE_CATEGORY_ACTION':
+      return {
+        ...state,
+      };
     case 'FILTER_PRICE_ACTION':
       return {
         ...state,
@@ -63,7 +67,7 @@ export const searchReducer = (state, action) => {
           max: payload.max,
         },
       };
-    case 'FILTER_SEACH_ACTION':
+    case 'FILTER_SEARCH_ACTION':
       return;
     case 'FILTER_RESET_ACTION':
       return initialCarState;

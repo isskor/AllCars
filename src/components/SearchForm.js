@@ -26,7 +26,7 @@ const SearchForm = () => {
       </div>
       <div className={styles.range_sliders}>
         <SliderInput min={100000} max={800000} type={'Price'} />
-        <SliderInput min={1000} max={70000} type={'Milage'} />
+        <SliderInput min={0} max={70000} type={'Milage'} />
       </div>
       <div className={styles.filter_btn} ref={filterRef}>
         <button onClick={() => setshowFilters(!showFilters)}>
@@ -36,7 +36,7 @@ const SearchForm = () => {
           <>
             <div className={styles.range_sliders_sm}>
               <SliderInput min={100000} max={800000} type={'Price'} />
-              <SliderInput min={1000} max={70000} type={'Milage'} />
+              <SliderInput min={0} max={70000} type={'Milage'} />
             </div>
             <Filters />
           </>

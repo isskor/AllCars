@@ -29,7 +29,7 @@ const Filters = () => {
         </div>
       ))}
       <div className={styles.option_btn}>
-        <button onClick={() => dispatch({ type: 'RESET_FILTERS_ACTION' })}>
+        <button onClick={() => dispatch({ type: 'FILTER_RESET_ACTION' })}>
           Reset Filters
         </button>
       </div>
