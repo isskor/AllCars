@@ -18,24 +18,29 @@ export const initialCarState = {
 const handleFilters = (categoryState, payload) => {
   const { categoryType, categoryValue } = payload;
 
-  if (categoryType === 'make') {
-    return {
-      ...categoryState,
-      make: [...categoryState.make, categoryValue],
-    };
-  }
-  if (categoryType === 'model') {
-    return {
-      ...categoryState,
-      model: [...categoryState.model, categoryValue],
-    };
-  }
-  if (categoryType === 'year') {
-    return {
-      ...categoryState,
-      year: [...categoryState.year, categoryValue],
-    };
-  }
+  return {
+    ...categoryState,
+    [categoryType]: [...categoryState[categoryType], categoryValue],
+  };
+  // this is same as this, but dynamic
+  //   if (categoryType === 'make') {
+  //     return {
+  //       ...categoryState,
+  //       make: [...categoryState.make, categoryValue],
+  //     };
+  //   }
+  //   if (categoryType === 'model') {
+  //     return {
+  //       ...categoryState,
+  //       model: [...categoryState.model, categoryValue],
+  //     };
+  //   }
+  //   if (categoryType === 'year') {
+  //     return {
+  //       ...categoryState,
+  //       year: [...categoryState.year, categoryValue],
+  //     };
+  //   }
 };
 
 export const searchReducer = (state, action) => {
