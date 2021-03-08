@@ -1,0 +1,14 @@
+.active_filters {
+  margin: 2.5rem auto;
+}
+.active_filters ul {
+  display: flex;
+  justify-content: flex-start;
+}
+.active_filters li {
+  background-color: var(--card-bg);
+  color: var(--secondary-color);
+  border-radius: 0.75rem;
+  margin-right: 1rem;
+  padding: 0.5rem 1.25rem;
+}

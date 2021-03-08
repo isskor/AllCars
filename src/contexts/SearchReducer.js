@@ -43,6 +43,10 @@ const handleFilters = (categoryState, payload) => {
 //     };
 //   }
 
+const handleRemoveFilter = (categoryState, payload) => {
+  return;
+};
+
 export const searchReducer = (state, action) => {
   const { type, payload } = action;
   console.log(action);
@@ -55,6 +59,7 @@ export const searchReducer = (state, action) => {
     case 'FILTER_REMOVE_CATEGORY_ACTION':
       return {
         ...state,
+        categories: handleRemoveFilter(state.categories, payload),
       };
     case 'FILTER_PRICE_ACTION':
       return {
