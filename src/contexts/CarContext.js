@@ -42,19 +42,6 @@ const filterList = () => {
   ];
 };
 
-const handlePriceRange = (state, min, max) => {
-  // filtersearchedCars
-  // filter method
-  // set new searched cars
-  return state.filter((item) => item.price >= min && item.price <= max);
-};
-const handleMilageRange = (state, min, max) => {
-  // filtersearchedCars
-  // filter method
-  // set new searched cars
-  return state.filter((item) => item.miles >= min && item.miles <= max);
-};
-
 export const CarContext = createContext();
 
 const CarContextProvider = ({ children }) => {
@@ -66,6 +53,46 @@ const CarContextProvider = ({ children }) => {
     searchReducer,
     initialCarState
   );
+
+  const newFiltersHelper = (filterTypeOne, filterTypeTwo) => {
+    console.log('newfilters');
+    console.log(filters);
+    console.log(filteredCarsObject);
+    console.log(cars);
+    return cars.filter((car) => {
+      if (
+        filteredCarsObject.categories[filterTypeOne].length > 0 ||
+        filteredCarsObject.categories[filterTypeTwo].length > 0
+      ) {
+        return (
+          filteredCarsObject.categories[filterTypeOne].includes(
+            car[filterTypeOne]
+          ) ||
+          filteredCarsObject.categories[filterTypeTwo].includes(
+            car[filterTypeTwo]
+          )
+        );
+      }
+      return car;
+    });
+  };
+
+  const handleNewFilters = () => {
+    setFilters([
+      {
+        type: 'Make',
+        list: getFilters('make', newFiltersHelper('model', 'year')),
+      },
+      {
+        type: 'Model',
+        list: getFilters('model', newFiltersHelper('make', 'year')),
+      },
+      {
+        type: 'Year',
+        list: getFilters('year', newFiltersHelper('make', 'model')),
+      },
+    ]);
+  };
 
   const handleFilteredCars = (stateToFilter, filterObject) => {
     const { categories, price, milage } = filterObject;
@@ -104,13 +131,19 @@ const CarContextProvider = ({ children }) => {
 
   useEffect(() => {
     handleFilteredCars(cars, filteredCarsObject);
+    handleNewFilters();
   }, [filteredCarsObject]);
+
+  // useEffect(() => {
+  // }, [filteredCars]);
 
   console.log(filteredCarsObject);
   console.log(filteredCars);
 
   return (
-    <Provider value={{ cars, filters, dispatch, filteredCars }}>
+    <Provider
+      value={{ cars, filters, dispatch, filteredCars, filteredCarsObject }}
+    >
       {children}
     </Provider>
   );
