@@ -21,7 +21,6 @@ const SearchForm = () => {
         <h3>Find Your Vintage Dream</h3>
         <div className={styles.form_group_search}>
           <CarSearchInput />
-
           <span className={styles.search_icon_sm}>icon</span>
         </div>
         <div className={styles.range_sliders}>

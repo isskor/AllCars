@@ -19,8 +19,6 @@ const CarSearchInput = () => {
           })
         }
       />
-
-      <span className={styles.search_icon_sm}>icon</span>
     </div>
   );
 };
