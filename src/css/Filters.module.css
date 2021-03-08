@@ -11,18 +11,30 @@
   margin: 2rem 1rem;
 }
 
-.option_btn {
-  align-self: start;
-  width: 33%;
+.reset_btn {
+  flex-basis: 12.5%;
+  justify-self: flex-end;
+  align-self: flex-end;
+  margin-bottom: 1rem;
 }
-
 @media (min-width: 768px) {
   .filter_container {
-    position: absolute;
-    top: 7rem;
-    right: 0;
-    width: 270px;
+    display: flex;
+    align-items: center;
     background: var(--card-bg);
     border-radius: 1.5rem;
+    width: 100%;
+  }
+
+  .form_group_select {
+    flex-direction: column;
+    flex-basis: 25%;
+    align-items: flex-start;
+    margin: 1rem 0;
+  }
+
+  .reset_btn {
+    flex-basis: auto;
+    margin-left: auto;
   }
 }

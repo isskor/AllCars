@@ -16,6 +16,7 @@ const SearchForm = () => {
     <form
       className={styles.search_wrapper}
       onSubmit={(e) => e.preventDefault()}
+      ref={filterRef}
     >
       <h3>Find Your Vintage Dream</h3>
       <div className={styles.form_group_search}>
@@ -28,10 +29,15 @@ const SearchForm = () => {
         <SliderInput min={100000} max={800000} type={'Price'} />
         <SliderInput min={0} max={70000} type={'Milage'} />
       </div>
-      <div className={styles.filter_btn} ref={filterRef}>
+      <div className={styles.filter_btn}>
         <button onClick={() => setshowFilters(!showFilters)}>
           {!showFilters ? 'Filters' : 'Close'}
         </button>
+      </div>
+      <div className={styles.search_icon_lg}>
+        <span>icon</span>
+      </div>
+      <div className={styles.filters}>
         {showFilters && (
           <>
             <div className={styles.range_sliders_sm}>
@@ -41,9 +47,6 @@ const SearchForm = () => {
             <Filters />
           </>
         )}
-      </div>
-      <div className={styles.search_icon_lg}>
-        <span>icon</span>
       </div>
     </form>
   );
