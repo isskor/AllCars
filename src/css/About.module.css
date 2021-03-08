@@ -22,6 +22,8 @@ a:hover {
   position: relative;
   width: 100%;
 }
+.aboutHeroContainer img {
+}
 .aboutTitle {
   text-align: left;
   font-size: 3vh;
@@ -38,6 +40,7 @@ a:hover {
   width: 95%;
   margin: 1vh auto;
   display: grid;
+  /* grid-gap: 1vh; */
   grid-template-areas:
     "theText theText theText theText theText theText"
     "theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage theStaffImage"
@@ -89,16 +92,22 @@ a:hover {
   padding: 10px;
   border: 1px solid #eaeaea;
 }
+/* .contactForm {
+}
+.contactInformation {
+}
+.customerContact {
+} */
 
 .footerNav {
   margin: 2vh 2vw;
 }
 
 /* iPads (portrait and landscape) ----------- */
+/* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    } */
 
 @media only screen and (min-device-width: 768px) {
-  .aboutTitle {
-  }
   .aboutContentContainer {
     grid-template-areas:
       "theText theText theText . theStaffImage theStaffImage"
@@ -117,6 +126,7 @@ a:hover {
     display: none;
   }
 }
+/* @media only screen and (min-device-width : 992px) and (max-device-width : 1199px) { */
 @media only screen and (min-device-width: 992px) {
   /* Styles */
 }

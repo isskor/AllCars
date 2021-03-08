@@ -9,7 +9,6 @@ const About = () => {
             <section className={styles.aboutContainer}>
                 <section className={styles.aboutHeroContainer}>
                     <h1 className={styles.aboutTitle}>About us</h1>
-                    {/* <img className={styles.aboutHeroImage} src="/assets/background/allcars_about.jpg" alt="About Header" /> */}
                 </section>
                 <div className={styles.aboutContentContainer}>
                     <section className={styles.aboutText}>
