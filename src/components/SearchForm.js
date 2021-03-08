@@ -18,11 +18,8 @@ const SearchForm = () => {
 
   useOutsideClick(filterRef, handleClickOutside);
   return (
-    <div className='' ref={filterRef}>
-      <form
-        className={styles.search_wrapper}
-        onSubmit={(e) => e.preventDefault()}
-      >
+    <div className={styles.search_wrapper} ref={filterRef}>
+      <form onSubmit={(e) => e.preventDefault()}>
         <h3>Find Your Vintage Dream</h3>
         <div className={styles.form_group_search}>
           <span className={styles.form_group_label}>Search</span>

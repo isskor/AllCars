@@ -1,13 +1,16 @@
 .search_wrapper {
+  width: 80%;
+  margin: 0 auto;
+  animation: dropDown 0.8s ease-out;
+}
+
+.search_wrapper form {
   background: var(--card-bg);
   padding: 1rem 2rem;
   border-radius: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
-  margin: 0 auto;
-  animation: dropDown 0.8s ease-out;
 }
 
 .search_wrapper h3 {
@@ -61,7 +64,7 @@ span {
 }
 
 @media (min-width: 768px) {
-  .search_wrapper {
+  .search_wrapper form {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
