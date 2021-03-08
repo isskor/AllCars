@@ -42,15 +42,6 @@ const filterList = () => {
   ];
 };
 
-// const handleSearchInput = (inputText) => {
-//   // filtersearchedCars
-//   // filter method
-
-//   // set new searched cars
-//   setSearchedCars()
-// }
-const maxMin = (min, max) => {};
-
 const handlePriceRange = (state, min, max) => {
   // filtersearchedCars
   // filter method
@@ -69,62 +60,8 @@ export const CarContext = createContext();
 const CarContextProvider = ({ children }) => {
   const { Provider } = CarContext;
   const [cars, setCars] = useState(carList);
-  const [searchedCars, setSearchedCars] = useState(cars);
   const [filters, setFilters] = useState(filterList());
 
-  const filterCars = (state, filterType, filterItem) => {
-    console.log(filterItem);
-    console.log(filterType);
-    const filteredCars = state.filter((car) => car[filterType] === filterItem);
-    // const index = filters.findIndex((list) => list.type === 'Make');
-    setFilters([
-      {
-        type: 'Make',
-        list: getFilters('make', filteredCars),
-        active: filterType === 'make' ? filterItem : filters[0].active,
-      },
-      {
-        type: 'Model',
-        list: getFilters('model', filteredCars),
-        active: filterType === 'model' ? filterItem : filters[1].active,
-      },
-      {
-        type: 'Year',
-        list: getFilters('year', filteredCars),
-        active: filterType === 'year' ? filterItem : filters[2].active,
-      },
-    ]);
-
-    return filteredCars;
-  };
-
-  const searchReducer = (filteredCars, action) => {
-    switch (action.type) {
-      case 'FILTER_ACTION':
-        return filterCars(
-          filteredCars,
-          action.payload.filterCategory,
-          action.payload.filterItem
-        );
-      case 'RESET_FILTERS_ACTION':
-        setFilters(filterList());
-        return cars;
-      case 'PRICE_RANGE_ACTION':
-        // action.payload{min, max}
-        return handlePriceRange(cars, action.payload.min, action.payload.max);
-
-      case 'MILAGE_RANGE_ACTION':
-        return handleMilageRange(cars, action.payload.min, action.payload.max);
-
-      default:
-        return filteredCars;
-    }
-  };
-
-  const [filteredCars, dispatch] = useReducer(searchReducer, cars);
-
-  console.log(filteredCars);
-  console.log(filters);
   return (
     <Provider value={{ cars, filters, dispatch, filteredCars }}>
       {children}
