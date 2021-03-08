@@ -17,7 +17,6 @@ function App() {
             <Route exact path='/car/:id' />
             <Route exact path='/cart' />
             <Route path='/receipt' />
-            <Test />
           </CartContextProvider>
         </CarContextProvider>
       </Router>
