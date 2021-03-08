@@ -6,8 +6,8 @@ const CarSearchInput = () => {
   const { dispatch, filteredCarsObject } = useContext(CarContext);
 
   return (
-    <div className={styles.form_group_search}>
-      <span className={styles.form_group_label}>Search</span>
+    <div className={styles.search_group}>
+      <span className={styles.search_label}>Search</span>
       <input
         type='text'
         className={styles.search_input}

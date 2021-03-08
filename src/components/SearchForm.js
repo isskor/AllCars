@@ -1,10 +1,12 @@
 import { useState, useRef } from 'react';
-import styles from '../css/SearchForm.module.css';
 import ActiveFilters from './ActiveFilters';
 import CarSearchInput from './CarSearchInput';
 import Filters from './Filters';
 import SliderInput from './SliderInput';
 import useOutsideClick from './useOutsideClick';
+// styles
+import styles from '../css/SearchForm.module.css';
+import { SearchOutlined } from '@ant-design/icons';
 const SearchForm = () => {
   const filterRef = useRef();
   const [showFilters, setshowFilters] = useState(false);
@@ -21,7 +23,9 @@ const SearchForm = () => {
         <h3>Find Your Vintage Dream</h3>
         <div className={styles.form_group_search}>
           <CarSearchInput />
-          <span className={styles.search_icon_sm}>icon</span>
+          <div className={`${styles.search_icon} ${styles.search_icon_sm}`}>
+            <SearchOutlined />
+          </div>
         </div>
         <div className={styles.range_sliders}>
           <SliderInput min={100000} max={800000} type={'Price'} />
@@ -32,8 +36,8 @@ const SearchForm = () => {
             {!showFilters ? 'Filters' : 'Close'}
           </button>
         </div>
-        <div className={styles.search_icon_lg}>
-          <span>icon</span>
+        <div className={`${styles.search_icon} ${styles.search_icon_lg}`}>
+          <SearchOutlined />
         </div>
         <div className={styles.filters}>
           <div

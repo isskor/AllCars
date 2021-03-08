@@ -20,14 +20,14 @@
   font-family: var(--main-font);
 }
 
+.form_group_search {
+  display: flex;
+  align-items: center;
+}
+
 .filter_btn {
   margin: 1rem 0;
   position: relative;
-}
-
-.form_group_label {
-  margin-bottom: 1rem;
-  flex-basis: 100%;
 }
 
 span {
@@ -41,6 +41,20 @@ span {
 }
 .range_sliders_sm {
   animation: dropDown 0.6s;
+}
+
+.search_icon {
+  background: var(--primary-button);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search_icon svg {
+  margin: 0;
+  color: var(--dark-color);
 }
 
 .search_icon_lg {
@@ -83,6 +97,8 @@ span {
     flex-basis: 12.5%;
     display: flex;
     justify-content: center;
+    /* align-self: center; */
+    padding-top: 0.5rem;
   }
 
   .filters {
@@ -96,8 +112,8 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 12.5%;
-    padding-top: 1rem;
+    align-self: start;
+    margin-top: 1rem;
   }
 
   .search_icon_sm {
