@@ -35,6 +35,11 @@ function Home() {
         <SearchForm />
       </div>
       <div className={style.carList}>
+        {showCars.length === 0 && (
+          <div>
+            <h1>no cars</h1>
+          </div>
+        )}
         {showCars.map((car, i) => (
           <CarCard key={i} car={car} />
         ))}

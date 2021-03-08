@@ -2,11 +2,16 @@ import { useState, useEffect, useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/SliderInput.module.css';
 const SliderInput = ({ min, max, type }) => {
-  const { dispatch } = useContext(CarContext);
+  const { dispatch, filteredCarsObject } = useContext(CarContext);
+  const { price, milage } = filteredCarsObject;
+
+  const maxType = type === 'Price' ? price.max : milage.max;
+  const minType = type === 'Price' ? price.min : milage.min;
+
   let thumbsize = 14;
   const [avg, setAvg] = useState((min + max) / 2);
-  const [minVal, setMinVal] = useState(min);
-  const [maxVal, setMaxVal] = useState(max);
+  const [minVal, setMinVal] = useState(minType);
+  const [maxVal, setMaxVal] = useState(maxType);
 
   const width = 120;
   const minWidth =
@@ -24,14 +29,19 @@ const SliderInput = ({ min, max, type }) => {
 
   useEffect(() => {
     setAvg((maxVal + minVal) / 2);
+    setMinVal(minType);
+    setMaxVal(maxType);
+  }, [price, milage]);
+
+  const handleRange = (value, minOrMax) => {
     dispatch({
       type: type === 'Price' ? 'FILTER_PRICE_ACTION' : 'FILTER_MILAGE_ACTION',
       payload: {
-        min: minVal,
-        max: maxVal,
+        minOrMax: minOrMax,
+        value: value,
       },
     });
-  }, [minVal, maxVal]);
+  };
 
   return (
     <div className={styles.slider_container}>
@@ -47,8 +57,10 @@ const SliderInput = ({ min, max, type }) => {
           step='1'
           min={min}
           max={avg}
-          value={minVal}
-          onChange={({ target }) => setMinVal(Math.round(Number(target.value)))}
+          value={minType}
+          onChange={({ target }) =>
+            handleRange(Math.round(Number(target.value)), 'min')
+          }
         />
         <input
           id='max'
@@ -59,13 +71,15 @@ const SliderInput = ({ min, max, type }) => {
           step='1'
           min={avg}
           max={max}
-          value={maxVal}
-          onChange={({ target }) => setMaxVal(Math.round(Number(target.value)))}
+          value={maxType}
+          onChange={({ target }) =>
+            handleRange(Math.round(Number(target.value)), 'max')
+          }
         />
       </div>
       <div className={styles.labels}>
-        <span>{minVal.toLocaleString()}</span>
-        <span>{maxVal.toLocaleString()}</span>
+        <span>{minType.toLocaleString()}</span>
+        <span>{maxType.toLocaleString()}</span>
       </div>
     </div>
   );

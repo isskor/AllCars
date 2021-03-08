@@ -55,11 +55,12 @@ const CarContextProvider = ({ children }) => {
   );
 
   const newFiltersHelper = (filterTypeOne, filterTypeTwo) => {
-    console.log('newfilters');
-    console.log(filters);
-    console.log(filteredCarsObject);
-    console.log(cars);
-    return cars.filter((car) => {
+    let arrayToLoop = cars;
+    if (filteredCarsObject.search) {
+      arrayToLoop = handleSearchInput(arrayToLoop, filteredCarsObject.search);
+    }
+
+    return arrayToLoop.filter((car) => {
       if (
         filteredCarsObject.categories[filterTypeOne].length > 0 ||
         filteredCarsObject.categories[filterTypeTwo].length > 0
@@ -94,8 +95,18 @@ const CarContextProvider = ({ children }) => {
     ]);
   };
 
+  const handleSearchInput = (listToLoop, search) => {
+    return listToLoop.filter((car) => {
+      return (
+        car.make.toLowerCase().includes(search.toLowerCase()) ||
+        car.model.toLowerCase().includes(search.toLowerCase()) ||
+        car.year.toString().includes(search.toLowerCase())
+      );
+    });
+  };
+
   const handleFilteredCars = (stateToFilter, filterObject) => {
-    const { categories, price, milage } = filterObject;
+    const { categories, price, milage, search } = filterObject;
 
     let newCarList = stateToFilter;
 
@@ -125,6 +136,9 @@ const CarContextProvider = ({ children }) => {
         return categories.year.includes(car.year);
       });
     }
+    if (search) {
+      newCarList = handleSearchInput(newCarList, search);
+    }
 
     setFilteredCars(newCarList);
   };
@@ -132,13 +146,11 @@ const CarContextProvider = ({ children }) => {
   useEffect(() => {
     handleFilteredCars(cars, filteredCarsObject);
     handleNewFilters();
+    console.log(filteredCarsObject);
   }, [filteredCarsObject]);
 
   // useEffect(() => {
   // }, [filteredCars]);
-
-  console.log(filteredCarsObject);
-  console.log(filteredCars);
 
   return (
     <Provider

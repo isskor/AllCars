@@ -7,7 +7,6 @@ const ActiveFilters = () => {
 
   const uniqueActiveFilters = new Set([...make, ...model, ...year]);
   const activeFilters = [...uniqueActiveFilters];
-  console.log(activeFilters);
 
   const handleRemoveFilter = (item) => {
     dispatch({

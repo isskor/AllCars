@@ -1,7 +1,7 @@
 export const initialCarState = {
   search: '',
   price: {
-    min: 1000,
+    min: 100000,
     max: 800000,
   },
   milage: {
@@ -44,12 +44,21 @@ const handleFilters = (categoryState, payload) => {
 //   }
 
 const handleRemoveFilter = (categoryState, payload) => {
-  return;
+  const keyArr = Object.keys(categoryState);
+
+  const key = keyArr.find((item) => categoryState[item].includes(payload));
+  // [1,2,3,4,5].INCLUDES(5) = TRUE/FALSE
+
+  console.log(key);
+  return {
+    ...categoryState,
+    [key]: categoryState[key].filter((item) => item !== payload),
+  };
 };
 
 export const searchReducer = (state, action) => {
   const { type, payload } = action;
-  console.log(action);
+
   switch (type) {
     case 'FILTER_CATEGORY_ACTION':
       return {
@@ -64,21 +73,18 @@ export const searchReducer = (state, action) => {
     case 'FILTER_PRICE_ACTION':
       return {
         ...state,
-        price: {
-          min: payload.min,
-          max: payload.max,
-        },
+        price: { ...state.price, [payload.minOrMax]: payload.value },
       };
     case 'FILTER_MILAGE_ACTION':
       return {
         ...state,
-        milage: {
-          min: payload.min,
-          max: payload.max,
-        },
+        milage: { ...state.milage, [payload.minOrMax]: payload.value },
       };
     case 'FILTER_SEARCH_ACTION':
-      return;
+      return {
+        ...state,
+        search: payload,
+      };
     case 'FILTER_RESET_ACTION':
       return initialCarState;
     default:
