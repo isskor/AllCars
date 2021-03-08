@@ -1,5 +1,5 @@
 .active_filters {
-  margin: 2.5rem auto;
+  margin: 1rem auto;
 }
 .active_filters ul {
   display: flex;
@@ -25,6 +25,7 @@
 .active_filter svg {
   margin: 0;
   font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .active_filter:hover svg {
@@ -40,6 +41,11 @@
   padding: 0.5rem 1rem;
   width: 100%;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.active_filter:hover li {
+  color: var(--primary-color);
 }
 
 @keyframes fadeIn {

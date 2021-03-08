@@ -30,6 +30,9 @@
     align-items: flex-start;
     margin: 1rem 0;
   }
+  .filterList_type {
+    margin-bottom: 0.5rem;
+  }
 
   .reset_btn {
     flex-basis: auto;
