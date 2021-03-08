@@ -28,7 +28,9 @@ const Deals = () => {
         }
       </div>
 
-      <button>Search..</button>
+      <Link to="/">
+        <button>Search..</button>
+      </Link>
     </div>
   );
 }
