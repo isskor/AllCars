@@ -15,9 +15,10 @@
   flex-wrap: wrap;
   gap: 0rem;
   margin: 2rem 0rem;
+  z-index: -1;
 }
 
-button{
+.link {
   width: 5.5rem;
   height: 2rem;
   margin: auto;

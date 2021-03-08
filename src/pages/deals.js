@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
+import {Link} from 'react-router-dom';
 import CarCard from '../components/CarCard';
 
 import DealsBanner from '../components/DealsBanner';
@@ -28,8 +29,8 @@ const Deals = () => {
         }
       </div>
 
-      <Link to="/">
-        <button>Search..</button>
+      <Link to="/" className={style.link}>
+        <button >Search..</button>
       </Link>
     </div>
   );
