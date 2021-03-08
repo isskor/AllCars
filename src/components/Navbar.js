@@ -11,8 +11,10 @@ const Navbar = () => {
     <div>
        <nav className={styles.mainNavbar}>
             <Link to="/"><span className={styles.logo}>AllCars</span></Link>
-            <FooterNavbar />  
-            <CartIcon />
+            <div className={styles.rightNavbar}>
+              <FooterNavbar />  
+              <CartIcon />
+            </div>
       </nav>   
     </div> 
       

@@ -2,13 +2,16 @@
     background-color: var(--card-bg);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     padding: 1rem;
     position: fixed;
     width: 100%;
     z-index: 9999;
     
     
+}
+.rightNavbar{
+    display: flex;
 }
 
 .logo{
