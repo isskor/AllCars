@@ -1,0 +1,20 @@
+.search_group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 90%;
+}
+
+.search_input {
+  width: 100%;
+  background: transparent;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  color: var(--secondary-color);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+.search_label {
+  margin-bottom: 1rem;
+  flex-basis: 100%;
+}
