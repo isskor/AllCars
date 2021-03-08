@@ -32,15 +32,15 @@ function CarDetails(props) {
       <>
         <div className={styles.carDetailsContainer}>
           <section className={styles.carImageContainer}>
+            {/* added image src here directly */}
             <NavLink className={styles.backButton} to='/'>
               <ArrowLeftOutlined />
             </NavLink>
-            {/* added image src here directly */}
             <img
               src={`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
               alt={car.name}
             />
-            <h1 className={styles.carMakeModelName}><span>Name {car.make} {car.model}</span></h1>
+            <h1 className={styles.carMakeModelName}><span>{car.make} {car.model}: only {car.price.toLocaleString('en')}! </span></h1>
             <div className={styles.cartButtonTop}>
               <AddToCartButton car={car} />
             </div>
