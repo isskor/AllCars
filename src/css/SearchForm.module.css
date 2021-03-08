@@ -94,6 +94,9 @@ span {
   .filters {
     width: 100%;
   }
+  .dropAnim {
+    animation: dropDown 1s;
+  }
 
   .search_icon_lg {
     display: flex;
@@ -105,5 +108,37 @@ span {
 
   .search_icon_sm {
     display: none;
+  }
+}
+.line {
+  width: 0;
+  margin: 1rem auto;
+  transition: all 1s ease;
+}
+.lineAnim {
+  background: var(--primary-button);
+  animation: lineAnim 1s;
+  opacity: 0;
+
+  animation-fill-mode: forwards;
+}
+
+@keyframes lineAnim {
+  0% {
+    height: 2px;
+    width: 0;
+  }
+  100% {
+    height: 2px;
+    opacity: 0.3;
+    width: 100%;
+  }
+}
+@keyframes dropDown {
+  0% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
