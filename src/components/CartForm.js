@@ -4,7 +4,6 @@ import styles from '../css/cart.module.css';
 const CartForm = () => {
     return (
         <div>
-            <h1>Checkout</h1>
             <form >
                 <label>
                     Full name:<br />
