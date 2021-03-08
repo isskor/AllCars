@@ -9,7 +9,7 @@ const SearchForm = () => {
   const filterRef = useRef();
   const [showFilters, setshowFilters] = useState(false);
 
-  const { dispatch } = useContext(CarContext);
+  const { dispatch, filteredCarsObject } = useContext(CarContext);
 
   const handleClickOutside = () => {
     setshowFilters(false);
@@ -29,6 +29,7 @@ const SearchForm = () => {
           <input
             type='text'
             className={styles.search_input}
+            value={filteredCarsObject.search}
             onChange={(e) =>
               dispatch({
                 type: 'FILTER_SEARCH_ACTION',

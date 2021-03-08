@@ -1,7 +1,7 @@
 export const initialCarState = {
   search: '',
   price: {
-    min: 1000,
+    min: 100000,
     max: 800000,
   },
   milage: {
