@@ -81,7 +81,10 @@ export const searchReducer = (state, action) => {
         milage: { ...state.milage, [payload.minOrMax]: payload.value },
       };
     case 'FILTER_SEARCH_ACTION':
-      return;
+      return {
+        ...state,
+        search: payload,
+      };
     case 'FILTER_RESET_ACTION':
       return initialCarState;
     default:

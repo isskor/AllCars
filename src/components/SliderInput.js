@@ -5,8 +5,6 @@ const SliderInput = ({ min, max, type }) => {
   const { dispatch, filteredCarsObject } = useContext(CarContext);
   const { price, milage } = filteredCarsObject;
 
-  console.log(price, milage);
-
   const maxType = type === 'Price' ? price.max : milage.max;
   const minType = type === 'Price' ? price.min : milage.min;
 
