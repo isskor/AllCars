@@ -4,10 +4,21 @@ import styles from '../css/cart.module.css';
 
 const CartForm = () => {
 
-    const [form, setForm] = useState({name :"", email:"", phone:"", address:"", method:""});
+    const [form, setForm] = useState({ name :"", email:"", phone:"", address:"", method:""});
+    const [paymentInfo, setPaymentInfo] = useState({ cardNumber:"" ,nameOnCard:"" , dateOnCard:"" , cvc:"" }) ;
 
     const handleChange = (e) => {
-      setForm( {...form , [e.target.name]  : [e.target.value] });
+      setForm( {...form , [e.target.name]:[e.target.value] });
+    }
+
+    const handlePayment = (e) => {
+        setPaymentInfo( { ...paymentInfo, [e.target.name] : [e.target.value]});
+    }
+
+    const takeInfo = (e) => {
+        e.preventDefault();
+        console.log(form);
+        console.log(paymentInfo);
     }
     
     return (
@@ -44,15 +55,15 @@ const CartForm = () => {
                 <br />
                 </form>
 
-                <form className={styles.form}>
+                <form className={styles.form} onChange={handlePayment}>
 
-                <input type="text" placeholder="Card number" className={styles.half}/>
-                <input type="text" placeholder="Name on card" className={styles.half} />
+                <input type="text" placeholder="Card number" className={styles.half} name="cardNumber" />
+                <input type="text" placeholder="Name on card" className={styles.half} name="nameOnCard" />
 
-                <input type="text" placeholder="MM/YY" className={styles.halfinput1} />
-                <input type="text" placeholder="CVC" className={styles.halfinput} />
+                <input type="text" placeholder="MM/YY" className={styles.halfinput1} name="dateOnCard"/>
+                <input type="text" placeholder="CVC" className={styles.halfinput} name="cvc"/>
                 <br />
-                <button> Purchase </button>
+                <button onClick={takeInfo}> Purchase </button>
             </form>
         </div>
     )
