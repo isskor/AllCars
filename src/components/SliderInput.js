@@ -25,7 +25,7 @@ const SliderInput = ({ min, max, type }) => {
   useEffect(() => {
     setAvg((maxVal + minVal) / 2);
     dispatch({
-      type: type === 'Price' ? 'PRICE_RANGE_ACTION' : 'MILAGE_RANGE_ACTION',
+      type: type === 'Price' ? 'FILTER_PRICE_ACTION' : 'FILTER_MILAGE_ACTION',
       payload: {
         min: minVal,
         max: maxVal,

@@ -14,10 +14,10 @@ const Dropdown = ({ filterList, type, setIsOpen }) => {
   const handleInsideClick = (item) => {
     setIsOpen(false);
     dispatch({
-      type: 'FILTER_ACTION',
+      type: 'FILTER_CATEGORY_ACTION',
       payload: {
-        filterCategory: type.toLowerCase(),
-        filterItem: item,
+        categoryType: type.toLowerCase(),
+        categoryValue: item,
       },
     });
   };

@@ -1,6 +1,6 @@
 import { useState, createContext, useReducer } from 'react';
 import carsJSON from '../json/cars.json';
-
+import { initialCarState, searchReducer } from './SearchReducer';
 // fetch data
 const carList = carsJSON.map((car, i) => {
   if (i < 3) {
@@ -67,6 +67,12 @@ const CarContextProvider = ({ children }) => {
     initialCarState
   );
 
+  const handleFilteredCars = (stateToFilter, filterObject) => {
+    return;
+  };
+
+  handleFilteredCars(filteredCars, filteredCarsState);
+  console.log(filteredCarsState);
   return (
     <Provider value={{ cars, filters, dispatch, filteredCars }}>
       {children}
@@ -75,12 +81,3 @@ const CarContextProvider = ({ children }) => {
 };
 
 export default CarContextProvider;
-
-// filterObject : {
-//   make: toyota
-//   model: null
-//   year: null
-//   price:100, 200
-//   milage:
-//   Search:
-// }
