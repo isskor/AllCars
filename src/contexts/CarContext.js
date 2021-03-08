@@ -61,6 +61,11 @@ const CarContextProvider = ({ children }) => {
   const { Provider } = CarContext;
   const [cars, setCars] = useState(carList);
   const [filters, setFilters] = useState(filterList());
+  const [filteredCars, setFilteredCars] = useState(cars);
+  const [filteredCarsState, dispatch] = useReducer(
+    searchReducer,
+    initialCarState
+  );
 
   return (
     <Provider value={{ cars, filters, dispatch, filteredCars }}>
