@@ -1,4 +1,4 @@
-import { useState, createContext, useReducer } from 'react';
+import { useState, createContext, useReducer, useEffect } from 'react';
 import carsJSON from '../json/cars.json';
 import { initialCarState, searchReducer } from './SearchReducer';
 // fetch data
@@ -62,17 +62,33 @@ const CarContextProvider = ({ children }) => {
   const [cars, setCars] = useState(carList);
   const [filters, setFilters] = useState(filterList());
   const [filteredCars, setFilteredCars] = useState(cars);
-  const [filteredCarsState, dispatch] = useReducer(
+  const [filteredCarsObject, dispatch] = useReducer(
     searchReducer,
     initialCarState
   );
 
   const handleFilteredCars = (stateToFilter, filterObject) => {
-    return;
+    const { categories, price, milage } = filterObject;
+
+    let newCarList = stateToFilter;
+
+    if (price) {
+      newCarList = newCarList.filter(
+        (car) => car.price >= price.min && car.price <= price.max
+      );
+    }
+    if (milage) {
+      newCarList = newCarList.filter(
+        (car) => car.miles >= milage.min && car.miles <= milage.max
+      );
+    }
+    setFilteredCars(newCarList);
   };
 
-  handleFilteredCars(filteredCars, filteredCarsState);
-  console.log(filteredCarsState);
+  useEffect(() => {
+    handleFilteredCars(cars, filteredCarsObject);
+  }, [filteredCarsObject]);
+
   return (
     <Provider value={{ cars, filters, dispatch, filteredCars }}>
       {children}
