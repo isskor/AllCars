@@ -3,27 +3,15 @@ import { Link } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/CarDetails2.module.css';
 import AddToCartButton from '../components/AddToCart';
-import FooterNavBar from '../components/FooterNavbar';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 
 function CarDetails(props) {
   const { cars } = useContext(CarContext);
   const [car, setCar] = useState(cars[0]);
 
-  // not needed, slows network by loading all images we only need one
-  // good approach but we should put this in context instead and load it all
-  const theCars = cars.map((car) => {
-    return {
-      ...car,
-      image: `../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
-    };
-  });
-
   // useEffect(() => {
   //   if (theCars) {
-  //     setCar(
-  //       theCars.find((car) => props.match.params.id === car.id)
-  //     );
+  //     setCar(theCars.find((car) => props.match.params.id === car.id));
   //   }
   // }, [theCars]);
 
@@ -59,7 +47,7 @@ function CarDetails(props) {
                   {car.price.toLocaleString('en')}
                 </p>
               </div>
-              <div className={styles.carDescriptionShort}>
+              <div className={styles.car_desc_short}>
                 <p>{car.descShort}</p>
               </div>
             </section>
@@ -92,6 +80,7 @@ function CarDetails(props) {
                 </div>
               </section>
             </section>
+            <div className={styles.detail_line}></div>
             <section className={styles.car_desc_container}>
               <h2>Description</h2>
               <p>{car.descLong}</p>
@@ -99,9 +88,6 @@ function CarDetails(props) {
           </div>
           <div className={styles.cartButton}>
             <AddToCartButton car={car} />
-          </div>
-          <div className={styles.footerNav}>
-            <FooterNavBar />
           </div>
         </div>
       </>
