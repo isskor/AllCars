@@ -46,9 +46,10 @@ input:focus {
 
 .radio {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .radiotext {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: column;
 }

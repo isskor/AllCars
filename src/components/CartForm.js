@@ -37,37 +37,34 @@ const CartForm = () => {
     <div>
       <form onChange={handleChange}>
         <h3>Shipping</h3>
-        <label>
+        <div className={styles.form_group}>
+          <label>Name</label>
           <input type='text' className={styles.cart_input} name='name' />
-        </label>
-
-        <label>
-          E-mail:
+        </div>
+        <div className={styles.form_group}>
+          <label>E-mail:</label>
           <input type='text' className={styles.cart_input} name='email' />
-        </label>
-
-        <label>
-          Phone number:
+        </div>
+        <div className={styles.form_group}>
+          <label>Phone number:</label>
           <input type='text' className={styles.cart_input} name='phone' />
-        </label>
-        <br />
-        <label>
-          Address:
-          <br />
+        </div>
+        <div className={styles.form_group}>
+          <label>Address:</label>
           <input type='text' className={styles.cart_input} name='address' />
-        </label>
-        <br />
-        <div className={styles.radiotext}>
-          <label>Pick up</label>
-          <label>Delivery</label>
-          <label>Express delivery</label>
         </div>
-        <div className={styles.radio}>
-          <input type='radio' value='Pick up' name='method' />
-          <input type='radio' value='Delivery' name='method' />
-          <input type='radio' value='Express delivery' name='method' />
+        <div className={styles.form_group}>
+          <div className={styles.radiotext}>
+            <label>Pick up</label>
+            <label>Delivery</label>
+            <label>Express delivery</label>
+          </div>
+          <div className={styles.radio}>
+            <input type='radio' value='Pick up' name='method' />
+            <input type='radio' value='Delivery' name='method' />
+            <input type='radio' value='Express delivery' name='method' />
+          </div>
         </div>
-        <br />
       </form>
 
       <form className={styles.form} onChange={handlePayment}>
