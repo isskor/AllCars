@@ -28,7 +28,7 @@ h3 {
   background-color: var(--secondary-color);
   border-radius: 100%;
   border: 2px solid var(--primary-color);
-  padding: 5px;
+  padding: 0px 12px 10px 12px ;
   margin: 5px;
   position: absolute;
   top: 5%;
