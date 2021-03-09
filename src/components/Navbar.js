@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom';
 import FooterNavbar from './FooterNavbar';
 import styles from '../css/Navbar.module.css';
 
-import { Link } from "react-router-dom";
-import FooterNavbar from "./FooterNavbar"
-import styles from "../css/Navbar.module.css" ;
 import CartIcon from './CartIcon';
 
 
