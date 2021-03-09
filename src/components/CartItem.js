@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import {CartContext} from '../contexts/CartContext';
+import { CartContext } from '../contexts/CartContext';
 import styles from '../css/CartItem.module.css';
-const CartItem = ({ cartItem }) => {
+const CartItem = ({ cartItem, checkout = false }) => {
   const { removeFromCart } = useContext(CartContext);
   return (
     <div className={styles.carCard}>
@@ -26,12 +26,14 @@ const CartItem = ({ cartItem }) => {
           <p className={styles.car_price}>{cartItem.price}</p>
         </div>
       </div>
-      <button
-        className={styles.removeBtn}
-        onClick={() => removeFromCart(cartItem)}
-      >
-        Remove
-      </button>
+      {!checkout && (
+        <button
+          className={styles.removeBtn}
+          onClick={() => removeFromCart(cartItem)}
+        >
+          Remove
+        </button>
+      )}
     </div>
   );
 };
