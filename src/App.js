@@ -3,7 +3,8 @@ import FooterNavbar from './components/FooterNavbar';
 import Navbar from './components/Navbar';
 import CarContextProvider from './contexts/CarContext';
 import CartContextProvider from './contexts/CartContext';
-import Test from './components/test';
+import Receipt from './pages/Receipt';
+import Test from './components/test' ;
 function App() {
   return (
     <div className='App'>
@@ -16,6 +17,7 @@ function App() {
             <Route exact path='/'></Route>
             <Route exact path='/about'></Route>
             <Test />
+            <Receipt />
           </CartContextProvider>
         </CarContextProvider>
       </Router>
