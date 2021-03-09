@@ -5,6 +5,7 @@ import styles from '../css/CarDetails.module.css';
 import AddToCartButton from '../components/AddToCart';
 import FooterNavBar from '../components/FooterNavbar';
 import { ArrowLeftOutlined } from '@ant-design/icons';
+import ReadMoreReact from 'read-more-react';
 
 function CarDetails(props) {
   const { cars } = useContext(CarContext);
@@ -51,29 +52,39 @@ function CarDetails(props) {
               <h2 className={styles.carStatsTitle}>Car Stats</h2>
               <section className={styles.carStats}>
                 <div className={styles.carMake}>
-                <p  className={styles.carAttribute}><span>Make:</span></p> <p className={styles.carValue}><span>{car.make}</span></p>
+                  <p className={styles.carAttribute}><span>Make:</span></p> <p className={styles.carValue}><span>{car.make}</span></p>
                   {/* <div className={styles.spacingDiv}></div> */}
                 </div>
                 <div className={styles.carModel}>
-                  <p  className={styles.carAttribute}><span>Model:</span> </p> <p   className={styles.carValue}><span> {car.model}</span></p>
+                  <p className={styles.carAttribute}><span>Model:</span> </p> <p className={styles.carValue}><span> {car.model}</span></p>
                 </div>
                 <div className={styles.carYear}>
-                  <p  className={styles.carAttribute}><span>Year</span></p> <p  className={styles.carValue}> <span> {car.year}</span></p>
+                  <p className={styles.carAttribute}><span>Year</span></p> <p className={styles.carValue}> <span> {car.year}</span></p>
                 </div>
                 <div className={styles.carMileage}>
-                  <p  className={styles.carAttribute}><span>Mileage</span></p> <p  className={styles.carValue}> <span> {car.miles}</span></p>
+                  <p className={styles.carAttribute}><span>Mileage</span></p> <p className={styles.carValue}> <span> {car.miles}</span></p>
                 </div>
                 <div className={styles.carVIN}>
-                  <p className={styles.carAttribute}><span>VIN</span> </p> <p  className={styles.carValue}><span> {car.vin}</span></p>
+                  <p className={styles.carAttribute}>
+                    <span>VIN</span> </p>
+                  <p className={styles.carValue}>
+                    <span> <ReadMoreReact
+                      className="styles.VINReadMoreText"
+                      text={ car.vin }
+                      min={4}
+                      ideal={6}
+                      max={8}
+                      readMoreText={"..."}
+                    /></span></p>
                 </div>
                 <div className={styles.carCity}>
-                  <p  className={styles.carAttribute}><span>City </span></p> <p  className={styles.carValue}> <span>{car.city}</span></p>
+                  <p className={styles.carAttribute}><span>City </span></p> <p className={styles.carValue}> <span>{car.city}</span></p>
                 </div>
               </section>
             </section>
             <section className={styles.carPriceDescContainer}>
               <h3 className={styles.carPriceLabel}>Price</h3>
-              <div className={styles.carPrice}><p>{car.price}</p></div>
+              <div className={styles.carPrice}><p>{car.price.toLocaleString('en')}</p></div>
               <h2 className={styles.carDescriptionTitle}>Description</h2>
               <div className={styles.carLongDescription}><p>{car.descLong}</p></div>
             </section>
