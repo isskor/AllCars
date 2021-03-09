@@ -1,3 +1,8 @@
+.carDetailsContainer {
+  max-width: 992px;
+  margin: 0 auto;
+}
+
 .carImageContainer {
   padding-top: 6rem;
   display: grid;
@@ -18,13 +23,13 @@
   justify-self: start;
   align-self: start;
   z-index: 2;
-  margin: 1rem;
+  margin: 0.25rem;
 }
 
 .backButton a {
   background: var(--dark-color);
   display: flex;
-  padding: 1rem;
+  padding: 0.5rem;
   opacity: 0.8;
   border-radius: 50%;
 }
@@ -46,3 +51,54 @@
   align-self: end;
   padding: 1rem;
 }
+/* STATS */
+.car_details_container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.car_details_container p {
+  line-height: 1.8rem;
+}
+
+.price_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem 0;
+}
+
+.price_container p {
+  font-size: 2rem;
+}
+
+.car_stats_container {
+  padding: 1rem 0;
+}
+
+.car_stat {
+  display: flex;
+  padding: 0.75rem 0;
+  justify-content: space-between;
+}
+
+/* 
+.carStatsContainer {
+  flex-basis: 50%;
+  padding: 1rem;
+}
+.carPriceDescContainer {
+  padding: 1rem;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.carPriceLabel,
+.carPrice {
+  align-self: flex-end;
+}
+
+.carPrice {
+  font-size: 2rem;
+} */ ;
