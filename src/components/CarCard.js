@@ -1,10 +1,17 @@
 import style from '../css/CarCard.module.css';
+import {useHistory} from 'react-router-dom' ;
+
 
 function CarCard(prop) {
 
+    const history = useHistory() ;
+    function goToCarDetails() {
+       history.push(`/car/${prop.car.vin}`)
+    }
+
     return (
         <div className={style.carCard}>
-            <div className={style.imgContainer}>
+            <div className={style.imgContainer} onClick={goToCarDetails}>
                 <img src={`/assets/car-pictures/${prop.car.make}-${prop.car.model}-${prop.car.year}.jpg`} alt="Car picture" />
                 <p className={style.carPrice}>${prop.car.price}</p>
                 <div className={style.imgTextWrapper}>
