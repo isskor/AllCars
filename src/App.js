@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CarContextProvider from './contexts/CarContext';
 import CartContextProvider from './contexts/CartContext';
-import Test from './components/test';
-
+import Home from './pages/Home';
+import About from './pages/About';
+import Deals from './pages/deals';
+import CartPage from './pages/CartPage';
 function App() {
   return (
     <div className='App'>
@@ -11,19 +13,14 @@ function App() {
         <CarContextProvider>
           <CartContextProvider>
             <Navbar />
-
             <Switch>
-                <Route path='/deals' />
-                <Route exact path='/' component={Test}/>
-                <Route path='/about' />
-                <Route exact path='/car/:id' />
-                <Route exact path='/cart' />
-                <Route path='/receipt' />
+              <Route path='/deals' component={Deals} />
+              <Route exact path='/' component={Home} />
+              <Route path='/about' component={About} />
+              <Route exact path='/car/:id' />
+              <Route exact path='/cart' component={CartPage} />
+              <Route path='/receipt' />
             </Switch>
-            
-            
-            
-
           </CartContextProvider>
         </CarContextProvider>
       </Router>
