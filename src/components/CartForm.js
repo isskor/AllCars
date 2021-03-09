@@ -34,8 +34,8 @@ const CartForm = () => {
   };
 
   return (
-    <div>
-      <form styles={styles.shipping_form} onChange={handleChange}>
+    <div className={styles.cartPage}>
+      <form className={styles.shipping_form} onChange={handleChange}>
         <h3>Shipping</h3>
         <div className={styles.form_group}>
           <label>Name</label>
