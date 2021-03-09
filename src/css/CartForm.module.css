@@ -1,0 +1,54 @@
+.cart_input {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.6);
+}
+form {
+  width: 90%;
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #454545;
+}
+
+form h3 {
+  text-align: center;
+  color: var(--secondary-color);
+  padding: 1rem 0 3rem;
+}
+
+label {
+  color: var(--primary-color);
+  font-family: var(--main-font);
+}
+
+input {
+  background: transparent;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  color: var(--secondary-color);
+
+  border-bottom: 1px solid rgba(192, 192, 192, 0.6);
+}
+
+input:focus {
+  background: #7c7c7c;
+  border-radius: 1rem;
+  transition: all 1s ease;
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+}
+.radiotext {
+  display: flex;
+  justify-content: space-between;
+}
