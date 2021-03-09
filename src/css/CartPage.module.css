@@ -13,10 +13,39 @@
   margin: 5rem auto;
 }
 
+.cartLeft {
+  margin-bottom: 3rem;
+}
+
+.total {
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+.total h3 {
+  font-size: 1.5rem;
+}
+.total h4 {
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
 @media (min-width: 768px) {
+  .total h3 {
+    font-size: 2rem;
+  }
+  .total h4 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+  }
+}
+@media (min-width: 992px) {
   .cartContainer {
-    width: 80%;
-    /* display: flex; */
+    width: 90%;
+    display: flex;
     margin: 0 auto;
   }
 
