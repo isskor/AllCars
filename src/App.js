@@ -5,6 +5,7 @@ import CartContextProvider from './contexts/CartContext';
 import Home from './pages/Home';
 import About from './pages/About';
 import Deals from './pages/deals';
+import CartPage from './pages/CartPage';
 function App() {
   return (
     <div className='App'>
@@ -17,7 +18,7 @@ function App() {
               <Route exact path='/' component={Home} />
               <Route path='/about' component={About} />
               <Route exact path='/car/:id' />
-              <Route exact path='/cart' />
+              <Route exact path='/cart' component={CartPage} />
               <Route path='/receipt' />
             </Switch>
           </CartContextProvider>
