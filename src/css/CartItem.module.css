@@ -11,7 +11,7 @@
   grid-area: 1/1/1/2;
 }
 
-img {
+.carCard img {
   /* height: 17px; */
   width: 100%;
   object-fit: cover;
@@ -30,10 +30,6 @@ img {
   font-size: 0.75rem;
   border-bottom: 1px solid var(--secondary-color);
   display: inline-block;
-}
-
-.car_info {
-  /* display: flex; */
 }
 
 .car_price {

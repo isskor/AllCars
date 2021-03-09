@@ -35,7 +35,7 @@ const CartForm = () => {
 
   return (
     <div className={styles.cartPage}>
-      <form className={styles.shipping_form} onChange={handleChange}>
+      <form className={styles.cart_form} onChange={handleChange}>
         <h3>Shipping</h3>
         <div className={styles.form_group}>
           <label>Name</label>
@@ -72,7 +72,7 @@ const CartForm = () => {
         </div>
       </form>
 
-      <form className={styles.billing_form} onChange={handlePayment}>
+      <form className={styles.cart_form} onChange={handlePayment}>
         <h3>Billing</h3>
 
         <div className={styles.form_group}>
