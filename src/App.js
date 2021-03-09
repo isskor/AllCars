@@ -11,7 +11,6 @@ function App() {
         <CarContextProvider>
           <CartContextProvider>
             <Navbar />
-
             <Switch>
               <Route path='/deals' />
               <Route exact path='/' component={Home} />
