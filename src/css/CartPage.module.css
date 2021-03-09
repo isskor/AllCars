@@ -1,20 +1,29 @@
-h2{
-    text-align: center;
-    color: var(--primary-color);
+.cart {
+  width: 100%;
+}
+
+.cart h2 {
+  margin: 5rem;
+  text-align: center;
+  color: var(--primary-color);
 }
 
 .cartContainer {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    padding: 2rem;
+  width: 90%;
+  margin: 5rem auto;
 }
 
-.cartLeft {
-    padding: 2rem;
-    
-}
+@media (min-width: 768px) {
+  .cartContainer {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+  }
 
-.cartRight{
-    padding: 2rem;
-   
+  .cartLeft {
+    flex-basis: 50%;
+  }
+  .cartRight {
+    flex-basis: 50%;
+  }
 }
