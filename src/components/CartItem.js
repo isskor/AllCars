@@ -12,17 +12,17 @@ const CartItem = ({ cartItem, checkout = false }) => {
         />
       </div>
       <div className={styles.car_info_container}>
-        <div className='car_info'>
-          <p>Car</p>
+        <div className={styles.car_info}>
           <p>
             {cartItem.make} {cartItem.model} {cartItem.year}
           </p>
         </div>
-        <div className='car_miles_ctn'>
-          <p>Miles</p>
+        <div className={styles.car_info}>
+          <p className={styles.car_info_label}>Miles</p>
           <p className='car_miles'>{cartItem.miles}</p>
         </div>
-        <div className='car_price_ctn'>
+        <div className={styles.car_info}>
+          <p className={styles.car_info_label}>Price</p>
           <p className={styles.car_price}>{cartItem.price}</p>
         </div>
       </div>
