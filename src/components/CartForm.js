@@ -1,12 +1,16 @@
 import React from 'react';
-import { useState } from 'react' ;
+import { useState , useContext } from 'react' ;
 import styles from '../css/cart.module.css';
+import {CartContext} from '../contexts/CartContext' ;
 
 const CartForm = () => {
 
     const [form, setForm] = useState({ name :"", email:"", phone:"", address:"", method:""});
     const [paymentInfo, setPaymentInfo] = useState({ cardNumber:"" ,nameOnCard:"" , dateOnCard:"" , cvc:"" }) ;
-
+   
+    
+    const { handleCheckout } = useContext(CartContext) ;
+  
     const handleChange = (e) => {
       setForm( {...form , [e.target.name]:[e.target.value] });
     }
@@ -17,8 +21,7 @@ const CartForm = () => {
 
     const takeInfo = (e) => {
         e.preventDefault();
-        console.log(form);
-        console.log(paymentInfo);
+        handleCheckout(form, paymentInfo);
     }
     
     return (
