@@ -57,6 +57,11 @@ img {
   margin-bottom: 0.5rem;
   margin-right: 0.25rem;
   font-size: 0.7rem;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.removeBtn:hover {
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
