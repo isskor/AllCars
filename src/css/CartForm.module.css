@@ -46,10 +46,44 @@ input:focus {
 
 .radio {
   display: flex;
-  flex-direction: column;
+  margin: 1rem 0;
 }
-.radiotext {
-  display: flex;
-  flex-direction: column;
-  justify-content: column;
+
+.radio label {
+  flex-basis: 50%;
+}
+
+.form_group {
+  flex-basis: 100%;
+}
+.card_date,
+.card_cvc {
+  flex-basis: 40%;
+}
+
+.purchaseBtn {
+  flex-basis: 100%;
+}
+
+@media (min-width: 576px) {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  form h3 {
+    flex-basis: 100%;
+  }
+
+  .email,
+  .phone {
+    flex-basis: 45%;
+  }
+}
+@media (min-width: 992px) {
+  .email,
+  .phone {
+    flex-basis: 100%;
+  }
 }

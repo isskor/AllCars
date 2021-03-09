@@ -42,66 +42,62 @@ const CartForm = () => {
           <input type='text' className={styles.cart_input} name='name' />
         </div>
         <div className={styles.form_group}>
-          <label>E-mail:</label>
-          <input type='text' className={styles.cart_input} name='email' />
-        </div>
-        <div className={styles.form_group}>
-          <label>Phone number:</label>
-          <input type='text' className={styles.cart_input} name='phone' />
-        </div>
-        <div className={styles.form_group}>
           <label>Address:</label>
           <input type='text' className={styles.cart_input} name='address' />
         </div>
+        <div className={`${styles.form_group} ${styles.email}`}>
+          <label>E-mail:</label>
+          <input type='text' className={styles.cart_input} name='email' />
+        </div>
+        <div className={`${styles.form_group} ${styles.phone}`}>
+          <label>Phone number:</label>
+          <input type='text' className={styles.cart_input} name='phone' />
+        </div>
+
         <div className={styles.form_group}>
-          <div className={styles.radiotext}>
-            <label>Pick up</label>
+          <h3>Delivery Options</h3>
+          <div className={styles.radio}>
             <label>Delivery</label>
-            <label>Express delivery</label>
+            <input type='radio' value='Pick up' name='method' />
           </div>
           <div className={styles.radio}>
-            <input type='radio' value='Pick up' name='method' />
+            <label>Express delivery</label>
             <input type='radio' value='Delivery' name='method' />
+          </div>
+          <div className={styles.radio}>
+            <label>Pick up</label>
+
             <input type='radio' value='Express delivery' name='method' />
           </div>
         </div>
       </form>
 
-      <form className={styles.form} onChange={handlePayment}>
+      <form className={styles.billingForm} onChange={handlePayment}>
         <h3>Billing</h3>
-        <label>Card</label>
-        <input
-          type='text'
-          placeholder='Card number'
-          className={styles.half}
-          name='cardNumber'
-        />
 
-        <label>Name</label>
-        <input
-          type='text'
-          placeholder='Name on card'
-          className={styles.half}
-          name='nameOnCard'
-        />
+        <div className={styles.form_group}>
+          <label>Card</label>
 
-        <label>Expiration Date</label>
-        <input
-          type='text'
-          placeholder='MM/YY'
-          className={styles.halfinput1}
-          name='dateOnCard'
-        />
+          <input type='text' placeholder='Card number' name='cardNumber' />
+        </div>
 
-        <label>CVC</label>
-        <input
-          type='text'
-          placeholder='CVC'
-          className={styles.halfinput}
-          name='cvc'
-        />
-        <br />
-        <button onClick={takeInfo}> Purchase </button>
+        <div className={styles.form_group}>
+          <label>Name</label>
+          <input type='text' placeholder='Name on card' name='nameOnCard' />
+        </div>
+
+        <div className={`${styles.form_group} ${styles.card_date}`}>
+          <label>Expiration Date</label>
+          <input type='text' placeholder='MM/YY' name='dateOnCard' />
+        </div>
+
+        <div className={`${styles.form_group} ${styles.card_cvc}`}>
+          <label>CVC</label>
+          <input type='text' placeholder='CVC' name='cvc' />
+        </div>
+        <div className={styles.purchaseBtn}>
+          <button onClick={takeInfo}> Purchase </button>
+        </div>
       </form>
     </div>
   );
