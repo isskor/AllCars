@@ -72,6 +72,7 @@
 @media only screen and (min-width: 768px) {
 
     .carCard {
+        width: 45%;
         grid-template-columns: 100%;
     }
 
@@ -123,4 +124,54 @@
         height: 2.2rem;
     }
     
+}
+
+@media only screen and (min-width: 992px) {
+
+    .carCard {
+        width: 30%;
+    }
+
+    .carPrice {
+        font-size: 1.2rem;
+    }
+
+    .imgTextWrapper {
+        padding: 0.3rem 0.5rem;
+    }
+
+    .wrapperText {
+        font-size: 1.2rem;
+    }
+
+    .statsContainer {
+        padding: 0.2rem 0.5rem;
+    }
+
+    .model {
+        font-size: 0.8rem;
+    }
+
+    .modelName {
+        font-size: 1rem;
+    }
+    
+    .milesContainer {
+        justify-self: left;
+    }
+    
+    .miles {
+        font-size: 0.8rem;
+    }
+
+    .milesNumber {
+        font-size: 1rem;
+    }
+
+    .addBtn {
+        font-size: 0.8rem;
+        width: 5.5rem;
+        height: 2rem;
+    }
+
 }

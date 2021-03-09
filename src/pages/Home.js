@@ -39,9 +39,11 @@ function Home() {
           <CarCard key={i} car={car} />
         ))}
         {showCars.length !== filteredCars.length && (
-          <button className={style.loadMore} onClick={handleShowNumber}>
-            Load more
-          </button>
+          <div className={style.btnContainer}>
+            <button className={style.loadMore} onClick={handleShowNumber}>
+              Load more
+            </button>
+          </div>
         )}
       </div>
     </div>
