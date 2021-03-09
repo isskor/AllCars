@@ -22,11 +22,11 @@ function CarCard(prop) {
             <div className={style.statsContainer}>
                 <div className="carModel">
                     <p className={style.model}>Model</p>
-                    <p>{prop.car.model}</p>
+                    <p className={style.modelName}>{prop.car.model}</p>
                 </div>
                 <div className={style.milesContainer}>
                     <p className={style.miles}>Miles</p>
-                    <p>{prop.car.miles}</p>
+                    <p className={style.milesNumber}>{prop.car.miles}</p>
                 </div>
                 <button className={style.addBtn}>Add to cart</button>
             </div>
