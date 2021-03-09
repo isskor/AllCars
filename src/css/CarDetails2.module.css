@@ -1,0 +1,48 @@
+.carImageContainer {
+  padding-top: 6rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(1fr, 20px);
+}
+
+.carImageContainer img {
+  width: 100%;
+  grid-area: 1/1/1/1;
+  object-fit: cover;
+  max-height: 650px;
+  /* z-index: 1; */
+}
+
+.backButton {
+  grid-area: 1/1/1/1;
+  justify-self: start;
+  align-self: start;
+  z-index: 2;
+  margin: 1rem;
+}
+
+.backButton a {
+  background: var(--dark-color);
+  display: flex;
+  padding: 1rem;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.backButton svg {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.carImageContainer h2 {
+  grid-area: 1/1/1/1;
+  justify-self: start;
+  align-self: end;
+  padding: 1rem;
+}
+.carImageContainer .cartButtonTop {
+  grid-area: 1/1/1/1;
+  justify-self: end;
+  align-self: end;
+  padding: 1rem;
+}
