@@ -1,166 +1,172 @@
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  h2,
-  h3 {
-    font-family: var(--main-font);
-    color: var(--secondary-color);
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-  }
-  .carDetailsContainer {
-  }
-  .carImageContainer {
-    height: auto;
-    width: 100%;
-    object-fit: cover;
-    position: center;
-    top: 20%;
-  }
-  .carImageContainer img {
-    max-height: 100%;
-    max-width: 100%;
-  }
-  .backButton {
-    font-size: 30px;
-    background-color: var(--secondary-color);
-    border-radius: 100%;
-    border: 2px solid var(--primary-color);
-    padding: 5px;
-    margin: 5px;
-    position: absolute;
-    top: 12%;
-    left: 0%;
-    transform: translate(-5%, -5%);
-  }
-  .carMakeModelName {
-    position: absolute;
-    text-align: left;
-    left: 5px;
-    top: 47%;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  .carMakeModelName span {
-    color: var(--secondary-color);
-    opacity: 1;
-  }
-  .cartButtonTop {
-    text-align: right;
-    position: absolute;
-    top: 47%;
-    right: 4vw;
-    margin: 5px;
-    padding: 5px;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h2,
+h3 {
+  font-family: var(--main-font);
+  color: var(--secondary-color);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+.carDetailsContainer {
+}
+.carImageContainer {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  position: center;
+  top: 20%;
+}
+.carImageContainer img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.backButton {
+  font-size: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 100%;
+  border: 2px solid var(--primary-color);
+  padding: 5px;
+  margin: 5px;
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  transform: translate(-5%, -5%);
+}
+.carMakeModelName {
+  position: absolute;
+  font-size: smaller;
+  left: 5px;
+  bottom: 5%;
+  transform: translate(5%, 80%);
+  margin: 5px;
+  padding: 5px;
+}
+/* .carMakeModelName span {
+  color: var(--secondary-color);
+  opacity: 1;
+} */
+.cartButtonTop {
+  text-align: right;
+  position: absolute;
+  bottom: 5%;
+  right: 10px;
+  margin: 5px;
+  padding: 5px;
+  transform: translate(5%, 80%);
+}
+.carTextDetailsContainer {
+  margin: 1vh;
+  padding: 1vh;
+  display: grid;
+  grid-template-areas:
+    ". theStats theStats theStats theStats  . "
+    ". thePriceDescription thePriceDescription thePriceDescription thePriceDescription .";
+}
+.carStatsContainer {
+  grid-area: theStats;
+  margin: 0 auto;
+  display: grid;
+}
+.carStatsContainer span {
+  color: var(--secondary-color);
+}
+.carDescriptionShort p {
+  color: var(--primary-color);
+}
+.carDescriptionShort {
+  padding-bottom: 1vh;
+  justify-self: center;
+  text-align: center;
+}
+.carStatsTitle {
+  text-align: center;
+}
+
+.carStats p {
+  display: inline-block;
+}
+.carStats {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  border: 1px solid white;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90%;
+  padding: 1vh 1vw;
+}
+/* .carStats div:nth-child(2) {
+    display:inline-block;
+    border: 2px solid yellow;
+} */
+.carStats .carAttribute {
+  justify-self: start;
+  text-align: start;
+  left: 0%;
+  width: 45%;
+}
+.carStats .carValue {
+  justify-self: start;
+  text-align: start;
+  right: 0%;
+  width: 45%;
+}
+.carPriceDescContainer {
+  grid-area: thePriceDescription;
+  margin: 1vh;
+  padding: 1vh;
+}
+.carPriceLabel {
+  text-align: center;
+  color: var(--primary-color);
+  /* border: 1px solid white; */
+}
+.carPrice {
+  text-align: center;
+  color: var(--primary-color);
+  /* border: 1px solid white; */
+}
+.carDescriptionTitle {
+  text-align: center;
+  padding-top: 1vh;
+}
+.carLongDescription {
+}
+.cartButton {
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+/* iPads (portrait and landscape) ----------- */
+/* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    } */
+
+@media only screen and (min-device-width: 768px) {
   .carTextDetailsContainer {
-    margin: 1vh;
-    padding: 1vh;
-    display: grid;
-    grid-template-areas:
-      ". theStats theStats theStats theStats  . "
-      ". thePriceDescription thePriceDescription thePriceDescription thePriceDescription .";
+    display: grid;  
+    grid-template-areas: "theStats theStats theStats thePriceDescription thePriceDescription thePriceDescription";
   }
-  .carStatsContainer {
-    grid-area: theStats;
-    margin: 0 auto;
-    display: grid;
+  .carMakeModelName,
+  .cartButtonTop {
+    bottom: 10%;
+    transform: translate(5%, 80%);
   }
-  .carStatsContainer span {
-    color: var(--secondary-color);
-  }
-  .carDescriptionShort p {
-    color: var(--primary-color);
-  }
-  .carDescriptionShort {
-    padding-bottom: 1vh;
-    justify-self: center;
-    text-align: center;
-  }
-  .carStatsTitle {
-    text-align: center;
-  }
-  
-  .carStats p {
-    display: inline-block;
-  }
-  .carStats {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
-    border: 1px solid white;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 90%;
-    padding: 1vh 1vw;
-  }
-  /* .carStats div:nth-child(2) {
-      display:inline-block;
-      border: 2px solid yellow;
-  } */
-  .carStats .carAttribute {
-    justify-self: start;
-    text-align: start;
-    left: 0%;
-    width: 45%;
-  }
-  .carStats .carValue {
-    justify-self: start;
-    text-align: start;
-    right: 0%;
-    width: 45%;
-  }
-  .carPriceDescContainer {
-    grid-area: thePriceDescription;
-    margin: 1vh;
-    padding: 1vh;
+  .carMakeModelName{
+    font-size: larger ;
   }
   .carPriceLabel {
-    text-align: center;
-    color: var(--primary-color);
+    text-align: right;
   }
   .carPrice {
-    text-align: center;
-    color: var(--primary-color);
+    text-align: right;
   }
   .carDescriptionTitle {
-    text-align: center;
-    padding-top: 1vh;
+    text-align: left;
   }
-  .carLongDescription {
+  .footerNav {
+    display: none;
   }
-  .cartButton {
-    text-align: center;
-    margin-bottom: 2vh;
-  }
-  
-  /* iPads (portrait and landscape) ----------- */
-  /* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-      } */
-  
-  @media only screen and (min-device-width: 768px) {
-    .carTextDetailsContainer {
-      display: grid;  
-      grid-template-areas: "theStats theStats theStats thePriceDescription thePriceDescription thePriceDescription";
-    }
-    .carMakeModelName,
-    .cartButtonTop {
-      top: 53%;
-    }
-    .carPriceLabel {
-      text-align: right;
-    }
-    .carPrice {
-      text-align: right;
-    }
-    .carDescriptionTitle {
-      text-align: left;
-    }
-    .footerNav {
-      display: none;
-    }
-  }
-  
+}
