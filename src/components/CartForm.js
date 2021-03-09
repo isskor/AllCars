@@ -12,11 +12,11 @@ const CartForm = () => {
     const { handleCheckout } = useContext(CartContext) ;
   
     const handleChange = (e) => {
-      setForm( {...form , [e.target.name]:[e.target.value] });
+      setForm( {...form , [e.target.name] : e.target.value });
     }
 
     const handlePayment = (e) => {
-        setPaymentInfo( { ...paymentInfo, [e.target.name] : [e.target.value]});
+        setPaymentInfo( { ...paymentInfo, [e.target.name] : e.target.value });
     }
 
     const takeInfo = (e) => {

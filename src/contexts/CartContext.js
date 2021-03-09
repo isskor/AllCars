@@ -29,7 +29,7 @@ const CartContextProvider = ({ children }) => {
   },[checkoutForm, cart])
 
 
-console.log(checkoutState)
+  
   return (
     <Provider
       value={{
