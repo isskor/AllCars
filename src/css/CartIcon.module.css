@@ -1,0 +1,36 @@
+.cartIcon {
+  display: grid;
+  grid-template-columns: 60px;
+  grid-template-rows: 10px 20px 20px;
+}
+.cost {
+  color: var(--secondary-color);
+  align-self: center;
+  grid-area: 1/1/1/1;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.cart {
+  margin: 0;
+  margin-top: 0.5rem;
+  color: var(--primary-color);
+  font-size: 40px;
+  grid-area: 2/1/4/1;
+  align-self: center;
+  justify-self: center;
+}
+svg {
+  margin: 0;
+}
+.quantity {
+  font-size: 0.8rem;
+  grid-area: 2/1/4/1;
+  margin: 0.4rem 0 0 0.5rem;
+
+  align-self: start;
+  justify-self: center;
+  color: var(--secondary-color);
+
+  text-align: center;
+}

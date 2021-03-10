@@ -4,7 +4,7 @@
   outline: none;
   border-bottom: 1px solid rgba(192, 192, 192, 0.6);
 }
-form {
+.cart_form {
   width: 90%;
   margin: 0 auto 2rem;
   padding: 2rem;
@@ -12,18 +12,18 @@ form {
   background-color: #454545;
 }
 
-form h3 {
+.cart_form h3 {
   text-align: center;
   color: var(--secondary-color);
   padding: 1rem 0 3rem;
 }
 
-label {
+.cartPage label {
   color: var(--primary-color);
   font-family: var(--main-font);
 }
 
-input {
+.cartPage input {
   background: transparent;
   box-sizing: border-box;
   display: block;
@@ -38,7 +38,7 @@ input {
   border-bottom: 1px solid rgba(192, 192, 192, 0.6);
 }
 
-input:focus {
+.cartPage input:focus {
   background: #7c7c7c;
   border-radius: 1rem;
   transition: all 1s ease;
@@ -53,11 +53,11 @@ input:focus {
   flex-basis: 50%;
 }
 
-.form_group {
+.cart_form .form_group {
   flex-basis: 100%;
 }
-.card_date,
-.card_cvc {
+.cart_form .card_date,
+.cart_form .card_cvc {
   flex-basis: 40%;
 }
 
@@ -68,24 +68,24 @@ input:focus {
 }
 
 @media (min-width: 576px) {
-  form {
+  .cart_form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  form h3 {
+  .cart_form h3 {
     flex-basis: 100%;
   }
 
-  .email,
-  .phone {
+  .cart_form .email,
+  .cart_form .phone {
     flex-basis: 45%;
   }
 }
 @media (min-width: 992px) {
-  .email,
-  .phone {
+  .cart_form .email,
+  .cart_form .phone {
     flex-basis: 100%;
   }
 }
