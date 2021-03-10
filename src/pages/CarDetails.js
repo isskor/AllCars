@@ -21,7 +21,7 @@ function CarDetails() {
 
   const renderCar = () => {
     return (
-      <>
+      <div className={styles.page_container}>
         <div className={styles.carDetailsContainer}>
           <section className={styles.carImageContainer}>
             <div className={styles.backButton}>
@@ -35,12 +35,9 @@ function CarDetails() {
             />
             <h2 className={styles.carMakeModelName}>
               <span>
-                {car.make} {car.model}: Only {car.price.toLocaleString('en')}!{' '}
+                {car.make} {car.model}
               </span>
             </h2>
-            <div className={styles.cartButtonTop}>
-              <AddToCartButton car={car} />
-            </div>
           </section>
           <div className={styles.car_details_container}>
             <section className={styles.main_info}>
@@ -49,6 +46,9 @@ function CarDetails() {
                 <p className={styles.carPrice}>
                   {car.price.toLocaleString('en')}
                 </p>
+              </div>
+              <div className={styles.cartButtonTop}>
+                <AddToCartButton car={car} />
               </div>
               <div className={styles.car_desc_short}>
                 <p>{car.descShort}</p>
@@ -93,7 +93,7 @@ function CarDetails() {
             <AddToCartButton car={car} />
           </div>
         </div>
-      </>
+      </div>
     );
   };
 
