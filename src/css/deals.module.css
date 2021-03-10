@@ -1,10 +1,6 @@
 .dealsContainer {
   width: 100%;
-  margin: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 6rem;
+  padding: 5rem 0;
 }
 
 .grid {
@@ -19,24 +15,15 @@
 }
 
 .link {
-  width: 5.5rem;
-  height: 2rem;
-  margin: auto;
+  display: flex;
+  justify-content: center;
 }
-
+.link button {
+  font-size: 1.4rem;
+}
 @media (min-width: 768px) {
   .grid {
     flex-direction: row;
     flex-wrap: wrap;
-  }
-}
-@media (min-width: 992px) {
-  .grid {
-    /* flex-direction: row; */
-  }
-
-  .grid * {
-    /* flex-basis: 30%; */
-    /* height: 20vh; */
   }
 }
