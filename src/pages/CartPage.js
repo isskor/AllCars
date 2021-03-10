@@ -4,6 +4,7 @@ import CartItem from '../components/CartItem';
 import CartForm from '../components/CartForm';
 import styles from '../css/CartPage.module.css';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import BillingForm from '../components/BillingForm';
 
 const CartPage = () => {
   const { cart } = useContext(CartContext);
@@ -31,6 +32,7 @@ const CartPage = () => {
         <div className={styles.cartRight}>
           <CartForm />
         </div>
+        <BillingForm />
       </div>
     </div>
   );
