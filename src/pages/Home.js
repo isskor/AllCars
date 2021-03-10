@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, useRef } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import CarCard from '../components/CarCard';
 import SearchForm from '../components/SearchForm';
@@ -22,6 +22,8 @@ function Home() {
     setShowNumber(showNumber + 10);
   };
 
+  const resultRef = useRef();
+
   return (
     <div className={style.home}>
       <div className={style.hero}>
@@ -32,9 +34,9 @@ function Home() {
         <h1 className={style.heroText}>Quality never goes out of style</h1>
       </div>
       <div className={style.searchForm}>
-        <SearchForm />
+        <SearchForm scrollToRef={resultRef} />
       </div>
-      <div className={style.carList}>
+      <div ref={resultRef} className={style.carList}>
         {showCars.length === 0 && (
           <div>
             <h1>no cars</h1>
