@@ -62,7 +62,7 @@
     grid-column-start: 1;
     grid-column-end: 3;
     padding: 0;
-    width: 5.5rem;
+    width: 5.8rem;
     height: 2rem;
     justify-self: right;
     align-self: end;
@@ -120,7 +120,7 @@
         grid-column-start: 3;
         grid-column-end: 4;
         font-size: 1rem;
-        width: 6.3rem;
+        width: 6.6rem;
         height: 2.2rem;
     }
     
@@ -170,7 +170,7 @@
 
     .addBtn {
         font-size: 0.8rem;
-        width: 5.5rem;
+        width: 5.8rem;
         height: 2rem;
     }
 
