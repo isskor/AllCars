@@ -1,9 +1,10 @@
 import React from 'react';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import styles from '../css/CartForm.module.css';
 import { CartContext } from '../contexts/CartContext';
 
 const CartForm = () => {
+  const { setCheckoutForm } = useContext(CartContext);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -15,6 +16,9 @@ const CartForm = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: [e.target.value] });
   };
+  useEffect(() => {
+    setCheckoutForm(form);
+  }, [form]);
 
   return (
     <div className={styles.cartPage}>

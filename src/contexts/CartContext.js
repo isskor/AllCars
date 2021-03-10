@@ -5,6 +5,7 @@ const CartContextProvider = ({ children }) => {
   const { Provider } = CartContext;
   const [cart, setCart] = useState([{ price: 999999999 }]);
   const [checkoutForm, setCheckoutForm] = useState({});
+  const [billingForm, setBillingForm] = useState({});
   const [checkoutState, setCheckoutState] = useState({});
 
   const addToCart = (item) => {
@@ -15,9 +16,9 @@ const CartContextProvider = ({ children }) => {
     setCart(cart.filter((car) => car !== item));
   };
 
-  const handleCheckout = (form, form2) => {
-    setCheckoutForm({ ...form, ...form2 });
-    console.log(form, form2);
+  const handleCheckout = (billing) => {
+    setBillingForm(billing);
+    setCheckoutForm(checkoutForm);
   };
 
   useEffect(() => {
@@ -35,6 +36,7 @@ const CartContextProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         handleCheckout,
+        setCheckoutForm,
         checkoutState,
       }}
     >
