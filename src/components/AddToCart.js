@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import Modal from './Modal';
+import style from '../css/CarCard.module.css';
 const AddToCartButton = ({ car }) => {
   const { addToCart } = useContext(CartContext);
   const [openModal, setOpenModal] = useState(false);
@@ -12,7 +13,7 @@ const AddToCartButton = ({ car }) => {
 
   return (
     <>
-      <button onClick={() => clickHandler(car)}>Add To Cart</button>
+      <button className={style.addBtn} onClick={() => clickHandler(car)}>Add To Cart</button>
       <Modal openModal={openModal} setOpenModal={setOpenModal} />
     </>
   );

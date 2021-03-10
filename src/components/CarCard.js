@@ -1,5 +1,6 @@
 import style from '../css/CarCard.module.css';
 import {useHistory} from 'react-router-dom' ;
+import AddToCart from './AddToCart';
 
 
 function CarCard(prop) {
@@ -28,7 +29,7 @@ function CarCard(prop) {
                     <p className={style.miles}>Miles</p>
                     <p className={style.milesNumber}>{prop.car.miles}</p>
                 </div>
-                <button className={style.addBtn}>Add to cart</button>
+                <AddToCart />
             </div>
         </div>
     )
