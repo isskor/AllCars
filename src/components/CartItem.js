@@ -1,11 +1,18 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import styles from '../css/CartItem.module.css';
 const CartItem = ({ cartItem, checkout = false }) => {
   const { removeFromCart } = useContext(CartContext);
+  const history = useHistory();
+
+  function goToCarDetails() {
+    history.push(`/car/${cartItem.vin}`);
+  }
+
   return (
     <div className={styles.carCard}>
-      <div className={styles.img_container}>
+      <div className={styles.img_container} onClick={goToCarDetails}>
         <img
           src={`/assets/car-pictures/${cartItem.make}-${cartItem.model}-${cartItem.year}.jpg`}
           alt='Car picture'
