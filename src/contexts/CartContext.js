@@ -14,7 +14,7 @@ const CartContextProvider = ({ children }) => {
 
     form:{
       name: "Johny Cash",
-      adress: "Solgatan 21, Stockholm",
+      address: "Solgatan 21, Stockholm",
       method: "Exspress delivery",
       number: "8768769870"
 
@@ -34,12 +34,12 @@ const CartContextProvider = ({ children }) => {
     console.log(form, form2);
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     setCheckoutState({
       cars: cart,
       form: checkoutForm,
     });
-  }, [checkoutForm, cart]);
+  }, [checkoutForm, cart]); */
 
   
   return (

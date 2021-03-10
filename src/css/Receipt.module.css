@@ -1,0 +1,16 @@
+h2, h3{
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.receiptNote {
+    padding: 2rem;
+    background-color: var(--card-bg);
+    margin: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.receipt {
+    padding: 1rem;
+}
