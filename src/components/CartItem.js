@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import {CartContext} from '../contexts/CartContext';
+import { CartContext } from '../contexts/CartContext';
 import styles from '../css/CartItem.module.css';
-const CartItem = ({ cartItem }) => {
+const CartItem = ({ cartItem, checkout = false }) => {
   const { removeFromCart } = useContext(CartContext);
   return (
     <div className={styles.carCard}>
@@ -12,26 +12,28 @@ const CartItem = ({ cartItem }) => {
         />
       </div>
       <div className={styles.car_info_container}>
-        <div className='car_info'>
-          <p>Car</p>
+        <div className={styles.car_info}>
           <p>
             {cartItem.make} {cartItem.model} {cartItem.year}
           </p>
         </div>
-        <div className='car_miles_ctn'>
-          <p>Miles</p>
+        <div className={styles.car_info}>
+          <p className={styles.car_info_label}>Miles</p>
           <p className='car_miles'>{cartItem.miles}</p>
         </div>
-        <div className='car_price_ctn'>
+        <div className={styles.car_info}>
+          <p className={styles.car_info_label}>Price</p>
           <p className={styles.car_price}>{cartItem.price}</p>
         </div>
       </div>
-      <button
-        className={styles.removeBtn}
-        onClick={() => removeFromCart(cartItem)}
-      >
-        Remove
-      </button>
+      {!checkout && (
+        <button
+          className={styles.removeBtn}
+          onClick={() => removeFromCart(cartItem)}
+        >
+          Remove
+        </button>
+      )}
     </div>
   );
 };
