@@ -26,7 +26,7 @@ const CartContextProvider = ({ children }) => {
       cars: cart,
       form: checkoutForm,
     });
-  }, [checkoutForm, cart]);
+  }, [billingForm, cart]);
 
   console.log(checkoutState);
   return (

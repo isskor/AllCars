@@ -32,7 +32,9 @@ const CartPage = () => {
         <div className={styles.cartRight}>
           <CartForm />
         </div>
-        <BillingForm />
+        <div className={styles.billingForm}>
+          <BillingForm />
+        </div>
       </div>
     </div>
   );

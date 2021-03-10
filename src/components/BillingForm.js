@@ -21,7 +21,7 @@ const BillingForm = () => {
   };
 
   return (
-    <div className={styles.cartPage}>
+    <div className={`${styles.cartPage} ${styles.BillingForm}`}>
       <form className={styles.cart_form} onChange={handlePayment}>
         <h3>Billing</h3>
 
