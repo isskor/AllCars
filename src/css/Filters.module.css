@@ -1,0 +1,50 @@
+.filter_container {
+  animation: dropDown 0.6s;
+}
+.form_group_select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 1rem;
+}
+
+.reset_btn {
+  flex-basis: 12.5%;
+  justify-self: flex-end;
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .filter_container {
+    display: flex;
+    align-items: center;
+    /* background: var(--card-bg); */
+    border-radius: 1.5rem;
+    width: 100%;
+  }
+
+  .form_group_select {
+    flex-direction: column;
+    flex-basis: 25%;
+    align-items: flex-start;
+    margin: 1rem 0;
+  }
+  .filterList_type {
+    margin-bottom: 0.5rem;
+  }
+
+  .reset_btn {
+    flex-basis: auto;
+    margin-left: auto;
+  }
+}
+
+@keyframes dropDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

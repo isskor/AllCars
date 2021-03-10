@@ -17,6 +17,9 @@ const About = () => {
                 <div className={styles.aboutImageStaff}>
                     <img className={styles.aboutTeam} src="/assets/background/allcars-team.jpg" alt="About the AllCars staff" />
                 </div>
+                <div className={styles.aboutContactInfo}>
+                    Contact us!
+                </div>
             </div>
         </div>
     );
