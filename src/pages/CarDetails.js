@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useHistory } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/CarDetails2.module.css';
 import AddToCartButton from '../components/AddToCart';
@@ -9,20 +9,25 @@ function CarDetails() {
   const { cars } = useContext(CarContext);
   const [car, setCar] = useState(cars[0]);
   const params = useParams();
-  console.log(params);
+  const history = useHistory();
+
+  // get Car
   useEffect(() => {
     setCar(cars.find((car) => params.id === car.vin));
     console.log(car);
   }, [params]);
+
+  // go back function
+
   const renderCar = () => {
     return (
       <>
         <div className={styles.carDetailsContainer}>
           <section className={styles.carImageContainer}>
             <div className={styles.backButton}>
-              <Link to='/'>
+              <a onClick={() => history.goBack()}>
                 <ArrowLeftOutlined />
-              </Link>
+              </a>
             </div>
             <img
               src={`../assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
