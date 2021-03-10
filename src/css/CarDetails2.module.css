@@ -1,11 +1,7 @@
-.page_container {
-  background: rgba(17, 17, 17, 0.603);
-  padding-top: 5rem;
-}
-
 .carDetailsContainer {
   background: var(--dark-color);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  background: var(--card-bg);
+  /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 1rem;
@@ -142,22 +138,10 @@
   }
 }
 
-/* 
-.carStatsContainer {
-  flex-basis: 50%;
-  padding: 1rem;
+@media (min-width: 1200px) {
+  .carImageContainer {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 1rem 1rem;
+    overflow: hidden;
+  }
 }
-.carPriceDescContainer {
-  padding: 1rem;
-  flex-basis: 50%;
-  display: flex;
-  flex-direction: column;
-}
-.carPriceLabel,
-.carPrice {
-  align-self: flex-end;
-}
-
-.carPrice {
-  font-size: 2rem;
-} */ ;
