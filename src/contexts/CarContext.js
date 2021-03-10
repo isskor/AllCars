@@ -146,7 +146,7 @@ const CarContextProvider = ({ children }) => {
   useEffect(() => {
     handleFilteredCars(cars, filteredCarsObject);
     handleNewFilters();
-    console.log(filteredCarsObject);
+    
   }, [filteredCarsObject]);
 
   // useEffect(() => {

@@ -14,7 +14,7 @@ const ReceiptCar = ({car}) => {
                     <p>{car.make} {car.model} {car.year}</p>
                 </div>
                 <div className='car_miles_ctn'>
-                    <p>Miles</p>
+                    
                     <p className='car_miles'>{car.miles}</p>
                 </div>
                 <div className='car_price_ctn'>
