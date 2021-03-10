@@ -11,17 +11,25 @@
   margin-right: 2rem;
 }
 
+svg {
+  color: #ffc388;
+  height: 1.25em !important;
+  width: 1.25em !important ;
+  margin-top: 1rem;
+}
+svg:hover {
+  color: orange;
+}
+
 @media (min-width: 575px) {
-  .iconName {
-    display: inline-block;
-  }
   .navbar {
     display: flex;
     justify-content: space-between;
   }
   .navbar svg,
   .navbar span {
-    font-size: 1rem;
+    /* font-size: 1rem; */
+    margin: 0 2rem;
   }
 }
 
@@ -38,19 +46,22 @@
   }
 }
 
-svg {
-  color: #ffc388;
-  height: 1.25em !important;
-  width: 1.25em !important ;
-  margin-top: 1rem;
-}
-svg:hover {
-  color: orange;
+@media (min-width: 768px) {
+  .iconName {
+    display: inline-block;
+    padding-right: 3rem;
+  }
+
+  .navbar svg,
+  .navbar span {
+    margin: 0;
+  }
 }
 
 @media (min-width: 992px) {
   .navbar svg,
   .navbar span {
     font-size: 1.3rem;
+    margin: 0;
   }
 }
