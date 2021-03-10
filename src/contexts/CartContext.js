@@ -3,7 +3,7 @@ import { useState, createContext, useEffect } from 'react';
 export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
   const { Provider } = CartContext;
-  const [cart, setCart] = useState(localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []);
+  const [cart, setCart] = useState(localStorage.getItem('cartCars') ? JSON.parse(localStorage.getItem('cartCars')) : []);
   const [checkoutForm, setCheckoutForm] = useState({});
   const [checkoutState, setCheckoutState] = useState({});
 
