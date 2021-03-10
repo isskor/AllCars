@@ -1,26 +1,24 @@
 import { useContext, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/CarDetails2.module.css';
 import AddToCartButton from '../components/AddToCart';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 
-function CarDetails(props) {
+function CarDetails() {
   const { cars } = useContext(CarContext);
   const [car, setCar] = useState(cars[0]);
-
-  // useEffect(() => {
-  //   if (theCars) {
-  //     setCar(theCars.find((car) => props.match.params.id === car.id));
-  //   }
-  // }, [theCars]);
-
+  const params = useParams();
+  console.log(params);
+  useEffect(() => {
+    setCar(cars.find((car) => params.id === car.vin));
+    console.log(car);
+  }, [params]);
   const renderCar = () => {
     return (
       <>
         <div className={styles.carDetailsContainer}>
           <section className={styles.carImageContainer}>
-            {/* added image src here directly */}
             <div className={styles.backButton}>
               <Link to='/'>
                 <ArrowLeftOutlined />

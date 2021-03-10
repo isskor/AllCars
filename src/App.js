@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Deals from './pages/deals';
 import CartPage from './pages/CartPage';
+import CarDetails from './pages/CarDetails';
 function App() {
   return (
     <div className='App'>
@@ -17,7 +18,7 @@ function App() {
               <Route path='/deals' component={Deals} />
               <Route exact path='/' component={Home} />
               <Route path='/about' component={About} />
-              <Route exact path='/car/:id' />
+              <Route exact path='/car/:id' component={CarDetails} />
               <Route exact path='/cart' component={CartPage} />
               <Route path='/receipt' />
             </Switch>
