@@ -14,6 +14,8 @@ const carList = carsJSON.map((car, i) => {
     discounted: false,
   };
 });
+ 
+
 // filter lists
 const getFilters = (type, list = carList) => {
   const filterSet = new Set(list.map((c) => c[type]));
@@ -41,6 +43,8 @@ const filterList = () => {
     },
   ];
 };
+
+
 
 export const CarContext = createContext();
 
@@ -149,6 +153,9 @@ const CarContextProvider = ({ children }) => {
     console.log(filteredCarsObject);
   }, [filteredCarsObject]);
 
+  useEffect(() => {
+    localStorage.setItem('carList', JSON.stringify(carList))
+  }, [carList]);
   // useEffect(() => {
   // }, [filteredCars]);
 
