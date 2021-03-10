@@ -44,8 +44,6 @@ const filterList = () => {
   ];
 };
 
-
-
 export const CarContext = createContext();
 
 const CarContextProvider = ({ children }) => {
