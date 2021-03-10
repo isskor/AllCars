@@ -26,7 +26,7 @@
 }
 
 .aboutText {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .aboutContactInfo {
-    margin: 1rem 1rem 0 1rem;
+    margin: 1.5rem 1rem 0 1rem;
     background-color: var(--card-bg);
     border-radius: 4px;
     padding: 1rem;
@@ -70,4 +70,76 @@
     font-size: 0.8rem;
     text-decoration: underline;
     opacity: 30%;
+}
+
+@media (min-width: 768px) {
+
+    .aboutHeroContainer {
+        height: 24vh;
+        overflow: hidden;
+    }
+
+    .aboutTitle {
+        font-size: 2.4rem;
+    }
+
+    .aboutContentContainer {
+        margin: 2rem;
+    }
+
+    .textAndImg {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+    }
+
+    .aboutText {
+        width: 45%;
+        font-size: 1.2rem;
+    }
+
+    .aboutTeam {
+        width: 50%;
+        object-fit: cover;
+    }
+
+    .aboutContactInfo {
+        padding: 1.5rem;
+    }
+    
+    .contactWrapper {
+        margin-bottom: 1.5rem;
+    }
+    
+    .allCarsCopyright {
+        font-size: 1.4rem;
+    }
+    
+    .email {
+        font-size: 1.2rem;
+    }
+
+    .addressAndPhonenumber {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contactAddress {
+        margin-bottom: 0;
+    }
+
+    .contactPhonenumber {
+        text-align: end;
+    }
+    
+    .contactUs {
+        font-size: 1rem;
+    }
+
+    .contactText {
+        font-size: 1.2rem;
+    }
+
 }
