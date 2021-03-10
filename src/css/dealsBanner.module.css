@@ -2,7 +2,7 @@
   height: 50vh;
   margin-bottom: 1rem;
   display: flex;
-  padding-top: 5.75rem; /* add height of nav here */
+  /* padding-top: 5.75rem; add height of nav here */
   z-index: -3;
 }
 .header img {
