@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
+import { CarContext } from '../contexts/CarContext';
 import { CartContext } from '../contexts/CartContext';
 import ReceiptCar from '../components/ReceiptCar';
 import styles from '../css/Receipt.module.css';
@@ -6,12 +7,18 @@ import { useHistory } from 'react-router-dom';
 
 const Receipt = () => {
   const { checkoutState } = useContext(CartContext);
+  const { dispatch } = useContext(CarContext);
   const history = useHistory();
 
   const goToHome = () => {
     history.push('/');
   };
-  console.log(checkoutState);
+
+  useEffect(() => {
+    return () => {
+      dispatch('FILTER_RESET_ACTION');
+    };
+  }, []);
 
   return (
     <div className={styles.receipt}>
