@@ -30,8 +30,8 @@ const CartContextProvider = ({ children }) => {
       cars: cart,
       form: checkoutForm,
     });
-    console.log('useffect' + checkoutForm);
-  }, [billingForm, cart, checkoutForm]);
+  setCart([])
+  }, [billingForm ]);
 
   useEffect(() => {
     localStorage.setItem('cartCars', JSON.stringify(cart));
