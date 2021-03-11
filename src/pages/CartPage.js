@@ -9,6 +9,7 @@ import BillingForm from '../components/BillingForm';
 const CartPage = () => {
   const { cart } = useContext(CartContext);
   const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
+
   return (
     <div className={styles.cart}>
       <div>
