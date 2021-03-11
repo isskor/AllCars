@@ -3,7 +3,6 @@ import { CartContext } from '../contexts/CartContext';
 import ReceiptCar from '../components/ReceiptCar';
 import styles from '../css/Receipt.module.css';
 import { useHistory } from 'react-router-dom';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const Receipt = () => {
   const { checkoutState } = useContext(CartContext);
@@ -13,7 +12,6 @@ const Receipt = () => {
     history.push('/');
   };
   console.log(checkoutState);
-  console.log(checkoutState.cars);
 
   return (
     <div className={styles.receipt}>
@@ -28,21 +26,20 @@ const Receipt = () => {
 
       <div className={styles.receiptNote}>
         <p>
-          Hello <b>{checkoutState.form.name}</b>. We have received your order.{' '}
+          Hello <b>{checkoutState.form.name}</b>. We have received your order.
         </p>
         <br />
         <p>
-          Your address is {checkoutState.form.address} and your number is{' '}
-          {checkoutState.form.number} .{' '}
-        </p>{' '}
+          {` Your address is ${checkoutState.form.address} and your number is
+          ${checkoutState.form.phone}.`}
+        </p>
         <br />
-        <p>You chooses {checkoutState.form.method} as a delivery methods</p>
+        <p>{`You chooses ${checkoutState.form.method} as a delivery methods`}</p>
       </div>
       <div className={styles.buttonGroup}>
         <button onClick={() => window.print()}>Print</button>
-        <button onClick={goToHome}>Back to Home</button> 
+        <button onClick={goToHome}>Back to Home</button>
       </div>
-      
     </div>
   );
 };

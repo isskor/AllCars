@@ -1,9 +1,11 @@
 import React from 'react';
 import { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from '../css/CartForm.module.css';
 import { CartContext } from '../contexts/CartContext';
 
 const BillingForm = () => {
+  const history = useHistory();
   const { handleCheckout } = useContext(CartContext);
   const [paymentInfo, setPaymentInfo] = useState({
     cardNumber: '',
@@ -18,6 +20,7 @@ const BillingForm = () => {
   const takeInfo = (e) => {
     e.preventDefault();
     handleCheckout(paymentInfo);
+    history.push('/receipt');
   };
 
   return (

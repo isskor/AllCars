@@ -10,30 +10,7 @@ const CartContextProvider = ({ children }) => {
   );
   const [checkoutForm, setCheckoutForm] = useState({});
   const [billingForm, setBillingForm] = useState({});
-  const [checkoutState, setCheckoutState] = useState({
-    cars: [
-      {
-        make: 'Pontiac',
-        model: 'Montana SV6',
-        year: 2006,
-        vin: 'JN1CV6FE7DM360307',
-        city: 'Jāsim',
-        descShort:
-          'purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus at diam',
-        descLong:
-          'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
-        price: 299379,
-        miles: 12346,
-      },
-    ],
-
-    form: {
-      name: 'Johny Cash',
-      address: 'Solgatan 21, Stockholm',
-      method: 'Exspress delivery',
-      number: '8768769870',
-    },
-  });
+  const [checkoutState, setCheckoutState] = useState({});
 
   const addToCart = (item) => {
     setCart([...cart, item]);
@@ -45,7 +22,7 @@ const CartContextProvider = ({ children }) => {
 
   const handleCheckout = (billing) => {
     setBillingForm(billing);
-    setCheckoutForm(checkoutForm);
+    console.log(checkoutForm);
   };
 
   useEffect(() => {
@@ -53,7 +30,8 @@ const CartContextProvider = ({ children }) => {
       cars: cart,
       form: checkoutForm,
     });
-  }, [billingForm, cart]);
+    console.log('useffect' + checkoutForm);
+  }, [billingForm, cart, checkoutForm]);
 
   useEffect(() => {
     localStorage.setItem('cartCars', JSON.stringify(cart));

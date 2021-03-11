@@ -18,6 +18,7 @@ const CartForm = () => {
   };
   useEffect(() => {
     setCheckoutForm(form);
+    console.log(form);
   }, [form]);
 
   return (
