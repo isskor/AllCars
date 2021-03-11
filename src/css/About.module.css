@@ -28,6 +28,10 @@
     margin-bottom: 1.5rem;
 }
 
+.aboutText p {
+    line-height: 2rem;
+}
+
 .teamImgWrap {
     display: none;
     box-shadow: 2px 2px 5px #242424;
@@ -35,7 +39,7 @@
 
 .paragraphHeading {
     font-size: 1.2rem;
-    margin-top: 0.8rem;
+    margin: 1.6rem 0 0.5rem 0;
     font-family: var(--header-font);
     font-weight: normal;
 }
@@ -45,7 +49,7 @@
 }
 
 .aboutContactInfo {
-    margin: 1.5rem 1rem;
+    margin: 2.5rem 1rem;
     background-color: var(--card-bg);
     border-radius: 4px;
     padding: 1rem;
@@ -105,7 +109,7 @@
         display: inline-block;
         width: 50%;
         float: right;
-        margin: 0.5rem 0 0.5rem 1rem;
+        margin: 0.8rem 0 0.5rem 1rem;
     }
 
     .paragraphHeading {
@@ -172,7 +176,7 @@
 
     .teamImgWrap {
         width: 40%;
-        margin: 1rem 0 0.5rem 1rem;
+        margin: 1.2rem 0 0.5rem 1rem;
     }
 
     .paragraphHeading {
@@ -180,7 +184,15 @@
     }
 
     .aboutContactInfo {
-        margin: 1.5rem 6rem;
+        margin: 2.5rem 8rem;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .aboutContactInfo {
+        margin: 2.5rem 14rem;
     }
 
 }
