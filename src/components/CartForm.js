@@ -46,16 +46,15 @@ const CartForm = () => {
           <h3>Delivery Options</h3>
           <div className={styles.radio}>
             <label>Delivery</label>
-            <input type='radio' value='Pick up' name='method' />
-          </div>
-          <div className={styles.radio}>
-            <label>Express delivery</label>
             <input type='radio' value='Delivery' name='method' />
           </div>
           <div className={styles.radio}>
-            <label>Pick up</label>
-
+            <label>Express delivery</label>
             <input type='radio' value='Express delivery' name='method' />
+          </div>
+          <div className={styles.radio}>
+            <label>Pick up</label>
+            <input type='radio' value='Pick up' name='method' />
           </div>
         </div>
       </form>
