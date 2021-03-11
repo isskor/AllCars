@@ -3,7 +3,7 @@ import { useState, createContext, useEffect } from 'react';
 export const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
   const { Provider } = CartContext;
-  const [cart, setCart] = useState([{ price: 999999999 }]);
+  const [cart, setCart] = useState(localStorage.getItem('cartCars') ? JSON.parse(localStorage.getItem('cartCars')) : []);
   const [checkoutForm, setCheckoutForm] = useState({});
   const [checkoutState, setCheckoutState] = useState({});
 
@@ -26,6 +26,12 @@ const CartContextProvider = ({ children }) => {
       form: checkoutForm,
     });
   }, [checkoutForm, cart]);
+
+  useEffect(() => {
+    localStorage.setItem('cartCars', JSON.stringify(cart))
+  }, [cart]);
+
+
 
   console.log(checkoutState);
   return (

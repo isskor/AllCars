@@ -14,6 +14,7 @@ const carList = carsJSON.map((car, i) => {
     discounted: false,
   };
 });
+
 // filter lists
 const getFilters = (type, list = carList) => {
   const filterSet = new Set(list.map((c) => c[type]));
@@ -48,10 +49,14 @@ const CarContextProvider = ({ children }) => {
   const { Provider } = CarContext;
   const [cars, setCars] = useState(carList);
   const [filters, setFilters] = useState(filterList());
+
   const [filteredCars, setFilteredCars] = useState(cars);
+
   const [filteredCarsObject, dispatch] = useReducer(
     searchReducer,
-    initialCarState
+    localStorage.getItem('filteredCarList')
+      ? JSON.parse(localStorage.getItem('filteredCarList'))
+      : initialCarState
   );
 
   const newFiltersHelper = (filterTypeOne, filterTypeTwo) => {
@@ -149,6 +154,9 @@ const CarContextProvider = ({ children }) => {
     console.log(filteredCarsObject);
   }, [filteredCarsObject]);
 
+  useEffect(() => {
+    localStorage.setItem('filteredCarList', JSON.stringify(filteredCarsObject));
+  }, [filteredCarsObject]);
   // useEffect(() => {
   // }, [filteredCars]);
 
