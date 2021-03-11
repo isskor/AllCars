@@ -30,8 +30,8 @@ const CartContextProvider = ({ children }) => {
       cars: cart,
       form: checkoutForm,
     });
-  setCart([])
-  }, [billingForm ]);
+    setCart([]);
+  }, [billingForm]);
 
   useEffect(() => {
     localStorage.setItem('cartCars', JSON.stringify(cart));
@@ -45,6 +45,7 @@ const CartContextProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         handleCheckout,
+        checkoutForm,
         setCheckoutForm,
         checkoutState,
       }}
