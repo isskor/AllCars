@@ -21,7 +21,7 @@ svg:hover {
   color: orange;
 }
 
-@media (min-width: 575px) {
+@media (min-width: 576px) {
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -33,7 +33,7 @@ svg:hover {
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
   .navbar {
     display: flex;
     justify-content: space-around;
@@ -46,19 +46,12 @@ svg:hover {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .iconName {
     display: inline-block;
     padding-right: 3rem;
   }
 
-  .navbar svg,
-  .navbar span {
-    margin: 0;
-  }
-}
-
-@media (min-width: 992px) {
   .navbar svg,
   .navbar span {
     font-size: 1.3rem;
