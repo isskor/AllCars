@@ -54,3 +54,8 @@ svg:hover {
     font-size: 1.3rem;
   }
 }
+@media print {
+  .navbar {
+    display: none;
+  }
+}

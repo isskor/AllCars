@@ -34,3 +34,9 @@ svg {
 
   text-align: center;
 }
+
+@media print {
+  .cartIcon {
+    display: none;
+  }
+}
