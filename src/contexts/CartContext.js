@@ -30,7 +30,6 @@ const CartContextProvider = ({ children }) => {
       cars: cart,
       form: checkoutForm,
     });
-    setCart([]);
   }, [billingForm]);
 
   useEffect(() => {
@@ -43,6 +42,7 @@ const CartContextProvider = ({ children }) => {
       value={{
         cart,
         addToCart,
+        setCart,
         removeFromCart,
         handleCheckout,
         checkoutForm,

@@ -6,9 +6,12 @@ import styles from '../css/Receipt.module.css';
 import { useHistory } from 'react-router-dom';
 
 const Receipt = () => {
-  const { checkoutState } = useContext(CartContext);
-  const { dispatch } = useContext(CarContext);
+  const { checkoutState, setCart } = useContext(CartContext);
   const history = useHistory();
+
+  useEffect(() => {
+    setCart([]);
+  }, []);
 
   const goToHome = () => {
     history.push('/');
