@@ -58,3 +58,8 @@ svg:hover {
     margin: 0;
   }
 }
+@media print {
+  .navbar {
+    display: none;
+  }
+}

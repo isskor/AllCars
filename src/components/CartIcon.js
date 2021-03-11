@@ -5,9 +5,9 @@ import styles from '../css/CartIcon.module.css';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 const CartIcon = () => {
   const { cart } = useContext(CartContext);
-  console.log(cart);
+  
   const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
-  console.log(totalCost);
+  
   //   console.log(cart[0].price);
   return (
     <div className={styles.cartIcon}>
