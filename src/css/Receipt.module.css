@@ -23,6 +23,18 @@
 .receipt button {
   margin: 2rem;
 }
+
+@media (min-width: 768px) {
+  .receipt_content {
+    display: flex;
+  }
+  .receipt_items {
+    flex-basis: 50%;
+  }
+  .receiptNote {
+    flex-basis: 50%;
+  }
+}
 @media print {
   nav {
     display: none;
