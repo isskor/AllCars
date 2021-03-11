@@ -1,198 +1,188 @@
 .aboutHeroContainer {
-    position: relative;
-    width: 100%;
-    height: 18vh;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 18vh;
+  overflow: hidden;
 }
 
 .aboutHeroImage {
-    width: 100%;
-    position: absolute;
+  width: 100%;
+  position: absolute;
 }
 
 .aboutTitle {
-    font-weight: normal;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.5rem;
+  font-weight: normal;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
 }
 
 .aboutContentContainer {
-    margin: 0 1rem;
-    display: flex;
-    flex-direction: column;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .aboutText {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .aboutText p {
-    line-height: 2rem;
+  line-height: 2rem;
 }
 
 .teamImgWrap {
-    display: none;
-    box-shadow: 2px 2px 5px #242424;
+  display: none;
+  box-shadow: 2px 2px 5px #242424;
 }
 
 .paragraphHeading {
-    font-size: 1.2rem;
-    margin: 1.6rem 0 0.5rem 0;
-    font-family: var(--header-font);
-    font-weight: normal;
+  font-size: 1.2rem;
+  margin: 1.6rem 0 0.5rem 0;
+  font-family: var(--header-font);
+  font-weight: normal;
 }
 
 .teamImgBottom {
-    box-shadow: 2px 2px 5px #242424;
+  box-shadow: 2px 2px 5px #242424;
 }
 
 .aboutContactInfo {
-    margin: 2.5rem 1rem;
-    background-color: var(--card-bg);
-    border-radius: 4px;
-    padding: 1rem;
+  margin: 2.5rem 1rem;
+  background-color: var(--card-bg);
+  border-radius: 4px;
+  padding: 1rem;
 }
 
 .contactWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1rem;
 }
 
 .allCarsCopyright {
-    font-size: 1.2rem;
-    color: var(--primary-color);
+  font-size: 1.2rem;
+  color: var(--primary-color);
 }
 
 .email {
-    color: var(--primary-color);
-    text-decoration: none;
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
 .email:hover {
-    color: orange;
+  color: orange;
 }
 
 .contactAddress {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .contactUs {
-    font-size: 0.8rem;
-    text-decoration: underline;
-    opacity: 30%;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  opacity: 30%;
 }
 
 @media (min-width: 768px) {
+  .aboutHeroContainer {
+    height: 24vh;
+  }
 
-    .aboutHeroContainer {
-        height: 24vh;
-    }
+  .aboutTitle {
+    font-size: 4rem;
+    padding: 2rem;
+  }
 
-    .aboutTitle {
-        font-size: 4rem;
-        padding: 2rem;
-    }
+  .aboutContentContainer {
+    margin: 1rem 2rem;
+  }
 
-    .aboutContentContainer {
-        margin: 1rem 2rem;
-    }
+  .aboutText {
+    font-size: 1rem;
+  }
 
-    .aboutText {
-        font-size: 1.2rem;
-    }
+  .teamImgWrap {
+    display: block;
+    width: 50%;
+    float: right;
+    margin: 0.8rem 0 0.5rem 1rem;
+  }
 
-    .teamImgWrap {
-        display: inline-block;
-        width: 50%;
-        float: right;
-        margin: 0.8rem 0 0.5rem 1rem;
-    }
+  .paragraphHeading {
+    font-size: 1.4rem;
+  }
 
-    .paragraphHeading {
-        font-size: 1.4rem;
-    }
+  .teamImgBottom {
+    display: none;
+  }
 
-    .teamImgBottom {
-        display: none;
-    }
+  .aboutContactInfo {
+    padding: 1.5rem;
+  }
 
-    .aboutContactInfo {
-        padding: 1.5rem;
-    }
-    
-    .contactWrapper {
-        margin-bottom: 1.5rem;
-    }
-    
-    .allCarsCopyright {
-        font-size: 1.4rem;
-    }
-    
-    .email {
-        font-size: 1.2rem;
-    }
+  .contactWrapper {
+    margin-bottom: 1.5rem;
+  }
 
-    .addressAndPhonenumber {
-        display: flex;
-        justify-content: space-between;
-    }
+  .allCarsCopyright {
+    font-size: 1.4rem;
+  }
 
-    .contactAddress {
-        margin-bottom: 0;
-    }
+  .email {
+    font-size: 1.2rem;
+  }
 
-    .contactPhonenumber {
-        text-align: end;
-    }
-    
-    .contactUs {
-        font-size: 1rem;
-    }
+  .addressAndPhonenumber {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .contactText {
-        font-size: 1.2rem;
-    }
+  .contactAddress {
+    margin-bottom: 0;
+  }
 
+  .contactPhonenumber {
+    text-align: end;
+  }
+
+  .contactUs {
+    font-size: 1rem;
+  }
+
+  .contactText {
+    font-size: 1.2rem;
+  }
 }
 
 @media (min-width: 992px) {
-    
-    .aboutHeroContainer {
-        height: 40vh;
-    }
+  .aboutHeroContainer {
+    height: 40vh;
+  }
 
-    .aboutTitle {
-        font-size: 3rem;
-    }
+  .aboutTitle {
+    font-size: 3rem;
+  }
 
-    .aboutContentContainer {
-        width: 80%;
-        margin: 1rem auto;
-    }
+  .aboutContentContainer {
+    width: 80%;
+    margin: 1rem auto;
+  }
 
-    .teamImgWrap {
-        width: 40%;
-        margin: 1.2rem 0 0.5rem 1rem;
-    }
+  .teamImgWrap {
+    width: 40%;
+    margin: 1.2rem 0 0.5rem 1rem;
+  }
 
-    .paragraphHeading {
-        font-size: 1.5rem;
-    }
+  .paragraphHeading {
+    font-size: 1.5rem;
+  }
 
-    .aboutContactInfo {
-        margin: 2.5rem 8rem;
-    }
-
-}
-
-@media (min-width: 1200px) {
-
-    .aboutContactInfo {
-        margin: 2.5rem 14rem;
-    }
-
+  .aboutContactInfo {
+    width: 100%;
+    max-width: 600px;
+    margin: 2.5rem auto;
+  }
 }
