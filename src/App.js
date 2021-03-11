@@ -15,8 +15,8 @@ function App() {
             <Route exact path='/deals'></Route>
             <Route exact path='/'></Route>
             <Route exact path='/about'></Route>
+            <Route exact path='/receipt' component={Receipt}></Route>
             
-            <Receipt />
           </CartContextProvider>
         </CarContextProvider>
       </Router>
