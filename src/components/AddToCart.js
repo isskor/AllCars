@@ -7,7 +7,9 @@ const AddToCartButton = ({ car }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const checkCart = (car) => {
-    return cart.includes(car);
+    return cart.find((findVin) => {
+      return findVin.vin === car.vin
+    });
   };
 
   const clickHandler = (car) => {
