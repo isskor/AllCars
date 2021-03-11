@@ -15,7 +15,7 @@ const CartIcon = () => {
       <Link to='/cart' className={styles.cart}>
         <ShoppingCartOutlined />
       </Link>
-      <span className={styles.quantity}>{cart.length}</span>
+      <Link to='/cart' className={styles.quantity}>{cart.length}</Link>
     </div>
   );
 };
