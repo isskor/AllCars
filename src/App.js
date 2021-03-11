@@ -19,14 +19,16 @@ function App() {
         <CarContextProvider>
           <CartContextProvider>
             <Navbar />
-            <Switch>
-              <Route path='/deals' component={Deals} />
-              <Route exact path='/' component={Home} />
-              <Route path='/about' component={About} />
-              <Route exact path='/car/:id' component={CarDetails} />
-              <Route exact path='/cart' component={CartPage} />
-              <Route exact path='/receipt' component={Receipt}></Route>
-            </Switch>
+            <div className={styles.page_container}>
+              <Switch>
+                <Route path='/deals' component={Deals} />
+                <Route exact path='/' component={Home} />
+                <Route path='/about' component={About} />
+                <Route exact path='/car/:id' component={CarDetails} />
+                <Route exact path='/cart' component={CartPage} />
+                <Route exact path='/receipt' component={Receipt}></Route>
+              </Switch>
+            </div>
           </CartContextProvider>
         </CarContextProvider>
       </Router>
