@@ -1,0 +1,147 @@
+.carDetailsContainer {
+  background: var(--dark-color);
+  background: var(--card-bg);
+  /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+
+.carImageContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(1fr, 20px);
+}
+
+.carImageContainer img {
+  width: 100%;
+  grid-area: 1/1/1/1;
+  object-fit: cover;
+  max-height: 650px;
+  /* z-index: 1; */
+}
+
+.backButton {
+  grid-area: 1/1/1/1;
+  justify-self: start;
+  align-self: start;
+  z-index: 2;
+  margin: 0.25rem;
+}
+
+.backButton a {
+  background: var(--dark-color);
+  display: flex;
+  padding: 0.5rem;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.backButton svg {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.carImageContainer h2 {
+  grid-area: 1/1/1/1;
+  justify-self: start;
+  align-self: end;
+  padding: 1rem;
+}
+.carImageContainer .cartButtonTop {
+  grid-area: 1/1/1/1;
+  justify-self: end;
+  align-self: end;
+  padding: 1rem;
+}
+/********** CAR STATS *********************/
+.car_details_container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.car_details_container h2,
+.car_details_container h3 {
+  color: var(--primary-color);
+}
+.car_details_container p {
+  line-height: 1.8rem;
+}
+
+.main_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.price_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.price_container p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.car_desc_short {
+  padding: 3rem 0;
+  flex-basis: 100%;
+}
+.car_stats_container {
+  padding: 1rem 0;
+}
+
+.car_stat {
+  display: flex;
+  padding: 0.75rem 0;
+  justify-content: space-between;
+}
+.car_desc_container {
+  padding: 1rem 0;
+}
+
+.car_desc_container p {
+  padding: 0.75rem 0;
+}
+
+.cartButton {
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (min-width: 576px) {
+  .car_details_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .main_info {
+    flex-basis: 100%;
+  }
+  .detail_line {
+    width: 1px;
+    height: 300px;
+    background-color: rgba(189, 189, 189, 0.2);
+    align-self: center;
+  }
+
+  .car_stats_container {
+    flex-basis: 45%;
+  }
+
+  .car_desc_container {
+    flex-basis: 45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carImageContainer {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 1rem 1rem;
+    overflow: hidden;
+  }
+}
