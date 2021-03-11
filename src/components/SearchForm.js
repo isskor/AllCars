@@ -19,7 +19,10 @@ const SearchForm = ({ scrollToRef }) => {
   useOutsideClick(filterRef, handleClickOutside);
 
   const scrollTo = () => {
-    window.scrollTo({ top: scrollToRef.current.offsetTop, behavior: 'smooth' });
+    window.scrollTo({
+      top: scrollToRef.current.offsetTop - 80,
+      behavior: 'smooth',
+    });
   };
   return (
     <div className={styles.search_wrapper} ref={filterRef}>
