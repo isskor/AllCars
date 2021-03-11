@@ -11,21 +11,29 @@
   margin-right: 2rem;
 }
 
-@media (min-width: 575px) {
-  .iconName {
-    display: inline-block;
-  }
+svg {
+  color: #ffc388;
+  height: 1.25em !important;
+  width: 1.25em !important ;
+  margin-top: 1rem;
+}
+svg:hover {
+  color: orange;
+}
+
+@media (min-width: 576px) {
   .navbar {
     display: flex;
     justify-content: space-between;
   }
   .navbar svg,
   .navbar span {
-    font-size: 1rem;
+    /* font-size: 1rem; */
+    margin: 0 2rem;
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
   .navbar {
     display: flex;
     justify-content: space-around;
@@ -38,19 +46,15 @@
   }
 }
 
-svg {
-  color: #ffc388;
-  height: 1.25em !important;
-  width: 1.25em !important ;
-  margin-top: 1rem;
-}
-svg:hover {
-  color: orange;
-}
-
 @media (min-width: 992px) {
+  .iconName {
+    display: inline-block;
+    padding-right: 3rem;
+  }
+
   .navbar svg,
   .navbar span {
     font-size: 1.3rem;
+    margin: 0;
   }
 }
