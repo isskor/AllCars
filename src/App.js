@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CarContextProvider from './contexts/CarContext';
 import CartContextProvider from './contexts/CartContext';
@@ -21,8 +21,8 @@ function App() {
               <Route path='/about' component={About} />
               <Route exact path='/car/:id' component={CarDetails} />
               <Route exact path='/cart' component={CartPage} />
+              <Route exact path='/receipt' component={Receipt}></Route>
             </Switch>
-            <Route exact path='/receipt' component={Receipt}></Route>
           </CartContextProvider>
         </CarContextProvider>
       </Router>
