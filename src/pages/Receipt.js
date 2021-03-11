@@ -34,7 +34,7 @@ const Receipt = () => {
                 <p>Your address is {checkoutState.form.address} and your number is {checkoutState.form.number} . </p> <br/>
                 <p>You chooses {checkoutState.form.method} as a delivery methods</p>  
             </div> 
-            <button>Print</button>       
+            <button onClick={window.print()}>Print</button>       
 
         </div>
     );
