@@ -9,15 +9,14 @@ const Receipt = () => {
   const { checkoutState } = useContext(CartContext);
   const history = useHistory();
 
-  const goToCart = () => {
-    history.push('/cart');
+  const goToHome = () => {
+    history.push('/');
   };
   console.log(checkoutState);
   console.log(checkoutState.cars);
 
   return (
     <div className={styles.receipt}>
-      <ArrowBackIcon onClick={goToCart} />
       <h2>Receipt</h2>
       <h3>Thank you for your purchase ! </h3>
       <br />
@@ -39,7 +38,11 @@ const Receipt = () => {
         <br />
         <p>You chooses {checkoutState.form.method} as a delivery methods</p>
       </div>
-      <button onClick={() => window.print()}>Print</button>
+      <div className={styles.buttonGroup}>
+        <button onClick={() => window.print()}>Print</button>
+        <button onClick={goToHome}>Back to Home</button> 
+      </div>
+      
     </div>
   );
 };

@@ -16,6 +16,13 @@ h3 {
   padding: 1rem;
 }
 
+.buttonGroup{
+    display: flex;
+    justify-content: center;
+}
+button{
+    margin: 2rem
+}
 @media print {
   nav {
     display: none;
