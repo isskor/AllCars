@@ -10,13 +10,13 @@ const CartIcon = () => {
   
   //   console.log(cart[0].price);
   return (
-    <div className={styles.cartIcon}>
+    <Link to='/cart' className={styles.cartIcon}>
       <span className={styles.cost}>${totalCost}</span>
-      <Link to='/cart' className={styles.cart}>
+      <span className={styles.cart}>
         <ShoppingCartOutlined />
-      </Link>
-      <Link to='/cart' className={styles.quantity}>{cart.length}</Link>
-    </div>
+      </span>
+      <span className={styles.quantity}>{cart.length}</span>
+    </Link>
   );
 };
 
