@@ -14,12 +14,6 @@ const Receipt = () => {
     history.push('/');
   };
 
-  useEffect(() => {
-    return () => {
-      dispatch('FILTER_RESET_ACTION');
-    };
-  }, []);
-
   return (
     <div className={styles.receipt}>
       <h2>Receipt</h2>
