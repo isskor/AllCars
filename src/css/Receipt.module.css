@@ -1,5 +1,5 @@
-h2,
-h3 {
+.receipt h2,
+.receipt h3 {
   color: var(--primary-color);
   text-align: center;
 }
@@ -16,12 +16,12 @@ h3 {
   padding: 1rem;
 }
 
-.buttonGroup{
-    display: flex;
-    justify-content: center;
+.buttonGroup {
+  display: flex;
+  justify-content: center;
 }
-button{
-    margin: 2rem
+.receipt button {
+  margin: 2rem;
 }
 @media print {
   nav {
