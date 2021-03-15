@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 const Receipt = () => {
   const { checkoutState, setCart } = useContext(CartContext);
   const history = useHistory();
+  const totalCost = checkoutState.cars.reduce((acc, cur) => acc + cur.price, 0);
 
   useEffect(() => {
     setCart([]);
@@ -37,10 +38,13 @@ const Receipt = () => {
           </p>
           <br />
           <p>
-            Your address is <b>{checkoutState.form.address}</b> and your phone number is <b>{checkoutState.form.phone}</b>.
+            Address: <b>{checkoutState.form.address}</b><br/>
+            Phone number: <b>{checkoutState.form.phone}</b>
           </p>
           <br />
-        <p>You have chosen <b>{checkoutState.form.method}</b> as your delivery method. </p>
+          <p>Delivery method: <b>{checkoutState.form.method}</b></p>
+          <br/>
+          <p>Total cost: <b>$ {totalCost.toLocaleString()}</b></p>
         </div>
       </div>
       <div className={styles.buttonGroup}>
