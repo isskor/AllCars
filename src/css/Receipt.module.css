@@ -24,7 +24,7 @@
   justify-content: center;
 }
 .receipt button {
-  margin: 2rem;
+  margin: 2rem 0.5rem 0 0.5rem;
 }
 
 @media (min-width: 992px) {
