@@ -19,7 +19,7 @@ const ReceiptCar = ({car}) => {
                     <p className='car_miles'> Miles: {car.miles}</p>
                 </div>
                 <div className='car_price_ctn'>
-                     <p className={styles.car_price}> Price : ${car.price} </p>
+                     <p className={styles.car_price}> Price : $ {car.price.toLocaleString()} </p>
                 </div>
             </div>
         </div>
