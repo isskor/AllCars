@@ -26,6 +26,10 @@ a:hover *{
   color: orange;
 }
 
+.logo:hover {
+  color: var(--primary-color);
+}
+
 @media (min-width: 1200px) {
   .mainNavbar {
     padding: 1rem 4rem;
