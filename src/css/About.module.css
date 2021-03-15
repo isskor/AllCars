@@ -1,23 +1,3 @@
-.aboutHeroContainer {
-  position: relative;
-  width: 100%;
-  height: 18vh;
-  overflow: hidden;
-}
-
-.aboutHeroImage {
-  width: 100%;
-  position: absolute;
-}
-
-.aboutTitle {
-  font-weight: normal;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.5rem;
-}
-
 .aboutContentContainer {
   margin: 0 1rem;
   display: flex;
@@ -88,14 +68,6 @@
 }
 
 @media (min-width: 768px) {
-  .aboutHeroContainer {
-    height: 24vh;
-  }
-
-  .aboutTitle {
-    font-size: 4rem;
-    padding: 2rem;
-  }
 
   .aboutContentContainer {
     margin: 1rem 2rem;
@@ -159,14 +131,7 @@
 }
 
 @media (min-width: 992px) {
-  .aboutHeroContainer {
-    height: 40vh;
-  }
-
-  .aboutTitle {
-    font-size: 3rem;
-  }
-
+  
   .aboutContentContainer {
     width: 80%;
     margin: 1rem auto;

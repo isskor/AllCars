@@ -2,7 +2,6 @@
   height: 50vh;
   margin-bottom: 1rem;
   display: flex;
-  /* padding-top: 5.75rem; add height of nav here */
   z-index: -3;
 }
 .header img {
@@ -13,6 +12,7 @@
   z-index: -1;
   position: absolute;
   padding: 0.5rem;
+  font-weight: normal;
 }
 
 @media (min-width: 768px) {
