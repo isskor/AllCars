@@ -42,8 +42,8 @@ function Home() {
             <h1>no cars</h1>
           </div>
         )}
-        {showCars.map((car, i) => (
-          <CarCard key={i} car={car} />
+        {showCars.map((car) => (
+          <CarCard key={car.vin} car={car} />
         ))}
         {showCars.length !== filteredCars.length && (
           <div className={style.btnContainer}>
