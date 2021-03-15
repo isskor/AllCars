@@ -45,15 +45,15 @@ const CartForm = () => {
         <div className={styles.form_group}>
           <h3>Delivery Options</h3>
           <div className={styles.radio}>
-            <label>Delivery (1-2 weeks)</label>
+            <label><b>Delivery</b> (1-2 weeks)</label>
             <input type='radio' value='Delivery' name='method' />
           </div>
           <div className={styles.radio}>
-            <label>Express delivery (3-5 days)</label>
+            <label><b>Express delivery</b> (3-5 days)</label>
             <input type='radio' value='Express delivery' name='method' />
           </div>
           <div className={styles.radio}>
-            <label>Pick up (at closest store)</label>
+            <label><b>Pick up</b> (at closest store)</label>
             <input type='radio' value='Pick up' name='method' />
           </div>
         </div>
