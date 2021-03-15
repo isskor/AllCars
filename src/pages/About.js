@@ -1,15 +1,14 @@
 import styles from "../css/About.module.css";
-// import aboutHero from "/assets/background/allcars_about.jpg";
-// import aboutTeam from "/assets/background/allcars-team.jpg";
-
+import Banner from '../components/Banner';
 
 const About = () => {
     return (
         <div className={styles.aboutContainer}>
-            <div className={styles.aboutHeroContainer}>
-                <img className={styles.aboutHeroImage} src="/assets/background/allcars_about.jpg" alt="About Header" />
-                <h1 className={styles.aboutTitle}>About us</h1>
-            </div>
+            <Banner 
+                header={"About Us"}
+                imgSrc={"/assets/background/allcars_about.jpg"}
+                altText={"Car on the road in a canyon"}
+            />
             <div className={styles.aboutContentContainer}>
                 <div className={styles.aboutText}>
                     <img className={styles.teamImgWrap} src="/assets/background/allcars-team.jpg" alt="About the AllCars staff" />
