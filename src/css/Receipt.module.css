@@ -10,6 +10,9 @@
   margin: 1rem;
   border-radius: 1rem;
   overflow: hidden;
+  grid-area: 1/2/1/2;
+  /* align-self:center; */
+  /* height: 100%; */
 }
 
 .receipt {
@@ -26,7 +29,9 @@
 
 @media (min-width: 768px) {
   .receipt_content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
   }
   .receipt_items {
     flex-basis: 50%;

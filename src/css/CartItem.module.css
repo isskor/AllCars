@@ -5,6 +5,7 @@
   margin: 1rem;
   border-radius: 1rem;
   overflow: hidden;
+  grid-column:1;
 }
 
 .img_container {
