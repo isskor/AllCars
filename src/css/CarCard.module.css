@@ -9,7 +9,7 @@
   cursor: pointer;
 }
 .carCard:hover {
-  Transform : scale(1.1) ;
+  /* Transform : scale(1.1) ; */
 }
 
 .imgContainer {

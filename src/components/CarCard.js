@@ -4,13 +4,15 @@ import AddToCart from './AddToCart';
 
 function CarCard(prop) {
   const history = useHistory();
-  function goToCarDetails() {
+  function goToCarDetails(e) {
+    // console.log(e.target.tagName );
+    if (e.target.tagName === 'BUTTON') return;
     history.push(`/car/${prop.car.vin}`);
   }
 
   return (
-    <div className={style.carCard} onClick={goToCarDetails}>
-      <div className={style.imgContainer} >
+    <div className={style.carCard} onClick={(e) => goToCarDetails(e)}>
+      <div className={style.imgContainer}>
         <img
           src={`/assets/car-pictures/${prop.car.make}-${prop.car.model}-${prop.car.year}.jpg`}
           alt='Car picture'
