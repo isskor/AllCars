@@ -27,11 +27,12 @@ const Dropdown = ({ filterList, type, setIsOpen }) => {
   return (
     <div className={styles.filter_list} ref={dropDownRef}>
       <ul>
-        {filterList.map((item) => (
+        {filterList.map((item, i) => (
           <li
+            key={i}
             className={styles.filter_item}
-            onClick={() => handleInsideClick(item)}
-          >
+            onClick={() => handleInsideClick(item)
+            }>
             {item}
           </li>
         ))}

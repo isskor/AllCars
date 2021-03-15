@@ -23,6 +23,7 @@ const ActiveFilters = () => {
           <ul>
             {activeFilters.map((item, i) => (
               <div
+                key ={i}
                 className={styles.active_filter}
                 onClick={() => handleRemoveFilter(item)}
               >
