@@ -6,6 +6,12 @@
   display: grid;
   grid-template-columns: 50% 50%;
   overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.carCard:hover {
+  /* Transform : scale(1.1) ; */
+  box-shadow: 0px 4px 20px #0000009f;
 }
 
 .imgContainer {

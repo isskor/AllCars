@@ -8,11 +8,11 @@ const AddToCartButton = ({ car }) => {
 
   const checkCart = (car) => {
     return cart.find((findVin) => {
-      return findVin.vin === car.vin
+      return findVin.vin === car.vin;
     });
   };
 
-  const clickHandler = (car) => {
+  const clickHandler = (e, car) => {
     addToCart(car);
     setOpenModal(true);
   };
@@ -21,7 +21,11 @@ const AddToCartButton = ({ car }) => {
     <>
       {!checkCart(car) ? (
         <>
-          <button className={style.addBtn} onClick={() => clickHandler(car)}>
+          <button
+            data-add-btn='addBtn'
+            className={style.addBtn}
+            onClick={(e) => clickHandler(e, car)}
+          >
             Add To Cart
           </button>
         </>

@@ -44,7 +44,7 @@ function CarDetails() {
               <div className={styles.price_container}>
                 <h3 className={styles.carPriceLabel}>Price</h3>
                 <p className={styles.carPrice}>
-                  {car.price.toLocaleString('en')}
+                  $ {car.price.toLocaleString()}
                 </p>
               </div>
               <div className={styles.cartButtonTop}>

@@ -4,18 +4,20 @@ import AddToCart from './AddToCart';
 
 function CarCard(prop) {
   const history = useHistory();
-  function goToCarDetails() {
+  function goToCarDetails(e) {
+    // console.log(e.target.tagName );
+    if (e.target.tagName === 'BUTTON') return;
     history.push(`/car/${prop.car.vin}`);
   }
 
   return (
-    <div className={style.carCard}>
-      <div className={style.imgContainer} onClick={goToCarDetails}>
+    <div className={style.carCard} onClick={(e) => goToCarDetails(e)}>
+      <div className={style.imgContainer}>
         <img
           src={`/assets/car-pictures/${prop.car.make}-${prop.car.model}-${prop.car.year}.jpg`}
           alt='Car picture'
         />
-        <p className={style.carPrice}>${prop.car.price}</p>
+        <p className={style.carPrice}>$ {prop.car.price.toLocaleString()}</p>
         <div className={style.imgTextWrapper}>
           <p className={style.wrapperText}>{prop.car.make}</p>
           <p className={style.wrapperText}>{prop.car.year}</p>

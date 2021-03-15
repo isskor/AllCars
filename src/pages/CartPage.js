@@ -29,7 +29,7 @@ const CartPage = () => {
           </ul>
           <div className={styles.total}>
             <h4>Total</h4>
-            <h3>{totalCost}​​​​​</h3>
+            <h3>$ {totalCost.toLocaleString()}​​​​​</h3>
           </div>
         </div>
         <div className={styles.cartRight}>

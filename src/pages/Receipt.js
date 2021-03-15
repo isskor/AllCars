@@ -9,6 +9,7 @@ const Receipt = () => {
   const { checkoutState, setCart } = useContext(CartContext);
   const { dispatch} = useContext(CarContext);
   const history = useHistory();
+  const totalCost = checkoutState.cars.reduce((acc, cur) => acc + cur.price, 0);
 
   useEffect(() => {
     setCart([]);
@@ -39,11 +40,13 @@ const Receipt = () => {
           </p>
           <br />
           <p>
-            {` Your address is ${checkoutState.form.address} and your number is
-          ${checkoutState.form.phone}.`}
+            Address: <b>{checkoutState.form.address}</b><br/>
+            Phone number: <b>{checkoutState.form.phone}</b>
           </p>
           <br />
-          <p>{`You chooses ${checkoutState.form.method} as a delivery methods`}</p>
+          <p>Delivery method: <b>{checkoutState.form.method}</b></p>
+          <br/>
+          <p>Total cost: <b>$ {totalCost.toLocaleString()}</b></p>
         </div>
       </div>
       <div className={styles.buttonGroup}>
