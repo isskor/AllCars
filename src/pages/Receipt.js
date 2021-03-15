@@ -27,11 +27,11 @@ const Receipt = () => {
       <p>Your Order(s) :</p>
 
       <div className={styles.receipt_content}>
-        <div className={styles.receipt_items}>
-          {checkoutState.cars.map((car) => (
-            <ReceiptCar key={car.vin} car={car} />
-          ))}
-        </div>
+        {/* <div className={styles.receipt_items}> */}
+        {checkoutState.cars.map((car) => (
+          <ReceiptCar key={car.vin} car={car} />
+        ))}
+        {/* </div> */}
 
         <div className={styles.receiptNote}>
           <p>

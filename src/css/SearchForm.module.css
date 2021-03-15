@@ -30,7 +30,7 @@
   position: relative;
 }
 
-span {
+.search_wrapper span {
   color: var(--primary-color);
 
   opacity: 0.8;
