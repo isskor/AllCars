@@ -7,16 +7,18 @@ import { useHistory } from 'react-router-dom';
 
 const Receipt = () => {
   const { checkoutState, setCart } = useContext(CartContext);
+  const { dispatch} = useContext(CarContext);
   const history = useHistory();
 
   useEffect(() => {
     setCart([]);
+    return () => dispatch({ type: 'FILTER_RESET_ACTION' });
   }, []);
 
   const goToHome = () => {
     history.push('/');
   };
-
+  
   return (
     <div className={styles.receipt}>
       <h2>Receipt</h2>
