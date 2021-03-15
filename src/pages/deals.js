@@ -3,7 +3,7 @@ import { CarContext } from '../contexts/CarContext';
 import { Link } from 'react-router-dom';
 import CarCard from '../components/CarCard';
 
-import DealsBanner from '../components/DealsBanner';
+import Banner from '../components/Banner';
 import style from '../css/deals.module.css';
 
 const Deals = () => {
@@ -20,7 +20,7 @@ const Deals = () => {
 
   return (
     <div className={style.dealsContainer}>
-      <DealsBanner className={style.header} />
+      <Banner className={style.header} />
 
       <div className={style.grid}>
         {discountedCars.map((car) => (

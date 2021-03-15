@@ -1,6 +1,6 @@
-import style from "../css/dealsBanner.module.css";
+import style from "../css/Banner.module.css";
 
-const DealsBanner = () => {
+const Banner = () => {
   return (
     <div className={style.header}>
       <img src="/assets/background/allcars_deals.jpg" alt=""/>
@@ -9,4 +9,4 @@ const DealsBanner = () => {
   );
 }
  
-export default DealsBanner;
+export default Banner;
