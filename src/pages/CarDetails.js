@@ -34,9 +34,7 @@ function CarDetails() {
               alt={car.name}
             />
             <h2 className={styles.carMakeModelName}>
-              <span>
-                {car.make} {car.model}
-              </span>
+              {car.make} {car.model}
             </h2>
           </section>
           <div className={styles.car_details_container}>

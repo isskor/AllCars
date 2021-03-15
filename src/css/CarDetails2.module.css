@@ -47,6 +47,8 @@
   justify-self: start;
   align-self: end;
   padding: 1rem;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 5px #1f1f1f;
 }
 .carImageContainer .cartButtonTop {
   grid-area: 1/1/1/1;

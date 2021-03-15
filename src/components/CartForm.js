@@ -27,33 +27,33 @@ const CartForm = () => {
         <h3>Shipping</h3>
         <div className={styles.form_group}>
           <label>Name</label>
-          <input type='text' className={styles.cart_input} name='name' />
+          <input type='text' className={styles.cart_input} name='name' placeholder="Full name" />
         </div>
         <div className={styles.form_group}>
           <label>Address:</label>
-          <input type='text' className={styles.cart_input} name='address' />
+          <input type='text' className={styles.cart_input} name='address' placeholder="Address" />
         </div>
         <div className={`${styles.form_group} ${styles.email}`}>
           <label>E-mail:</label>
-          <input type='text' className={styles.cart_input} name='email' />
+          <input type='text' className={styles.cart_input} name='email' placeholder="E-mail" />
         </div>
         <div className={`${styles.form_group} ${styles.phone}`}>
           <label>Phone number:</label>
-          <input type='text' className={styles.cart_input} name='phone' />
+          <input type='text' className={styles.cart_input} name='phone' placeholder="Phone number" />
         </div>
 
         <div className={styles.form_group}>
           <h3>Delivery Options</h3>
           <div className={styles.radio}>
-            <label>Delivery</label>
+            <label>Delivery (1-2 weeks)</label>
             <input type='radio' value='Delivery' name='method' />
           </div>
           <div className={styles.radio}>
-            <label>Express delivery</label>
+            <label>Express delivery (3-5 days)</label>
             <input type='radio' value='Express delivery' name='method' />
           </div>
           <div className={styles.radio}>
-            <label>Pick up</label>
+            <label>Pick up (at closest store)</label>
             <input type='radio' value='Pick up' name='method' />
           </div>
         </div>

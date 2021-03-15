@@ -46,11 +46,18 @@
 
 .radio {
   display: flex;
+  justify-content: space-between;
   margin: 1rem 0;
 }
 
 .radio label {
   flex-basis: 50%;
+}
+
+.radio input {
+  width: 20px;
+  margin-right: 0.5rem
+
 }
 
 .cart_form .form_group {
