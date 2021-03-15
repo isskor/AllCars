@@ -3,6 +3,7 @@ import { CarContext } from '../contexts/CarContext';
 import CarCard from '../components/CarCard';
 import SearchForm from '../components/SearchForm';
 import style from '../css/Home.module.css';
+import Banner from '../components/Banner';
 
 function Home() {
   const { filteredCars } = useContext(CarContext);
@@ -26,13 +27,11 @@ function Home() {
 
   return (
     <div className={style.home}>
-      <div className={style.hero}>
-        <img
-          className={style.heroImg}
-          src='/assets/background/allcars_home.jpg'
-        />
-        <h1 className={style.heroText}>Quality never goes out of style</h1>
-      </div>
+      <Banner 
+        header={"Quality never goes out of style"}
+        imgSrc={"/assets/background/allcars_home.jpg"}
+        altText={"Vintage car"}
+      />
       <div className={style.searchForm}>
         <SearchForm scrollToRef={resultRef} />
       </div>
