@@ -9,8 +9,8 @@ function CarCard(prop) {
   }
 
   return (
-    <div className={style.carCard}>
-      <div className={style.imgContainer} onClick={goToCarDetails}>
+    <div className={style.carCard} onClick={goToCarDetails}>
+      <div className={style.imgContainer} >
         <img
           src={`/assets/car-pictures/${prop.car.make}-${prop.car.model}-${prop.car.year}.jpg`}
           alt='Car picture'

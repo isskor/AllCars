@@ -21,7 +21,7 @@ const AddToCartButton = ({ car }) => {
     <>
       {!checkCart(car) ? (
         <>
-          <button className={style.addBtn} onClick={() => clickHandler(car)}>
+          <button className={style.addBtn} onClick={()=>clickHandler(car)}>
             Add To Cart
           </button>
         </>
