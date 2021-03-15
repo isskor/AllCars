@@ -20,7 +20,12 @@ const Deals = () => {
 
   return (
     <div className={style.dealsContainer}>
-      <Banner className={style.header} />
+      <Banner 
+        header={"Quality Deals"} 
+        imgSrc={"/assets/background/allcars_deals.jpg"} 
+        altText={"Woman driving vintage car"}
+        className={style.header} 
+      />
 
       <div className={style.grid}>
         {discountedCars.map((car) => (

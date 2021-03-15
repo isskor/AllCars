@@ -1,10 +1,10 @@
 import style from "../css/Banner.module.css";
 
-const Banner = () => {
+const Banner = (prop) => {
   return (
     <div className={style.header}>
-      <img src="/assets/background/allcars_deals.jpg" alt=""/>
-      <h1>Quality Deals</h1>
+      <img src={prop.imgSrc} alt={prop.altText} />
+      <h1>{prop.header}</h1>
     </div>
   );
 }
