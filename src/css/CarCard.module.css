@@ -6,6 +6,10 @@
   display: grid;
   grid-template-columns: 50% 50%;
   overflow: hidden;
+  cursor: pointer;
+}
+.carCard:hover {
+  Transform : scale(1.1) ;
 }
 
 .imgContainer {
