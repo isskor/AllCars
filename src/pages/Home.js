@@ -28,10 +28,10 @@ function Home() {
   return (
     <div className={style.home}>
       <Banner 
-        header={"Quality never goes out of style"}
         imgSrc={"/assets/background/allcars_home.jpg"}
         altText={"Vintage car"}
       />
+      <h1 className={style.heading}>Quality never goes out of style</h1>
       <div className={style.searchForm}>
         <SearchForm scrollToRef={resultRef} />
       </div>
