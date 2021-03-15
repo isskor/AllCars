@@ -6,7 +6,7 @@ import { CartContext } from '../contexts/CartContext';
 
 const BillingForm = () => {
   const history = useHistory();
-  const { handleCheckout } = useContext(CartContext);
+  const { handleCheckout, checkoutForm, cart } = useContext(CartContext);
   const [paymentInfo, setPaymentInfo] = useState({
     cardNumber: '',
     nameOnCard: '',
@@ -19,8 +19,18 @@ const BillingForm = () => {
 
   const takeInfo = (e) => {
     e.preventDefault();
+    console.log(cart.length < 1);
+    console.log(checkoutForm);
+    if (cart.length < 1) {
+      return;
+    }
+
     handleCheckout(paymentInfo);
     history.push('/receipt');
+  };
+
+  const disable = () => {
+    return checkoutForm.lenght > 0 && cart.length > 0;
   };
 
   return (

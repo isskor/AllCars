@@ -6,9 +6,12 @@ import styles from '../css/Receipt.module.css';
 import { useHistory } from 'react-router-dom';
 
 const Receipt = () => {
-  const { checkoutState } = useContext(CartContext);
-  const { dispatch } = useContext(CarContext);
+  const { checkoutState, setCart } = useContext(CartContext);
   const history = useHistory();
+
+  useEffect(() => {
+    setCart([]);
+  }, []);
 
   const goToHome = () => {
     history.push('/');
@@ -21,21 +24,25 @@ const Receipt = () => {
       <br />
       <p>Your Order(s) :</p>
 
-      {checkoutState.cars.map((car) => (
-        <ReceiptCar key={car.vin} car={car} />
-      ))}
+      <div className={styles.receipt_content}>
+        <div className={styles.receipt_items}>
+          {checkoutState.cars.map((car) => (
+            <ReceiptCar key={car.vin} car={car} />
+          ))}
+        </div>
 
-      <div className={styles.receiptNote}>
-        <p>
-          Hello <b>{checkoutState.form.name}</b>. We have received your order.
-        </p>
-        <br />
-        <p>
-          {` Your address is ${checkoutState.form.address} and your number is
+        <div className={styles.receiptNote}>
+          <p>
+            Hello <b>{checkoutState.form.name}</b>. We have received your order.
+          </p>
+          <br />
+          <p>
+            {` Your address is ${checkoutState.form.address} and your number is
           ${checkoutState.form.phone}.`}
-        </p>
-        <br />
-        <p>{`You chooses ${checkoutState.form.method} as a delivery methods`}</p>
+          </p>
+          <br />
+          <p>{`You chooses ${checkoutState.form.method} as a delivery methods`}</p>
+        </div>
       </div>
       <div className={styles.buttonGroup}>
         <button onClick={() => window.print()}>Print</button>
