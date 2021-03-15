@@ -17,7 +17,7 @@ function CarCard(prop) {
           src={`/assets/car-pictures/${prop.car.make}-${prop.car.model}-${prop.car.year}.jpg`}
           alt='Car picture'
         />
-        <p className={style.carPrice}>${prop.car.price}</p>
+        <p className={style.carPrice}>$ {prop.car.price.toLocaleString()}</p>
         <div className={style.imgTextWrapper}>
           <p className={style.wrapperText}>{prop.car.make}</p>
           <p className={style.wrapperText}>{prop.car.year}</p>
