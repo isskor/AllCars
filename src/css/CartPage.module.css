@@ -47,6 +47,7 @@
   .cartContainer {
     width: 90%;
     display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
   }
 
@@ -55,5 +56,8 @@
   }
   .cartRight {
     flex-basis: 50%;
+  }
+  .billingForm {
+    flex-basis: 100%;
   }
 }

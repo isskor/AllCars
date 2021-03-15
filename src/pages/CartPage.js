@@ -1,17 +1,21 @@
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import CartItem from '../components/CartItem';
 import CartForm from '../components/CartForm';
 import styles from '../css/CartPage.module.css';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import BillingForm from '../components/BillingForm';
 
 const CartPage = () => {
   const { cart } = useContext(CartContext);
   const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
+  const history = useHistory();
+
   return (
     <div className={styles.cart}>
       <div>
-        <a href='#Home'>
+      <a onClick={() => history.goBack()}>
           <ArrowBackIcon />
         </a>
       </div>
@@ -30,6 +34,9 @@ const CartPage = () => {
         </div>
         <div className={styles.cartRight}>
           <CartForm />
+        </div>
+        <div className={styles.billingForm}>
+          <BillingForm />
         </div>
       </div>
     </div>

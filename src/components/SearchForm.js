@@ -7,7 +7,7 @@ import useOutsideClick from './useOutsideClick';
 // styles
 import styles from '../css/SearchForm.module.css';
 import { SearchOutlined } from '@ant-design/icons';
-const SearchForm = () => {
+const SearchForm = ({ scrollToRef }) => {
   const filterRef = useRef();
   const [showFilters, setshowFilters] = useState(false);
 
@@ -17,13 +17,23 @@ const SearchForm = () => {
   };
 
   useOutsideClick(filterRef, handleClickOutside);
+
+  const scrollTo = () => {
+    window.scrollTo({
+      top: scrollToRef.current.offsetTop - 80,
+      behavior: 'smooth',
+    });
+  };
   return (
     <div className={styles.search_wrapper} ref={filterRef}>
       <form onSubmit={(e) => e.preventDefault()}>
         <h3>Find Your Vintage Dream</h3>
         <div className={styles.form_group_search}>
           <CarSearchInput />
-          <div className={`${styles.search_icon} ${styles.search_icon_sm}`}>
+          <div
+            className={`${styles.search_icon} ${styles.search_icon_sm}`}
+            onClick={scrollTo}
+          >
             <SearchOutlined />
           </div>
         </div>
@@ -36,7 +46,10 @@ const SearchForm = () => {
             {!showFilters ? 'Filters' : 'Close'}
           </button>
         </div>
-        <div className={`${styles.search_icon} ${styles.search_icon_lg}`}>
+        <div
+          className={`${styles.search_icon} ${styles.search_icon_lg}`}
+          onClick={scrollTo}
+        >
           <SearchOutlined />
         </div>
         <div className={styles.filters}>

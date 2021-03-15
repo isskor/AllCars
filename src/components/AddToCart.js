@@ -1,18 +1,37 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import Modal from './Modal';
+import style from '../css/CarCard.module.css';
 const AddToCartButton = ({ car }) => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, cart } = useContext(CartContext);
   const [openModal, setOpenModal] = useState(false);
 
-  const clickHandler = (car) => {
+  const checkCart = (car) => {
+    return cart.find((findVin) => {
+      return findVin.vin === car.vin;
+    });
+  };
+
+  const clickHandler = (e, car) => {
     addToCart(car);
     setOpenModal(true);
   };
 
   return (
     <>
-      <button onClick={() => clickHandler(car)}>Add To Cart</button>
+      {!checkCart(car) ? (
+        <>
+          <button
+            data-add-btn='addBtn'
+            className={style.addBtn}
+            onClick={(e) => clickHandler(e, car)}
+          >
+            Add To Cart
+          </button>
+        </>
+      ) : (
+        <span className={style.addBtn}>In Cart</span>
+      )}
       <Modal openModal={openModal} setOpenModal={setOpenModal} />
     </>
   );

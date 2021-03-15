@@ -86,6 +86,7 @@ export const searchReducer = (state, action) => {
         search: payload,
       };
     case 'FILTER_RESET_ACTION':
+      console.log('reset ran');
       return initialCarState;
     default:
       return state;

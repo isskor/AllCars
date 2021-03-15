@@ -5,18 +5,18 @@ import styles from '../css/CartIcon.module.css';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 const CartIcon = () => {
   const { cart } = useContext(CartContext);
-  console.log(cart);
+  
   const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
-  console.log(totalCost);
+  
   //   console.log(cart[0].price);
   return (
-    <div className={styles.cartIcon}>
+    <Link to='/cart' className={styles.cartIcon}>
       <span className={styles.cost}>${totalCost}</span>
-      <Link to='/cart' className={styles.cart}>
+      <span className={styles.cart}>
         <ShoppingCartOutlined />
-      </Link>
+      </span>
       <span className={styles.quantity}>{cart.length}</span>
-    </div>
+    </Link>
   );
 };
 

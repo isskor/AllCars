@@ -7,7 +7,7 @@ const Modal = ({ openModal, setOpenModal }) => {
   const handleModalClick = (click) => {
     setOpenModal(false);
     if (click === 'home') {
-      history.push('/');
+      setOpenModal(false);
       return;
     }
     history.push('/cart');
