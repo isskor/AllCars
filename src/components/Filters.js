@@ -11,7 +11,7 @@ const Filters = () => {
   return (
     <div className={styles.filter_container}>
       {filters.map((filterList, i) => (
-        <div className={styles.form_group_select}>
+        <div className={styles.form_group_select} key={i}>
           <span className={styles.filterList_type}>{filterList.type}</span>
           <button
             className={styles.option_btn}
