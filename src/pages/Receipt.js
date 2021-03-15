@@ -37,11 +37,10 @@ const Receipt = () => {
           </p>
           <br />
           <p>
-            {` Your address is ${checkoutState.form.address} and your number is
-          ${checkoutState.form.phone}.`}
+            Your address is <b>{checkoutState.form.address}</b> and your number is <b>{checkoutState.form.phone}</b>.
           </p>
           <br />
-          <p>{`You chooses ${checkoutState.form.method} as a delivery methods`}</p>
+        <p>Your choose is <b>{checkoutState.form.method}</b> as a transfer option. </p>
         </div>
       </div>
       <div className={styles.buttonGroup}>
