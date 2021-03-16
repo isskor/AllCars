@@ -1,8 +1,8 @@
 import { useState, createContext, useEffect } from 'react';
 
-export const CartContext = createContext();
-const CartContextProvider = ({ children }) => {
-  const { Provider } = CartContext;
+export const UserContext = createContext();
+const UserContextProvider = ({ children }) => {
+  const { Provider } = UserContext;
   const [cart, setCart] = useState(
     localStorage.getItem('cartCars')
       ? JSON.parse(localStorage.getItem('cartCars'))
@@ -55,4 +55,4 @@ const CartContextProvider = ({ children }) => {
   );
 };
 
-export default CartContextProvider;
+export default UserContextProvider;

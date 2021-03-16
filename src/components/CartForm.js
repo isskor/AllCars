@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState, useContext, useEffect } from 'react';
 import styles from '../css/CartForm.module.css';
-import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 
 const CartForm = () => {
-  const { setCheckoutForm } = useContext(CartContext);
+  const { setCheckoutForm } = useContext(UserContext);
   const [form, setForm] = useState({
     name: '',
     email: '',
