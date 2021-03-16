@@ -11,7 +11,7 @@ const UserContextProvider = ({ children }) => {
   const [checkoutForm, setCheckoutForm] = useState({});
   const [billingForm, setBillingForm] = useState({});
   const [checkoutState, setCheckoutState] = useState({});
-  const [userState, setUserState] = useState([])
+  const [userState, setUserState] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const addToCart = (item) => {
@@ -38,22 +38,18 @@ const UserContextProvider = ({ children }) => {
     localStorage.setItem('cartCars', JSON.stringify(cart));
   }, [cart]);
 
-  
   const registerUser = (user) => {
     if (userState.length === 0) {
       user.id = user.email;
       setUserState([...userState, user]);
-    } else {
-      userState.forEach(object => {
-        if (object.email === user.email) {
-          console.log("Already exist!");
-          return;
-      } else {
-        user.id = user.email;
-        setUserState([...userState, user]);
-      }
-      });
-    };
+      return;
+    }
+    const a = userState.filter((object) => object.email === user.email);
+
+    if (a.length > 0) return;
+    console.log('added');
+    user.id = user.email;
+    setUserState([...userState, user]);
 
     // if (userState.length > 0) {
     //   userState.forEach(object => {
@@ -69,7 +65,7 @@ const UserContextProvider = ({ children }) => {
     //   setUserState([...userState, user]);
     // }
   };
-  
+
   console.log(checkoutState);
   return (
     <Provider
