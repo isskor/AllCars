@@ -60,10 +60,6 @@ function RegisterForm() {
   return (
     <div className={styles.loginForm}>
       <form onChange={handleChange}>
-        <h1>Register</h1>
-        <p>
-          <Link to='/login'>Already have an Account? Login!</Link>
-        </p>
         {formValues?.map((item) => (
           <div className={styles.form_group} key={item.name}>
             <label className={styles.login_label}>{item.name}</label>

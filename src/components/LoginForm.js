@@ -13,10 +13,6 @@ function LoginForm() {
   return (
     <div className={styles.loginForm}>
       <form>
-        <h1>Login</h1>
-        <p>
-          <Link to='/register'>Don't have an account? Register!</Link>
-        </p>
         <div className={styles.form_group}>
           <label className={styles.login_label}>Username</label>
           <input
