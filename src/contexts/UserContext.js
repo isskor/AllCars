@@ -11,6 +11,8 @@ const UserContextProvider = ({ children }) => {
   const [checkoutForm, setCheckoutForm] = useState({});
   const [billingForm, setBillingForm] = useState({});
   const [checkoutState, setCheckoutState] = useState({});
+  const [userState, setUserState] = useState([])
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const addToCart = (item) => {
     setCart([...cart, item]);
@@ -36,6 +38,13 @@ const UserContextProvider = ({ children }) => {
     localStorage.setItem('cartCars', JSON.stringify(cart));
   }, [cart]);
 
+  
+  const registerUser = (user) => {
+    setUserState([...userState, user]);
+  }
+
+  console.log("userState: ", userState);
+  
   console.log(checkoutState);
   return (
     <Provider
@@ -48,6 +57,9 @@ const UserContextProvider = ({ children }) => {
         checkoutForm,
         setCheckoutForm,
         checkoutState,
+        userState,
+        setUserState,
+        registerUser,
       }}
     >
       {children}
