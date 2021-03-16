@@ -29,28 +29,28 @@ function LoginRegisterPage() {
         </div>
         <div className={`${styles.log_reg_header} ${styles.header_lg}`}>
           <div
-            className={`${
-              pathname === '/login'
-                ? styles.header_group_active
-                : styles.header_group
+            className={`${styles.header_group} ${
+              pathname === '/login' && styles.header_group_active
             }`}
           >
             <h2>Login</h2>
-            <p>
-              <Link to='/login'>Already have an Account? Login!</Link>
-            </p>
+            {pathname !== '/login' && (
+              <p>
+                <Link to='/login'>Already have an Account? Login!</Link>
+              </p>
+            )}
           </div>
           <div
-            className={`${
-              pathname === '/login'
-                ? styles.header_group
-                : styles.header_group_active
+            className={`${styles.header_group} ${
+              pathname === '/register' && styles.header_group_active
             }`}
           >
             <h2>Register</h2>
-            <p>
-              <Link to='/register'>Don't have an account? Register!</Link>
-            </p>
+            {pathname !== '/register' && (
+              <p>
+                <Link to='/register'>Don't have an account? Register!</Link>
+              </p>
+            )}
           </div>
         </div>
         {pathname === '/login' && <LoginForm />}
