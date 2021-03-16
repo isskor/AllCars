@@ -14,9 +14,11 @@
     margin: 0 auto 2rem;
     padding: 2rem;
     border-radius: 1rem;
-    background-color: rgba(0,0,0,0.5);
-    backdrop-filter: blur(2px);
-    height:80vh;
+    background-color: rgba(32, 32, 32, 0.5);
+    backdrop-filter: blur(3px);
+    /* height:80vh; */
+    min-height: 100%;
+    box-shadow: 0 5px 20px rgb(0, 0, 0, 0.6);
 
   }
 
@@ -29,6 +31,7 @@
   .loginForm p{
       margin: 0 auto;
     width: 60%;
+    text-align: center;
   }
 
   .loginForm a{
