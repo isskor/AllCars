@@ -1,8 +1,26 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
 function RegisterForm() {
-  const form = [
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    Password: '',
+    'Confirm Password': '',
+    phone: '',
+    address: '',
+    method: '',
+  });
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: [e.target.value] });
+  };
+
+  const formValues = [
+    {
+      name: 'Full name',
+      type: 'text',
+      placeholder: 'Enter your full name',
+    },
     { name: 'Email', type: 'email', placeholder: 'Please enter your email' },
     {
       name: 'Password',
@@ -13,11 +31,10 @@ function RegisterForm() {
       name: 'Confirm Password',
       type: 'password',
       placeholder: 'Please confirm your password',
-    },
-    {
-      name: 'Full name',
-      type: 'text',
-      placeholder: 'Enter your full name',
+      error:
+        form?.Password.toString() != form['Confirm Password'].toString()
+          ? 'Password does not match'
+          : '',
     },
     {
       name: 'Address',
@@ -33,16 +50,21 @@ function RegisterForm() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-  };
+    const errors = formValues.filter((a) => a.error);
+    // if there are errors, return without doing anything
+    if (errors.length > 0) return;
 
+    //    do something
+  };
+  useEffect(() => {}, [form]);
   return (
     <div className={styles.loginForm}>
-      <form>
+      <form onChange={handleChange}>
         <h1>Register</h1>
         <p>
           <Link to='/login'>Already have an Account? Login!</Link>
         </p>
-        {form?.map((item) => (
+        {formValues?.map((item) => (
           <div className={styles.form_group} key={item.name}>
             <label className={styles.login_label}>{item.name}</label>
             <input
@@ -50,6 +72,9 @@ function RegisterForm() {
               name={item.name}
               placeholder={item.placeholder}
             />
+            {item.error && (
+              <span className={styles.form_error}>{item.error}</span>
+            )}
           </div>
         ))}
 
