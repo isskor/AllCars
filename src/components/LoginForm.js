@@ -14,7 +14,7 @@ function LoginForm() {
           <input
             type='text'
             name='login'
-            placeholder='Enter your username or emailx'
+            placeholder='Enter your username or email'
           />
         </div>
         <div className={styles.form_group}>

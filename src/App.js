@@ -30,7 +30,11 @@ function App() {
               <Route exact path='/car/:id' component={CarDetails} />
               <Route exact path='/cart' component={CartPage} />
               <Route exact path='/receipt' component={Receipt}></Route>
-              <Route exact path='/login' component={LoginRegisterPage} />
+              <Route
+                exact
+                path={['/login', '/register']}
+                component={LoginRegisterPage}
+              />
             </Switch>
           </div>
         </CartContextProvider>

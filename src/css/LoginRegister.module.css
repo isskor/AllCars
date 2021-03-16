@@ -1,9 +1,22 @@
 .log_reg_container{
+    overflow: hidden;
+    margin-bottom: -5rem;
+}
+
+.log_reg_wrapper{
     background: url('../assets//background//allcars-login.jpg');
-    height: calc(100vh - 5rem);
+    min-height: 120vh;
     width: 100%;
     background-size: cover;
-    margin-bottom: -5rem;
     background-position: 70%;
     
+}
+
+.log_reg_wrapper h3{
+    padding: 5rem 1rem 5rem;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--header-font);
+
 }
