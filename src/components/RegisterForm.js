@@ -26,6 +26,10 @@ function RegisterForm() {
     },
   ];
 
+  const handleRegister = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className={styles.loginForm}>
       <form>
@@ -45,7 +49,9 @@ function RegisterForm() {
         ))}
 
         <div className={styles.form_group}>
-          <button type='button'>Register</button>
+          <button type='submit' onClick={(e) => handleRegister(e)}>
+            Register
+          </button>
         </div>
       </form>
     </div>

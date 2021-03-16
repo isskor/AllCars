@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
 function LoginForm() {
+  const handleLogin = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className={styles.loginForm}>
       <form>
@@ -27,7 +31,9 @@ function LoginForm() {
           <span>Forgot your password?</span>
         </div>
         <div className={styles.form_group}>
-          <button type='button'>Log in</button>
+          <button type='submit' onClick={(e) => handleLogin(e)}>
+            Log in
+          </button>
         </div>
       </form>
     </div>
