@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
 function LoginForm() {
+  const history = useHistory();
+
   const handleLogin = (e) => {
     e.preventDefault();
+    // do something
+
+    history.goBack();
   };
 
   return (
