@@ -15,6 +15,11 @@ function RegisterForm() {
       placeholder: 'Please confirm your password',
     },
     {
+      name: 'Full name',
+      type: 'text',
+      placeholder: 'Enter your full name',
+    },
+    {
       name: 'Address',
       type: 'text',
       placeholder: 'Enter your address',

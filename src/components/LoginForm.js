@@ -7,7 +7,6 @@ function LoginForm() {
   const handleLogin = (e) => {
     e.preventDefault();
     // do something
-
     history.goBack();
   };
 
