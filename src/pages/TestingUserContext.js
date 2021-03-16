@@ -8,7 +8,8 @@ function TestingUserContext() {
         name: "",
         address: "",
         email: "",
-        phone: ""
+        phone: "",
+        id: ""
     });
 
     const handleChange = (e) => {
@@ -33,7 +34,7 @@ function TestingUserContext() {
             <div>
                 <ul>
                     {userState.map((user, i) => (
-                        <li key={i}>Name: {user.name}, Address: {user.address}, E-mail: {user.email}, Phone number: {user.phone}</li>
+                        <li key={i}>Name: {user.name}, Address: {user.address}, E-mail: {user.email}, Phone number: {user.phone}, ID: {user.id}</li>
                     ))}
                 </ul>
             </div>

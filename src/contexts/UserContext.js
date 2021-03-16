@@ -40,10 +40,35 @@ const UserContextProvider = ({ children }) => {
 
   
   const registerUser = (user) => {
-    setUserState([...userState, user]);
-  }
+    if (userState.length === 0) {
+      user.id = user.email;
+      setUserState([...userState, user]);
+    } else {
+      userState.forEach(object => {
+        if (object.email === user.email) {
+          console.log("Already exist!");
+          return;
+      } else {
+        user.id = user.email;
+        setUserState([...userState, user]);
+      }
+      });
+    };
 
-  console.log("userState: ", userState);
+    // if (userState.length > 0) {
+    //   userState.forEach(object => {
+    //     if (object.email === user.email) {
+    //       console.log("Already exist!");
+    //     } else {
+    //       user.id = user.email;
+    //       setUserState([...userState, user]);
+    //     };
+    //   });
+    // } else {
+    //   user.id = user.email;
+    //   setUserState([...userState, user]);
+    // }
+  };
   
   console.log(checkoutState);
   return (
