@@ -1,0 +1,9 @@
+.log_reg_container{
+    background: url('../assets//background//allcars-login.jpg');
+    height: calc(100vh - 5rem);
+    width: 100%;
+    background-size: cover;
+    margin-bottom: -5rem;
+    background-position: 70%;
+    
+}

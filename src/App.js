@@ -14,6 +14,7 @@ import CarDetails from './pages/CarDetails';
 import Receipt from './pages/Receipt';
 // styles
 import styles from './css/App.module.css';
+import LoginRegisterPage from './pages/LoginRegisterPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route exact path='/car/:id' component={CarDetails} />
               <Route exact path='/cart' component={CartPage} />
               <Route exact path='/receipt' component={Receipt}></Route>
+              <Route exact path='/login' component={LoginRegisterPage} />
             </Switch>
           </div>
         </CartContextProvider>
