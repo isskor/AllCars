@@ -14,7 +14,7 @@ import CarDetails from './pages/CarDetails';
 import Receipt from './pages/Receipt';
 // styles
 import styles from './css/App.module.css';
-import LoginRegisterPage from './pages/LoginRegisterPage';
+import LoginRegister from './pages/LoginRegister';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
               <Route
                 exact
                 path={['/login', '/register']}
-                component={LoginRegisterPage}
+                component={LoginRegister}
               />
             </Switch>
           </div>

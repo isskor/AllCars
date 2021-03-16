@@ -14,8 +14,8 @@
     margin: 0 auto 2rem;
     padding: 2rem;
     border-radius: 1rem;
-    background-color: rgba(32, 32, 32, 0.5);
-    backdrop-filter: blur(3px);
+    background-color: rgba(12, 12, 12, 0.5);
+    backdrop-filter: blur(5px);
     /* height:80vh; */
     min-height: 100%;
     box-shadow: 0 5px 20px rgb(0, 0, 0, 0.6);
@@ -32,6 +32,11 @@
       margin: 0 auto;
     width: 60%;
     text-align: center;
+  }
+
+  .forgot_pw {
+      font-size: 0.8rem;
+      padding: 1.5rem;
   }
 
   .loginForm a{

@@ -32,7 +32,7 @@ function LoginForm() {
             name='password'
             placeholder='Enter your password'
           />
-          <span>Forgot your password?</span>
+          <p className={styles.forgot_pw}>Forgot your password?</p>
         </div>
         <div className={styles.form_group}>
           <button type='submit' onClick={(e) => handleLogin(e)}>
