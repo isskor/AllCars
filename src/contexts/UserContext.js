@@ -65,22 +65,16 @@ const UserContextProvider = ({ children }) => {
 
   const loginUser = (user) => {
     userState.forEach((object) => {
-      console.log("Object: ", object, "User: ", user)
-      if (object.email === user.email) {
-        if (object.password === user.password) {
-          console.log("Login sucessful!");
-          return;
-        } else {
-          console.log("Didn't work!");
-        }
+      if (object.email === user.email && object.password === user.password) {
+        setIsLoggedIn(true);
+        console.log("Login sucessful!");
+        return;
       } else {
-        console.log("Didn't work!");
-      }
+        setIsLoggedIn(false);
+        console.log("Wrong email or password...");
+      };
     });
-
   };
-
-  console.log("userState: ", userState);
 
   console.log(checkoutState);
   return (
