@@ -9,7 +9,7 @@ const CartContextProvider = ({ children }) => {
       : []
   );
   const [checkoutForm, setCheckoutForm] = useState({});
-  const [billingForm, setBillingForm] = useState({});
+  // const [billingForm, setBillingForm] = useState({});
   const [checkoutState, setCheckoutState] = useState({});
 
   const addToCart = (item) => {
@@ -20,8 +20,8 @@ const CartContextProvider = ({ children }) => {
     setCart(cart.filter((car) => car !== item));
   };
 
-  const handleCheckout = (billing) => {
-    setBillingForm(billing);
+  const handleCheckout = (form) => {
+    setCheckoutForm(form);
     console.log(checkoutForm);
   };
 
@@ -30,7 +30,7 @@ const CartContextProvider = ({ children }) => {
       cars: cart,
       form: checkoutForm,
     });
-  }, [billingForm]);
+  }, [checkoutForm]);
 
   useEffect(() => {
     localStorage.setItem('cartCars', JSON.stringify(cart));

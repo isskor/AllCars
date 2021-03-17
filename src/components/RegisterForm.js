@@ -62,7 +62,7 @@ function RegisterForm() {
 
   return (
     <div className={styles.loginForm}>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={handleSubmit}>
         {formValues?.map((item) => (
           <div className={styles.form_group} key={item.name}>
             <label className={styles.login_label}>{item.display}</label>
@@ -70,19 +70,16 @@ function RegisterForm() {
               type={item.type}
               name={item.name}
               placeholder={item.placeholder}
+              value={values[item.name] || ''}
               onChange={handleChange}
-              value={values[item.name]}
             />
-            {errors[item.name] && (
-              <span className={styles.form_error}>{errors[item.name]}</span>
-            )}
+
+            <span className={styles.form_error}>{errors[item.name]}</span>
           </div>
         ))}
 
         <div className={styles.form_group}>
-          <button type='submit' onSubmit={(e) => handleSubmit(e)}>
-            Register
-          </button>
+          <button type='submit'>Register</button>
         </div>
       </form>
     </div>
