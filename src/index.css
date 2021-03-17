@@ -9,6 +9,7 @@
   --primary-color: #ffc388;
   --secondary-color: #eaeaea;
   --dark-color: #5b5b5b;
+  --error-color:rgb(252, 143, 143);
   --primary-button: linear-gradient(
     121.61deg,
     #fdc194 11.85%,
