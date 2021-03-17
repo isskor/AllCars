@@ -17,7 +17,7 @@ const UserContextProvider = ({ children }) => {
   const [userState, setUserState] = useState([
     {
       email: "something@hej.se",
-      password: "hej1"
+      password: "hejhej1"
     },
     {
       email: "some@hej.se",
@@ -56,13 +56,13 @@ const UserContextProvider = ({ children }) => {
 
   const registerUser = (user) => {
     const a = userState.filter((object) => object.email === user.email);
-
     if (a.length > 0) {
       console.log("Already exist!");
       return;
     }
     user.id = user.email;
     setUserState([...userState, user]);
+    history.replace("/login");
   };
 
   const loginUser = (user) => {

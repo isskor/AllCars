@@ -9,7 +9,7 @@ import BillingForm from '../components/BillingForm';
 import useForm from '../components/useForm';
 import { validateCheckout } from '../components/FormValidationRules';
 const CartPage = () => {
-  const { cart, handleCheckout } = useContext(CartContext);
+  const { cart, handleCheckout } = useContext(UserContext);
   const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
   const history = useHistory();
 

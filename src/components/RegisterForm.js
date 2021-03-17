@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
 import useForm from '../components/useForm';
 import { validateRegister } from './FormValidationRules';
+import { UserContext } from '../contexts/UserContext';
 function RegisterForm() {
   const history = useHistory();
 
@@ -10,6 +11,7 @@ function RegisterForm() {
     handleRegister,
     validateRegister
   );
+  const { registerUser } = useContext(UserContext);
 
   const formValues = [
     {
@@ -52,8 +54,7 @@ function RegisterForm() {
 
   function handleRegister() {
     console.log(values['username']);
-    // **********REGISTER FUNCTION
-    history.goBack();
+    registerUser(values);
   }
 
   useEffect(() => {
