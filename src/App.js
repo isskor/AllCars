@@ -15,6 +15,7 @@ import Receipt from './pages/Receipt';
 import TestingUserContext from './pages/TestingUserContext';
 // styles
 import styles from './css/App.module.css';
+import LoginRegister from './pages/LoginRegister';
 
 function App() {
   return (
@@ -30,7 +31,11 @@ function App() {
               <Route exact path='/car/:id' component={CarDetails} />
               <Route exact path='/cart' component={CartPage} />
               <Route exact path='/receipt' component={Receipt}></Route>
-              <Route exact path="/testing" component={TestingUserContext} />
+              <Route
+                exact
+                path={['/login', '/register']}
+                component={LoginRegister}
+              />
             </Switch>
           </div>
         </UserContextProvider>

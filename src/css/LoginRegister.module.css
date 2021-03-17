@@ -1,0 +1,101 @@
+.log_reg_container{
+    overflow: hidden;
+    margin-bottom: -5rem;
+    background: url('../assets//background//allcars-login.jpg');
+    width: 100%;
+    background-position: 68%;
+    background-size: cover;
+}
+
+.log_reg_wrapper{
+    min-height: 120vh;
+    width: 90%;
+    margin: 2rem auto ;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgba(12, 12, 12, 0.5);
+    backdrop-filter: blur(5px);
+    /* height:80vh; */
+    min-height: 100%;
+    box-shadow: 0 5px 20px rgb(0, 0, 0, 0.6);
+}
+
+.log_reg_header h1{
+    color: var(--primary-color);
+    text-align: center;;
+}
+
+.log_reg_header  p{
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+}
+
+.log_reg_header a{
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.log_reg_wrapper h3{
+    padding: 2rem 1rem 0;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--header-font);
+
+}
+
+.header_lg{
+    display: none;
+}
+
+
+
+@media(min-width: 768px){
+    .log_reg_header{
+        display:none;
+    }
+    .header_lg{
+        display: flex;
+        justify-content: center;
+    }
+    .header_lg h2{
+        font-size: 2.4rem;
+        font-family: var(--header-font);
+        color: var(--primary-color);
+        text-align: center;;
+    }
+    .header_lg p{
+        width: 80%;
+    }
+
+    .header_group{
+        padding: 1rem;
+        opacity: 0.5;
+        flex:0.5;
+    }
+    .header_group_active{
+        opacity: 1;
+
+    }
+
+
+    .log_reg_container{
+        overflow: hidden;
+        margin-bottom: -5rem;
+        background: url('../assets//background//allcars-login.jpg');
+        width: 100%;
+        background-position: 50% ;
+        background-size: cover;
+        min-height: 120vh;
+    }
+
+
+
+    .log_reg_wrapper{
+        width: 60%;
+        max-width: 650px;
+        margin-left: 4rem;
+    }
+}
