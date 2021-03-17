@@ -39,31 +39,14 @@ const UserContextProvider = ({ children }) => {
   }, [cart]);
 
   const registerUser = (user) => {
-    if (userState.length === 0) {
-      user.id = user.email;
-      setUserState([...userState, user]);
+    const a = userState.filter((object) => object.email.toString() === user.email.toString());
+
+    if (a.length > 0) {
+      console.log("Already exist!");
       return;
     }
-    const a = userState.filter((object) => object.email === user.email);
-
-    if (a.length > 0) return;
-    console.log('added');
     user.id = user.email;
     setUserState([...userState, user]);
-
-    // if (userState.length > 0) {
-    //   userState.forEach(object => {
-    //     if (object.email === user.email) {
-    //       console.log("Already exist!");
-    //     } else {
-    //       user.id = user.email;
-    //       setUserState([...userState, user]);
-    //     };
-    //   });
-    // } else {
-    //   user.id = user.email;
-    //   setUserState([...userState, user]);
-    // }
   };
 
   console.log(checkoutState);
