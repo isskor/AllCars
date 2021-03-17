@@ -73,6 +73,9 @@ function LoginRegisterPage() {
         <h3>A new Adventure Awaits!</h3>
       </div>
       {isRegistered && <ConfirmationPopup />}
+
+      {/* For styling purposes below */}
+      {/* <ConfirmationPopup /> */}
     </div>
   );
 }

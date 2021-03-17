@@ -1,0 +1,7 @@
+.popupBackground {
+    background-color: pink;
+}
+
+.popupContainer {
+    background-color: var(--card-bg);
+}
