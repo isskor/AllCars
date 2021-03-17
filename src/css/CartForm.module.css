@@ -18,12 +18,12 @@
   padding: 1rem 0 3rem;
 }
 
-.cartPage label {
+.cart_form  label {
   color: var(--primary-color);
   font-family: var(--main-font);
 }
 
-.cartPage input {
+.cart_form  input {
   background: transparent;
   box-sizing: border-box;
   display: block;
@@ -38,7 +38,7 @@
   border-bottom: 1px solid rgba(192, 192, 192, 0.6);
 }
 
-.cartPage input:focus {
+.cart_form  input:focus {
   background: #7c7c7c;
   border-radius: 1rem;
   transition: all 1s ease;
@@ -85,14 +85,23 @@
     flex-basis: 100%;
   }
 
-  .cart_form .email,
-  .cart_form .phone {
-    flex-basis: 45%;
-  }
+ 
 }
 @media (min-width: 992px) {
+  .cart_form{
+    margin: 0;
+  }
   .cart_form .email,
   .cart_form .phone {
     flex-basis: 100%;
+  }
+  .checkout_form{
+   /* grid-area: 1/2/1/3; */
+   flex-basis: 50%;
+
+  }
+
+  .billing_form{
+    grid-area: 2/1/2/3;
   }
 }

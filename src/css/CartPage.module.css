@@ -34,6 +34,10 @@
   border-bottom: 2px solid var(--secondary-color);
 }
 
+.cart_form_container{
+  margin: 0 auto;
+}
+
 @media (min-width: 768px) {
   .total h3 {
     font-size: 2rem;
@@ -46,18 +50,22 @@
 @media (min-width: 992px) {
   .cartContainer {
     width: 90%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 0 auto;
+  }
+  .cart_form_container{
+    grid-area: 1/1/3/3;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 0;
   }
 
   .cartLeft {
-    flex-basis: 50%;
+    grid-area: 1/1/1/1;
   }
-  .cartRight {
-    flex-basis: 50%;
-  }
-  .billingForm {
-    flex-basis: 100%;
-  }
+
+  
 }

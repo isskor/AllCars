@@ -12,7 +12,7 @@ const UserContextProvider = ({ children }) => {
       : []
   );
   const [checkoutForm, setCheckoutForm] = useState({});
-  const [billingForm, setBillingForm] = useState({});
+  // const [billingForm, setBillingForm] = useState({});
   const [checkoutState, setCheckoutState] = useState({});
   const [userState, setUserState] = useState([
     {
@@ -38,8 +38,8 @@ const UserContextProvider = ({ children }) => {
     setCart(cart.filter((car) => car !== item));
   };
 
-  const handleCheckout = (billing) => {
-    setBillingForm(billing);
+  const handleCheckout = (form) => {
+    setCheckoutForm(form);
     console.log(checkoutForm);
   };
 
@@ -48,7 +48,7 @@ const UserContextProvider = ({ children }) => {
       cars: cart,
       form: checkoutForm,
     });
-  }, [billingForm]);
+  }, [checkoutForm]);
 
   useEffect(() => {
     localStorage.setItem('cartCars', JSON.stringify(cart));
