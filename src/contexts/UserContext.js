@@ -94,7 +94,8 @@ const UserContextProvider = ({ children }) => {
         userState,
         setUserState,
         registerUser,
-        loginUser
+        loginUser,
+        isLoggedIn
       }}
     >
       {children}
