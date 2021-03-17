@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import PersonIcon from '@material-ui/icons/Person';
 import styles from '../css/FooterNavbar.module.css';
 
 const FooterNavbar = () => {
@@ -19,6 +20,11 @@ const FooterNavbar = () => {
         {<InfoOutlinedIcon />}
         <span className={styles.iconName}>About</span>
       </Link>
+      <Link to='/login'>
+        {<PersonIcon />}
+        <span className={styles.iconName}>Login/Register</span>
+      </Link>
+      
     </nav>
   );
 };
