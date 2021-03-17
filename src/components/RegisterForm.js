@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
 import { Link } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
 function RegisterForm() {
+  const { registerUser } = useContext(UserContext);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -12,7 +14,7 @@ function RegisterForm() {
     method: '',
   });
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: [e.target.value] });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const formValues = [
@@ -53,6 +55,7 @@ function RegisterForm() {
     const errors = formValues.filter((a) => a.error);
     // if there are errors, return without doing anything
     if (errors.length > 0) return;
+    registerUser(form);
 
     //    do something
   };
