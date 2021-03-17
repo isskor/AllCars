@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
-import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 import Modal from './Modal';
 import style from '../css/CarCard.module.css';
 const AddToCartButton = ({ car }) => {
-  const { addToCart, cart } = useContext(CartContext);
+  const { addToCart, cart } = useContext(UserContext);
   const [openModal, setOpenModal] = useState(false);
 
   const checkCart = (car) => {
