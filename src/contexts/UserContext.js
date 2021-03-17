@@ -39,7 +39,7 @@ const UserContextProvider = ({ children }) => {
   }, [cart]);
 
   const registerUser = (user) => {
-    const a = userState.filter((object) => object.email.toString() === user.email.toString());
+    const a = userState.filter((object) => object.email === user.email);
 
     if (a.length > 0) {
       console.log("Already exist!");
@@ -48,6 +48,8 @@ const UserContextProvider = ({ children }) => {
     user.id = user.email;
     setUserState([...userState, user]);
   };
+
+  console.log("userState: ", userState);
 
   console.log(checkoutState);
   return (
@@ -64,6 +66,8 @@ const UserContextProvider = ({ children }) => {
         userState,
         setUserState,
         registerUser,
+        isLoggedIn,
+        setIsLoggedIn
       }}
     >
       {children}
