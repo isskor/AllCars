@@ -41,7 +41,7 @@ function LoginRegisterPage() {
               pathname === '/login' && styles.header_group_active
             }`}
           >
-            <h2>Login</h2>
+            <Link to="/login" replace><h2>Login</h2></Link>
             {pathname !== '/login' && (
               <p>
                 <Link to='/login' replace>
@@ -55,7 +55,7 @@ function LoginRegisterPage() {
               pathname === '/register' && styles.header_group_active
             }`}
           >
-            <h2>Register</h2>
+            <Link to="/register" replace><h2>Register</h2></Link>
             {pathname !== '/register' && (
               <p>
                 <Link to='/register' replace>

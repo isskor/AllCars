@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 import CartItem from '../components/CartItem';
 import CartForm from '../components/CartForm';
 import styles from '../css/CartPage.module.css';

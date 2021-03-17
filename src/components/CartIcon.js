@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 import styles from '../css/CartIcon.module.css';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 const CartIcon = () => {
-  const { cart } = useContext(CartContext);
+  const { cart } = useContext(UserContext);
   
   const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
   

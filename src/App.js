@@ -3,7 +3,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 
 // context
 import CarContextProvider from './contexts/CarContext';
-import CartContextProvider from './contexts/CartContext';
+import UserContextProvider from './contexts/UserContext';
 // components
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -12,6 +12,7 @@ import Deals from './pages/deals';
 import CartPage from './pages/CartPage';
 import CarDetails from './pages/CarDetails';
 import Receipt from './pages/Receipt';
+import TestingUserContext from './pages/TestingUserContext';
 // styles
 import styles from './css/App.module.css';
 import LoginRegister from './pages/LoginRegister';
@@ -20,7 +21,7 @@ function App() {
   return (
     <div className='App'>
       <CarContextProvider>
-        <CartContextProvider>
+        <UserContextProvider>
           <Navbar />
           <div className={styles.page_container}>
             <Switch>
@@ -37,7 +38,7 @@ function App() {
               />
             </Switch>
           </div>
-        </CartContextProvider>
+        </UserContextProvider>
       </CarContextProvider>
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from '../css/CartForm.module.css';
-import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 
 const BillingForm = ({ errors }) => {
   // const history = useHistory();

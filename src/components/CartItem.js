@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 import styles from '../css/CartItem.module.css';
 const CartItem = ({ cartItem, checkout = false }) => {
-  const { removeFromCart } = useContext(CartContext);
+  const { removeFromCart } = useContext(UserContext);
   const history = useHistory();
 
   function goToCarDetails() {

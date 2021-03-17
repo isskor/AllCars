@@ -1,12 +1,12 @@
 import { useContext, useEffect } from 'react';
 import { CarContext } from '../contexts/CarContext';
-import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 import ReceiptCar from '../components/ReceiptCar';
 import styles from '../css/Receipt.module.css';
 import { useHistory } from 'react-router-dom';
 
 const Receipt = () => {
-  const { checkoutState, setCart } = useContext(CartContext);
+  const { checkoutState, setCart } = useContext(UserContext);
   const { dispatch} = useContext(CarContext);
   const history = useHistory();
   const totalCost = checkoutState.cars.reduce((acc, cur) => acc + cur.price, 0);
