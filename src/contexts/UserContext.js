@@ -1,8 +1,10 @@
 import { TrendingUpRounded } from '@material-ui/icons';
 import { useState, createContext, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export const UserContext = createContext();
 const UserContextProvider = ({ children }) => {
+  const history = useHistory();
   const { Provider } = UserContext;
   const [cart, setCart] = useState(
     localStorage.getItem('cartCars')
@@ -68,6 +70,7 @@ const UserContextProvider = ({ children }) => {
       if (object.email === user.email && object.password === user.password) {
         setIsLoggedIn(true);
         console.log("Login sucessful!");
+        history.goBack();
         return;
       } else {
         setIsLoggedIn(false);

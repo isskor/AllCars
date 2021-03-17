@@ -1,23 +1,34 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
+import { useContext, useState } from 'react';
+import { UserContext } from '../contexts/UserContext';
+
 function LoginForm() {
   const history = useHistory();
+  const { loginUser } = useContext(UserContext);
+  const [loginInfo, setLoginInfo] = useState({
+        email: "",
+        password: ""
+  });
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // do something
-    history.goBack();
+  const handleChange = (e) => {
+      setLoginInfo({...loginInfo, [e.target.name]: e.target.value})
+  };
+
+  const handleClick = (e) => {
+      e.preventDefault();
+      loginUser(loginInfo);
   };
 
   return (
     <div className={styles.loginForm}>
-      <form>
+      <form onChange={handleChange}>
         <div className={styles.form_group}>
           <label className={styles.login_label}>Username</label>
           <input
             type='text'
-            name='login'
+            name='email'
             placeholder='Enter your username or email'
           />
         </div>
@@ -31,7 +42,7 @@ function LoginForm() {
           <p className={styles.forgot_pw}>Forgot your password?</p>
         </div>
         <div className={styles.form_group}>
-          <button type='submit' onClick={(e) => handleLogin(e)}>
+          <button type='submit' onClick={(e) => handleClick(e)}>
             Log in
           </button>
         </div>
