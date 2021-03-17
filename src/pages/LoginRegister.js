@@ -1,12 +1,15 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import ConfirmationPopup from '../components/ConfirmationPopup';
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
+import { UserContext } from '../contexts/UserContext';
 import styles from '../css/LoginRegister.module.css';
 
 function LoginRegisterPage() {
   const history = useHistory();
   const { pathname } = history.location;
+  const { isRegistered } = useContext(UserContext);
   useEffect(() => {
     console.log('rend');
     // maybe store history somehow if we do not want to use goBack function when clicking login
@@ -69,6 +72,7 @@ function LoginRegisterPage() {
         {pathname === '/register' && <RegisterForm />}
         <h3>A new Adventure Awaits!</h3>
       </div>
+      {isRegistered && <ConfirmationPopup />}
     </div>
   );
 }

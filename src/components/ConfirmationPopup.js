@@ -1,7 +1,7 @@
 function ConfirmationPopup() {
     return (
         <div className="popup">
-            <p>You are now registered! Please log in.</p>
+            <p>You are now registered!</p>
         </div>
     )
 }

@@ -29,6 +29,7 @@ const UserContextProvider = ({ children }) => {
     }
   ]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
 
   const addToCart = (item) => {
     setCart([...cart, item]);
@@ -62,6 +63,7 @@ const UserContextProvider = ({ children }) => {
     }
     user.id = user.email;
     setUserState([...userState, user]);
+    setIsRegistered(true);
     history.replace("/login");
   };
 
@@ -94,7 +96,8 @@ const UserContextProvider = ({ children }) => {
         userState,
         setUserState,
         registerUser,
-        loginUser
+        loginUser,
+        isRegistered
       }}
     >
       {children}
