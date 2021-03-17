@@ -71,7 +71,7 @@
 
 .error{
   font-size: 0.75rem;
-  color:rgb(252, 143, 143);
+  color:var(--error-color);
 }
 
 @media (min-width: 576px) {
