@@ -1,3 +1,4 @@
+import { TrendingUpRounded } from '@material-ui/icons';
 import { useState, createContext, useEffect } from 'react';
 
 export const UserContext = createContext();
@@ -11,7 +12,20 @@ const UserContextProvider = ({ children }) => {
   const [checkoutForm, setCheckoutForm] = useState({});
   const [billingForm, setBillingForm] = useState({});
   const [checkoutState, setCheckoutState] = useState({});
-  const [userState, setUserState] = useState([]);
+  const [userState, setUserState] = useState([
+    {
+      email: "something@hej.se",
+      password: "hej1"
+    },
+    {
+      email: "some@hej.se",
+      password: "hej2"
+    },
+    {
+      email: "thing@hej.se",
+      password: "hej3"
+    }
+  ]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const addToCart = (item) => {
@@ -49,6 +63,23 @@ const UserContextProvider = ({ children }) => {
     setUserState([...userState, user]);
   };
 
+  const loginUser = (user) => {
+    userState.forEach((object) => {
+      console.log("Object: ", object, "User: ", user)
+      if (object.email === user.email) {
+        if (object.password === user.password) {
+          console.log("Login sucessful!");
+          return;
+        } else {
+          console.log("Didn't work!");
+        }
+      } else {
+        console.log("Didn't work!");
+      }
+    });
+
+  };
+
   console.log("userState: ", userState);
 
   console.log(checkoutState);
@@ -66,8 +97,7 @@ const UserContextProvider = ({ children }) => {
         userState,
         setUserState,
         registerUser,
-        isLoggedIn,
-        setIsLoggedIn
+        loginUser
       }}
     >
       {children}

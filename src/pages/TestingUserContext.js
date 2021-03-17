@@ -3,7 +3,7 @@ import { UserContext } from '../contexts/UserContext';
 
 function TestingUserContext() {
 
-    const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
+    const { loginUser } = useContext(UserContext);
     const [loginInfo, setLoginInfo] = useState({
         email: "",
         password: ""
@@ -15,8 +15,7 @@ function TestingUserContext() {
 
     const handleClick = (e) => {
         e.preventDefault();
-        setIsLoggedIn(true);
-        console.log(loginInfo);
+        loginUser(loginInfo);
     };
 
     // const { userState, registerUser } = useContext(UserContext);
