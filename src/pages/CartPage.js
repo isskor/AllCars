@@ -40,7 +40,9 @@ const CartPage = () => {
         <div className={styles.cartLeft}>
           <ul>
             {cart.map((cartItem) => (
-              <CartItem cartItem={cartItem} key={cartItem.vin} />
+              <div className={styles.item_container}>
+                <CartItem cartItem={cartItem} key={cartItem.vin} />
+              </div>
             ))}
           </ul>
           <div className={styles.total}>
