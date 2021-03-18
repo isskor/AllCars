@@ -1,4 +1,3 @@
-import { TrendingUpRounded } from '@material-ui/icons';
 import { useState, createContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -12,23 +11,23 @@ const UserContextProvider = ({ children }) => {
       : []
   );
   const [checkoutForm, setCheckoutForm] = useState({});
-  // const [billingForm, setBillingForm] = useState({});
   const [checkoutState, setCheckoutState] = useState({});
-  const [userState, setUserState] = useState([
+  const [usersState, setUsersState] = useState([
     {
-      email: "something@hej.se",
-      password: "hejhej1"
+      email: 'something@hej.se',
+      password: 'hejhej1',
     },
     {
-      email: "some@hej.se",
-      password: "hej2"
+      email: 'some@hej.se',
+      password: 'hej2',
     },
     {
-      email: "thing@hej.se",
-      password: "hej3"
-    }
+      email: 'thing@hej.se',
+      password: 'hej3',
+    },
   ]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
 
   const addToCart = (item) => {
     setCart([...cart, item]);
@@ -55,27 +54,30 @@ const UserContextProvider = ({ children }) => {
   }, [cart]);
 
   const registerUser = (user) => {
-    const a = userState.filter((object) => object.email === user.email);
-    if (a.length > 0) {
-      console.log("Already exist!");
+    const userExist = usersState.filter(
+      (object) => object.email === user.email
+    );
+    if (userExist.length > 0) {
+      console.log('Already exist!');
       return;
     }
     user.id = user.email;
-    setUserState([...userState, user]);
-    history.replace("/login");
+    setUsersState([...usersState, user]);
+    setIsRegistered(true);
+    history.replace('/login');
   };
 
   const loginUser = (user) => {
-    userState.forEach((object) => {
+    usersState.forEach((object) => {
       if (object.email === user.email && object.password === user.password) {
         setIsLoggedIn(true);
-        console.log("Login sucessful!");
+        console.log('Login sucessful!');
         history.goBack();
         return;
       } else {
         setIsLoggedIn(false);
-        console.log("Wrong email or password...");
-      };
+        console.log('Wrong email or password...');
+      }
     });
   };
 
@@ -91,11 +93,11 @@ const UserContextProvider = ({ children }) => {
         checkoutForm,
         setCheckoutForm,
         checkoutState,
-        userState,
-        setUserState,
+        usersState,
+        setUsersState,
         registerUser,
         loginUser,
-        isLoggedIn
+        isRegistered,
       }}
     >
       {children}
