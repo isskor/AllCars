@@ -48,6 +48,7 @@ const UserContextProvider = ({ children }) => {
       cars: cart,
       form: checkoutForm,
     });
+    // currentUser.history.push({ cars: cart, form: checkoutForm });
   }, [checkoutForm]);
 
   useEffect(() => {
@@ -101,6 +102,7 @@ const UserContextProvider = ({ children }) => {
         registerUser,
         loginUser,
         isRegistered,
+        currentUser,
       }}
     >
       {children}
