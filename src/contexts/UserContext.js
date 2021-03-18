@@ -14,7 +14,7 @@ const UserContextProvider = ({ children }) => {
       ? JSON.parse(localStorage.getItem('cartCars'))
       : []
   );
-  const [checkoutForm, setCheckoutForm] = useState({});
+
   const [checkoutState, setCheckoutState] = useState({});
   const [usersState, setUsersState] = useState([
     {
@@ -33,7 +33,7 @@ const UserContextProvider = ({ children }) => {
       password: 'hej3',
     },
   ]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const [currentUser, setCurrentUser] = useState(null);
   const [isRegistered, setIsRegistered] = useState(false);
 
@@ -47,7 +47,12 @@ const UserContextProvider = ({ children }) => {
   };
 
   const handleCheckout = (form) => {
-    setCheckoutForm(form);
+    setCheckoutState({
+      timestamp: new Date().toLocaleString(),
+      id: uuidv4(),
+      cars: cart,
+      form: form,
+    });
   };
 
   //******** user functions
@@ -83,21 +88,17 @@ const UserContextProvider = ({ children }) => {
   // reset all other state?
 
   //******** on checkout
-  useEffect(() => {
-    setCheckoutState({
-      timestamp: new Date().toLocaleString(),
-      id: uuidv4(),
-      cars: cart,
-      form: checkoutForm,
-    });
-    // currentUser.history.push({ cars: cart, form: checkoutForm });
-  }, [checkoutForm]);
 
   useEffect(() => {
     if (currentUser) {
+      const firstPurchase = currentUser.purchaseHistory;
+      if (!firstPurchase) {
+        setCurrentUser({ ...currentUser, purchaseHistory: [checkoutState] });
+        return;
+      }
       setCurrentUser({
         ...currentUser,
-        purchaseHistory: { ...currentUser.purchaseHistory, checkoutState },
+        purchaseHistory: [...currentUser.purchaseHistory, checkoutState],
       });
     }
   }, [checkoutState]);
@@ -127,8 +128,6 @@ const UserContextProvider = ({ children }) => {
         setCart,
         removeFromCart,
         handleCheckout,
-        checkoutForm,
-        setCheckoutForm,
         checkoutState,
         registerUser,
         isRegistered,
