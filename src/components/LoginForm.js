@@ -4,21 +4,36 @@ import styles from '../css/LoginForm.module.css';
 import { useContext, useState } from 'react';
 import { UserContext } from '../contexts/UserContext';
 
-function LoginForm() {
+function LoginForm({ onCartPage }) {
   const history = useHistory();
-  const { loginUser } = useContext(UserContext);
+  const { setCurrentUser, setIsLoggedIn, usersState } = useContext(UserContext);
   const [loginInfo, setLoginInfo] = useState({
-        email: "",
-        password: ""
+    email: '',
+    password: '',
   });
 
+  const loginUser = (user) => {
+    usersState.forEach((object) => {
+      if (object.email === user.email && object.password === user.password) {
+        setCurrentUser(object);
+        console.log('Login sucessful!');
+        if (!onCartPage) {
+          history.goBack();
+        }
+        return;
+      } else {
+        console.log('Wrong email or password...');
+      }
+    });
+  };
+
   const handleChange = (e) => {
-      setLoginInfo({...loginInfo, [e.target.name]: e.target.value})
+    setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });
   };
 
   const handleClick = (e) => {
-      e.preventDefault();
-      loginUser(loginInfo);
+    e.preventDefault();
+    loginUser(loginInfo);
   };
 
   return (

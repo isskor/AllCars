@@ -8,11 +8,11 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import BillingForm from '../components/BillingForm';
 import useForm from '../components/useForm';
 import { validateCheckout } from '../components/FormValidationRules';
+import LoginForm from '../components/LoginForm';
 const CartPage = () => {
-  const { cart, handleCheckout } = useContext(UserContext);
+  const { cart, handleCheckout, currentUser } = useContext(UserContext);
   const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
   const history = useHistory();
-
   const { handleChange, handleSubmit, values, errors } = useForm(
     checkout,
     validateCheckout
@@ -40,8 +40,8 @@ const CartPage = () => {
         <div className={styles.cartLeft}>
           <ul>
             {cart.map((cartItem) => (
-              <div className={styles.item_container}>
-                <CartItem cartItem={cartItem} key={cartItem.vin} />
+              <div className={styles.item_container} key={cartItem.vin}>
+                <CartItem cartItem={cartItem} />
               </div>
             ))}
           </ul>
@@ -50,14 +50,21 @@ const CartPage = () => {
             <h3>$ {totalCost.toLocaleString()}​​​​​</h3>
           </div>
         </div>
-        <form
-          className={styles.cart_form_container}
-          onSubmit={handleSubmit}
-          onChange={handleChange}
-        >
-          <CartForm errors={errors} />
-          <BillingForm errors={errors} />
-        </form>
+        {!currentUser ? (
+          <div className={styles.login_form}>
+            <h2>Login to purchase</h2>
+            <LoginForm onCartPage={true} />
+          </div>
+        ) : (
+          <form
+            className={styles.cart_form_container}
+            onSubmit={handleSubmit}
+            onChange={handleChange}
+          >
+            <CartForm errors={errors} />
+            <BillingForm errors={errors} />
+          </form>
+        )}
 
         <div className={styles.billingForm}></div>
       </div>

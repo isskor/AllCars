@@ -69,19 +69,19 @@ const UserContextProvider = ({ children }) => {
     history.replace('/login');
   };
 
-  const loginUser = (user) => {
-    usersState.forEach((object) => {
-      if (object.email === user.email && object.password === user.password) {
-        setCurrentUser(object);
-        console.log('Login sucessful!');
-        history.goBack();
-        return;
-      } else {
-        setIsLoggedIn(false);
-        console.log('Wrong email or password...');
-      }
-    });
-  };
+  // const loginUser = (user) => {
+  //   usersState.forEach((object) => {
+  //     if (object.email === user.email && object.password === user.password) {
+  //       setCurrentUser(object);
+  //       console.log('Login sucessful!');
+  //       history.goBack();
+  //       return;
+  //     } else {
+  //       setIsLoggedIn(false);
+  //       console.log('Wrong email or password...');
+  //     }
+  //   });
+  // };
 
   useEffect(() => {
     console.log(currentUser);
@@ -100,9 +100,11 @@ const UserContextProvider = ({ children }) => {
         setCheckoutForm,
         checkoutState,
         registerUser,
-        loginUser,
+
         isRegistered,
         currentUser,
+        setCurrentUser,
+        usersState,
       }}
     >
       {children}

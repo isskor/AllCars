@@ -5,30 +5,6 @@ import styles from '../css/CartForm.module.css';
 import { UserContext } from '../contexts/UserContext';
 
 const BillingForm = ({ errors }) => {
-  // const history = useHistory();
-  // const { handleCheckout, checkoutForm, cart } = useContext(CartContext);
-  // const [paymentInfo, setPaymentInfo] = useState({
-  //   cardNumber: '',
-  //   nameOnCard: '',
-  //   dateOnCard: '',
-  //   cvc: '',
-  // });
-  // const handlePayment = (e) => {
-  //   setPaymentInfo({ ...paymentInfo, [e.target.name]: [e.target.value] });
-  // };
-
-  // const takeInfo = (e) => {
-  //   e.preventDefault();
-  //   console.log(cart.length < 1);
-  //   console.log(checkoutForm);
-  //   if (cart.length < 1) {
-  //     return;
-  //   }
-
-  //   handleCheckout(paymentInfo);
-  //   history.push('/receipt');
-  // };
-
   return (
     <div className={`${styles.cart_form} ${styles.billing_form}`}>
       <h3>Billing</h3>
