@@ -16,6 +16,7 @@ import TestingUserContext from './pages/TestingUserContext';
 // styles
 import styles from './css/App.module.css';
 import LoginRegister from './pages/LoginRegister';
+import UserPurchases from './pages/UserPurchases';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
                 path={['/login', '/register']}
                 component={LoginRegister}
               />
+              <Route path='/mypage' component={UserPurchases} />
             </Switch>
           </div>
         </UserContextProvider>

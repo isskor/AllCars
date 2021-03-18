@@ -30,7 +30,9 @@ const CartItem = ({ cartItem, checkout = false }) => {
         </div>
         <div className={styles.car_info}>
           <p className={styles.car_info_label}>Price</p>
-          <p className={styles.car_price}>$ {cartItem.price.toLocaleString()}</p>
+          <p className={styles.car_price}>
+            $ {cartItem.price.toLocaleString()}
+          </p>
         </div>
       </div>
       {!checkout && (

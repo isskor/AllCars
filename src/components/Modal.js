@@ -4,7 +4,9 @@ import styles from '../css/Modal.module.css';
 const Modal = ({ openModal, setOpenModal }) => {
   const history = useHistory();
 
-  const handleModalClick = (click) => {
+  const handleModalClick = (e, click) => {
+    console.log('handleModal click');
+    e.stopPropagation();
     setOpenModal(false);
     if (click === 'home') {
       setOpenModal(false);
@@ -14,16 +16,23 @@ const Modal = ({ openModal, setOpenModal }) => {
     return;
   };
 
+  // const modalClick = (e) => {
+  //   if (e.target.classList.contains('modal')) setOpenModal(false);
+  //   console.log('modal shadow click');
+  // };
+
   return (
     <>
       {openModal && (
-        <div className={styles.modal}>
+        <div className={`modal ${styles.modal}`}>
           <div className={styles.modal_container}>
             <p>Added To cart!</p>
             <div className={styles.btn_container}>
-              <button onClick={() => handleModalClick('home')}>Buy More</button>
+              <button onClick={(e) => handleModalClick(e, 'home')}>
+                Buy More
+              </button>
 
-              <button onClick={() => handleModalClick('cart')}>
+              <button onClick={(e) => handleModalClick(e, 'cart')}>
                 Go To Cart
               </button>
             </div>
