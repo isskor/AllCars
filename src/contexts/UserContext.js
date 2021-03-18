@@ -20,13 +20,16 @@ const UserContextProvider = ({ children }) => {
     {
       email: 'something@hej.se',
       password: 'hejhej1',
+      id: 1,
     },
     {
       email: 'some@hej.se',
       password: 'hej2',
+      id: 2,
     },
     {
       email: 'thing@hej.se',
+      id: 3,
       password: 'hej3',
     },
   ]);
@@ -107,9 +110,14 @@ const UserContextProvider = ({ children }) => {
 
   //******** log users and currentuser
   useEffect(() => {
-    console.log(currentUser);
-    console.log(usersState);
+    if (currentUser) {
+      const a = usersState.filter((user) => user.id !== currentUser.id);
+
+      setUsersState([...a, currentUser]);
+    }
   }, [currentUser]);
+  console.log(currentUser);
+  console.log(usersState);
 
   return (
     <Provider
