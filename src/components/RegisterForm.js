@@ -53,13 +53,8 @@ function RegisterForm() {
   ];
 
   function handleRegister() {
-    console.log(values['username']);
     registerUser(values);
   }
-
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
 
   return (
     <div className={styles.loginForm}>

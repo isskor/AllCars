@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 const Receipt = () => {
   const { checkoutState, setCart } = useContext(UserContext);
-  const { dispatch} = useContext(CarContext);
+  const { dispatch } = useContext(CarContext);
   const history = useHistory();
   const totalCost = checkoutState.cars.reduce((acc, cur) => acc + cur.price, 0);
 
@@ -19,7 +19,7 @@ const Receipt = () => {
   const goToHome = () => {
     history.push('/');
   };
-  
+
   return (
     <div className={styles.receipt}>
       <h2>Receipt</h2>
@@ -35,18 +35,26 @@ const Receipt = () => {
         {/* </div> */}
 
         <div className={styles.receiptNote}>
+          <h4>orderID {checkoutState.id}</h4>
           <p>
-            Hello <b>{checkoutState.form.name}</b>. We have received your order and sent you a confirmation to your e-mail <b>{checkoutState.form.email}</b>.
+            Hello <b>{checkoutState.form.name}</b>. We have received your order
+            and sent you a confirmation to your e-mail{' '}
+            <b>{checkoutState.form.email}</b>.
           </p>
           <br />
           <p>
-            Address: <b>{checkoutState.form.address}</b><br/>
+            Address: <b>{checkoutState.form.address}</b>
+            <br />
             Phone number: <b>{checkoutState.form.phone}</b>
           </p>
           <br />
-          <p>Delivery method: <b>{checkoutState.form.method}</b></p>
-          <br/>
-          <p>Total cost: <b>$ {totalCost.toLocaleString()}</b></p>
+          <p>
+            Delivery method: <b>{checkoutState.form.method}</b>
+          </p>
+          <br />
+          <p>
+            Total cost: <b>$ {totalCost.toLocaleString()}</b>
+          </p>
         </div>
       </div>
       <div className={styles.buttonGroup}>

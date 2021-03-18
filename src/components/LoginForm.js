@@ -6,7 +6,7 @@ import { UserContext } from '../contexts/UserContext';
 
 function LoginForm({ onCartPage }) {
   const history = useHistory();
-  const { setCurrentUser, setIsLoggedIn, usersState } = useContext(UserContext);
+  const { setCurrentUser, usersState } = useContext(UserContext);
   const [loginInfo, setLoginInfo] = useState({
     email: '',
     password: '',

@@ -5,10 +5,7 @@ const useForm = (callback, validate) => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    console.log('ran');
-    console.log(errors);
     if (Object.keys(errors).length === 0 && Object.keys(values).length > 0) {
-      console.log('bv');
       callback();
       setValues({});
     }

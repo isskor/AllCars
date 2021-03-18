@@ -1,10 +1,14 @@
 import { useState, createContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 export const UserContext = createContext();
+
 const UserContextProvider = ({ children }) => {
   const history = useHistory();
   const { Provider } = UserContext;
+
+  //******** context States
   const [cart, setCart] = useState(
     localStorage.getItem('cartCars')
       ? JSON.parse(localStorage.getItem('cartCars'))
@@ -30,6 +34,7 @@ const UserContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [isRegistered, setIsRegistered] = useState(false);
 
+  //******** cart functions
   const addToCart = (item) => {
     setCart([...cart, item]);
   };
@@ -40,20 +45,9 @@ const UserContextProvider = ({ children }) => {
 
   const handleCheckout = (form) => {
     setCheckoutForm(form);
-    console.log(checkoutForm);
   };
 
-  useEffect(() => {
-    setCheckoutState({
-      cars: cart,
-      form: checkoutForm,
-    });
-    // currentUser.history.push({ cars: cart, form: checkoutForm });
-  }, [checkoutForm]);
-
-  useEffect(() => {
-    localStorage.setItem('cartCars', JSON.stringify(cart));
-  }, [cart]);
+  //******** user functions
 
   const registerUser = (user) => {
     const userExist = usersState.filter(
@@ -68,21 +62,50 @@ const UserContextProvider = ({ children }) => {
     setIsRegistered(true);
     history.replace('/login');
   };
-
-  // const loginUser = (user) => {
-  //   usersState.forEach((object) => {
-  //     if (object.email === user.email && object.password === user.password) {
-  //       setCurrentUser(object);
-  //       console.log('Login sucessful!');
-  //       history.goBack();
-  //       return;
-  //     } else {
-  //       setIsLoggedIn(false);
-  //       console.log('Wrong email or password...');
-  //     }
-  //   });
+  // current user dummy object
+  // const ben = {
+  // address name etc.
+  //   ...user,
+  //   userCart: cart,
+  //   purchaseHistory: {
+  //     id: '',
+  //     cars: [],
+  //     form: {},
+  //   },
   // };
 
+  //******** user logout
+  // save to localstorage
+  // set cart: 0
+  // reset all other state?
+
+  //******** on checkout
+  useEffect(() => {
+    setCheckoutState({
+      timestamp: new Date().toLocaleString(),
+      id: uuidv4(),
+      cars: cart,
+      form: checkoutForm,
+    });
+    // currentUser.history.push({ cars: cart, form: checkoutForm });
+  }, [checkoutForm]);
+
+  useEffect(() => {
+    if (currentUser) {
+      setCurrentUser({
+        ...currentUser,
+        purchaseHistory: { ...currentUser.purchaseHistory, checkoutState },
+      });
+    }
+  }, [checkoutState]);
+
+  //******** local storage
+
+  useEffect(() => {
+    localStorage.setItem('cartCars', JSON.stringify(cart));
+  }, [cart]);
+
+  //******** log users and currentuser
   useEffect(() => {
     console.log(currentUser);
     console.log(usersState);
@@ -100,7 +123,6 @@ const UserContextProvider = ({ children }) => {
         setCheckoutForm,
         checkoutState,
         registerUser,
-
         isRegistered,
         currentUser,
         setCurrentUser,

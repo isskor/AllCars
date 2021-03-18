@@ -22,11 +22,8 @@ const CartPage = () => {
     console.log('checkout');
     console.log(values);
     handleCheckout(values);
+    history.push('/receipt');
   }
-
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
 
   return (
     <div className={styles.cart}>
