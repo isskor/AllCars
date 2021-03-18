@@ -27,6 +27,7 @@ const UserContextProvider = ({ children }) => {
     },
   ]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
   const [isRegistered, setIsRegistered] = useState(false);
 
   const addToCart = (item) => {
@@ -70,7 +71,7 @@ const UserContextProvider = ({ children }) => {
   const loginUser = (user) => {
     usersState.forEach((object) => {
       if (object.email === user.email && object.password === user.password) {
-        setIsLoggedIn(true);
+        setCurrentUser(object);
         console.log('Login sucessful!');
         history.goBack();
         return;
@@ -81,7 +82,11 @@ const UserContextProvider = ({ children }) => {
     });
   };
 
-  console.log(checkoutState);
+  useEffect(() => {
+    console.log(currentUser);
+    console.log(usersState);
+  }, [currentUser]);
+
   return (
     <Provider
       value={{
@@ -93,8 +98,6 @@ const UserContextProvider = ({ children }) => {
         checkoutForm,
         setCheckoutForm,
         checkoutState,
-        usersState,
-        setUsersState,
         registerUser,
         loginUser,
         isRegistered,
