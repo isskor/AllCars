@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import ConfirmationPopup from '../components/ConfirmationPopup';
 import LoginForm from '../components/LoginForm';
@@ -10,10 +10,20 @@ function LoginRegisterPage() {
   const history = useHistory();
   const { pathname } = history.location;
   const { isRegistered } = useContext(UserContext);
+  const [showPopup, setShowPopup] = useState(false);
   useEffect(() => {
     console.log('rend');
     // maybe store history somehow if we do not want to use goBack function when clicking login
   }, []);
+  useEffect(() => {
+    if (isRegistered) {
+      setShowPopup(true)
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 3000);
+    }
+  }, [isRegistered]);
+
   return (
     <div className={styles.log_reg_container}>
       <div className={styles.log_reg_wrapper}>
@@ -72,7 +82,7 @@ function LoginRegisterPage() {
         {pathname === '/register' && <RegisterForm />}
         <h3>A new Adventure Awaits!</h3>
       </div>
-      {isRegistered && <ConfirmationPopup />}
+      {showPopup && <ConfirmationPopup />}
 
       {/* For styling purposes below */}
       {/* <ConfirmationPopup /> */}
