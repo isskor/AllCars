@@ -28,18 +28,18 @@ const FooterNavbar = () => {
           <span className={styles.iconName}>About</span>
         </Link>
         {currentUser ? (
-          <Link to='mypage'>
-            {<PersonIcon />}
-            <span className={styles.iconName}>My Profile</span>
-          </Link>
-        ) : (
           <div className={styles.myAccount}>
             {<PersonIcon />}
-            <span className={styles.iconName}>Login/Register</span>
+            <span className={styles.iconName}>My Profile</span>
           </div>
+        ) : (
+          <Link to='/login'>
+            {<PersonIcon />}
+            <span className={styles.iconName}>Login/Register</span>
+          </Link>
         )}
       </nav>
-      {openDropdown && <NavDropdown />}
+      {currentUser && <>{openDropdown && <NavDropdown />}</>}
     </div>
   );
 };

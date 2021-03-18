@@ -27,6 +27,11 @@ svg:hover {
   /* position: relative; */
   display:flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.myAccount:hover >svg , .myAccount:hover > span{
+  color: orange;
 }
 @media (min-width: 576px) {
   .navbar {

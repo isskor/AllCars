@@ -14,7 +14,7 @@
     width: 100%;
 }
 
-.navDropdown li{
+.navDropdown li, .navDropdown a{
     font-size: 1.4rem;
     padding: 2rem 0;
     border-bottom: 1px solid rgba(199, 199, 199, 0.3);
@@ -25,15 +25,13 @@
     color: var(--secondary-color);
     
 }
-.navDropdown a{
-    color: var(--secondary-color);
-     
-}
-.navDropdown li:hover{
+
+.navDropdown a:hover{
     color:var(--primary-color);
     background: rgba(0,0,0,0.8);
 }
-.navDropdown li:hover >a{
+.navDropdown li:hover{
+    background: rgba(0,0,0,0.8);
     color:var(--primary-color);
 }
 
@@ -52,8 +50,9 @@
         margin-right:-2rem;
     }
     
-    .navDropdown li{
+    .navDropdown li, .navDropdown a{
         color: var(--secondary-color);
+        width: 100%;
         font-size: 1rem;
         padding: 2rem 1rem;
         background: var(--card-bg);
