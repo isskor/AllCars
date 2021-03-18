@@ -70,17 +70,6 @@ const UserContextProvider = ({ children }) => {
     setIsRegistered(true);
     history.replace('/login');
   };
-  // current user dummy object
-  // const ben = {
-  // address name etc.
-  //   ...user,
-  //   userCart: cart,
-  //   purchaseHistory: {
-  //     id: '',
-  //     cars: [],
-  //     form: {},
-  //   },
-  // };
 
   //******** user logout
   // save to localstorage
