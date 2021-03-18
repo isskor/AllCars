@@ -9,7 +9,7 @@ import styles from '../css/LoginRegister.module.css';
 function LoginRegisterPage() {
   const history = useHistory();
   const { pathname } = history.location;
-  const { isRegistered } = useContext(UserContext);
+  const { isRegistered, setIsRegistered } = useContext(UserContext);
   const [showPopup, setShowPopup] = useState(false);
   useEffect(() => {
     console.log('rend');
@@ -20,9 +20,10 @@ function LoginRegisterPage() {
       setShowPopup(true)
       setTimeout(() => {
         setShowPopup(false);
+        setIsRegistered(false);
       }, 3000);
     }
-  }, [isRegistered]);
+  }, [pathname]);
 
   return (
     <div className={styles.log_reg_container}>
@@ -78,14 +79,11 @@ function LoginRegisterPage() {
             )}
           </div>
         </div>
+        {showPopup && <ConfirmationPopup />}
         {pathname === '/login' && <LoginForm />}
         {pathname === '/register' && <RegisterForm />}
         <h3>A new Adventure Awaits!</h3>
       </div>
-      {showPopup && <ConfirmationPopup />}
-
-      {/* For styling purposes below */}
-      {/* <ConfirmationPopup /> */}
     </div>
   );
 }

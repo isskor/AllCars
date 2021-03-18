@@ -97,7 +97,8 @@ const UserContextProvider = ({ children }) => {
         setUserState,
         registerUser,
         loginUser,
-        isRegistered
+        isRegistered,
+        setIsRegistered
       }}
     >
       {children}
