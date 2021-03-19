@@ -15,6 +15,12 @@ function UserPurchases() {
         altText={"My page image"}
       />
       <button onClick={() => setCurrentUser(null)}>logout</button>
+      <div className="userInfo">
+        <p>Name: <span>Bob Bobbsen</span></p>
+        <p>Adress: <span>Bobstreet 808</span></p>
+        <p>Email: <span>Bob@bob.se</span></p>
+        {/* Add all info connected to profile here */}
+      </div>
 
       <div className="myPurchasesContainer">
         {/* map out all OrderCards connected to profile here. */}
