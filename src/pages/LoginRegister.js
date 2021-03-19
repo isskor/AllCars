@@ -1,16 +1,27 @@
-import { useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import ConfirmationPopup from '../components/ConfirmationPopup';
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
+import { UserContext } from '../contexts/UserContext';
 import styles from '../css/LoginRegister.module.css';
 
 function LoginRegisterPage() {
   const history = useHistory();
   const { pathname } = history.location;
+  const { isRegistered, setIsRegistered } = useContext(UserContext);
+  const [showPopup, setShowPopup] = useState(false);
+
   useEffect(() => {
-    console.log('rend');
-    // maybe store history somehow if we do not want to use goBack function when clicking login
-  }, []);
+    if (isRegistered) {
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+        setIsRegistered(false);
+      }, 3000);
+    }
+  }, [pathname]);
+
   return (
     <div className={styles.log_reg_container}>
       <div className={styles.log_reg_wrapper}>
@@ -41,7 +52,9 @@ function LoginRegisterPage() {
               pathname === '/login' && styles.header_group_active
             }`}
           >
-            <Link to="/login" replace><h2>Login</h2></Link>
+            <Link to='/login' replace>
+              <h2>Login</h2>
+            </Link>
             {pathname !== '/login' && (
               <p>
                 <Link to='/login' replace>
@@ -55,7 +68,9 @@ function LoginRegisterPage() {
               pathname === '/register' && styles.header_group_active
             }`}
           >
-            <Link to="/register" replace><h2>Register</h2></Link>
+            <Link to='/register' replace>
+              <h2>Register</h2>
+            </Link>
             {pathname !== '/register' && (
               <p>
                 <Link to='/register' replace>
@@ -65,6 +80,7 @@ function LoginRegisterPage() {
             )}
           </div>
         </div>
+        {showPopup && <ConfirmationPopup />}
         {pathname === '/login' && <LoginForm />}
         {pathname === '/register' && <RegisterForm />}
         <h3>A new Adventure Awaits!</h3>
