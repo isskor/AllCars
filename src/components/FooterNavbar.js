@@ -43,9 +43,11 @@ const FooterNavbar = () => {
             <span className={styles.iconName}>My Profile</span>
           </div>
         ) : (
-          <Link to='/login'>
+          <Link to='/login' className={styles.login_container}>
             {<PersonIcon />}
-            <span className={styles.iconName}>Login/Register</span>
+            <span className={`${styles.iconName} ${styles.login_btn}`}>
+              Login/Register
+            </span>
           </Link>
         )}
       </nav>

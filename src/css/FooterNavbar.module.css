@@ -49,6 +49,17 @@ svg:hover {
     display: flex;
   }
 
+  .login_container{
+    position: relative;
+  }
+
+  .login_btn{
+    display:inline-block;
+    font-size: 0.7rem;
+    position: absolute;
+    left:-30%;
+    top:1.6rem;
+  }
   
 }
 
@@ -75,6 +86,11 @@ svg:hover {
   .navbar span {
     font-size: 1.3rem;
     margin: 0;
+  }
+  .login_btn{
+    position: relative;
+    top:0;
+    left:0;
   }
 }
 @media print {
