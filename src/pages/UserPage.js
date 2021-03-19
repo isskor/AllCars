@@ -1,11 +1,11 @@
-import style from '../css/UserPage.module.css';
+import styles from '../css/UserPage.module.css';
 import { useContext } from 'react';
 import Banner from '../components/Banner';
 import UserPageInfo from '../components/UserpageInfo';
 import { UserContext } from '../contexts/UserContext';
 import OrderCard from '../components/OrderCard';
 function UserPage() {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
   console.log(currentUser);
 
   return (
@@ -15,15 +15,18 @@ function UserPage() {
         imgSrc={'/assets/background/allcars_mypage.jpg'}
         altText={'My page image'}
       />
-      <button onClick={() => setCurrentUser(null)}>logout</button>
-
-      <UserPageInfo />
-
-      <ul>
-        {currentUser.purchaseHistory.map((order) => (
-          <OrderCard order={order} key={order.id} />
-        ))}
-      </ul>
+      <div className={styles.UserPage_info}>
+        <h2>My Info</h2>
+        <UserPageInfo />
+      </div>
+      <div className={styles.purchases}>
+        <h2>My Purchases</h2>
+        <ul>
+          {currentUser.purchaseHistory.map((order) => (
+            <OrderCard order={order} key={order.id} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
