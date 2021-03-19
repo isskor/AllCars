@@ -8,20 +8,15 @@
   margin: 1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.info h2{
-  flex-basis: 100%;
+h2{
+  margin: auto 1rem;
 }
-.info p{
-  flex-basis: 50%;
-}
-.info p:first-of-type{
+p{
+  flex-basis: 40%;
   text-align: start;
-}
-.info p:last-of-type{
-  text-align: end;
 }
 
 
