@@ -18,6 +18,7 @@ function UserPurchases() {
 
       <div className="myPurchasesContainer">
         {/* map out all orders connected to profile here. */}
+        
         <OrderCard/>
 
       </div>
