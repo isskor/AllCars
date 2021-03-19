@@ -37,7 +37,7 @@ const CartForm = ({ errors }) => {
           name='email'
           placeholder='E-mail'
         />
-        {errors.mail && <span className={styles.error}>{errors.email}</span>}
+        {errors.email && <span className={styles.error}>{errors.email}</span>}
       </div>
       <div className={`${styles.form_group} ${styles.phone}`}>
         <label>Phone number:</label>
