@@ -32,6 +32,9 @@ const UserContextProvider = ({ children }) => {
       id: 3,
       password: 'hej3',
     },
+    localStorage.getItem('users')
+      ? [...JSON.parse(localStorage.getItem('users'))]
+      : null,
   ]);
 
   const [currentUser, setCurrentUser] = useState(
