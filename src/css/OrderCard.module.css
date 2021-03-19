@@ -1,8 +1,27 @@
 .orderCardContainer{
-  background: green;
+  background: rgba(255, 255, 255, 0.25);
   margin: 1rem auto;
+  padding: 0.5rem 0rem;
 }
 
 .info{
   margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+.info h2{
+  flex-basis: 100%;
+}
+.info p{
+  flex-basis: 50%;
+}
+.info p:first-of-type{
+  text-align: start;
+}
+.info p:last-of-type{
+  text-align: end;
+}
+
+
