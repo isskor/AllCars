@@ -34,7 +34,11 @@ const UserContextProvider = ({ children }) => {
     },
   ]);
 
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(
+    localStorage.getItem('currentUser')
+      ? JSON.parse(localStorage.getItem('currentUser'))
+      : null
+  );
   const [isRegistered, setIsRegistered] = useState(false);
 
   //******** cart functions
@@ -94,10 +98,6 @@ const UserContextProvider = ({ children }) => {
 
   //******** local storage
 
-  useEffect(() => {
-    localStorage.setItem('cartCars', JSON.stringify(cart));
-  }, [cart]);
-
   //******** log users and currentuser
   useEffect(() => {
     if (currentUser) {
@@ -106,8 +106,15 @@ const UserContextProvider = ({ children }) => {
       setUsersState([...a, currentUser]);
     }
   }, [currentUser]);
-  console.log(currentUser);
-  console.log(usersState);
+
+  useEffect(() => {
+    localStorage.setItem('cartCars', JSON.stringify(cart));
+  }, [cart]);
+
+  useEffect(() => {
+    localStorage.setItem('users', JSON.stringify(usersState));
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+  }, [usersState, currentUser]);
 
   return (
     <Provider
