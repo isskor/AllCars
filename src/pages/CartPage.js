@@ -32,39 +32,45 @@ const CartPage = () => {
           <ArrowBackIcon />
         </a>
       </div>
-      <h2>Checkout</h2>
-      <div className={styles.cartContainer}>
-        <div className={styles.cartLeft}>
-          <ul>
-            {cart.map((cartItem) => (
-              <div className={styles.item_container} key={cartItem.vin}>
-                <CartItem cartItem={cartItem} />
+      {cart.length < 1 ? (
+        <h2 className={styles.empty}>Cart is empty</h2>
+      ) : (
+        <>
+          <h2>Checkout</h2>
+          <div className={styles.cartContainer}>
+            <div className={styles.cartLeft}>
+              <ul>
+                {cart.map((cartItem) => (
+                  <div className={styles.item_container} key={cartItem.vin}>
+                    <CartItem cartItem={cartItem} />
+                  </div>
+                ))}
+              </ul>
+              <div className={styles.total}>
+                <h4>Total</h4>
+                <h3>$ {totalCost.toLocaleString()}​​​​​</h3>
               </div>
-            ))}
-          </ul>
-          <div className={styles.total}>
-            <h4>Total</h4>
-            <h3>$ {totalCost.toLocaleString()}​​​​​</h3>
-          </div>
-        </div>
-        {!currentUser ? (
-          <div className={styles.login_form}>
-            <h2>Login to purchase</h2>
-            <LoginForm onCartPage={true} />
-          </div>
-        ) : (
-          <form
-            className={styles.cart_form_container}
-            onSubmit={handleSubmit}
-            onChange={handleChange}
-          >
-            <CartForm errors={errors} />
-            <BillingForm errors={errors} />
-          </form>
-        )}
+            </div>
+            {!currentUser ? (
+              <div className={styles.login_form}>
+                <h2>Login to purchase</h2>
+                <LoginForm onCartPage={true} />
+              </div>
+            ) : (
+              <form
+                className={styles.cart_form_container}
+                onSubmit={handleSubmit}
+                onChange={handleChange}
+              >
+                <CartForm errors={errors} />
+                <BillingForm errors={errors} />
+              </form>
+            )}
 
-        <div className={styles.billingForm}></div>
-      </div>
+            <div className={styles.billingForm}></div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
