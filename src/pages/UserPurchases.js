@@ -11,7 +11,7 @@ function UserPurchases() {
     <div>
       <Banner 
         header={"My page"}
-        imgSrc={"/assets/background/allcars_about.jpg"}
+        imgSrc={"/assets/background/allcars_mypage.jpg"}
         altText={"My page image"}
       />
       <button onClick={() => setCurrentUser(null)}>logout</button>
