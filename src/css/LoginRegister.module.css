@@ -5,12 +5,13 @@
     width: 100%;
     background-position: 68%;
     background-size: cover;
+    min-height: 100vh;
 }
 
 .log_reg_wrapper{
     min-height: 120vh;
     width: 90%;
-    margin: 2rem auto ;
+    margin: 2rem auto 5rem;
     padding: 2rem;
     border-radius: 1rem;
     background-color: rgba(12, 12, 12, 0.5);
