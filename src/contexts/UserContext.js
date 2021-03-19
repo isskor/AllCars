@@ -71,7 +71,7 @@ const UserContextProvider = ({ children }) => {
   //******** on checkout
 
   useEffect(() => {
-    if (currentUser) {
+    if (currentUser && Object.keys(checkoutState).length > 0) {
       const firstPurchase = currentUser.purchaseHistory;
       if (!firstPurchase) {
         setCurrentUser({ ...currentUser, purchaseHistory: [checkoutState] });
