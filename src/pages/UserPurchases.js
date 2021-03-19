@@ -17,9 +17,11 @@ function UserPurchases() {
       <button onClick={() => setCurrentUser(null)}>logout</button>
 
       <div className="myPurchasesContainer">
-        {/* map out all orders connected to profile here. */}
-        
+        {/* map out all OrderCards connected to profile here. */}
         <OrderCard/>
+        <OrderCard/>
+        <OrderCard/>
+        
 
       </div>
 
