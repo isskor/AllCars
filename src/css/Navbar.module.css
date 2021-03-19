@@ -14,7 +14,6 @@
 
 .logo {
   color: var(--primary-color);
-  padding: 20px;
   font-family: var(--header-font);
   font-size: 2rem;
 }
@@ -48,6 +47,6 @@ a:hover *{
 
 @media (min-width: 1200px) {
   .mainNavbar {
-    padding: 1rem 4rem;
+    padding: 1rem 2rem;
   }
 }
