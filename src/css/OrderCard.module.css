@@ -14,9 +14,7 @@
 h2{
   margin: auto 1rem;
 }
-p{
-  flex-basis: 40%;
-  text-align: start;
+.info p{
+  flex-basis: 50%;
+  text-align: center;
 }
-
-

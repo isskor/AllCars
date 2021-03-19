@@ -1,26 +1,24 @@
+import style from '../css/UserPage.module.css';
 import { OrderedListOutlined } from '@ant-design/icons';
 import { useContext } from 'react';
 import Banner from '../components/Banner';
 import OrderCard from '../components/OrderCard';
+import UserPageInfo from '../components/UserpageInfo';
 import { UserContext } from '../contexts/UserContext';
 function UserPurchases() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   console.log(currentUser);
 
   return (
-    <div>
+    <div className={style.container}>
       <Banner 
         header={"My page"}
         imgSrc={"/assets/background/allcars_mypage.jpg"}
         altText={"My page image"}
       />
       <button onClick={() => setCurrentUser(null)}>logout</button>
-      <div className="userInfo">
-        <p>Name: <span>Bob Bobbsen</span></p>
-        <p>Adress: <span>Bobstreet 808, 8080 Bobland </span></p>
-        <p>Email: <span>Bob@bob.se</span></p>
-        {/* Add all info connected to profile here */}
-      </div>
+
+      <UserPageInfo/>
 
       <div className="myPurchasesContainer">
         {/* map out all OrderCards connected to profile here. */}
