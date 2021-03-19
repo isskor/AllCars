@@ -26,6 +26,10 @@
     
 }
 
+.navDropdown li{
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
 .navDropdown a:hover{
     color:var(--primary-color);
     background: rgba(0,0,0,0.8);
