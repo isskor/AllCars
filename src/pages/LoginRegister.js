@@ -11,13 +11,10 @@ function LoginRegisterPage() {
   const { pathname } = history.location;
   const { isRegistered, setIsRegistered } = useContext(UserContext);
   const [showPopup, setShowPopup] = useState(false);
-  useEffect(() => {
-    console.log('rend');
-    // maybe store history somehow if we do not want to use goBack function when clicking login
-  }, []);
+
   useEffect(() => {
     if (isRegistered) {
-      setShowPopup(true)
+      setShowPopup(true);
       setTimeout(() => {
         setShowPopup(false);
         setIsRegistered(false);
@@ -55,7 +52,9 @@ function LoginRegisterPage() {
               pathname === '/login' && styles.header_group_active
             }`}
           >
-            <Link to="/login" replace><h2>Login</h2></Link>
+            <Link to='/login' replace>
+              <h2>Login</h2>
+            </Link>
             {pathname !== '/login' && (
               <p>
                 <Link to='/login' replace>
@@ -69,7 +68,9 @@ function LoginRegisterPage() {
               pathname === '/register' && styles.header_group_active
             }`}
           >
-            <Link to="/register" replace><h2>Register</h2></Link>
+            <Link to='/register' replace>
+              <h2>Register</h2>
+            </Link>
             {pathname !== '/register' && (
               <p>
                 <Link to='/register' replace>
