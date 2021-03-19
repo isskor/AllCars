@@ -5,6 +5,7 @@ import Banner from '../components/Banner';
 import Purchase from '../components/Purchase';
 import UserPageInfo from '../components/UserpageInfo';
 import { UserContext } from '../contexts/UserContext';
+import OrderCard from '../components/OrderCard';
 function UserPurchases() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   console.log(currentUser);
@@ -17,10 +18,15 @@ function UserPurchases() {
         altText={"My page image"}
       />
       <button onClick={() => setCurrentUser(null)}>logout</button>
+      
+      <UserPageInfo/>
 
-      <Purchase />
+      <ul>
+        {currentUser.purchaseHistory.map((order) => (
+          <OrderCard order={order} key={order.id} />
+        ))}
+      </ul>
 
-        <UserPageInfo/>
     </div>
   );
 }

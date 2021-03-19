@@ -1,15 +1,15 @@
+import { StayCurrentLandscape } from '@material-ui/icons';
 import style from '../css/OrderCard.module.css';
 import OrderCardOrders from './OrderCardOrders';
 
-const OrderCard = () => {
+const OrderCard = ({order}) => {
   return(
   <div className={style.orderCardContainer}>
-    <h2>Order: <span>#123</span></h2>
+    <h2>Order: #<span>{order.id}</span></h2>
     <div className={style.info}>
-      <p>Total price: <span>40000</span></p>
-      <p>ID: <span>1236 231 SD58 </span></p>
+      <p>Total price: <span>{order.cars.reduce((acc, cur) => cur.price + acc, 0)}</span></p>
       <p>
-        <span className="date">10.10.2010</span> - <span className="time">10:00</span>
+        <span className="timestamp">{order.timestamp}</span>
       </p>
     </div>
     <div className={style.orders}>
