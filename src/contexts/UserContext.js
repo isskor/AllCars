@@ -16,26 +16,11 @@ const UserContextProvider = ({ children }) => {
   );
 
   const [checkoutState, setCheckoutState] = useState({});
-  const [usersState, setUsersState] = useState([
-    {
-      email: 'something@hej.se',
-      password: 'hejhej1',
-      id: 1,
-    },
-    {
-      email: 'some@hej.se',
-      password: 'hej2',
-      id: 2,
-    },
-    {
-      email: 'thing@hej.se',
-      id: 3,
-      password: 'hej3',
-    },
+  const [usersState, setUsersState] = useState(
     localStorage.getItem('users')
-      ? [...JSON.parse(localStorage.getItem('users'))]
-      : null,
-  ]);
+      ? JSON.parse(localStorage.getItem('users'))
+      : []
+  );
 
   const [currentUser, setCurrentUser] = useState(
     localStorage.getItem('currentUser')

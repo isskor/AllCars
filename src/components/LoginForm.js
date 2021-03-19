@@ -13,19 +13,21 @@ function LoginForm({ onCartPage }) {
   });
 
   const [errors, setError] = useState('');
-
   const loginUser = (user) => {
-    usersState.forEach((object) => {
+    const a = usersState.filter((object) => {
       if (object.email === user.email && object.password === user.password) {
         setCurrentUser(object);
         console.log('Login sucessful!');
         if (!onCartPage) {
           history.goBack();
+          return object;
         }
-        return;
+        return object;
       }
-      setError('Wrong email or password...');
     });
+    if (a.length > 0) return;
+    setError('Wrong email or password...');
+    setTimeout(() => setError(''), 3000);
   };
 
   const handleChange = (e) => {
