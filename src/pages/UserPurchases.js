@@ -10,23 +10,22 @@ function UserPurchases() {
   console.log(currentUser);
 
   return (
-    <div className={style.container}>
+    <div>
       <Banner 
         header={"My page"}
         imgSrc={"/assets/background/allcars_mypage.jpg"}
         altText={"My page image"}
       />
-      <button onClick={() => setCurrentUser(null)}>logout</button>
-
-      <UserPageInfo/>
-
-      <div className="myPurchasesContainer">
-        {/* map out all OrderCards connected to profile here. */}
-        <OrderCard/>
-        <OrderCard/>
-        <OrderCard/>
+      <div className={style.container}>
+        <button onClick={() => setCurrentUser(null)}>logout</button>
+        <UserPageInfo/>
+        <div className="myPurchasesContainer">
+          {/* map out all OrderCards connected to profile here. */}
+          <OrderCard/>
+          <OrderCard/>
+          <OrderCard/>
         
-
+        </div>
       </div>
 
     </div>
