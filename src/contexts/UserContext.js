@@ -115,6 +115,7 @@ const UserContextProvider = ({ children }) => {
         checkoutState,
         registerUser,
         isRegistered,
+        setIsRegistered,
         currentUser,
         setCurrentUser,
         usersState,
