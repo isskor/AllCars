@@ -12,6 +12,8 @@ function LoginForm({ onCartPage }) {
     password: '',
   });
 
+  const [errors, setError] = useState('');
+
   const loginUser = (user) => {
     usersState.forEach((object) => {
       if (object.email === user.email && object.password === user.password) {
@@ -21,9 +23,8 @@ function LoginForm({ onCartPage }) {
           history.goBack();
         }
         return;
-      } else {
-        console.log('Wrong email or password...');
       }
+      setError('Wrong email or password...');
     });
   };
 
@@ -54,7 +55,7 @@ function LoginForm({ onCartPage }) {
             name='password'
             placeholder='Enter your password'
           />
-          <p className={styles.forgot_pw}>Forgot your password?</p>
+          <p className={styles.form_error}>{errors}</p>
         </div>
         <div className={styles.form_group}>
           <button type='submit' onClick={(e) => handleClick(e)}>
