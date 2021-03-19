@@ -4,6 +4,7 @@ import CarCard from '../components/CarCard';
 import SearchForm from '../components/SearchForm';
 import style from '../css/Home.module.css';
 import Banner from '../components/Banner';
+import ScrollToTopBtn from '../components/ScrollToTopBtn';
 
 function Home() {
   const { filteredCars } = useContext(CarContext);
@@ -27,9 +28,9 @@ function Home() {
 
   return (
     <div className={style.home}>
-      <Banner 
-        imgSrc={"/assets/background/allcars_home.jpg"}
-        altText={"Vintage car"}
+      <Banner
+        imgSrc={'/assets/background/allcars_home.jpg'}
+        altText={'Vintage car'}
       />
       <h1 className={style.heading}>Quality never goes out of style</h1>
       <div className={style.searchForm}>
@@ -52,6 +53,7 @@ function Home() {
           </div>
         )}
       </div>
+      <ScrollToTopBtn />
     </div>
   );
 }
