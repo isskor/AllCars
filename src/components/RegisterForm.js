@@ -1,83 +1,81 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
+import useForm from '../components/useForm';
+import { validateRegister } from './FormValidationRules';
+import { UserContext } from '../contexts/UserContext';
 function RegisterForm() {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    Password: '',
-    'Confirm Password': '',
-    phone: '',
-    address: '',
-    method: '',
-  });
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: [e.target.value] });
-  };
+  const history = useHistory();
+
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    handleRegister,
+    validateRegister
+  );
+  const { registerUser } = useContext(UserContext);
 
   const formValues = [
     {
-      name: 'Full name',
+      display: 'Full name',
+      name: 'username',
       type: 'text',
       placeholder: 'Enter your full name',
     },
-    { name: 'Email', type: 'email', placeholder: 'Please enter your email' },
     {
-      name: 'Password',
+      display: 'Email',
+      name: 'email',
+      type: 'text',
+      placeholder: 'Please enter your email',
+    },
+    {
+      display: 'Password',
+      name: 'password',
       type: 'password',
       placeholder: 'Please enter your password',
     },
     {
-      name: 'Confirm Password',
+      display: 'Confirm Password',
+      name: 'confirm_password',
       type: 'password',
       placeholder: 'Please confirm your password',
-      error:
-        form?.Password.toString() != form['Confirm Password'].toString()
-          ? 'Password does not match'
-          : '',
     },
     {
-      name: 'Address',
+      display: 'Address',
+      name: 'address',
       type: 'text',
       placeholder: 'Enter your address',
     },
     {
-      name: 'Phone Number',
+      display: 'Phone Number',
+      name: 'phone_number',
       type: 'text',
       placeholder: 'Please enter your phone number',
     },
   ];
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-    const errors = formValues.filter((a) => a.error);
-    // if there are errors, return without doing anything
-    if (errors.length > 0) return;
+  function handleRegister() {
+    registerUser(values);
+  }
 
-    //    do something
-  };
-  useEffect(() => {}, [form]);
   return (
     <div className={styles.loginForm}>
-      <form onChange={handleChange}>
+      <form onSubmit={handleSubmit}>
         {formValues?.map((item) => (
           <div className={styles.form_group} key={item.name}>
-            <label className={styles.login_label}>{item.name}</label>
+            <label className={styles.login_label}>{item.display}</label>
             <input
               type={item.type}
               name={item.name}
               placeholder={item.placeholder}
+              value={values[item.name] || ''}
+              onChange={handleChange}
             />
-            {item.error && (
-              <span className={styles.form_error}>{item.error}</span>
-            )}
+
+            <span className={styles.form_error}>{errors[item.name]}</span>
           </div>
         ))}
 
         <div className={styles.form_group}>
-          <button type='submit' onClick={(e) => handleRegister(e)}>
-            Register
-          </button>
+          <button type='submit'>Register</button>
         </div>
       </form>
     </div>

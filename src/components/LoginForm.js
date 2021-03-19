@@ -1,23 +1,52 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
-function LoginForm() {
-  const history = useHistory();
+import { useContext, useState } from 'react';
+import { UserContext } from '../contexts/UserContext';
 
-  const handleLogin = (e) => {
+function LoginForm({ onCartPage }) {
+  const history = useHistory();
+  const { setCurrentUser, usersState } = useContext(UserContext);
+  const [loginInfo, setLoginInfo] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [errors, setError] = useState('');
+  const loginUser = (user) => {
+    const a = usersState.filter((object) => {
+      if (object.email === user.email && object.password === user.password) {
+        setCurrentUser(object);
+        console.log('Login sucessful!');
+        if (!onCartPage) {
+          history.goBack();
+          return object;
+        }
+        return object;
+      }
+    });
+    if (a.length > 0) return;
+    setError('Wrong email or password...');
+    setTimeout(() => setError(''), 3000);
+  };
+
+  const handleChange = (e) => {
+    setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });
+  };
+
+  const handleClick = (e) => {
     e.preventDefault();
-    // do something
-    history.goBack();
+    loginUser(loginInfo);
   };
 
   return (
     <div className={styles.loginForm}>
-      <form>
+      <form onChange={handleChange}>
         <div className={styles.form_group}>
           <label className={styles.login_label}>Username</label>
           <input
             type='text'
-            name='login'
+            name='email'
             placeholder='Enter your username or email'
           />
         </div>
@@ -28,10 +57,10 @@ function LoginForm() {
             name='password'
             placeholder='Enter your password'
           />
-          <p className={styles.forgot_pw}>Forgot your password?</p>
+          <p className={styles.form_error}>{errors}</p>
         </div>
         <div className={styles.form_group}>
-          <button type='submit' onClick={(e) => handleLogin(e)}>
+          <button type='submit' onClick={(e) => handleClick(e)}>
             Log in
           </button>
         </div>

@@ -16,7 +16,7 @@ const SearchForm = ({ scrollToRef }) => {
     console.log('click');
   };
 
-  useOutsideClick(filterRef, handleClickOutside);
+  useOutsideClick(handleClickOutside, filterRef);
 
   const scrollTo = () => {
     window.scrollTo({
