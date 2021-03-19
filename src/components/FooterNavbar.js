@@ -20,17 +20,17 @@ const FooterNavbar = () => {
 
   useOutsideClick(closeDropdown, navDropDownRef);
   return (
-    <div className={styles.nav_container}>
+    <div className={styles.nav_container} ref={navDropDownRef}>
       <nav className={styles.navbar}>
-        <Link to='/deals'>
+        <Link to='/deals' onClick={closeDropdown}>
           {<LocalOfferIcon />}
           <span className={styles.iconName}>Deals</span>
         </Link>
-        <Link to='/'>
+        <Link to='/' onClick={closeDropdown}>
           {<HomeIcon />}
           <span className={styles.iconName}>Home</span>
         </Link>
-        <Link to='/about'>
+        <Link to='/about' onClick={closeDropdown}>
           {<InfoOutlinedIcon />}
           <span className={styles.iconName}>About</span>
         </Link>
@@ -50,14 +50,7 @@ const FooterNavbar = () => {
         )}
       </nav>
       {currentUser && (
-        <>
-          {openDropdown && (
-            <NavDropdown
-              navDropDownRef={navDropDownRef}
-              closeDropdown={closeDropdown}
-            />
-          )}
-        </>
+        <>{openDropdown && <NavDropdown closeDropdown={closeDropdown} />}</>
       )}
     </div>
   );

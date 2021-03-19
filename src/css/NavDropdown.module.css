@@ -35,7 +35,33 @@
     color:var(--primary-color);
 }
 
+.closeNav {
+    padding: 1.5rem;
+    display: grid;
+    cursor: pointer;
+  }
+  .closeNav  span{
+      grid-area:1/1/1/1;
+      align-self: center;
+      display: inline-block;
+      width: 36px;
+      height: 3px;
+      background: var(--secondary-color);
+      
+    }
+    
+  .closeNav_line1{
+    transform: rotate(-45deg);
+  }
+  .closeNav_line2{
+    transform: rotate(45deg);
+  }
+
+
 @media(min-width: 576px){
+    .closeNav{
+        display:none;
+    }
     .navDropdown{
         position: absolute;
         top: 4rem;
