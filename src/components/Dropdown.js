@@ -22,7 +22,7 @@ const Dropdown = ({ filterList, type, setIsOpen }) => {
     });
   };
 
-  useOutsideClick(dropDownRef, handleClickOutside);
+  useOutsideClick(handleClickOutside, dropDownRef);
 
   return (
     <div className={styles.filter_list} ref={dropDownRef}>
@@ -31,8 +31,8 @@ const Dropdown = ({ filterList, type, setIsOpen }) => {
           <li
             key={i}
             className={styles.filter_item}
-            onClick={() => handleInsideClick(item)
-            }>
+            onClick={() => handleInsideClick(item)}
+          >
             {item}
           </li>
         ))}

@@ -16,25 +16,17 @@ const UserContextProvider = ({ children }) => {
   );
 
   const [checkoutState, setCheckoutState] = useState({});
-  const [usersState, setUsersState] = useState([
-    {
-      email: 'something@hej.se',
-      password: 'hejhej1',
-      id: 1,
-    },
-    {
-      email: 'some@hej.se',
-      password: 'hej2',
-      id: 2,
-    },
-    {
-      email: 'thing@hej.se',
-      id: 3,
-      password: 'hej3',
-    },
-  ]);
+  const [usersState, setUsersState] = useState(
+    localStorage.getItem('users')
+      ? JSON.parse(localStorage.getItem('users'))
+      : []
+  );
 
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(
+    localStorage.getItem('currentUser')
+      ? JSON.parse(localStorage.getItem('currentUser'))
+      : null
+  );
   const [isRegistered, setIsRegistered] = useState(false);
 
   //******** cart functions
@@ -70,17 +62,6 @@ const UserContextProvider = ({ children }) => {
     setIsRegistered(true);
     history.replace('/login');
   };
-  // current user dummy object
-  // const ben = {
-  // address name etc.
-  //   ...user,
-  //   userCart: cart,
-  //   purchaseHistory: {
-  //     id: '',
-  //     cars: [],
-  //     form: {},
-  //   },
-  // };
 
   //******** user logout
   // save to localstorage
@@ -90,7 +71,7 @@ const UserContextProvider = ({ children }) => {
   //******** on checkout
 
   useEffect(() => {
-    if (currentUser) {
+    if (currentUser && Object.keys(checkoutState).length > 0) {
       const firstPurchase = currentUser.purchaseHistory;
       if (!firstPurchase) {
         setCurrentUser({ ...currentUser, purchaseHistory: [checkoutState] });
@@ -105,10 +86,6 @@ const UserContextProvider = ({ children }) => {
 
   //******** local storage
 
-  useEffect(() => {
-    localStorage.setItem('cartCars', JSON.stringify(cart));
-  }, [cart]);
-
   //******** log users and currentuser
   useEffect(() => {
     if (currentUser) {
@@ -117,8 +94,15 @@ const UserContextProvider = ({ children }) => {
       setUsersState([...a, currentUser]);
     }
   }, [currentUser]);
-  console.log(currentUser);
-  console.log(usersState);
+
+  useEffect(() => {
+    localStorage.setItem('cartCars', JSON.stringify(cart));
+  }, [cart]);
+
+  useEffect(() => {
+    localStorage.setItem('users', JSON.stringify(usersState));
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+  }, [usersState, currentUser]);
 
   return (
     <Provider
