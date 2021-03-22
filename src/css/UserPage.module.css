@@ -1,16 +1,17 @@
-.container{
+.container {
   width: 90%;
   margin: 1rem auto;
 }
 
 .UserPage_info {
   margin-top: 2rem;
-.h2{
+}
+.h2 {
   padding-left: 1rem;
   color: var(--primary-color);
 }
 
-.purchases{
+.purchases {
   background: hsla(0, 0%, 60%, 0.5);
   padding: 1rem 0rem;
 }
@@ -25,7 +26,8 @@
   margin-top: 2.8rem;
 }
 
-.UserPage_info h2, .purchasesHeading {
+.UserPage_info h2,
+.purchasesHeading {
   color: var(--primary-color);
 }
 
