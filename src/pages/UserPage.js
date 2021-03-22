@@ -16,11 +16,11 @@ function UserPage() {
         altText={'My page image'}
       />
       <div className={styles.UserPage_info}>
-        <h2>My Info</h2>
+        <h2 className={styles.h2}>My Info</h2>
         <UserPageInfo />
       </div>
       <div className={styles.purchases}>
-        <h2>My Purchases</h2>
+        <h2 className={styles.h2}>My Purchases</h2>
         <ul>
           {currentUser.purchaseHistory.map((order) => (
             <OrderCard order={order} key={order.id} />
