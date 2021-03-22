@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
 import { useContext, useState } from 'react';
@@ -13,6 +13,9 @@ function LoginForm({ onCartPage }) {
   });
 
   const [errors, setError] = useState('');
+
+  let timeOut = () => setTimeout(() => setError(''), 3000);
+
   const loginUser = (user) => {
     const a = usersState.filter((object) => {
       if (object.email === user.email && object.password === user.password) {
@@ -27,8 +30,14 @@ function LoginForm({ onCartPage }) {
     });
     if (a.length > 0) return;
     setError('Wrong email or password...');
-    setTimeout(() => setError(''), 3000);
+    timeOut();
   };
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [timeOut]);
 
   const handleChange = (e) => {
     setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });
