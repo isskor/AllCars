@@ -14,7 +14,7 @@ function LoginForm({ onCartPage }) {
 
   const [errors, setError] = useState('');
 
-  let timeOut = () => setTimeout(() => setError(''), 3000);
+  // let timeOut = () => setTimeout(() => setError(''), 3000);
 
   const loginUser = (user) => {
     const a = usersState.filter((object) => {
@@ -30,17 +30,19 @@ function LoginForm({ onCartPage }) {
     });
     if (a.length > 0) return;
     setError('Wrong email or password...');
-    timeOut();
+    // timeOut();
   };
 
-  useEffect(() => {
-    return () => {
-      clearTimeout(timeOut);
-    };
-  }, [timeOut]);
+  // useEffect(() => {
+  //   return () => {
+  //     console.log('time2');
+  //     clearTimeout(timeOut);
+  //   };
+  // }, [timeOut]);
 
   const handleChange = (e) => {
     setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });
+    setError('');
   };
 
   const handleClick = (e) => {
