@@ -26,7 +26,7 @@ const Navbar = () => {
           {!currentUser && (
             <div className={styles.login_btn}>
               <Link to='/login'>
-                <span className={styles.iconName}>Login/Register</span>
+                <span className={styles.iconName}>Log in/Register</span>
               </Link>
             </div>
           )}

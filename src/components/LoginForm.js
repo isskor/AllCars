@@ -43,7 +43,7 @@ function LoginForm({ onCartPage }) {
     <div className={styles.loginForm}>
       <form onChange={handleChange}>
         <div className={styles.form_group}>
-          <label className={styles.login_label}>Username</label>
+          <label className={styles.login_label}>Email</label>
           <input
             type='text'
             name='email'

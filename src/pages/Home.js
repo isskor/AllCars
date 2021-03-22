@@ -53,7 +53,7 @@ function Home() {
           </div>
         )}
       </div>
-      <ScrollToTopBtn />
+      {/* <ScrollToTopBtn /> */}
     </div>
   );
 }
