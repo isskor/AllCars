@@ -1,15 +1,23 @@
 .container{
-  margin: auto;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.UserPage_info {
+  margin-top: 2rem;
+}
+
+.purchases {
+  margin-top: 2.8rem;
+}
+
+.UserPage_info h2, .purchasesHeading {
+  color: var(--primary-color);
 }
 
 @media (min-width: 768px) {
   .container {
-    width: 75%;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 50%;
+    width: 80%;
+    max-width: 1000px;
   }
 }
