@@ -18,3 +18,13 @@
   flex-basis: 50%;
   text-align: center;
 }
+
+.orderID{
+  color: var(--primary-color);
+  filter: opacity(0.75);
+  text-align: center;
+}
+
+.orderInfo{
+  font-weight: bold;
+}
