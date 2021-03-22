@@ -12,7 +12,9 @@ const OrderCartItem = ({ car }) => {
       <div className={styles.car_info_container}>
         <div className='car_info'>
           <p>
-            Model: {car.make} {car.model}
+            <b>
+              {car.make} {car.model}
+            </b>
           </p>
           <p> Year: {car.year}</p>
         </div>
