@@ -28,7 +28,7 @@ function LoginRegisterPage() {
         <div className={styles.log_reg_header}>
           {pathname === '/login' ? (
             <>
-              <h1>Login</h1>
+              <h1>Log in</h1>
               <p>
                 <Link to='/register' replace>
                   Don't have an account? Register!
@@ -40,7 +40,7 @@ function LoginRegisterPage() {
               <h1>Register</h1>
               <p>
                 <Link to='/login' replace>
-                  Already have an Account? Login!
+                  Already have an Account? Log in!
                 </Link>
               </p>
             </>
@@ -53,12 +53,12 @@ function LoginRegisterPage() {
             }`}
           >
             <Link to='/login' replace>
-              <h2>Login</h2>
+              <h2>Log in</h2>
             </Link>
             {pathname !== '/login' && (
               <p>
                 <Link to='/login' replace>
-                  Already have an Account? Login!
+                  Already have an Account? Log in!
                 </Link>
               </p>
             )}

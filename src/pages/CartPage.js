@@ -53,7 +53,7 @@ const CartPage = () => {
             </div>
             {!currentUser ? (
               <div className={styles.login_form}>
-                <h2>Login to purchase</h2>
+                <h2>Log in to purchase</h2>
                 <LoginForm onCartPage={true} />
               </div>
             ) : (
