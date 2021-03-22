@@ -1,61 +1,48 @@
-.loginForm{
-    padding-top: 1rem ;
+.login_form {
+  padding-top: 1rem;
 }
 
-.loginForm input{
-    background: transparent;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid rgba(192, 192, 192, 0.6);
-    padding: 1rem 0;
-  }
-  .loginForm form {
-    /* width: 90%;
-    margin: 0 auto 2rem;
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: rgba(12, 12, 12, 0.5);
-    backdrop-filter: blur(5px);
-    min-height: 100%;
-    box-shadow: 0 5px 20px rgb(0, 0, 0, 0.6); */
+.login_form input {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.6);
+  padding: 1rem 0;
+  color: var(--secondary-color);
+  font-size: 1rem;
+}
 
-  }
+.forgot_pw {
+  font-size: 0.8rem;
+  padding: 1.5rem;
+  text-align: end;
+}
 
+.login_form label {
+  color: var(--secondary-color);
+}
 
-  .forgot_pw {
-      font-size: 0.8rem;
-      padding: 1.5rem;
-      text-align: end;
-  }
-  
-  .loginForm label{
-      color: var(--secondary-color);
-  }
+.login_form .form_group {
+  margin: 3rem auto;
+  /* padding: 1rem 0; */
+  display: flex;
+  flex-direction: column;
+}
 
-  .loginForm  .form_group{
-      margin: 3rem auto;
-      /* padding: 1rem 0; */
-        display: flex;
-        flex-direction: column;
-  }
+.login_form input::placeholder {
+  color: var(--secondary-color);
+  opacity: 0.6;
+}
 
+.login_form button {
+  align-self: center;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
 
-
-  .loginForm input::placeholder{
-      color: var(--secondary-color);
-      opacity: 0.6;
-  }
-
-  .loginForm button {
-      align-self: center;
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-  }
-
-  .form_error {
- 
-      color:var(--error-color)!important;
-      margin: 0;
-      padding: 0;
-      font-size: 0.7rem;
-  }
+.form_error {
+  color: var(--error-color) !important;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
+}
