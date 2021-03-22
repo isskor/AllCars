@@ -1,5 +1,5 @@
 .carCard {
-  margin: 1rem 1rem;
+  margin: 0.5rem 0;
   background-color: var(--card-bg);
   box-shadow: 0px 4px 9px #00000040;
   border-radius: 4px;
@@ -82,8 +82,14 @@
   margin: 0.3rem 0.1rem;
 }
 
-.carCard span{
+.carCard span {
   color: var(--primary-color);
+}
+
+@media (min-width: 576px) {
+  .carCard {
+    margin: 1rem;
+  }
 }
 
 @media only screen and (min-width: 768px) {
