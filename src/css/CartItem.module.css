@@ -14,6 +14,7 @@
 
 .carCard img {
   height: 100%;
+  object-fit: cover;
 }
 
 .car_info_container {
