@@ -19,6 +19,11 @@
   position: relative;
 }
 
+.imgContainer img {
+  height: 100%;
+  object-fit: cover;
+}
+
 .carPrice {
   position: absolute;
   top: 0;
