@@ -22,7 +22,7 @@ function UserPage() {
       <div className={styles.purchases}>
         <h2>My Purchases</h2>
         <ul>
-          {currentUser.purchaseHistory.map((order) => (
+          {currentUser?.purchaseHistory.map((order) => (
             <OrderCard order={order} key={order.id} />
           ))}
         </ul>
