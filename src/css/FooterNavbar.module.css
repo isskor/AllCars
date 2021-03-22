@@ -7,7 +7,6 @@
   display: none;
   color: #ffc388;
   font-size: 1.4rem;
-  padding: 10px 10px;
   margin-right: 2rem;
 }
 
@@ -32,6 +31,7 @@ svg:hover {
 .myAccount:hover > span {
   color: orange;
 }
+
 @media (min-width: 576px) {
   .navbar {
     display: flex;
@@ -53,10 +53,16 @@ svg:hover {
 
   .login_btn {
     display: inline-block;
-    font-size: 0.7rem;
-    position: absolute;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    /* position: absolute;
     left: -20%;
-    top: 1.6rem;
+    top: 1.6rem; */
+  }
+
+  .login_btn > span {
+    margin: 0;
   }
 }
 
@@ -85,9 +91,9 @@ svg:hover {
     margin: 0;
   }
   .login_btn {
-    position: relative;
+    /* position: relative;
     top: 0;
-    left: 0;
+    left: 0; */
   }
 }
 @media print {

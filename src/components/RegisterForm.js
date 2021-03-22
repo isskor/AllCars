@@ -73,7 +73,7 @@ function RegisterForm() {
           </div>
         ))}
 
-        <div className={styles.form_group}>
+        <div className={styles.form_group_btn}>
           <button type='submit'>Register</button>
           <p
             className={styles.form_error}

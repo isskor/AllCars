@@ -44,9 +44,8 @@ const FooterNavbar = () => {
           </div>
         ) : (
           <Link to='/login' className={styles.login_container}>
-            {<PersonIcon />}
             <span className={`${styles.iconName} ${styles.login_btn}`}>
-              Log in / Register
+              Log in / <span> Register </span>
             </span>
           </Link>
         )}

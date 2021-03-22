@@ -31,7 +31,7 @@ function LoginRegisterPage() {
               <h1>Log in</h1>
               <p>
                 <Link to='/register' replace>
-                  Don't have an account? Register!
+                  Don't have an account? <br /> Register!
                 </Link>
               </p>
             </>
@@ -40,7 +40,7 @@ function LoginRegisterPage() {
               <h1>Register</h1>
               <p>
                 <Link to='/login' replace>
-                  Already have an Account? Log in!
+                  Already have an Account? <br /> Log in!
                 </Link>
               </p>
             </>
@@ -58,7 +58,7 @@ function LoginRegisterPage() {
             {pathname !== '/login' && (
               <p>
                 <Link to='/login' replace>
-                  Already have an Account? Log in!
+                  Already have an Account? <br /> Log in!
                 </Link>
               </p>
             )}
@@ -74,7 +74,7 @@ function LoginRegisterPage() {
             {pathname !== '/register' && (
               <p>
                 <Link to='/register' replace>
-                  Don't have an account? Register!
+                  Don't have an account? <br /> Register!
                 </Link>
               </p>
             )}

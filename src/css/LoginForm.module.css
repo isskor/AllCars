@@ -2,40 +2,31 @@
   padding-top: 1rem;
 }
 
-.loginForm input{
-    background: transparent;
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    padding: 1.2rem;
-    font-size: 1rem;
-    outline: none;
-    border: none;
-    color: var(--secondary-color);
-    border-bottom: 1px solid rgba(192, 192, 192, 0.6);
-  }
+.login_form input {
+  background: transparent;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 1.2rem 0;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  color: var(--secondary-color);
+  border-bottom: 1px solid rgba(192, 192, 192, 0.6);
+}
 
-  .loginForm input:focus {
-    background: #7c7c7c;
-    border-radius: 1rem;
-    transition: all 1s ease;
-  }
+.login_form input:focus {
+  background: #7c7c7c;
+  border-radius: 1rem;
+  transition: all 1s ease;
+}
 
-  .loginForm label {
-    color: var(--primary-color);
-    font-family: var(--main-font);
-    display: inline-block;
-    padding-top: 1rem;
-  }
-  .loginForm form {
-    /* width: 90%;
-    margin: 0 auto 2rem;
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: rgba(12, 12, 12, 0.5);
-    backdrop-filter: blur(5px);
-    min-height: 100%;
-    box-shadow: 0 5px 20px rgb(0, 0, 0, 0.6); */
+.login_form label {
+  color: var(--primary-color);
+  font-family: var(--main-font);
+  display: inline-block;
+  padding-top: 1rem;
+}
 
 .forgot_pw {
   font-size: 0.8rem;
@@ -43,24 +34,32 @@
   text-align: end;
 }
 
-.loginForm label {
+.login_form label {
   color: var(--secondary-color);
 }
 
-  .forgot_pw {
-      font-size: 0.8rem;
-      padding: 1.5rem;
-      text-align: end;
-  }
-  
+.forgot_pw {
+  font-size: 0.8rem;
+  padding: 1.5rem;
+  text-align: end;
+}
 
-.loginForm input::placeholder {
+.login_form input::placeholder {
   color: var(--secondary-color);
   opacity: 0.6;
 }
 
-.loginForm button {
-  align-self: center;
+.form_group {
+  padding: 1rem 0;
+}
+
+.form_group_btn {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.login_form button {
   padding: 0.75rem 2rem;
   font-size: 1rem;
   margin-bottom: 1rem;

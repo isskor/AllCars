@@ -54,7 +54,10 @@ const CartPage = () => {
             {!currentUser ? (
               <div className={styles.login_form}>
                 <h2>Login to purchase</h2>
-                <Link to='/register'> Don't have an account? Register!</Link>
+                <Link to='/register'>
+                  {' '}
+                  Don't have an account? <br /> Register!
+                </Link>
                 <LoginForm onCartPage={true} />
               </div>
             ) : (
