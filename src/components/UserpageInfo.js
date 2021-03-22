@@ -10,7 +10,7 @@ import { UserContext } from '../contexts/UserContext';
   return (
     <div className={style.userInfo}>
         <p>Name: <span>{user.username}</span></p>
-        <p>Email: <span>{user.username}</span></p>
+        <p>Email: <span>{user.email}</span></p>
         <p>Address: <span>{user.address}</span></p>
         <p>Phone: <span>{user.phone_number}</span></p>
         {/* Add all info connected to profile here */}
