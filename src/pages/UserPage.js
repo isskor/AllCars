@@ -15,17 +15,19 @@ function UserPage() {
         imgSrc={'/assets/background/allcars_mypage.jpg'}
         altText={'My page image'}
       />
-      <div className={styles.UserPage_info}>
-        <h2>My Info</h2>
-        <UserPageInfo />
-      </div>
-      <div className={styles.purchases}>
-        <h2>My Purchases</h2>
-        <ul>
-          {currentUser?.purchaseHistory.map((order) => (
-            <OrderCard order={order} key={order.id} />
-          ))}
-        </ul>
+      <div className={styles.container}>
+        <div className={styles.UserPage_info}>
+          <h2>My Info</h2>
+          <UserPageInfo />
+        </div>
+        <div className={styles.purchases}>
+          <h2 className={styles.purchasesHeading}>My Purchases</h2>
+          <ul>
+            {currentUser?.purchaseHistory.map((order) => (
+              <OrderCard order={order} key={order.id} />
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
