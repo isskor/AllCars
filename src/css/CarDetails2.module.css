@@ -1,15 +1,16 @@
-.carDetailsContainer {
+.car_details_container {
   background: var(--dark-color);
   background: var(--card-bg);
   /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); */
   /* max-width: 1200px; */
   margin: 0 auto;
   margin-bottom: 10px;
+  position: relative;
 }
 
-.carDetailsContainer h3, .carDetailsContainer h2{
+.car_details_container h3,
+.car_details_container h2 {
   color: var(--primary-color);
-
 }
 
 .carImageContainer {
@@ -68,11 +69,7 @@
   /* padding: 0 2rem; */
 }
 
-.car_details_container h2,
-.car_details_container h3 {
-  color: var(--primary-color);
-}
-.carDetailsContainer p {
+.car_details_container p {
   line-height: 1.8rem;
 }
 
@@ -82,6 +79,9 @@
   align-items: flex-end;
   flex-wrap: wrap;
   padding: 1rem 2rem;
+  background: #222222;
+  padding: 1rem 2rem;
+  box-shadow: 0 5px 20px rgba(7, 7, 7, 0.3);
 }
 
 .price_container {
@@ -108,8 +108,8 @@
 }
 .car_desc_container {
   padding: 1rem 2rem;
+  margin-bottom: 10rem;
 }
-
 
 .car_desc_container p {
   padding: 0.75rem 0;
@@ -120,33 +120,38 @@
   padding: 1rem;
 }
 
-.details_footer{
+.details_footer {
   background: #222222;
-  padding: 1rem;
+  padding: 2rem 1rem;
   box-shadow: 0 -5px 20px rgba(110, 110, 110, 0.3);
+  position: absolute;
+  width: 100%;
+  /* bottom: 0; */
+  top: calc(100% - 164px);
 }
-.details_footer_wrapper{
-  display:flex;
+.details_footer_wrapper {
+  display: flex;
   margin-top: 1.4rem;
   /* padding: 2rem 1rem ; */
   flex-wrap: wrap;
-
+  align-items: flex-start;
 }
 
-.details_footer_wrapper h4{
+.details_footer_wrapper h4 {
   font-size: 1.2rem;
-  padding: 1rem;
+  padding: 0;
   color: var(--secondary-color);
-  flex: 50%;
+  flex: 100%;
 }
 
 .details_footer_wrapper > p {
-  flex: 50%;
+  flex: 100%;
   text-align: end;
   padding: 1rem;
   font-size: 2rem;
 }
-.details_footer_wrapper button{
+.details_footer_wrapper button,
+.details_footer_wrapper span {
   margin-left: auto;
   margin-right: 1rem;
 }
@@ -157,16 +162,18 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
+  .carImageContainer {
+    flex: 1;
+  }
   .main_info {
     flex-basis: 100%;
   }
-  .detail_line {
+  /* .detail_line {
     width: 1px;
     height: 300px;
     background-color: rgba(189, 189, 189, 0.2);
     align-self: center;
-  }
+  } */
 
   .car_stats_container {
     flex-basis: 45%;
@@ -174,74 +181,88 @@
 
   .car_desc_container {
     flex-basis: 45%;
+    margin-bottom: 3rem;
+  }
+
+  .details_footer {
+    top: 100%;
+  }
+
+  .details_footer_wrapper h4 {
+    flex: 50%;
+  }
+
+  .details_footer_wrapper p {
+    flex: 50%;
   }
 }
 
-@media(min-width: 992px){
-  .carDetailsContainer{
-    display:flex;
-    flex-wrap:wrap;
-    margin-bottom: -5rem;
+@media (min-width: 992px) {
+  .car_details_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* margin-bottom: -5rem; */
   }
-  .main_info{
-    display:none;
-  }
-  .detail_line{
+  .main_info {
     display: none;
   }
-  .carImageContainer{
-    flex-basis:60%;
-    display:flex;
-    flex-wrap:wrap;
+  .detail_line {
+    display: none;
   }
-  .carImageContainer > a{
+  .carImageContainer {
+    flex-basis: 60%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .carImageContainer img {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 0;
+  }
+  .carImageContainer > a {
     flex-basis: 100%;
   }
-  .carImageContainer img{
-    padding: 1rem;
-  }
-  .carImageContainer > h2{
+
+  .carImageContainer > h2 {
     display: none;
   }
   .car_stats_container {
     flex-basis: 40%;
     padding: 2rem;
   }
-  .car_stats_container > h2{
+  .car_stats_container > h2 {
     text-align: center;
   }
   .car_desc_container {
+    flex-basis: 60%;
+    padding: 0rem;
+  }
+  .car_desc_container > h2 {
+    display: none;
+  }
+  .details_footer {
     flex-basis: 100%;
-  }
-  .car_desc_container > h2{
-    display:none;
-  }
-  .details_footer{
-    flex-basis:100%;
     padding: 2rem;
     margin: 0;
   }
 }
 
-
-
 @media (min-width: 1200px) {
-  .car_desc_container{
-    padding: 0 10rem;
-  }
-  .carImageContainer{
+  .car_desc_container {
     padding-left: 10rem;
   }
-  .car_stats_container{
-    padding-right:10rem;
+  .carImageContainer {
+    padding-left: 10rem;
+  }
+  .car_stats_container {
+    padding-right: 10rem;
   }
   .carDetailsContainer {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
     /* padding: 0 10rem; */
     overflow: hidden;
   }
-  .details_footer_wrapper{
+  .details_footer_wrapper {
     padding: 0 10rem;
   }
-
 }

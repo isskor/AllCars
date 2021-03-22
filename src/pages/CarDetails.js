@@ -22,7 +22,7 @@ function CarDetails() {
   const renderCar = () => {
     return (
       <div className={styles.page_container}>
-        <div className={styles.carDetailsContainer}>
+        <div className={styles.car_details_container}>
           <section className={styles.carImageContainer}>
             <div className={styles.backButton}>
               <a onClick={() => history.goBack()}>
@@ -79,7 +79,6 @@ function CarDetails() {
               </div>
             </section>
           </section>
-          <div className={styles.detail_line}></div>
           <section className={styles.car_desc_container}>
             <h2>Description</h2>
             <p>{car.descLong}</p>
@@ -91,6 +90,7 @@ function CarDetails() {
                 {car.make} {car.model}
               </h4>
               <p className={styles.carPrice}>$ {car.price.toLocaleString()}</p>
+
               <AddToCartButton car={car} />
             </div>
           </div>

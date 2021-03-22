@@ -77,7 +77,11 @@
   margin: 0.3rem 0.1rem;
 }
 
-.carCard span{
+/* .carCard span {
+  color: var(--primary-color);
+} */
+
+.inCart {
   color: var(--primary-color);
 }
 
