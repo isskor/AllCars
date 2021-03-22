@@ -4,15 +4,15 @@ import OrderCartItem from './OrderCarItem';
 const OrderCard = ({ order }) => {
   return (
     <div className={style.orderCardContainer}>
-      <h2>
+      <h2 className={style.orderID}>
         Order: #<span>{order.id}</span>
       </h2>
       <div className={style.info}>
-        <p>
+        <p className={style.orderInfo}>
           Total price:
           <span>{order.cars.reduce((acc, cur) => cur.price + acc, 0)}</span>
         </p>
-        <p>
+        <p className={style.orderInfo}>
           <span className='timestamp'>{order.timestamp}</span>
         </p>
       </div>

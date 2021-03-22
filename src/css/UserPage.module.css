@@ -5,6 +5,20 @@
 
 .UserPage_info {
   margin-top: 2rem;
+.h2{
+  padding-left: 1rem;
+  color: var(--primary-color);
+}
+
+.purchases{
+  background: hsla(0, 0%, 60%, 0.5);
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 75%;
+  }
 }
 
 .purchases {
