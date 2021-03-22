@@ -1,5 +1,5 @@
 .orderCardContainer{
-  background: var(--card-bg);
+  background: hsla(0, 0%, 60%, 0.5);
   margin: 1rem auto;
   padding: 0.5rem 0rem;
 }
@@ -21,7 +21,7 @@
 
 .orderID{
   color: var(--primary-color);
-  filter: opacity(0.75);
+  filter: opacity(0.8);
   text-align: center;
 }
 
