@@ -1,5 +1,5 @@
-import { useContext, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useContext } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import CartItem from '../components/CartItem';
 import CartForm from '../components/CartForm';
@@ -53,7 +53,8 @@ const CartPage = () => {
             </div>
             {!currentUser ? (
               <div className={styles.login_form}>
-                <h2>Log in to purchase</h2>
+                <h2>Login to purchase</h2>
+                <Link to='/register'> Don't have an account? Register!</Link>
                 <LoginForm onCartPage={true} />
               </div>
             ) : (

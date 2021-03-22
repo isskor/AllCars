@@ -20,8 +20,9 @@ const useForm = (callback, validate, state) => {
   };
 
   const handleChange = (e) => {
-    e.persist();
+    // e.persist();
     setValues({ ...values, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: '' });
   };
 
   return {

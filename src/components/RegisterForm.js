@@ -56,7 +56,7 @@ function RegisterForm() {
   }
 
   return (
-    <div className={styles.loginForm}>
+    <div className={styles.login_form}>
       <form onSubmit={handleSubmit}>
         {formValues?.map((item) => (
           <div className={styles.form_group} key={item.name}>
