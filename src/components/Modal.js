@@ -6,7 +6,6 @@ const Modal = ({ openModal, setOpenModal }) => {
 
   const handleModalClick = (e, click) => {
     console.log('handleModal click');
-    e.stopPropagation();
     setOpenModal(false);
     if (click === 'home') {
       setOpenModal(false);

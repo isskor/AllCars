@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
-
-const useForm = (callback, validate) => {
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../contexts/UserContext';
+const useForm = (callback, validate, state) => {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
 
+  const { usersState } = useContext(UserContext);
   useEffect(() => {
     if (Object.keys(errors).length === 0 && Object.keys(values).length > 0) {
       callback();
@@ -11,9 +12,11 @@ const useForm = (callback, validate) => {
     }
   }, [errors]);
 
+  console.log(usersState);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors(validate(values));
+    setErrors(validate(values, state));
   };
 
   const handleChange = (e) => {

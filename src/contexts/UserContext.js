@@ -50,13 +50,6 @@ const UserContextProvider = ({ children }) => {
   //******** user functions
 
   const registerUser = (user) => {
-    const userExist = usersState.filter(
-      (object) => object.email === user.email
-    );
-    if (userExist.length > 0) {
-      console.log('Already exist!');
-      return;
-    }
     user.id = user.email;
     setUsersState([...usersState, user]);
     setIsRegistered(true);

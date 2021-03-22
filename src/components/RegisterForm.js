@@ -5,13 +5,12 @@ import useForm from '../components/useForm';
 import { validateRegister } from './FormValidationRules';
 import { UserContext } from '../contexts/UserContext';
 function RegisterForm() {
-  const history = useHistory();
-
+  const { registerUser, usersState } = useContext(UserContext);
   const { handleChange, handleSubmit, values, errors } = useForm(
     handleRegister,
-    validateRegister
+    validateRegister,
+    usersState
   );
-  const { registerUser } = useContext(UserContext);
 
   const formValues = [
     {
@@ -76,6 +75,12 @@ function RegisterForm() {
 
         <div className={styles.form_group}>
           <button type='submit'>Register</button>
+          <p
+            className={styles.form_error}
+            style={{ fontSize: '1rem', textAlign: 'center' }}
+          >
+            {errors.exists}
+          </p>
         </div>
       </form>
     </div>
