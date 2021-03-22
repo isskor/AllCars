@@ -4,10 +4,28 @@
 
 .loginForm input{
     background: transparent;
-    border: none;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1rem;
     outline: none;
+    border: none;
+    color: var(--secondary-color);
     border-bottom: 1px solid rgba(192, 192, 192, 0.6);
-    padding: 1rem 0;
+  }
+
+  .loginForm input:focus {
+    background: #7c7c7c;
+    border-radius: 1rem;
+    transition: all 1s ease;
+  }
+
+  .loginForm label {
+    color: var(--primary-color);
+    font-family: var(--main-font);
+    display: inline-block;
+    padding-top: 1rem;
   }
   .loginForm form {
     /* width: 90%;
@@ -28,9 +46,6 @@
       text-align: end;
   }
   
-  .loginForm label{
-      color: var(--secondary-color);
-  }
 
   .loginForm  .form_group{
       margin: 3rem auto;
