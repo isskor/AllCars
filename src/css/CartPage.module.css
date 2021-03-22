@@ -51,7 +51,19 @@
 }
 
 .login_form h2 {
-  margin: 5rem 0;
+  margin: 3rem 0 1rem;
+}
+
+.login_form a {
+  color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  display: inline-block;
+}
+
+.login_form a:hover {
+  color: orange;
 }
 
 .cart .empty {
