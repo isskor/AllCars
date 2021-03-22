@@ -6,7 +6,6 @@ import { UserContext } from '../contexts/UserContext';
 import OrderCard from '../components/OrderCard';
 function UserPage() {
   const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
 
   return (
     <div>
