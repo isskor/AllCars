@@ -35,13 +35,15 @@
   .receipt_content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr;
   }
   .receipt_items {
     flex-basis: 50%;
   }
   .receiptNote {
     flex-basis: 50%;
+    grid-row-start: 1;
+    grid-row-end: 3;
   }
 }
 
