@@ -1,7 +1,11 @@
 .receipt h2,
-.receipt h3 {
+.receipt h3{
   color: var(--primary-color);
   text-align: center;
+}
+.receipt h4 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
 }
 
 .receiptNote {

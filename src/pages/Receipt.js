@@ -38,7 +38,7 @@ const Receipt = () => {
             {/* </div> */}
 
             <div className={styles.receiptNote}>
-              <h4>orderID {checkoutState.id}</h4>
+              <h4>Order number: {checkoutState.id}</h4>
               <p>
                 Hello <b>{checkoutState.form.name}</b>. We have received your
                 order and sent you a confirmation to your e-mail{' '}
