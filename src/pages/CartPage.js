@@ -42,7 +42,7 @@ const CartPage = () => {
               <ul>
                 {cart.map((cartItem) => (
                   <div className={styles.item_container} key={cartItem.vin}>
-                    <CartItem cartItem={cartItem} />
+                    <CartItem cartItem={cartItem} checkout={'true'} />
                   </div>
                 ))}
               </ul>

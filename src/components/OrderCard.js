@@ -1,4 +1,5 @@
 import style from '../css/OrderCard.module.css';
+import CartItem from './CartItem';
 import OrderCartItem from './OrderCarItem';
 
 const OrderCard = ({ order }) => {
@@ -24,7 +25,8 @@ const OrderCard = ({ order }) => {
       </div>
       <div className={style.orders}>
         {order.cars.map((car) => (
-          <OrderCartItem car={car} key={car.vin} />
+          // <OrderCartItem car={car} key={car.vin} />
+          <CartItem cartItem={car} key={car.vin} />
         ))}
       </div>
     </div>

@@ -12,7 +12,6 @@ import Deals from './pages/deals';
 import CartPage from './pages/CartPage';
 import CarDetails from './pages/CarDetails';
 import Receipt from './pages/Receipt';
-import TestingUserContext from './pages/TestingUserContext';
 // styles
 import styles from './css/App.module.css';
 import LoginRegister from './pages/LoginRegister';

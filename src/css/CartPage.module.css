@@ -73,6 +73,11 @@
   color: var(--primary-color);
 }
 
+@media (min-width: 576px) {
+  .cartContainer {
+    padding: 2rem;
+  }
+}
 @media (min-width: 768px) {
   .total h3 {
     font-size: 2rem;

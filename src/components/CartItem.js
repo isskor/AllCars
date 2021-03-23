@@ -1,9 +1,7 @@
-import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { UserContext } from '../contexts/UserContext';
 import styles from '../css/CartItem.module.css';
+import RemoveCarBtn from './RemoveCarBtn';
 const CartItem = ({ cartItem, checkout = false }) => {
-  const { removeFromCart } = useContext(UserContext);
   const history = useHistory();
 
   function goToCarDetails() {
@@ -24,25 +22,16 @@ const CartItem = ({ cartItem, checkout = false }) => {
             {cartItem.make} {cartItem.model} {cartItem.year}
           </p>
         </div>
-        <div className={styles.car_info}>
-          <p className={styles.car_info_label}>Miles</p>
-          <p className='car_miles'>{cartItem.miles}</p>
+        <div className={styles.car_info_miles}>
+          <p className='car_miles'>{cartItem.miles} miles</p>
         </div>
-        <div className={styles.car_info}>
-          <p className={styles.car_info_label}>Price</p>
+        <div className={styles.car_info_price}>
           <p className={styles.car_price}>
             $ {cartItem.price.toLocaleString()}
           </p>
         </div>
       </div>
-      {!checkout && (
-        <button
-          className={styles.removeBtn}
-          onClick={() => removeFromCart(cartItem)}
-        >
-          Remove
-        </button>
-      )}
+      {checkout && <RemoveCarBtn cartItem={cartItem} />}
     </div>
   );
 };

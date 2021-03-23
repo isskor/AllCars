@@ -4,6 +4,7 @@ import { UserContext } from '../contexts/UserContext';
 import ReceiptCar from '../components/ReceiptCar';
 import styles from '../css/Receipt.module.css';
 import { useHistory } from 'react-router-dom';
+import CartItem from '../components/CartItem';
 
 const Receipt = () => {
   const { checkoutState, setCart } = useContext(UserContext);
@@ -33,7 +34,7 @@ const Receipt = () => {
           <div className={styles.receipt_content}>
             {/* <div className={styles.receipt_items}> */}
             {checkoutState.cars.map((car) => (
-              <ReceiptCar key={car.vin} car={car} />
+              <CartItem key={car.vin} car={car} />
             ))}
             {/* </div> */}
 
