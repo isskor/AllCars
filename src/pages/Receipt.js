@@ -34,7 +34,7 @@ const Receipt = () => {
           <div className={styles.receipt_content}>
             {/* <div className={styles.receipt_items}> */}
             {checkoutState.cars.map((car) => (
-              <CartItem key={car.vin} car={car} />
+              <CartItem key={car.vin} cartItem={car} />
             ))}
             {/* </div> */}
 
