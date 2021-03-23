@@ -34,7 +34,7 @@ const AddToCartButton = ({ car }) => {
           <span className={style.addBtn}>In Cart</span>
         )
       ) : (
-        <span> Sold </span>
+        <span className={style.addBtn}> Sold </span>
       )}
       <Modal openModal={openModal} setOpenModal={setOpenModal} />
     </>

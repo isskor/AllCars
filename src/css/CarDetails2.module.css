@@ -116,6 +116,10 @@
   padding: 1rem;
 }
 
+.page_container span {
+  color: var(--primary-color);
+}
+
 @media (min-width: 576px) {
   .car_details_container {
     flex-direction: row;
