@@ -9,8 +9,6 @@ function NavDropdown({ closeDropdown }) {
   const handleClick = () => {
     setCurrentUser(null);
     history.push("/");
-    alert("You're logged out!");
-
   }
 
   return (
