@@ -19,18 +19,22 @@ const AddToCartButton = ({ car }) => {
 
   return (
     <>
-      {!checkCart(car) ? (
-        <>
-          <button
-            data-add-btn='addBtn'
-            className={style.addBtn}
-            onClick={(e) => clickHandler(e, car)}
-          >
-            Add To Cart
-          </button>
-        </>
+      {!car.sold ? (
+        !checkCart(car) ? (
+          <>
+            <button
+              data-add-btn='addBtn'
+              className={style.addBtn}
+              onClick={(e) => clickHandler(e, car)}
+            >
+              Add To Cart
+            </button>
+          </>
+        ) : (
+          <span className={style.addBtn}>In Cart</span>
+        )
       ) : (
-        <span className={style.addBtn}>In Cart</span>
+        <span> Sold </span>
       )}
       <Modal openModal={openModal} setOpenModal={setOpenModal} />
     </>

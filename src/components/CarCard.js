@@ -37,6 +37,7 @@ function CarCard(prop) {
           <p className={style.miles}>Miles</p>
           <p className={style.milesNumber}>{prop.car.miles}</p>
         </div>
+
         <AddToCart car={prop.car} />
       </div>
     </div>

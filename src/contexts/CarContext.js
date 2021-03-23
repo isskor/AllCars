@@ -47,7 +47,11 @@ export const CarContext = createContext();
 
 const CarContextProvider = ({ children }) => {
   const { Provider } = CarContext;
-  const [cars, setCars] = useState(carList);
+  const [cars, setCars] = useState(
+    localStorage.getItem('carList')
+      ? JSON.parse(localStorage.getItem('carList'))
+      : carList
+  );
   const [filters, setFilters] = useState(filterList());
 
   const [filteredCars, setFilteredCars] = useState(cars);
@@ -59,13 +63,18 @@ const CarContextProvider = ({ children }) => {
       : initialCarState
   );
 
-  function handleSoldCars(soldCars) {
+  function handleSoldCarsHelper(soldCars) {
     const a = cars.map((car) => {
       const b = soldCars.filter((soldCar) => soldCar.vin === car.vin);
       if (b.length > 0) return { ...car, sold: true };
       return car;
     });
     console.log(a);
+    return a;
+  }
+
+  function handleSoldCars(soldCars) {
+    setCars(handleSoldCarsHelper(soldCars));
   }
 
   const newFiltersHelper = (filterTypeOne, filterTypeTwo) => {
@@ -164,7 +173,8 @@ const CarContextProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem('filteredCarList', JSON.stringify(filteredCarsObject));
-  }, [filteredCarsObject]);
+    localStorage.setItem('carList', JSON.stringify(cars));
+  }, [filteredCarsObject, cars]);
   // useEffect(() => {
   // }, [filteredCars]);
 
