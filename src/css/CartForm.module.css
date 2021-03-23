@@ -42,11 +42,13 @@
 .radio {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 1rem 0;
 }
 
 .radio label {
-  flex-basis: 50%;
+  flex-basis: 75%;
+  padding: 0;
 }
 
 .radio input {
