@@ -25,14 +25,16 @@
   grid-area: 1/1/1/1;
   justify-self: start;
   align-self: start;
+  padding: 1rem;
   z-index: 2;
   margin: 0.25rem;
+  cursor: pointer;
 }
 
 .backButton a {
-  background: var(--dark-color);
+  background: var(--card-bg);
   display: flex;
-  padding: 0.5rem;
+  padding: 1em;
   opacity: 0.8;
   border-radius: 50%;
 }

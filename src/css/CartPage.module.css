@@ -73,6 +73,20 @@
   color: var(--primary-color);
 }
 
+.backButton {
+  display: flex;
+  padding: 1rem;
+}
+
+.backButton a {
+  background: var(--card-bg);
+  padding: 1em;
+
+  opacity: 0.8;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 @media (min-width: 576px) {
   .cartContainer {
     padding: 2rem;

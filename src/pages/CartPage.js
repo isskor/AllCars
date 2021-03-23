@@ -4,7 +4,8 @@ import { UserContext } from '../contexts/UserContext';
 import CartItem from '../components/CartItem';
 import CartForm from '../components/CartForm';
 import styles from '../css/CartPage.module.css';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+
+import { ArrowLeftOutlined } from '@ant-design/icons';
 import BillingForm from '../components/BillingForm';
 import useForm from '../components/useForm';
 import { validateCheckout } from '../components/FormValidationRules';
@@ -30,9 +31,9 @@ const CartPage = () => {
 
   return (
     <div className={styles.cart}>
-      <div>
+      <div className={styles.backButton}>
         <a onClick={() => history.goBack()}>
-          <ArrowBackIcon />
+          <ArrowLeftOutlined />
         </a>
       </div>
       {cart.length < 1 ? (
