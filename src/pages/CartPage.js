@@ -9,8 +9,10 @@ import BillingForm from '../components/BillingForm';
 import useForm from '../components/useForm';
 import { validateCheckout } from '../components/FormValidationRules';
 import LoginForm from '../components/LoginForm';
+import { CarContext } from '../contexts/CarContext';
 const CartPage = () => {
   const { cart, handleCheckout, currentUser } = useContext(UserContext);
+  const { handleSoldCars } = useContext(CarContext);
   const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
   const history = useHistory();
   const { handleChange, handleSubmit, values, errors } = useForm(
@@ -21,6 +23,7 @@ const CartPage = () => {
   function checkout() {
     console.log('checkout');
     console.log(values);
+    handleSoldCars(cart);
     handleCheckout(values);
     history.push('/receipt');
   }

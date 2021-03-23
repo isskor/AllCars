@@ -59,6 +59,15 @@ const CarContextProvider = ({ children }) => {
       : initialCarState
   );
 
+  function handleSoldCars(soldCars) {
+    const a = cars.map((car) => {
+      const b = soldCars.filter((soldCar) => soldCar.vin === car.vin);
+      if (b.length > 0) return { ...car, sold: true };
+      return car;
+    });
+    console.log(a);
+  }
+
   const newFiltersHelper = (filterTypeOne, filterTypeTwo) => {
     let arrayToLoop = cars;
     if (filteredCarsObject.search) {
@@ -151,7 +160,6 @@ const CarContextProvider = ({ children }) => {
   useEffect(() => {
     handleFilteredCars(cars, filteredCarsObject);
     handleNewFilters();
-    
   }, [filteredCarsObject]);
 
   useEffect(() => {
@@ -162,7 +170,14 @@ const CarContextProvider = ({ children }) => {
 
   return (
     <Provider
-      value={{ cars, filters, dispatch, filteredCars, filteredCarsObject }}
+      value={{
+        cars,
+        filters,
+        dispatch,
+        filteredCars,
+        filteredCarsObject,
+        handleSoldCars,
+      }}
     >
       {children}
     </Provider>

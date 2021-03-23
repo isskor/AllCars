@@ -36,14 +36,14 @@ export const validateRegister = (values, state) => {
 
 export const validateCheckout = (values) => {
   let errors = {};
-  if (!values.name) errors.name = textError;
-  if (!values.address) errors.address = textError;
-  checkEmail(errors, values.email);
-  if (!values.phone) errors.phone = textError;
-  if (!values.method) errors.method = shippingError;
-  if (!values.cardNumber) errors.cardNumber = textError;
-  if (!values.nameOnCard) errors.nameOnCard = textError;
-  if (!values.dateOnCard) errors.dateOnCard = textError;
-  if (!values.cvc) errors.cvc = textError;
+  // if (!values.name) errors.name = textError;
+  // if (!values.address) errors.address = textError;
+  // checkEmail(errors, values.email);
+  // if (!values.phone) errors.phone = textError;
+  // if (!values.method) errors.method = shippingError;
+  // if (!values.cardNumber) errors.cardNumber = textError;
+  // if (!values.nameOnCard) errors.nameOnCard = textError;
+  // if (!values.dateOnCard) errors.dateOnCard = textError;
+  // if (!values.cvc) errors.cvc = textError;
   return errors;
 };
