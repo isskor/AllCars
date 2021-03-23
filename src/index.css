@@ -9,7 +9,7 @@
   --primary-color: #ffc388;
   --secondary-color: #eaeaea;
   --dark-color: #5b5b5b;
-  --error-color:rgb(252, 143, 143);
+  --error-color: rgb(252, 143, 143);
   --primary-button: linear-gradient(
     121.61deg,
     #fdc194 11.85%,
@@ -35,6 +35,14 @@ h1 {
   font-family: var(--header-font);
   color: var(--secondary-color);
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  user-select: none;
 }
 
 p {
