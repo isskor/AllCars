@@ -17,7 +17,8 @@ function UserPage() {
       <div className={styles.container}>
         <div className={styles.UserPage_info}>
           <h2>My Info</h2>
-          <UserPageInfo />
+          {currentUser && <UserPageInfo />}
+          
         </div>
         <div className={styles.purchases}>
           <h2 className={styles.purchasesHeading}>My Purchases</h2>
