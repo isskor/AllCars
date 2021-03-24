@@ -56,12 +56,12 @@ function LoginForm({ onCartPage }) {
             name='password'
             placeholder='Enter your password'
           />
-          <p className={styles.form_error}>{errors}</p>
         </div>
         <div className={styles.form_group_btn}>
           <button type='submit' onClick={(e) => handleClick(e)}>
             Log in
           </button>
+          <p className={styles.form_error}>{errors}</p>
         </div>
       </form>
     </div>
