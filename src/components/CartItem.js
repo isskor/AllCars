@@ -4,13 +4,14 @@ import RemoveCarBtn from './RemoveCarBtn';
 const CartItem = ({ cartItem, checkout = false }) => {
   const history = useHistory();
 
-  function goToCarDetails() {
+  function goToCarDetails(e) {
+    if (e.target.tagName === 'svg' || e.target.tagName === 'path') return;
     history.push(`/car/${cartItem.vin}`);
   }
 
   return (
-    <div className={styles.carCard}>
-      <div className={styles.img_container} onClick={goToCarDetails}>
+    <div className={styles.carCard} onClick={goToCarDetails}>
+      <div className={styles.img_container}>
         <img
           src={`/assets/car-pictures/${cartItem.make}-${cartItem.model}-${cartItem.year}.jpg`}
           alt='Car picture'

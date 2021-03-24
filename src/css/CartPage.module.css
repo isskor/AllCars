@@ -3,7 +3,7 @@
 }
 
 .cart h2 {
-  margin: 5rem;
+  margin: 0 0 5rem 0;
   text-align: center;
   color: var(--primary-color);
 }
