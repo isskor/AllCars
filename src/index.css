@@ -68,3 +68,7 @@ button:hover {
 img {
   width: 100%;
 }
+
+svg {
+  color: var(--primary-color);
+}
