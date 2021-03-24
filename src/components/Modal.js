@@ -5,7 +5,6 @@ const Modal = ({ openModal, setOpenModal }) => {
   const history = useHistory();
 
   const handleModalClick = (e, click) => {
-    console.log('handleModal click');
     setOpenModal(false);
     if (click === 'home') {
       setOpenModal(false);
@@ -14,11 +13,6 @@ const Modal = ({ openModal, setOpenModal }) => {
     history.push('/cart');
     return;
   };
-
-  // const modalClick = (e) => {
-  //   if (e.target.classList.contains('modal')) setOpenModal(false);
-  //   console.log('modal shadow click');
-  // };
 
   return (
     <>

@@ -20,7 +20,6 @@ function LoginForm({ onCartPage }) {
     const a = usersState.filter((object) => {
       if (object.email === user.email && object.password === user.password) {
         setCurrentUser(object);
-        console.log('Login sucessful!');
         if (!onCartPage) {
           history.goBack();
           return object;
@@ -30,15 +29,7 @@ function LoginForm({ onCartPage }) {
     });
     if (a.length > 0) return;
     setError('Wrong email or password...');
-    // timeOut();
   };
-
-  // useEffect(() => {
-  //   return () => {
-  //     console.log('time2');
-  //     clearTimeout(timeOut);
-  //   };
-  // }, [timeOut]);
 
   const handleChange = (e) => {
     setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });

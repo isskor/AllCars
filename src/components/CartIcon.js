@@ -8,7 +8,6 @@ const CartIcon = () => {
   
   const totalCost = cart.reduce((acc, cur) => acc + cur.price, 0);
   
-  //   console.log(cart[0].price);
   return (
     <Link to='/cart' className={styles.cartIcon}>
       <span className={styles.cost}>${totalCost}</span>

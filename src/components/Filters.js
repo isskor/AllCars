@@ -6,7 +6,6 @@ import { CarContext } from '../contexts/CarContext';
 const Filters = () => {
   const [isOpen, setIsOpen] = useState(null);
   const { filters, dispatch } = useContext(CarContext);
-  console.log(filters);
 
   return (
     <div className={styles.filter_container}>

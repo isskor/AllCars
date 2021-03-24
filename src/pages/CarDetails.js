@@ -14,7 +14,6 @@ function CarDetails() {
   // get Car
   useEffect(() => {
     setCar(cars.find((car) => params.id === car.vin));
-    console.log(car);
   }, [params]);
 
   // go back function

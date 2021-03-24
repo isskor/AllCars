@@ -22,8 +22,6 @@ const CartPage = () => {
   );
 
   function checkout() {
-    console.log('checkout');
-    console.log(values);
     handleSoldCars(cart);
     handleCheckout(values);
     history.push('/receipt');

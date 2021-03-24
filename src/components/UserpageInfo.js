@@ -6,7 +6,6 @@ import { UserContext } from '../contexts/UserContext';
 
   const { currentUser } = useContext(UserContext);
   const user = currentUser;
-  console.log(user);
   return (
     <div className={style.userInfo}>
         <p>Name: <span>{user.username}</span></p>
