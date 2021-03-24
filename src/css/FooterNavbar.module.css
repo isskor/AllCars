@@ -11,8 +11,8 @@
 }
 
 .navbar svg {
-  height: 1em !important;
-  width: 1em !important ;
+  height: 1.25em !important;
+  width: 1.25em !important ;
 }
 
 .myAccount {
@@ -36,8 +36,7 @@
   }
   .navbar svg,
   .navbar span {
-    /* font-size: 1rem; */
-    margin: 0 2rem;
+    margin: 0 1rem;
   }
   .nav_container {
     position: relative;
@@ -53,9 +52,6 @@
     font-size: 0.8rem;
     display: flex;
     flex-direction: column;
-    /* position: absolute;
-    left: -20%;
-    top: 1.6rem; */
   }
   
   .login_btn > span {
@@ -91,6 +87,8 @@
 
   .navbar svg {
     margin-right: 0.5rem;
+    height: 1em !important;
+    width: 1em !important;
   }
 
 }
