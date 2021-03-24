@@ -1,6 +1,5 @@
 import { useState, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import PersonIcon from '@material-ui/icons/Person';
 import styles from '../css/FooterNavbar.module.css';
 import { UserContext } from '../contexts/UserContext';
 import NavDropdown from './NavDropdown';
