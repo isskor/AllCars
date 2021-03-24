@@ -4,7 +4,6 @@ import CarCard from '../components/CarCard';
 import SearchForm from '../components/SearchForm';
 import style from '../css/Home.module.css';
 import Banner from '../components/Banner';
-import ScrollToTopBtn from '../components/ScrollToTopBtn';
 
 function Home() {
   const { filteredCars } = useContext(CarContext);

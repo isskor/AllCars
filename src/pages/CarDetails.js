@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/CarDetails2.module.css';
 import AddToCartButton from '../components/AddToCart';

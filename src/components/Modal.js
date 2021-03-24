@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styles from '../css/Modal.module.css';
 const Modal = ({ openModal, setOpenModal }) => {
   const history = useHistory();

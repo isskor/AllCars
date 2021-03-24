@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styles from '../css/LoginForm.module.css';
 import { useContext, useState } from 'react';
 import { UserContext } from '../contexts/UserContext';
@@ -13,8 +12,6 @@ function LoginForm({ onCartPage }) {
   });
 
   const [errors, setError] = useState('');
-
-  // let timeOut = () => setTimeout(() => setError(''), 3000);
 
   const loginUser = (user) => {
     const a = usersState.filter((object) => {
