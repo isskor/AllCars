@@ -10,10 +10,10 @@
   margin-right: 2rem;
 }
 
-svg {
+.navbar svg {
   color: #ffc388;
-  height: 1.25em !important;
-  width: 1.25em !important ;
+  height: 1em !important;
+  width: 1em !important ;
 }
 
 .myAccount {
