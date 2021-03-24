@@ -40,7 +40,7 @@ const FooterNavbar = () => {
             onClick={() => setOpenDropdown(!openDropdown)}
           >
             {<PersonIcon />}
-            <span className={styles.iconName}>My Profile</span>
+            <span className={styles.iconName}>My Page</span>
           </div>
         ) : (
           <Link to='/login' className={styles.login_container}>
