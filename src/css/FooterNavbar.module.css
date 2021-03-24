@@ -15,20 +15,11 @@ svg {
   height: 1.25em !important;
   width: 1.25em !important ;
 }
-svg:hover {
-  color: orange;
-}
 
 .myAccount {
-  /* position: relative; */
   display: flex;
   align-items: center;
   cursor: pointer;
-}
-
-.myAccount:hover > svg,
-.myAccount:hover > span {
-  color: orange;
 }
 
 #login_container {
@@ -97,6 +88,10 @@ svg:hover {
   .navbar span {
     font-size: 1.3rem;
     margin: 0;
+  }
+
+  .navbar svg {
+    margin-right: 0.5rem;
   }
 
 }
