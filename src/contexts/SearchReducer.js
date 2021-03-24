@@ -49,7 +49,6 @@ const handleRemoveFilter = (categoryState, payload) => {
   const key = keyArr.find((item) => categoryState[item].includes(payload));
   // [1,2,3,4,5].INCLUDES(5) = TRUE/FALSE
 
-  console.log(key);
   return {
     ...categoryState,
     [key]: categoryState[key].filter((item) => item !== payload),
@@ -86,7 +85,6 @@ export const searchReducer = (state, action) => {
         search: payload,
       };
     case 'FILTER_RESET_ACTION':
-      console.log('reset ran');
       return initialCarState;
     default:
       return state;

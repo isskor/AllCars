@@ -5,6 +5,7 @@
   margin: 1rem;
   border-radius: 1rem;
   grid-column: 1;
+  cursor: pointer;
 }
 
 .img_container {

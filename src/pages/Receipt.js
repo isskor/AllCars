@@ -1,7 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import { UserContext } from '../contexts/UserContext';
-import ReceiptCar from '../components/ReceiptCar';
 import styles from '../css/Receipt.module.css';
 import { useHistory } from 'react-router-dom';
 import CartItem from '../components/CartItem';
@@ -32,11 +31,9 @@ const Receipt = () => {
           <p>Your Order(s) :</p>
 
           <div className={styles.receipt_content}>
-            {/* <div className={styles.receipt_items}> */}
             {checkoutState.cars.map((car) => (
               <CartItem key={car.vin} cartItem={car} />
             ))}
-            {/* </div> */}
 
             <div className={styles.receiptNote}>
               <h4>Order number: {checkoutState.id}</h4>

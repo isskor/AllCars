@@ -69,7 +69,6 @@ const CarContextProvider = ({ children }) => {
       if (b.length > 0) return { ...car, sold: true };
       return car;
     });
-    console.log(a);
     return a;
   }
 

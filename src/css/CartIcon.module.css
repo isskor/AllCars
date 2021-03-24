@@ -20,9 +20,10 @@
   align-self: center;
   justify-self: center;
 }
-svg {
+.cart svg {
   margin: 0;
   color: #ffc388;
+  font-size: 1.25em;
 }
 .quantity {
   font-size: 0.8rem;

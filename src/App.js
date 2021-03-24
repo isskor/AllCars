@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // context
 import CarContextProvider from './contexts/CarContext';

@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useContext } from 'react';
 import styles from '../css/LoginForm.module.css';
 import useForm from '../components/useForm';
 import { validateRegister } from './FormValidationRules';

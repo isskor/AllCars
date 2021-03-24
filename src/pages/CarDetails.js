@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Link, useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/CarDetails2.module.css';
 import AddToCartButton from '../components/AddToCart';
@@ -14,7 +14,6 @@ function CarDetails() {
   // get Car
   useEffect(() => {
     setCar(cars.find((car) => params.id === car.vin));
-    console.log(car);
   }, [params]);
 
   // go back function

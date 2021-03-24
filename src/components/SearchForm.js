@@ -13,7 +13,6 @@ const SearchForm = ({ scrollToRef }) => {
 
   const handleClickOutside = () => {
     setshowFilters(false);
-    console.log('click');
   };
 
   useOutsideClick(handleClickOutside, filterRef);

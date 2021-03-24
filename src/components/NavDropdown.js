@@ -18,8 +18,7 @@ function NavDropdown({ closeDropdown }) {
         <span className={styles.closeNav_line2}></span>
       </div>
       <ul onClick={closeDropdown}>
-        <Link to='/user-page'>My Page</Link>
-        <Link to='/my-settings'>My Settings</Link>
+        <Link to='/user-page'>Purchases</Link>
         <li onClick={handleClick} className='logout'>
           Log Out
         </li>

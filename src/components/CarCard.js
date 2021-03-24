@@ -5,12 +5,9 @@ import AddToCart from './AddToCart';
 function CarCard(prop) {
   const history = useHistory();
   function goToCarDetails(e) {
-    console.log(e.target);
 
     if (e.target.closest('.modal')) return;
-    console.log('modal shadow click');
 
-    console.log('carcard clicked');
     if (e.target.tagName === 'BUTTON') return;
     history.push(`/car/${prop.car.vin}`);
   }

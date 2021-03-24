@@ -1,6 +1,5 @@
 import style from '../css/OrderCard.module.css';
 import CartItem from './CartItem';
-import OrderCartItem from './OrderCarItem';
 
 const OrderCard = ({ order }) => {
   return (

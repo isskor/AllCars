@@ -10,29 +10,27 @@
   margin-right: 2rem;
 }
 
-svg {
+.navbar svg {
   color: #ffc388;
-  height: 1.25em !important;
-  width: 1.25em !important ;
-  /* margin-top: 1rem; */
-}
-svg:hover {
-  color: orange;
+  height: 1em !important;
+  width: 1em !important ;
 }
 
 .myAccount {
-  /* position: relative; */
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.myAccount:hover > svg,
-.myAccount:hover > span {
-  color: orange;
+#login_container {
+  display: none;
 }
 
 @media (min-width: 576px) {
+  #login_container {
+    display: flex;
+  }
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -46,11 +44,11 @@ svg:hover {
     position: relative;
     display: flex;
   }
-
+  
   .login_container {
     position: relative;
   }
-
+  
   .login_btn {
     display: inline-block;
     font-size: 0.8rem;
@@ -60,13 +58,14 @@ svg:hover {
     left: -20%;
     top: 1.6rem; */
   }
-
+  
   .login_btn > span {
     margin: 0;
   }
 }
 
 @media (max-width: 576px) {
+
   .navbar {
     display: flex;
     justify-content: space-around;
@@ -90,11 +89,11 @@ svg:hover {
     font-size: 1.3rem;
     margin: 0;
   }
-  .login_btn {
-    /* position: relative;
-    top: 0;
-    left: 0; */
+
+  .navbar svg {
+    margin-right: 0.5rem;
   }
+
 }
 @media print {
   .navbar {
