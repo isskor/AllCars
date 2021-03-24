@@ -25,6 +25,10 @@
   display: none;
 }
 
+#login_container {
+  display: none;
+}
+
 @media (min-width: 576px) {
   #login_container {
     display: flex;
