@@ -14,7 +14,6 @@ svg {
   color: #ffc388;
   height: 1.25em !important;
   width: 1.25em !important ;
-  /* margin-top: 1rem; */
 }
 svg:hover {
   color: orange;
@@ -32,7 +31,15 @@ svg:hover {
   color: orange;
 }
 
+#login_container {
+  display: none;
+}
+
 @media (min-width: 576px) {
+  #login_container {
+    display: flex;
+  }
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -46,11 +53,11 @@ svg:hover {
     position: relative;
     display: flex;
   }
-
+  
   .login_container {
     position: relative;
   }
-
+  
   .login_btn {
     display: inline-block;
     font-size: 0.8rem;
@@ -60,13 +67,14 @@ svg:hover {
     left: -20%;
     top: 1.6rem; */
   }
-
+  
   .login_btn > span {
     margin: 0;
   }
 }
 
 @media (max-width: 576px) {
+
   .navbar {
     display: flex;
     justify-content: space-around;
