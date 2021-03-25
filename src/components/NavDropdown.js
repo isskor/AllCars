@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { Link, useHistory } from 'react-router-dom';
 import styles from '../css/NavDropdown.module.css';
+
 function NavDropdown({ closeDropdown }) {
   const { setCurrentUser } = useContext(UserContext);
   const history = useHistory();

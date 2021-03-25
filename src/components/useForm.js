@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../contexts/UserContext';
+import { useEffect, useState } from 'react';
+
 const useForm = (callback, validate, state) => {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
 
-  const { usersState } = useContext(UserContext);
   useEffect(() => {
     if (Object.keys(errors).length === 0 && Object.keys(values).length > 0) {
       callback();

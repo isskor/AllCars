@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
 
 import styles from '../css/CarSearchInput.module.css';
+
 const CarSearchInput = () => {
   const { dispatch, filteredCarsObject } = useContext(CarContext);
 

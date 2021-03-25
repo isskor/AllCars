@@ -4,6 +4,7 @@ const passwordError = 'Password too short';
 const shippingError = 'Please choose a shipping method';
 const notMatch = 'Passwords does not match';
 const emailExist = 'Email is already registered';
+
 function checkEmail(errors, email) {
   if (!email) return (errors.email = textError);
   if (!/\S+@\S+\.\S+/.test(email)) {

@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import styles from '../css/CartItem.module.css';
 import RemoveCarBtn from './RemoveCarBtn';
+
 const CartItem = ({ cartItem, checkout = false }) => {
   const history = useHistory();
 
