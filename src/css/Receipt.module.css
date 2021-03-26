@@ -1,0 +1,67 @@
+.receipt h2,
+.receipt h3{
+  color: var(--primary-color);
+  text-align: center;
+}
+.receipt h4 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.receiptNote {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  margin: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  grid-area: 1/2/1/2;
+  /* align-self:center; */
+  /* height: 100%; */
+}
+
+.receipt {
+  padding: 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+}
+.receipt button {
+  margin: 2rem 0.5rem 0 0.5rem;
+}
+
+@media (min-width: 992px) {
+  .receipt_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .receipt_items {
+    flex-basis: 50%;
+  }
+  .receiptNote {
+    flex-basis: 50%;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: flex-start;
+  }
+}
+
+@media print {
+  nav {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
+  button {
+    display: none;
+  }
+  .receipt svg {
+    display: none;
+  }
+
+  /* .carIcon in cartIcon.js */
+  /* .navbar in footerNavbar.js */
+}

@@ -1,0 +1,196 @@
+.carCard {
+  margin: 0.5rem 0;
+  background-color: var(--card-bg);
+  box-shadow: 0px 4px 9px #00000040;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.carCard:hover {
+  /* Transform : scale(1.1) ; */
+  box-shadow: 0px 4px 20px #0000009f;
+}
+
+.imgContainer {
+  width: 100%;
+  position: relative;
+}
+
+.imgContainer img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carPrice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 0.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 0 0.5rem;
+  color: var(--primary-color);
+}
+
+.imgTextWrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.1rem 0.2rem;
+  background-color: #424242ad;
+}
+
+.wrapperText {
+  color: var(--primary-color);
+}
+
+.statsContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  padding: 0.1rem 0.3rem;
+}
+
+.model {
+  font-size: 0.75rem;
+  text-decoration: underline;
+  opacity: 30%;
+}
+
+.milesContainer {
+  justify-self: right;
+}
+
+.miles {
+  font-size: 0.75rem;
+  text-decoration: underline;
+  opacity: 30%;
+}
+
+.addBtn {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 0;
+  width: 5.8rem;
+  height: 2rem;
+  justify-self: right;
+  align-self: end;
+  margin: 0.3rem 0.1rem;
+}
+
+.carCard span {
+  color: var(--primary-color);
+}
+
+@media (min-width: 576px) {
+  .carCard {
+    margin: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .carCard {
+    width: 45%;
+    grid-template-columns: 100%;
+  }
+
+  .carPrice {
+    top: 0;
+    right: 0;
+    font-size: 1.3rem;
+  }
+
+  .imgTextWrapper {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .wrapperText {
+    font-size: 1.3rem;
+  }
+
+  .statsContainer {
+    grid-template-columns: 35% 24% 35%;
+    column-gap: 3%;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .model {
+    font-size: 1rem;
+  }
+
+  .modelName {
+    font-size: 1.2rem;
+  }
+
+  .milesContainer {
+    justify-self: left;
+  }
+
+  .miles {
+    font-size: 1rem;
+  }
+
+  .milesNumber {
+    font-size: 1.2rem;
+  }
+
+  .addBtn {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    font-size: 1rem;
+    width: 6.6rem;
+    height: 2.2rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .carCard {
+    width: 30%;
+  }
+
+  .carPrice {
+    font-size: 1.2rem;
+  }
+
+  .imgTextWrapper {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .wrapperText {
+    font-size: 1.2rem;
+  }
+
+  .statsContainer {
+    padding: 0.2rem 0.5rem;
+  }
+
+  .model {
+    font-size: 0.8rem;
+  }
+
+  .modelName {
+    font-size: 1rem;
+  }
+
+  .milesContainer {
+    justify-self: left;
+  }
+
+  .miles {
+    font-size: 0.8rem;
+  }
+
+  .milesNumber {
+    font-size: 1rem;
+  }
+
+  .addBtn {
+    font-size: 0.8rem;
+    width: 5.8rem;
+    height: 2rem;
+  }
+}

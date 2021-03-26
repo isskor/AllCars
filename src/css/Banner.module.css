@@ -1,0 +1,29 @@
+.header {
+  height: 30vh;
+  margin-bottom: 1rem;
+  display: flex;
+  z-index: -3;
+}
+.header img {
+  object-fit: cover;
+  z-index: -2;
+}
+.header h1 {
+  z-index: -1;
+  position: absolute;
+  padding: 0.5rem;
+  font-weight: normal;
+}
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 4rem;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    height: 50vh;
+  }
+}

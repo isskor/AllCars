@@ -1,0 +1,52 @@
+.mainNavbar {
+  background-color: var(--card-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+.rightNavbar {
+  display: flex;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-family: var(--header-font);
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
+}
+
+a:hover *{
+  color: orange;
+}
+
+.logo:hover {
+  color: var(--primary-color);
+}
+.login_btn{
+  margin-top: auto;
+}
+.login_btn a{
+  color: var(--primary-color);
+  display: flex;
+  align-items:flex-end ;
+  margin-right: 1rem;
+  font-size: 0.75rem;
+}
+
+@media(min-width: 576px){
+  .login_btn{
+    display:none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mainNavbar {
+    padding: 1rem 2rem;
+  }
+}

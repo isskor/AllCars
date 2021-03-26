@@ -1,0 +1,38 @@
+.container {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.UserPage_info {
+  margin-top: 2rem;
+}
+.h2 {
+  padding-left: 1rem;
+  color: var(--primary-color);
+}
+
+.purchases {
+  padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 75%;
+  }
+}
+
+.purchases {
+  margin-top: 2.8rem;
+}
+
+.UserPage_info h2,
+.purchasesHeading {
+  color: var(--primary-color);
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 80%;
+    max-width: 1000px;
+  }
+}
