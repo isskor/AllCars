@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans:wght@400;600;700&display=swap');
+@import './css/About.module.css';
 
 /* Global Styles */
 
@@ -8,6 +9,7 @@
   --primary-color: #ffc388;
   --secondary-color: #eaeaea;
   --dark-color: #5b5b5b;
+  --error-color: rgb(252, 143, 143);
   --primary-button: linear-gradient(
     121.61deg,
     #fdc194 11.85%,
@@ -25,12 +27,22 @@
 
 body {
   background-color: var(--dark-color);
+
+  font-family: var(--main-font);
 }
 
 h1 {
   font-family: var(--header-font);
   color: var(--secondary-color);
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  user-select: none;
 }
 
 p {
@@ -55,4 +67,8 @@ button:hover {
 
 img {
   width: 100%;
+}
+
+svg {
+  color: var(--primary-color);
 }

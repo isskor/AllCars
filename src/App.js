@@ -1,32 +1,44 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import { Route, Switch } from 'react-router-dom';
+
+// context
 import CarContextProvider from './contexts/CarContext';
-import CartContextProvider from './contexts/CartContext';
-import Test from './components/test';
+import UserContextProvider from './contexts/UserContext';
+// components
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/About';
+import Deals from './pages/deals';
+import CartPage from './pages/CartPage';
+import CarDetails from './pages/CarDetails';
+import Receipt from './pages/Receipt';
+import LoginRegister from './pages/LoginRegister';
+import UserPage from './pages/UserPage';
+// styles
+import styles from './css/App.module.css';
 
 function App() {
   return (
     <div className='App'>
-      <Router>
-        <CarContextProvider>
-          <CartContextProvider>
-            <Navbar />
-
+      <CarContextProvider>
+        <UserContextProvider>
+          <Navbar />
+          <div className={styles.page_container}>
             <Switch>
-                <Route path='/deals' />
-                <Route exact path='/' component={Test}/>
-                <Route path='/about' />
-                <Route exact path='/car/:id' />
-                <Route exact path='/cart' />
-                <Route path='/receipt' />
+              <Route path='/deals' component={Deals} />
+              <Route exact path='/' component={Home} />
+              <Route path='/about' component={About} />
+              <Route path='/car/:id' component={CarDetails} />
+              <Route path='/cart' component={CartPage} />
+              <Route path='/receipt' component={Receipt} />
+              <Route
+                path={['/login', '/register']}
+                component={LoginRegister}
+              />
+              <Route path='/user-page' component={UserPage} />
             </Switch>
-            
-            
-            
-
-          </CartContextProvider>
-        </CarContextProvider>
-      </Router>
+          </div>
+        </UserContextProvider>
+      </CarContextProvider>
     </div>
   );
 }

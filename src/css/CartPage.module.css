@@ -1,0 +1,132 @@
+.cart {
+  width: 100%;
+}
+
+.cart h2 {
+  margin: 0 0 5rem 0;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.cartContainer {
+  width: 100%;
+  margin: 5rem auto;
+}
+
+.cartLeft {
+  margin-bottom: 3rem;
+}
+
+.total {
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+.total h3 {
+  font-size: 1.5rem;
+}
+.total h4 {
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.cart_form_container {
+  margin: 0 auto;
+}
+
+.login_form {
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(12, 12, 12, 0.5);
+  backdrop-filter: blur(5px);
+  /* height:80vh; */
+  min-height: 100%;
+  box-shadow: 0 5px 20px rgb(0, 0, 0, 0.6);
+}
+
+.login_form h2 {
+  margin: 3rem 0 1rem;
+}
+
+.login_form a {
+  color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  display: inline-block;
+}
+
+.login_form a:hover {
+  color: orange;
+}
+
+.cart .empty {
+  margin: 5rem 0;
+  width: 100%;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.backButton {
+  display: flex;
+  padding: 1rem;
+}
+
+.backButton a {
+  background: var(--card-bg);
+  padding: 1em;
+
+  opacity: 0.8;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .cartContainer {
+    padding: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .total h3 {
+    font-size: 2rem;
+  }
+  .total h4 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+  }
+
+  .login_form {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .cartContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cart_form_container {
+    /* grid-area: 1/1/3/3; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    margin: 0;
+  }
+
+  .cartLeft ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login_form {
+    width: 35%;
+  }
+}

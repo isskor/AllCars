@@ -1,0 +1,154 @@
+.aboutContentContainer {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutText {
+  margin-bottom: 1.5rem;
+}
+
+.aboutText p {
+  line-height: 2rem;
+}
+
+.teamImgWrap {
+  display: none;
+  box-shadow: 2px 2px 5px #242424;
+}
+
+.paragraphHeading {
+  font-size: 1.2rem;
+  margin: 1.6rem 0 0.5rem 0;
+  font-family: var(--header-font);
+  font-weight: normal;
+  color: var(--secondary-color);
+}
+
+.teamImgBottom {
+  box-shadow: 2px 2px 5px #242424;
+}
+
+.aboutContactInfo {
+  margin: 2.5rem 1rem;
+  background-color: var(--card-bg);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.contactWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.allCarsCopyright {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.email {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.email:hover {
+  color: orange;
+}
+
+.contactAddress {
+  margin-bottom: 0.5rem;
+}
+
+.contactUs {
+  font-size: 0.8rem;
+  text-decoration: underline;
+  opacity: 30%;
+}
+
+@media (min-width: 768px) {
+
+  .aboutContentContainer {
+    margin: 1rem 2rem;
+  }
+
+  .aboutText {
+    font-size: 1rem;
+  }
+
+  .teamImgWrap {
+    display: block;
+    width: 50%;
+    float: right;
+    margin: 0.8rem 0 0.5rem 1rem;
+  }
+
+  .paragraphHeading {
+    font-size: 1.4rem;
+  }
+
+  .teamImgBottom {
+    display: none;
+  }
+
+  .aboutContactInfo {
+    padding: 1.5rem;
+  }
+
+  .contactWrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .allCarsCopyright {
+    font-size: 1.4rem;
+  }
+
+  .email {
+    font-size: 1.2rem;
+  }
+
+  .addressAndPhonenumber {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contactAddress {
+    margin-bottom: 0;
+  }
+
+  .contactPhonenumber {
+    text-align: end;
+  }
+
+  .contactUs {
+    font-size: 1rem;
+  }
+
+  .contactText {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  
+  .aboutContentContainer {
+    width: 80%;
+    margin: 1rem auto;
+  }
+
+  .teamImgWrap {
+    width: 40%;
+    margin: 1.2rem 0 0.5rem 1rem;
+  }
+
+  .paragraphHeading {
+    font-size: 1.5rem;
+  }
+
+  .aboutContactInfo {
+    width: 100%;
+    max-width: 600px;
+    margin: 2.5rem auto;
+  }
+}
