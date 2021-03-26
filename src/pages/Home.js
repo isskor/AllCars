@@ -38,7 +38,7 @@ function Home() {
       <div ref={resultRef} className={style.carList}>
         {showCars.length === 0 && (
           <div>
-            <h1>no cars</h1>
+            <h2 style={{color: "white"}}>No search results</h2>
           </div>
         )}
         {showCars.map((car) => (

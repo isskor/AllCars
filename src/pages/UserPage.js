@@ -18,11 +18,15 @@ function UserPage() {
       <div className={styles.container}>
         <div className={styles.purchases}>
           <h2 className={styles.purchasesHeading}>Purchases</h2>
-          <ul>
-            {currentUser?.purchaseHistory?.map((order) => (
-              <OrderCard order={order} key={order.id} />
-            ))}
-          </ul>
+          {currentUser?.purchaseHistory?.length > 0 ? (
+            <ul>
+              {currentUser?.purchaseHistory?.map((order) => (
+                <OrderCard order={order} key={order.id} />
+              ))}
+            </ul>
+          ) : (
+            <p><i>No purchases</i></p>
+          )}
         </div>
         <div className={styles.UserPage_info}>
           <h2>Contact Information</h2>
