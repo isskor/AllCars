@@ -7,6 +7,7 @@ import useOutsideClick from './useOutsideClick';
 // styles
 import styles from '../css/SearchForm.module.css';
 import { SearchOutlined } from '@ant-design/icons';
+
 const SearchForm = ({ scrollToRef }) => {
   const filterRef = useRef();
   const [showFilters, setshowFilters] = useState(false);

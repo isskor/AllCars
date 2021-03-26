@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/SliderInput.module.css';
+
 const SliderInput = ({ min, max, type }) => {
   const { dispatch, filteredCarsObject } = useContext(CarContext);
   const { price, milage } = filteredCarsObject;

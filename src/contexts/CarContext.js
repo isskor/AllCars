@@ -174,8 +174,6 @@ const CarContextProvider = ({ children }) => {
     localStorage.setItem('filteredCarList', JSON.stringify(filteredCarsObject));
     localStorage.setItem('carList', JSON.stringify(cars));
   }, [filteredCarsObject, cars]);
-  // useEffect(() => {
-  // }, [filteredCars]);
 
   return (
     <Provider

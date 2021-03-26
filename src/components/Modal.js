@@ -1,12 +1,13 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from '../css/Modal.module.css';
+
 const Modal = ({ openModal, setOpenModal }) => {
   const history = useHistory();
 
   const handleModalClick = (e, click) => {
     setOpenModal(false);
-    if (click === 'home') {
+    if (click === 'back') {
       setOpenModal(false);
       return;
     }
@@ -21,7 +22,7 @@ const Modal = ({ openModal, setOpenModal }) => {
           <div className={styles.modal_container}>
             <p>Added To cart!</p>
             <div className={styles.btn_container}>
-              <button onClick={(e) => handleModalClick(e, 'home')}>
+              <button onClick={(e) => handleModalClick(e, 'back')}>
                 Buy More
               </button>
 

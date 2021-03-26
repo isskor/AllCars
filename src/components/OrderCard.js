@@ -24,7 +24,6 @@ const OrderCard = ({ order }) => {
       </div>
       <div className={style.orders}>
         {order.cars.map((car) => (
-          // <OrderCartItem car={car} key={car.vin} />
           <CartItem cartItem={car} key={car.vin} />
         ))}
       </div>

@@ -27,6 +27,7 @@ const UserContextProvider = ({ children }) => {
       ? JSON.parse(localStorage.getItem('currentUser'))
       : null
   );
+  
   const [isRegistered, setIsRegistered] = useState(false);
 
   //******** cart functions
@@ -56,17 +57,12 @@ const UserContextProvider = ({ children }) => {
     history.replace('/login');
   };
 
-  //******** user logout
-  // save to localstorage
-  // set cart: 0
-  // reset all other state?
-
   //******** on checkout
 
   useEffect(() => {
     if (currentUser && Object.keys(checkoutState).length > 0) {
-      const firstPurchase = currentUser.purchaseHistory;
-      if (!firstPurchase) {
+      const purchaseHistoryExist = currentUser.purchaseHistory;
+      if (!purchaseHistoryExist) {
         setCurrentUser({ ...currentUser, purchaseHistory: [checkoutState] });
         return;
       }
@@ -76,8 +72,6 @@ const UserContextProvider = ({ children }) => {
       });
     }
   }, [checkoutState]);
-
-  //******** local storage
 
   //******** log users and currentuser
   useEffect(() => {

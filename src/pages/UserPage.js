@@ -4,6 +4,7 @@ import Banner from '../components/Banner';
 import UserPageInfo from '../components/UserpageInfo';
 import { UserContext } from '../contexts/UserContext';
 import OrderCard from '../components/OrderCard';
+
 function UserPage() {
   const { currentUser } = useContext(UserContext);
 

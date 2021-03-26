@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import styles from '../css/CartIcon.module.css';
 import { ShoppingCartOutlined } from '@ant-design/icons';
+
 const CartIcon = () => {
   const { cart } = useContext(UserContext);
   

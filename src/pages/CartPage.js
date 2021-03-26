@@ -11,6 +11,7 @@ import useForm from '../components/useForm';
 import { validateCheckout } from '../components/FormValidationRules';
 import LoginForm from '../components/LoginForm';
 import { CarContext } from '../contexts/CarContext';
+
 const CartPage = () => {
   const { cart, handleCheckout, currentUser } = useContext(UserContext);
   const { handleSoldCars } = useContext(CarContext);

@@ -11,11 +11,12 @@ const FooterNavbar = () => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const navDropDownRef = useRef();
 
-  const closeDropdown = (e) => {
+  const closeDropdown = () => {
     setOpenDropdown(false);
   };
 
   useOutsideClick(closeDropdown, navDropDownRef);
+
   return (
     <div className={styles.nav_container} ref={navDropDownRef}>
       <nav className={styles.navbar}>

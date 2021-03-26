@@ -12,7 +12,6 @@ import { UserContext } from '../contexts/UserContext';
         <p>Email: <span>{user.email}</span></p>
         <p>Address: <span>{user.address}</span></p>
         <p>Phone: <span>{user.phone_number}</span></p>
-        {/* Add all info connected to profile here */}
       </div>
   );
 }

@@ -3,6 +3,7 @@ import styles from '../css/LoginForm.module.css';
 import useForm from '../components/useForm';
 import { validateRegister } from './FormValidationRules';
 import { UserContext } from '../contexts/UserContext';
+
 function RegisterForm() {
   const { registerUser, usersState } = useContext(UserContext);
   const { handleChange, handleSubmit, values, errors } = useForm(

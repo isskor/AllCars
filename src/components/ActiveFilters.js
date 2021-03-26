@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { CarContext } from '../contexts/CarContext';
 import styles from '../css/ActiveFilters.module.css';
 import { CloseCircleOutlined } from '@ant-design/icons';
+
 const ActiveFilters = () => {
   const { dispatch, filteredCarsObject } = useContext(CarContext);
   const { make, model, year } = filteredCarsObject.categories;
